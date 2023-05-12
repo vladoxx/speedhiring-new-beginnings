@@ -4,48 +4,51 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="web.css" />
+    <link rel="stylesheet" href="tablet.css" />
+    <link rel="stylesheet" href="mobile.css" />
     <title>New Beginnings</title>
   </head>
   <body>
     <!-- NAVBAR -->
-    <nav>
-      <ul>
-        <li><a href="#">Início</a></li>
-        <li><a href="#">Serviços</a></li>
-        <li><a href="#">Benefícios</a></li>
-        <li><a href="#">Depoimentos</a></li>
-        <li><a href="#">Sobre Nós</a></li>
+    <nav class="navbar">
+      <ul class="navbar__ul">
+        <li class="navbar__ul__li-inicio"><a href="#">Início</a></li>
+        <li class="navbar__ul__li-servico"><a href="#">Serviços</a></li>
+        <li class="navbar__ul__li-beneficios"><a href="#">Benefícios</a></li>
+        <li class="navbar__ul__li-depoimentos"><a href="#">Depoimentos</a></li>
+        <li class="navbar__ul__li-depoimentos"><a href="#">Sobre Nós</a></li>
       </ul>
     </nav>
 
     <!-- HERO SECTION -->
-    <section>
-      <h1>Solução para empregos para imigrantes</h1>
-      <p>
+    <section class="hero">
+      <h1 class="hero__title">Solução para empregos para imigrantes</h1>
+      <p class="hero__p">
         Ajude imigrantes a encontrar empregos e superar as barreiras que muitas
         vezes impedem a integração no mercado de trabalho.
       </p>
-      <a href="#" class="cta">Agende uma consulta</a>
+      <a href="#" class="hero__link">Agende uma consulta</a>
     </section>
 
     <!-- SEÇÃO DE SERVIÇOS -->
-    <section>
+    <section class="servico">
       <h2>Nossos serviços</h2>
       <ul>
         <li>
           <h3>Serviço 1</h3>
           <p>Descrição do serviço 1.</p>
-          <a href="#" class="cta">Saiba mais</a>
+          <a href="#" class="">Saiba mais</a>
         </li>
         <li>
           <h3>Serviço 2</h3>
           <p>Descrição do serviço 2.</p>
-          <a href="#" class="cta">Saiba mais</a>
+          <a href="#" class="">Saiba mais</a>
         </li>
         <li>
           <h3>Serviço 3</h3>
           <p>Descrição do serviço 3.</p>
-          <a href="#" class="cta">Saiba mais</a>
+          <a href="#" class="">Saiba mais</a>
         </li>
       </ul>
     </section>
@@ -58,7 +61,7 @@
         <li>Soluções personalizadas</li>
         <li>Preços acessíveis</li>
       </ul>
-      <a href="#" class="cta">Saiba mais</a>
+      <a href="#" class="">Saiba mais</a>
     </section>
 
     <!-- SEÇÃO DE DEPOIMENTOS -->
@@ -82,7 +85,7 @@
           <cite>Nome do cliente</cite>
         </li>
       </ul>
-      <a href="#" class="cta">Veja mais depoimentos</a>
+      <a href="#" class="">Veja mais depoimentos</a>
     </section>
 
     <!-- SEÇÃO DE SOBRE NÓS -->
