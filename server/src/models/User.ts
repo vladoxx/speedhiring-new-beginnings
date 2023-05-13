@@ -54,6 +54,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
       trim: true,
+      select: false, // Para não vir a senha na requisição
     },
   },
   {
