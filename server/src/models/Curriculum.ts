@@ -6,16 +6,16 @@ interface ICurriculum extends Document {
   professional_experience: {
     company: string;
     job_title: string;
-    start_date: Date;
-    end_date: Date;
+    start_date: string;
+    end_date: string;
     job_description: string;
   }[];
   education: {
     institution: string;
     degree: string;
     field_of_study: string;
-    start_date: Date;
-    end_date: Date;
+    start_date: string;
+    end_date: string;
     description: string;
   }[];
   skills: {
@@ -49,11 +49,11 @@ const curriculumSchema = new Schema(
           trim: true,
         },
         start_date: {
-          type: Date,
+          type: String,
           required: true,
         },
         end_date: {
-          type: Date,
+          type: String,
           required: true,
         },
         job_description: {
@@ -81,11 +81,11 @@ const curriculumSchema = new Schema(
           trim: true,
         },
         start_date: {
-          type: Date,
+          type: String,
           required: true,
         },
         end_date: {
-          type: Date,
+          type: String,
           required: true,
         },
         description: {
