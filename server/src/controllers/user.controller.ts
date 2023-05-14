@@ -49,4 +49,12 @@ export const updateUser: RequestHandler = async (req, res) => {
   res.json(userUpdate);
 };
 
-export const deleteUser: RequestHandler = async (req, res) => {};
+export const deleteUser: RequestHandler = async (req, res) => {
+  const userFound = await User.findByIdAndDelete(req.params.id);
+
+  if (!userFound) {
+    return res.status(204).json();
+  }
+
+  return res.json(userFound);
+};

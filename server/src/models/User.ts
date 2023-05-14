@@ -1,15 +1,32 @@
 import { Schema, model, Document } from "mongoose";
+import bcrypt from "bcryptjs"; // biblioteca de criptografia de senhas
 
 interface IUser extends Document {
   name: string;
   email: string;
-  password: string;
   phone: string;
   address: string;
   cep: string;
   city: string;
   state: string;
   job: string;
+  password: string;
+  birthDate: Date;
+  nationality: string;
+  cpf: string;
+  maritalStatus: string;
+  genderIdentity: string;
+  pronoun: string;
+  sexualOrientation: string;
+  ethnicity: string;
+  disabilities: string;
+  education: {
+    country: string;
+    level: string;
+    institution: string;
+    course: string;
+    status: string;
+  };
 }
 
 const userSchema = new Schema(
@@ -56,11 +73,78 @@ const userSchema = new Schema(
       trim: true,
       select: false, // Para não vir a senha na requisição
     },
+    birthDate: {
+      type: Date,
+      required: true,
+    },
+    nationality: {
+      type: String,
+      trim: true,
+    },
+    cpf: {
+      type: String,
+      trim: true,
+      unique: true,
+    },
+    maritalStatus: {
+      type: String,
+      trim: true,
+    },
+    genderIdentity: {
+      type: String,
+      trim: true,
+    },
+    pronoun: {
+      type: String,
+      trim: true,
+    },
+    sexualOrientation: {
+      type: String,
+      trim: true,
+    },
+    ethnicity: {
+      type: String,
+      trim: true,
+    },
+    disabilities: {
+      type: String,
+      trim: true,
+    },
+    education: {
+      country: {
+        type: String,
+        trim: true,
+      },
+      level: {
+        type: String,
+        trim: true,
+      },
+      institution: {
+        type: String,
+        trim: true,
+      },
+      course: {
+        type: String,
+        trim: true,
+      },
+      status: {
+        type: String,
+        trim: true,
+      },
+    },
   },
   {
     versionKey: false,
     timestamps: true,
   }
 );
+
+// encriptar a senha do usuário antes de salvar no banco de dados
+userSchema.pre("save", async function (next) {
+  const hash = await bcrypt.hash(this.password, 10);
+  this.password = hash;
+
+  next();
+});
 
 export default model<IUser>("User", userSchema);

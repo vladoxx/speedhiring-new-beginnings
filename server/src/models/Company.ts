@@ -1,4 +1,5 @@
 import { Schema, model, Document } from "mongoose";
+import bcrypt from "bcryptjs";
 
 interface ICompany extends Document {
   corporate_name: string;
@@ -61,5 +62,12 @@ const companySchema = new Schema(
     timestamps: true,
   }
 );
+
+companySchema.pre("save", async function (next) {
+  const hash = await bcrypt.hash(this.password, 10);
+  this.password = hash;
+
+  next();
+});
 
 export default model<ICompany>("Company", companySchema);
