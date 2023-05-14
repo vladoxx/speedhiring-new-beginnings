@@ -1,14 +1,20 @@
 import { Schema, model, Document } from "mongoose";
+import bcrypt from "bcryptjs";
 
 interface ICompany extends Document {
   corporate_name: string;
   cnpj: string;
   email: string;
-  website: string;
+  website?: string;
   address: string;
   phone: string;
   job: string;
   password: string;
+  receivedCurriculums?: {
+    user: Schema.Types.ObjectId;
+    curriculum: Schema.Types.ObjectId;
+    receivedDate: Date;
+  }[];
 }
 
 const companySchema = new Schema(
@@ -55,11 +61,34 @@ const companySchema = new Schema(
       required: true,
       trim: true,
     },
+    receivedCurriculums: [
+      {
+        user: {
+          type: Schema.Types.ObjectId,
+          ref: "User",
+        },
+        curriculum: {
+          type: Schema.Types.ObjectId,
+          ref: "Curriculum",
+        },
+        receivedDate: {
+          type: Date,
+          default: Date.now,
+        },
+      },
+    ],
   },
   {
     versionKey: false,
     timestamps: true,
   }
 );
+
+companySchema.pre("save", async function (next) {
+  const hash = await bcrypt.hash(this.password, 10);
+  this.password = hash;
+
+  next();
+});
 
 export default model<ICompany>("Company", companySchema);
