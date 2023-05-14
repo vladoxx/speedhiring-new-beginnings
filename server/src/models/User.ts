@@ -11,7 +11,7 @@ interface IUser extends Document {
   state: string;
   job: string;
   password: string;
-  birthDate: Date;
+  birthDate: String;
   nationality: string;
   cpf: string;
   maritalStatus: string;
@@ -71,67 +71,81 @@ const userSchema = new Schema(
       type: String,
       required: true,
       trim: true,
-      select: false, // Para não vir a senha na requisição
+      // select: false, // Para não vir a senha na requisição
     },
-    birthDate: {
-      type: Date,
+    birth_date: {
+      type: String,
       required: true,
     },
     nationality: {
       type: String,
-      trim: true,
+      required: true,
     },
     cpf: {
       type: String,
-      trim: true,
+      required: true,
       unique: true,
-    },
-    maritalStatus: {
-      type: String,
       trim: true,
     },
-    genderIdentity: {
+    marital_status: {
       type: String,
+      required: true,
       trim: true,
     },
-    pronoun: {
+    gender_identity: {
       type: String,
+      required: true,
       trim: true,
     },
-    sexualOrientation: {
+    pronouns: {
       type: String,
+      required: true,
+      trim: true,
+    },
+    sexual_orientation: {
+      type: String,
+      required: true,
       trim: true,
     },
     ethnicity: {
       type: String,
+      required: true,
       trim: true,
     },
     disabilities: {
       type: String,
+      required: true,
       trim: true,
     },
-    education: {
-      country: {
-        type: String,
-        trim: true,
+    education: [
+      {
+        country: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        level: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        institution: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        course: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        status: {
+          type: String,
+          required: true,
+          trim: true,
+        },
       },
-      level: {
-        type: String,
-        trim: true,
-      },
-      institution: {
-        type: String,
-        trim: true,
-      },
-      course: {
-        type: String,
-        trim: true,
-      },
-      status: {
-        type: String,
-        trim: true,
-      },
-    },
+    ],
   },
   {
     versionKey: false,

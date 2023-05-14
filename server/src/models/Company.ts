@@ -5,11 +5,16 @@ interface ICompany extends Document {
   corporate_name: string;
   cnpj: string;
   email: string;
-  website: string;
+  website?: string;
   address: string;
   phone: string;
   job: string;
   password: string;
+  receivedCurriculums?: {
+    user: Schema.Types.ObjectId;
+    curriculum: Schema.Types.ObjectId;
+    receivedDate: Date;
+  }[];
 }
 
 const companySchema = new Schema(
@@ -56,6 +61,22 @@ const companySchema = new Schema(
       required: true,
       trim: true,
     },
+    receivedCurriculums: [
+      {
+        user: {
+          type: Schema.Types.ObjectId,
+          ref: "User",
+        },
+        curriculum: {
+          type: Schema.Types.ObjectId,
+          ref: "Curriculum",
+        },
+        receivedDate: {
+          type: Date,
+          default: Date.now,
+        },
+      },
+    ],
   },
   {
     versionKey: false,
