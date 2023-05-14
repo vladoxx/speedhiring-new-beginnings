@@ -27,34 +27,38 @@ export const getAllCompanies: RequestHandler = async (req, res) => {
   }
 };
 
-// export const getOneUser: RequestHandler = async (req, res) => {
-//   const userFound = await User.findById(req.params.id);
+export const getOneCompany: RequestHandler = async (req, res) => {
+  const companyFound = await Company.findById(req.params.id);
 
-//   if (!userFound) {
-//     return res.status(204).json();
-//   }
+  if (!companyFound) {
+    return res.status(204).json();
+  }
 
-//   return res.json(userFound);
-// };
+  return res.json(companyFound);
+};
 
-// export const updateUser: RequestHandler = async (req, res) => {
-//   const userUpdate = await User.findByIdAndUpdate(req.params.id, req.body, {
-//     new: true,
-//   });
+export const updateCompany: RequestHandler = async (req, res) => {
+  const companyUpdate = await Company.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {
+      new: true,
+    }
+  );
 
-//   if (!userUpdate) {
-//     return res.status(204).json();
-//   }
+  if (!companyUpdate) {
+    return res.status(204).json();
+  }
 
-//   res.json(userUpdate);
-// };
+  res.json(companyUpdate);
+};
 
-// export const deleteUser: RequestHandler = async (req, res) => {
-//   const userFound = await User.findByIdAndDelete(req.params.id);
+export const deleteCompany: RequestHandler = async (req, res) => {
+  const companyFound = await Company.findByIdAndDelete(req.params.id);
 
-//   if (!userFound) {
-//     return res.status(204).json();
-//   }
+  if (!companyFound) {
+    return res.status(204).json();
+  }
 
-//   return res.json(userFound);
-// };
+  return res.json(companyFound);
+};
