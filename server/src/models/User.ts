@@ -11,22 +11,16 @@ interface IUser extends Document {
   state: string;
   job: string;
   password: string;
-  birthDate: String;
-  nationality: string;
-  cpf: string;
-  maritalStatus: string;
-  genderIdentity: string;
-  pronoun: string;
-  sexualOrientation: string;
-  ethnicity: string;
-  disabilities: string;
-  education: {
-    country: string;
-    level: string;
-    institution: string;
-    course: string;
-    status: string;
-  };
+  confirm_password: string;
+  // birthDate?: String;
+  // nationality?: string;
+  // cpf?: string;
+  // maritalStatus?: string;
+  // genderIdentity?: string;
+  // pronoun?: string;
+  // sexualOrientation?: string;
+  // ethnicity?: string;
+  // disabilities?: string;
 }
 
 const userSchema = new Schema(
@@ -73,79 +67,55 @@ const userSchema = new Schema(
       trim: true,
       // select: false, // Para não vir a senha na requisição
     },
-    birth_date: {
+    confirm_password: {
       type: String,
-      required: true,
-    },
-    nationality: {
-      type: String,
-      required: true,
-    },
-    cpf: {
-      type: String,
-      required: true,
-      unique: true,
+      require: true,
       trim: true,
     },
-    marital_status: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    gender_identity: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    pronouns: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    sexual_orientation: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    ethnicity: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    disabilities: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    education: [
-      {
-        country: {
-          type: String,
-          required: true,
-          trim: true,
-        },
-        level: {
-          type: String,
-          required: true,
-          trim: true,
-        },
-        institution: {
-          type: String,
-          required: true,
-          trim: true,
-        },
-        course: {
-          type: String,
-          required: true,
-          trim: true,
-        },
-        status: {
-          type: String,
-          required: true,
-          trim: true,
-        },
-      },
-    ],
+    // birth_date: {
+    //   type: String,
+    //   required: true,
+    // },
+    // nationality: {
+    //   type: String,
+    //   required: true,
+    // },
+    // cpf: {
+    //   type: String,
+    //   required: true,
+    //   unique: true,
+    //   trim: true,
+    // },
+    // marital_status: {
+    //   type: String,
+    //   required: true,
+    //   trim: true,
+    // },
+    // gender_identity: {
+    //   type: String,
+    //   required: true,
+    //   trim: true,
+    // },
+    // pronouns: {
+    //   type: String,
+    //   required: true,
+    //   trim: true,
+    // },
+    // sexual_orientation: {
+    //   type: String,
+    //   required: true,
+    //   trim: true,
+    // },
+    // ethnicity: {
+    //   type: String,
+    //   required: true,
+    //   trim: true,
+    // },
+    // disabilities: {
+    //   type: String,
+    //   required: true,
+    //   trim: true,
+    // },
   },
   {
     versionKey: false,

@@ -8,13 +8,15 @@ interface ICompany extends Document {
   website?: string;
   address: string;
   phone: string;
-  job: string;
   password: string;
   receivedCurriculums?: {
     user: Schema.Types.ObjectId;
     curriculum: Schema.Types.ObjectId;
     receivedDate: Date;
   }[];
+  jobs?: {
+    job: Schema.Types.ObjectId;
+  };
 }
 
 const companySchema = new Schema(
@@ -51,11 +53,6 @@ const companySchema = new Schema(
       required: true,
       trim: true,
     },
-    job: {
-      type: String,
-      required: true,
-      trim: true,
-    },
     password: {
       type: String,
       required: true,
@@ -75,6 +72,12 @@ const companySchema = new Schema(
           type: Date,
           default: Date.now,
         },
+      },
+    ],
+    jobs: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Job",
       },
     ],
   },

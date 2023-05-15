@@ -5,6 +5,7 @@ interface ICurriculum extends Document {
   objective: string;
   professional_experience: {
     company: string;
+    country: string;
     job_title: string;
     start_date: string;
     end_date: string;
@@ -12,15 +13,16 @@ interface ICurriculum extends Document {
   }[];
   education: {
     institution: string;
-    degree: string;
+    country?: string;
+    level?: string;
     field_of_study: string;
     start_date: string;
     end_date: string;
-    description: string;
+    status?: string;
   }[];
   skills: {
     skill_name: string;
-    experience_level: string;
+    experience_level?: string;
   }[];
 }
 
@@ -39,6 +41,11 @@ const curriculumSchema = new Schema(
     professional_experience: [
       {
         company: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        country: {
           type: String,
           required: true,
           trim: true,
@@ -70,7 +77,12 @@ const curriculumSchema = new Schema(
           required: true,
           trim: true,
         },
-        degree: {
+        country: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        level: {
           type: String,
           required: true,
           trim: true,
@@ -88,11 +100,6 @@ const curriculumSchema = new Schema(
           type: String,
           required: true,
         },
-        description: {
-          type: String,
-          required: true,
-          trim: true,
-        },
       },
     ],
     skills: [
@@ -104,7 +111,6 @@ const curriculumSchema = new Schema(
         },
         experience_level: {
           type: String,
-          required: true,
           trim: true,
         },
       },

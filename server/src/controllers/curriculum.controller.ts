@@ -3,7 +3,7 @@ import { RequestHandler } from "express";
 import Curriculum from "../models/Curriculum";
 
 export const createCurriculum: RequestHandler = async (req, res) => {
-  const curriculumFound = await Curriculum.findOne({ user: req.body.user });
+  const curriculumFound = await Curriculum.findOne({ email: req.body.email });
 
   if (curriculumFound) {
     return res

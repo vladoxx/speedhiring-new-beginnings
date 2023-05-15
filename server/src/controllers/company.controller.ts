@@ -1,6 +1,7 @@
 import { RequestHandler } from "express";
 
 import Company from "../models/Company";
+import Job from "../models/Job";
 
 export const createCompany: RequestHandler = async (req, res) => {
   const companyFound = await Company.findOne({ cnpj: req.body.cnpj });
@@ -61,4 +62,23 @@ export const deleteCompany: RequestHandler = async (req, res) => {
   }
 
   return res.json(companyFound);
+};
+
+export const getJobsCompany: RequestHandler = async (req, res) => {
+  try {
+    const company = await Company.findById(req.params.id);
+
+    if (!company) {
+      return res.status(400).json({ message: "Empresa não encontrada" });
+    }
+
+    const jobs = await Job.find({ company: company._id });
+
+    return res.status(200).json(jobs);
+  } catch (error) {
+    console.error(error);
+    return res
+      .status(500)
+      .json({ message: "Erro ao buscar as vagas da empresa" });
+  }
 };
