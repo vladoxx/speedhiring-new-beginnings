@@ -1,6 +1,7 @@
-import { RequestHandler } from "express";
+import { RequestHandler, application } from "express";
 
 import User from "../models/User";
+import Application from "../models/Candidate";
 
 export const createUser: RequestHandler = async (req, res) => {
   const { name, email, phone, address, password, confirm_password } = req.body;
@@ -78,4 +79,13 @@ export const deleteUser: RequestHandler = async (req, res) => {
   }
 
   return res.json(userFound);
+};
+
+export const getAllJobApplications: RequestHandler = async (req, res) => {
+  const userId = await User.findById(req.params.id);
+  const applications = await Application.find({ user: userId }).populate("job");
+
+  const jobs = applications.map((application) => application.job);
+
+  res.json(jobs);
 };
