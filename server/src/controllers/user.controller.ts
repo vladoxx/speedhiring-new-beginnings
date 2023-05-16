@@ -1,14 +1,36 @@
-import { RequestHandler } from "express";
+import { RequestHandler, application } from "express";
 
 import User from "../models/User";
+import Application from "../models/Candidate";
 
 export const createUser: RequestHandler = async (req, res) => {
-  const userFound = await User.findOne({ email: req.body.email });
+  const { name, email, phone, address, password, confirm_password } = req.body;
+  const userFound = await User.findOne({ email: email });
 
   if (userFound) {
     return res
       .status(301)
       .json({ message: "Já existe um usuário com este e-mail!" });
+  }
+
+  if (!name) {
+    return res.status(422).json({ msg: "Nome obrigatório" });
+  }
+
+  if (!phone) {
+    return res.status(422).json({ msg: "Telefone obrigatório" });
+  }
+
+  if (!address) {
+    return res.status(422).json({ msg: "Endereço obrigatório" });
+  }
+
+  if (!password) {
+    return res.status(422).json({ msg: "Senha obrigatória" });
+  }
+
+  if (password !== confirm_password) {
+    return res.status(422).json({ msg: "As senhas não conferem" });
   }
 
   console.log(req.body);
@@ -57,4 +79,13 @@ export const deleteUser: RequestHandler = async (req, res) => {
   }
 
   return res.json(userFound);
+};
+
+export const getAllJobApplications: RequestHandler = async (req, res) => {
+  const userId = await User.findById(req.params.id);
+  const applications = await Application.find({ user: userId }).populate("job");
+
+  const jobs = applications.map((application) => application.job);
+
+  res.json(jobs);
 };

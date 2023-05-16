@@ -3,8 +3,9 @@ const router = Router();
 
 import * as companyController from "../controllers/company.controller";
 
-router.get("/company", companyController.getAllCompanies);
+router.get("/companies", companyController.getAllCompanies);
 router.get("/company/:id", companyController.getOneCompany);
+router.get("/company/:id/jobs", companyController.getJobsCompany);
 router.post("/company", companyController.createCompany);
 router.put("/company/:id", companyController.updateCompany);
 router.delete("/company/:id", companyController.deleteCompany);
