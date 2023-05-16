@@ -10,8 +10,8 @@ interface IUser extends Document {
   city: string;
   state: string;
   job: string;
-  password: string;
-  confirm_password: string;
+  password?: string | undefined;
+  confirm_password: string | undefined;
 }
 
 const userSchema = new Schema(
@@ -56,12 +56,13 @@ const userSchema = new Schema(
       type: String,
       required: true,
       trim: true,
-      // select: false, // Para não vir a senha na requisição
+      select: false, // Para não vir a senha na requisição
     },
     confirm_password: {
       type: String,
       require: true,
       trim: true,
+      select: false,
     },
   },
   {

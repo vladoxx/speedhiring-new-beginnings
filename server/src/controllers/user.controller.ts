@@ -1,4 +1,5 @@
 import { RequestHandler } from "express";
+import bcrypt from "bcryptjs";
 
 import User from "../models/User";
 import Application from "../models/Candidate";
@@ -38,7 +39,26 @@ export const createUser: RequestHandler = async (req, res) => {
 
   const user = new User(req.body);
   const saveUser = await user.save();
+
+  saveUser.password = undefined; // remover o campo password do objeto saveUser antes de enviar a resposta
+  saveUser.confirm_password = undefined; // pode remover o campo confirm_password do objeto saveUser antes de enviar a resposta
   res.json(saveUser);
+};
+
+export const loginUser: RequestHandler = async (req, res) => {
+  const { email, password } = req.body;
+
+  const user = await User.findOne({ email }).select("+password"); // adiciona o campo password
+
+  if (!user) {
+    return res.status(400).json({ msg: "Usuário não encontrado" });
+  }
+
+  if (!(await bcrypt.compare(password, user.password || ""))) {
+    return res.status(400).send({ msj: "Senha inválida" });
+  }
+
+  res.json({ user });
 };
 
 export const getAllUsers: RequestHandler = async (req, res) => {
