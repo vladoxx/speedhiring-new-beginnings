@@ -1,10 +1,11 @@
-import { RequestHandler, application } from "express";
+import { RequestHandler } from "express";
 
 import User from "../models/User";
 import Application from "../models/Candidate";
 
 export const createUser: RequestHandler = async (req, res) => {
   const { name, email, phone, address, password, confirm_password } = req.body;
+
   const userFound = await User.findOne({ email: email });
 
   if (userFound) {
