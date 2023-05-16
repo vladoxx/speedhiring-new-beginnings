@@ -1,8 +1,18 @@
 import { RequestHandler } from "express";
 import bcrypt from "bcryptjs";
+import dotenv from "dotenv";
+
+import jwt from "jsonwebtoken";
+dotenv.config();
 
 import User from "../models/User";
 import Application from "../models/Candidate";
+
+function generateToken(params = {}) {
+  return jwt.sign(params, process.env.SECRET || "", {
+    expiresIn: 86400,
+  });
+}
 
 export const createUser: RequestHandler = async (req, res) => {
   const { name, email, phone, address, password, confirm_password } = req.body;
@@ -41,8 +51,8 @@ export const createUser: RequestHandler = async (req, res) => {
   const saveUser = await user.save();
 
   saveUser.password = undefined; // remover o campo password do objeto saveUser antes de enviar a resposta
-  saveUser.confirm_password = undefined; // pode remover o campo confirm_password do objeto saveUser antes de enviar a resposta
-  res.json(saveUser);
+  saveUser.confirm_password = undefined; // remover o campo confirm_password do objeto saveUser antes de enviar a resposta
+  res.json({ saveUser, token: generateToken({ id: user.id }) });
 };
 
 export const loginUser: RequestHandler = async (req, res) => {
@@ -58,7 +68,9 @@ export const loginUser: RequestHandler = async (req, res) => {
     return res.status(400).send({ msj: "Senha inválida" });
   }
 
-  res.json({ user });
+  user.password = undefined; // remover o campo password do objeto saveUser antes de enviar a resposta
+
+  res.json({ user, token: generateToken({ id: user.id }) });
 };
 
 export const getAllUsers: RequestHandler = async (req, res) => {

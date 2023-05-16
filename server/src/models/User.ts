@@ -10,7 +10,7 @@ interface IUser extends Document {
   city: string;
   state: string;
   job: string;
-  password?: string | undefined;
+  password: string | undefined;
   confirm_password: string | undefined;
 }
 
