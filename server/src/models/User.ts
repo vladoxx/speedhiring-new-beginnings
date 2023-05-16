@@ -12,15 +12,6 @@ interface IUser extends Document {
   job: string;
   password: string;
   confirm_password: string;
-  // birthDate?: String;
-  // nationality?: string;
-  // cpf?: string;
-  // maritalStatus?: string;
-  // genderIdentity?: string;
-  // pronoun?: string;
-  // sexualOrientation?: string;
-  // ethnicity?: string;
-  // disabilities?: string;
 }
 
 const userSchema = new Schema(
@@ -72,50 +63,6 @@ const userSchema = new Schema(
       require: true,
       trim: true,
     },
-    // birth_date: {
-    //   type: String,
-    //   required: true,
-    // },
-    // nationality: {
-    //   type: String,
-    //   required: true,
-    // },
-    // cpf: {
-    //   type: String,
-    //   required: true,
-    //   unique: true,
-    //   trim: true,
-    // },
-    // marital_status: {
-    //   type: String,
-    //   required: true,
-    //   trim: true,
-    // },
-    // gender_identity: {
-    //   type: String,
-    //   required: true,
-    //   trim: true,
-    // },
-    // pronouns: {
-    //   type: String,
-    //   required: true,
-    //   trim: true,
-    // },
-    // sexual_orientation: {
-    //   type: String,
-    //   required: true,
-    //   trim: true,
-    // },
-    // ethnicity: {
-    //   type: String,
-    //   required: true,
-    //   trim: true,
-    // },
-    // disabilities: {
-    //   type: String,
-    //   required: true,
-    //   trim: true,
-    // },
   },
   {
     versionKey: false,
