@@ -3,7 +3,7 @@ import { Schema, model, Document } from "mongoose";
 interface ICurriculum extends Document {
   user: Schema.Types.ObjectId;
   personalInfo: {
-    birthDate?: String;
+    birthDate?: string;
     nationality?: string;
     cpf?: string;
     maritalStatus?: string;
