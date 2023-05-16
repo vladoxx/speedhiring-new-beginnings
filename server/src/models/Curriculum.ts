@@ -2,6 +2,18 @@ import { Schema, model, Document } from "mongoose";
 
 interface ICurriculum extends Document {
   user: Schema.Types.ObjectId;
+  personalInfo: {
+    birthDate?: String;
+    nationality?: string;
+    cpf?: string;
+    maritalStatus?: string;
+    genderIdentity?: string;
+    pronoun?: string;
+    sexualOrientation?: string;
+    ethnicity?: string;
+    disabilities?: string;
+    about?: string;
+  }[];
   objective: string;
   professional_experience: {
     company: string;
@@ -24,6 +36,24 @@ interface ICurriculum extends Document {
     skill_name: string;
     experience_level?: string;
   }[];
+  courses: {
+    courseName: string;
+    institution: string;
+    country: string;
+    startDate: string;
+    endDate: string;
+  }[];
+  certifications: {
+    certificationName: string;
+    institution: string;
+    country: string;
+    startDate: string;
+    endDate: string;
+  }[];
+  languages: {
+    language: string;
+    proficiency: string;
+  }[];
 }
 
 const curriculumSchema = new Schema(
@@ -32,6 +62,56 @@ const curriculumSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "User",
       require: true,
+    },
+    personalInfo: {
+      birth_date: {
+        type: String,
+        required: true,
+      },
+      nationality: {
+        type: String,
+        required: true,
+      },
+      cpf: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+      },
+      marital_status: {
+        type: String,
+        required: true,
+        trim: true,
+      },
+      gender_identity: {
+        type: String,
+        required: true,
+        trim: true,
+      },
+      pronouns: {
+        type: String,
+        required: true,
+        trim: true,
+      },
+      sexual_orientation: {
+        type: String,
+        required: true,
+        trim: true,
+      },
+      ethnicity: {
+        type: String,
+        required: true,
+        trim: true,
+      },
+      disabilities: {
+        type: String,
+        required: true,
+        trim: true,
+      },
+      about: {
+        type: String,
+        trim: true,
+      },
     },
     objective: {
       type: String,
@@ -111,6 +191,74 @@ const curriculumSchema = new Schema(
         },
         experience_level: {
           type: String,
+          trim: true,
+        },
+      },
+    ],
+    courses: [
+      {
+        courseName: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        institution: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        country: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        startDate: {
+          type: Date,
+          required: true,
+        },
+        endDate: {
+          type: Date,
+          required: true,
+        },
+      },
+    ],
+    certifications: [
+      {
+        certificationName: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        institution: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        country: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        startDate: {
+          type: Date,
+          required: true,
+        },
+        endDate: {
+          type: Date,
+          required: true,
+        },
+      },
+    ],
+    languages: [
+      {
+        language: {
+          type: String,
+          required: true,
+          trim: true,
+        },
+        proficiency: {
+          type: String,
+          required: true,
           trim: true,
         },
       },

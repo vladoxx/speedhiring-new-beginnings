@@ -16,7 +16,7 @@ interface ICompany extends Document {
   }[];
   jobs?: {
     job: Schema.Types.ObjectId;
-  };
+  }[];
 }
 
 const companySchema = new Schema(
