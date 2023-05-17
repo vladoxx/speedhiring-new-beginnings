@@ -1,0 +1,26 @@
+:root {
+  --verde-azulado: #05bfdb;
+  --roxo-escuro: #7028df;
+  --roxo-claro: #b04cd9;
+  --laranja-escuro: #f4a261;
+  --laranja-escuro: #ffae90;
+  --branco: #ffffff;
+  --cinza-azulado: #484b5a;
+  --cinza-escuro: #7c7c7c;
+
+  --font-family: "Montserrat", sans-serif;
+  --font-size-h1-web: ;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: var(--font-family);
+}
+
+img {
+  width: 100%;
+}

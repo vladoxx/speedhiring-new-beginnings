@@ -38,7 +38,7 @@ function Home() {
           <img src={Migrantes} alt="" />
           <h4>Migrantes e refugiados</h4>
           <p>
-            Os migrantes e refugiados podem contribuir significativamente na
+            Os imigrantes e refugiados podem contribuir significativamente na
             economia brasileira e em geral.
           </p>
         </div>
