@@ -15,6 +15,10 @@ import RegisterCompany from "./pages/RegisterCompany/RegisterCompany.tsx";
 import AdvertiseVacancy from "./pages/AdvertiseVacancy/AdvertiseVacancy.tsx";
 import Vacancy from "./pages/Vacancy/Vacancy.tsx";
 import DescriptionVacancy from "./pages/DescriptionVacancy/DescriptionVacancy.tsx";
+import ChangePassword from "./pages/ChangePassword/ChangePassword.tsx";
+import Notification from "./pages/Notification/Notification.tsx";
+import Candidatures from "./pages/Candidatures/Candidatures.tsx";
+import PersonalInformation from "./pages/PersonalInformation/PersonalInformation.tsx";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -31,6 +35,10 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Route path="/company" element={<Company/>} />
         <Route path="/user" element={<User/>} />
         <Route path="/vacancy" element={<Vacancy/>} />
+        <Route path="/changePassword" element={<ChangePassword/>} />
+        <Route path="/notification" element={<Notification/>} />
+        <Route path="/candidatures" element={<Candidatures/>} />
+        <Route path="/personalInformation" element={<PersonalInformation/>} />
       </Routes>
 
       <Footer />
