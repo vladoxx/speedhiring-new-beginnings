@@ -1,3 +1,5 @@
+import Home from "./pages/Home/Home";
+
 function App() {
   // const [users, setUsers] = useState<UserProps[]>([]);
 
@@ -16,7 +18,11 @@ function App() {
   //   return <p key={item.email}>{item.name}</p>;
   // });
 
-  return <></>;
+  return (
+    <>
+      <Home />
+    </>
+  );
 }
 
 export default App;
