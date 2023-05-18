@@ -19,6 +19,10 @@ import ChangePassword from "./pages/ChangePassword/ChangePassword.tsx";
 import Notification from "./pages/Notification/Notification.tsx";
 import Candidatures from "./pages/Candidatures/Candidatures.tsx";
 import PersonalInformation from "./pages/PersonalInformation/PersonalInformation.tsx";
+import Formation from "./pages/Formation/Formation.tsx";
+import ProfessionalExperience from "./pages/ProfessionalExperience/ProfessionalExperience.tsx";
+import CoursesCertifications from "./pages/CoursesCertifications/CoursesCertifications.tsx";
+import Language from "./pages/Language/Language.tsx";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -30,15 +34,19 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <Route path="/login" element={<Login />} />
         <Route path="/register-user" element={<RegisterUser/>} />
         <Route path="/register-company" element={<RegisterCompany/>} />
-        <Route path="/advertiseVacancy" element={<AdvertiseVacancy/>} />
-        <Route path="/descriptionVacancy" element={<DescriptionVacancy/>} />
+        <Route path="/advertise-vacancy" element={<AdvertiseVacancy/>} />
+        <Route path="/description-vacancy" element={<DescriptionVacancy/>} />
         <Route path="/company" element={<Company/>} />
         <Route path="/user" element={<User/>} />
         <Route path="/vacancy" element={<Vacancy/>} />
-        <Route path="/changePassword" element={<ChangePassword/>} />
+        <Route path="/change-password" element={<ChangePassword/>} />
         <Route path="/notification" element={<Notification/>} />
         <Route path="/candidatures" element={<Candidatures/>} />
-        <Route path="/personalInformation" element={<PersonalInformation/>} />
+        <Route path="/personal-information" element={<PersonalInformation/>} />
+        <Route path="/formation" element={<Formation/>} />
+        <Route path="/professional-experience" element={<ProfessionalExperience/>} />
+        <Route path="/courses-certifications" element={<CoursesCertifications/>} />
+        <Route path="/language" element={<Language/>} />
       </Routes>
 
       <Footer />

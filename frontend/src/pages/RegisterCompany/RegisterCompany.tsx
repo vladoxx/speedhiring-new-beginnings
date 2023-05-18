@@ -8,7 +8,7 @@ function RegisterCompany() {
       <input type="text" placeholder="CNPJ*" required/>
       <input type="tel" placeholder="Telefone*" required/>
       <input type="text" placeholder="Website" required/>
-      <input type="password" placeholder="Senha*" required/>/
+      <input type="password" placeholder="Senha*" required/>
       <input type="password" placeholder="Confirmar a Senha*" required/>
       <button>Cadastrar</button>
     </div>
