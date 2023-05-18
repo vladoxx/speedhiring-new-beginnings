@@ -3,6 +3,15 @@
   padding: 1.5rem;
 }
 
+.header__nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header__nav nav {
+  width: 0;
+}
+
 .header__div {
   display: flex;
   justify-content: center;
@@ -100,7 +109,7 @@
   background-color: var(--verde-azulado);
   height: 87vh;
   width: 100%;
-  transform: translate(-150%);
+  transform: translate(-300px);
   display: flex;
   flex-direction: column;
   padding-left: 50px;
@@ -158,7 +167,11 @@
   margin-top: 2rem;
 }
 
-@media (min-width: 320px) {
+@media (max-width: 320px) {
+  .header__nav {
+    flex-direction: column;
+  }
+
   .navbar .menu-items {
     padding-top: 375px;
     height: 160vh;

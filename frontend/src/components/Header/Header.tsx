@@ -8,35 +8,37 @@ function Header() {
   return (
     <>
       <header className="header">
-        <nav>
-          <div className="navbar">
-            <div className="container nav-container">
-              <input className="checkbox" type="checkbox" />
-              <div className="hamburger-lines">
-                <span className="line line1"></span>
-                <span className="line line2"></span>
-                <span className="line line3"></span>
+        <div className="header__nav">
+          <nav>
+            <div className="navbar">
+              <div className="container nav-container">
+                <input className="checkbox" type="checkbox" />
+                <div className="hamburger-lines">
+                  <span className="line line1"></span>
+                  <span className="line line2"></span>
+                  <span className="line line3"></span>
+                </div>
+                <ul className="header__ul menu-items">
+                  <li>
+                    <Link to={"/"}>Início</Link>
+                  </li>
+                  <li>Para empresas</li>
+                  <li>Candidato</li>
+                  <li>Vagas</li>
+                  <li>Benefícios</li>
+                  <li>Contato</li>
+                  <li>
+                    <Link to={"/login"}>Login</Link>
+                  </li>
+                </ul>
               </div>
-              <ul className="header__ul menu-items">
-                <li>
-                  <Link to={"/"}>Início</Link>
-                </li>
-                <li>Para empresas</li>
-                <li>Candidato</li>
-                <li>Vagas</li>
-                <li>Benefícios</li>
-                <li>Contato</li>
-                <li>
-                  <Link to={"/login"}>Login</Link>
-                </li>
-              </ul>
             </div>
-          </div>
-        </nav>
-        <div className="header__div">
-          <img className="header__img" src={Logo} />
+          </nav>
+          <div className="header__div">
+            <img className="header__img" src={Logo} />
 
-          <h1 className="header_title">New Beginnings</h1>
+            <h1 className="header_title">New Beginnings</h1>
+          </div>
         </div>
         <h2 className="header_subtitle">
           Solução de empregos para imigrantes e refugiados
