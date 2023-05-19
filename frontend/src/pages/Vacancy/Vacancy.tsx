@@ -1,32 +1,32 @@
 function Vacancy() {
   return (
-    <div>
-        <h3>Vagas</h3>
+    <div className="vacant">
+        <h3 className="vacant__tittle">Vagas</h3>
 
-        <div>
-            <h3>Promotor de Vendas</h3>
-            <p>Rio de Janeiro</p>
-            <p>
+        <div className="vacant__box_info">
+            <h3 className="vacant__job_tittle">Promotor de Vendas</h3>
+            <p className="vacant__localization">Rio de Janeiro</p>
+            <p className="vacant__description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Provident distinctio fugiat facere voluptatibus dolore cumque,
                 quia eaque sequi laudantium sapiente aspernatur quod dignissimos
                 incidunt quam. Et a officia architecto adipisci!
             </p>
         </div>
-        <div>
-            <h3>Promotor de Vendas</h3>
-            <p>Rio de Janeiro</p>
-            <p>
+        <div className="vacant__box_info">
+            <h3 className="vacant__job_tittle">Promotor de Vendas</h3>
+            <p className="vacant__localization">Rio de Janeiro</p>
+            <p className="vacant__description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Provident distinctio fugiat facere voluptatibus dolore cumque,
                 quia eaque sequi laudantium sapiente aspernatur quod dignissimos
                 incidunt quam. Et a officia architecto adipisci!
             </p>
         </div>
-        <div>
-            <h3>Promotor de Vendas</h3>
-            <p>Rio de Janeiro</p>
-            <p>
+        <div className="vacant__box_info">
+            <h3 className="vacant__job_tittle">Promotor de Vendas</h3>
+            <p className="vacant__localization">Rio de Janeiro</p>
+            <p className="vacant__description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Provident distinctio fugiat facere voluptatibus dolore cumque,
                 quia eaque sequi laudantium sapiente aspernatur quod dignissimos
@@ -34,7 +34,7 @@ function Vacancy() {
             </p>
         </div>
 
-        <button>Voltar ao Inicio</button>
+        <button className="vacant" type="button">Voltar ao Inicio</button>
     </div>
   )
 }
