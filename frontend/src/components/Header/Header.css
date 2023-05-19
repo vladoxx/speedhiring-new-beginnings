@@ -34,7 +34,7 @@
 
 .navbar .nav-container a {
   text-decoration: none;
-  color: #0e2431;
+  color: #fff;
   font-weight: 500;
   font-size: 1.2rem;
   padding: 0.7rem;
@@ -185,3 +185,61 @@
     height: 67vh;
   }
 }
+
+@media (min-width: 768px) {
+
+  .header__img {
+    width: 80px;
+
+}
+  .navbar .menu-items {
+   display:contents;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content:center;
+  }
+
+  .navbar .menu-items li a{
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--branco);
+    margin-bottom: 1.2rem;
+  }
+
+  .header_title {
+  font-size: 2.400rem;
+  margin: 0 0 0 0.5rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+  }
+
+  .header__paragraph {
+    font-size: 0.9rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .nav-container .hamburger-lines {
+    display: none;
+  }
+
+  .header__navbar_button{
+    border-radius:16px;
+    background-color: #F4A261;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow:inset 2px 2px 2px 0px
+    rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    margin-left: 100px;
+    margin-top: 15px;
+
+} } 

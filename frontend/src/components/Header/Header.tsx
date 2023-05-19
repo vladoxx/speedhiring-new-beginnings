@@ -21,13 +21,20 @@ function Header() {
                 <li>
                   <Link to={"/"}>Início</Link>
                 </li>
-                <li>Para empresas</li>
-                <li>Candidato</li>
-                <li>Vagas</li>
-                <li>Benefícios</li>
-                <li>Contato</li>
                 <li>
-                  <Link to={"/login"}>Login</Link>
+                  <Link to={"/register-company"}>Para empresas</Link>
+                </li>
+                <li>
+                  <Link to={"/register-user"}>Candidato</Link>
+                </li>
+                <li>
+                  <Link to={"/vacancy"}>Vagas</Link>
+                </li>         
+                <li>
+                  <Link to={"/"}>Contato</Link>
+                </li>
+                <li >
+                  <Link className="header__navbar_button" to={"/login"}>Login</Link>
                 </li>
               </ul>
             </div>
