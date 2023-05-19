@@ -4,9 +4,9 @@ function PersonalInformation() {
             <div className="personal-information__box-info">
                 <h3 className="personal-information__info-tittle">Informações Pessoais</h3>
                 <h4 className="personal-information__name">Nome/Sobrenome</h4>
-                <img className="personal-information__image" src="" alt="foto-usuario" ></img>
+                <input className="personal-information__image" type=""/>
                 <h4 className="personal-information__about-you-tittle">Sobre Voce</h4>
-                <textarea className="personal-information__text-area" rows={4} cols={16}></textarea>
+                <input className="personal-information__text-area" type=""></input>
 
                 <h5 className="personal-information__data-info-tittle">Dados Pessoais</h5>
                 <p className="personal-information__date-of-birth">Data de Nascimento: 20/02/1980</p>
@@ -34,101 +34,96 @@ function PersonalInformation() {
                 <input className="personal-information__edit-button" type="button" value="Editar dados"/>
             </div>
 
-            <div>
+            <div className="personal-information__box-formations">
                 <h3 className="personal-information__formations-tittle">Formações</h3>
+                
                 <h4 className="personal-information__university">Universidad del Zulia</h4>
                 <p className="personal-information__career">Engenharia Ambiental</p>
                 <p className="personal-information__graduation">Graduação</p>
-                <p className="personal-information__country">Venezuela</p>
-                <p className="personal-information__formation-data">2004-2010</p>
-                <p className="personal-information__formation-status">Concluído</p>
-            
-                <h4>Instituto Universitario de Tecnologia de Maracaibo IUTM</h4>
-                <p>Turismo</p>
-                <p>Técnico</p>
-                <p>Venezuela</p>
-                <p>2011-2013</p>
-                <p>Em andamento</p>
+                <p className="personal-information__formation-country">Venezuela</p>
+                <p className="personal-information__formation-data">2004 - 2010</p>
+                <p className="personal-information__formation-status">Concluido</p>
 
-                <input className="" type="submit" value="Editar dados" />
+                <h4 className="personal-information__university">Instituto Universitario de Tecnologia de Maracaibo IUTM</h4>
+                <p className="personal-information__career">Turismo</p>
+                <p className="personal-information__graduation">Técnico</p>
+                <p className="personal-information__formation-country">Venezuela</p>
+                <p className="personal-information__formation-data">2011-2013</p>
+                <p className="personal-information__formation-status">Em andamento</p>
+
+                <button className="personal-information__button-formation">Editar dados</button>
             </div>
 
-            <div>
-                <h3>Experiencia profissional</h3>
-                <h4>Professor de Química</h4>
-                <p>Universidad de Los Andes</p>
-                <p>Venezuela</p>
-                <p>2014-2019</p>
-                <p>Responsabilidades</p>
-                <textarea className="" rows={4} cols={16}></textarea>
+            <div className="personal-information__box-job-experience">
+                <h3 className="personal-information__job-experience-tittle">Experiencia profissional</h3>
 
-                <h4>Atendente de Caixa</h4>
-                <p>Assai Atacadista</p>
-                <p>Brasil</p>
-                <p>2020-2021</p>
-                <p>Responsabilidades</p>
-                <textarea className="" rows={4} cols={16}></textarea>
+                <h4 className="personal-information__job-tittle">Professor de Química</h4>
+                <p className="personal-information__job-experience-institution">Universidad de Los Andes</p>
+                <p className="personal-information__job-country">Venezuela</p>
+                <p className="personal-information__job-data">2014-2019</p>
+                <p className="personal-information__job-responsibilities-description">Responsabilidades</p>
+                <input></input>
 
-                <h4>Serviços Gerais</h4>
-                <p>Hotel Hilton</p>
-                <p>Brasil</p>
-                <p>2021-2023</p>
-                <p>Responsabilidades</p>
-                <textarea className="" rows={4} cols={16}></textarea>
+                <h4 className="personal-information__job-tittle">Atendente de Caixa</h4>
+                <p className="personal-information__job-experience-institution">Assai Atacadista</p>
+                <p className="personal-information__job-country">Brasil</p>
+                <p className="personal-information__job-data">2020-2021</p>
+                <p className="personal-information__job-responsibilities-description">Responsabilidades</p>
+                <input></input>
 
+                <h4 className="personal-information__job-tittle">Serviços Gerais</h4>
+                <p className="personal-information__job-experience-institution">Hotel Hilton</p>
+                <p className="personal-information__job-country">Brasil</p>
+                <p className="personal-information__job-data">2021-2023</p>
+                <p className="personal-information__job-responsibilities-description">Responsabilidades</p>
+                <input></input>
 
-                <input className="" type="submit" value="Editar dados" />
+                <button className="personal-information__button-job-experience" type="button">Editar dados</button>
             </div>
 
-            <div>
-                <h3>Cursos e Certificações</h3>
-                <h4>Geração Crescer</h4>
-                <p>Marketing</p>
-                <p>Brasil</p>
-                <p>01/2023 - 03/2023</p>
-                <textarea className="" rows={4} cols={16}></textarea>
+            <div className="personal-information__box-certifications">
 
+                <h3 className="personal-information__certification-tittle">Cursos e Certificações</h3>
+
+                <h3 className="personal-information__certifications-institution">Geração Crescer</h3>
+                <p className="personal-information__certifications-course">Marketing</p>
+                <p className="personal-information__certifications-country">Brasil</p>
+                <p className="personal-information__certifications-data">01/2023 - 03/2023</p>
+                <input></input>
              
-                <h3>ONE Oracle Next Education</h3>
-                <h4>Programação Full Stack</h4>
-                <p>Brasil</p>
-                <p>04/2022 - 10/2022</p>
-                <textarea className="" rows={4} cols={16}></textarea>
-
+                <h3 className="personal-information__certifications-institution">ONE Oracle Next Education</h3>
+                <p className="personal-information__certifications-course">Programação Full Stack</p>
+                <p className="personal-information__certifications-country">Brasil</p>
+                <p className="personal-information__certifications-data">04/2022 - 10/2022</p>
+                <input></input>
                 
-                <h3>Toti</h3>
-                <h4>Programação Full Stack</h4>
-                <p>Brasil</p>
-                <p>06/2020 - 10/2020</p>
-                <textarea className="" rows={4} cols={16}></textarea>
+                <h3 className="personal-information__certifications-institution">Toti</h3>
+                <p className="personal-information__certifications-course">Programação Full Stack</p>
+                <p className="personal-information__certifications-country">Brasil</p>
+                <p className="personal-information__certifications-data">06/2020 - 10/2020</p>
+                <input></input>
 
-
-                <input className="" type="submit" value="Editar dados" />
+                <button className="personal-information__button-certifications">Editar dados</button>
             </div>
 
-            <div>
-                <h3>Idiomas</h3>
-                <h4>Espanhol</h4>
-                <p>Fluente</p>
-                <h4>Português</h4>
-                <p>Avançãdo</p>
-                <h4>Inglês</h4>
-                <p>Básico</p>
-                <button>Editar dados</button>
+            <div className="personal-information__language">
+                <h3 className="personal-information__language-tittle">Idiomas</h3>
+                <h4 className="personal-information__language-practiced">Espanhol</h4>
+                <p className="personal-information__language-proficiency">Fluente</p>
+                <h4 className="personal-information__language-practiced">Português</h4>
+                <p className="personal-information__language-proficiency">Avançãdo</p>
+                <h4 className="personal-information__language-practiced">Inglês</h4>
+                <p className="personal-information__language-proficiency">Básico</p>
+                <button className="personal-information__language-button">Editar dados</button>
             </div>
 
-            <div>
-                <h3>Habilidades</h3>
-
-                <label>Habilidades*
-                    <input type="text" placeholder="React" required />
-                </label>
-
-                <button>+</button>
-                <p>HTML</p>
-                
-                <button className="" type="button">Voltar ao Início</button>
-
+            <div className="personal-information__skills">
+                <h3 className="personal-information__skills-tittle">Habilidades</h3>
+                <label className="personal-information__skills-name">*Habilidade</label>
+                <input></input>
+                <button className="personal-information__skills-add" type="button">+</button>
+                <p className="personal-information__skill">HTML</p>
+                <button className="personal-information__skill-button-home">Voltar ao Início</button>
             </div>
         </div>
     )

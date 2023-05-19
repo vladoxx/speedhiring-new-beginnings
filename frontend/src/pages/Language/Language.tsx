@@ -1,23 +1,19 @@
 function Language() {
   return (
-    <div>
-      <h3>Idiomas</h3>
+    <div className="languages">
+      <h3 className="languages__tittle">Idiomas</h3>
+      <label className="languages__select">Idiomas*</label>
 
       <form action="">
-        <label>Idiomas*</label>
+        <label className="languages__select">Idiomas*</label>
 
-        <label>Proficiência*</label>
-        <select name="proficiencia">
-          <option value="basico">Básico</option>
-          <option value="intermediario">Intermêdiario</option>
-          <option value="avancado">Avançado</option>
-          <option value="nativo">Nativo</option>
-        </select>
-
-        <input className="" type="submit" value="Salvar" />
-        <input className="" type="submit" value="Editar" />
-        <input className="" type="submit" value="Deletar" />
-        <button className="" type="button">Cancelar</button>
+      <label className="languages__proficiency">Proficiência</label>
+      <select className="languages__proficiency_level" name="proficiencia">
+        <option value="basico">Básico</option>
+        <option value="intermediario">Intermêdiario</option>
+        <option value="avancado">Avançado</option>
+        <option value="nativo">Nativo</option>
+      </select>
       </form>
     </div>
   )
