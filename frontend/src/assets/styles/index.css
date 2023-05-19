@@ -7,9 +7,14 @@
   --branco: #ffffff;
   --cinza-azulado: #484b5a;
   --cinza-escuro: #7c7c7c;
+  --black: #000000;
+  --branco-acinzentado: #f7f4f4;
 
   --font-family: "Montserrat", sans-serif;
-  --font-size-h1-web: ;
+  --font-size-h1-mobile: 1.625rem;
+  --font-size-h2-mobile: 1.5rem;
+  --font-size-h3-mobile: 1.25rem;
+  --font-size-p-mobile: 1rem;
 }
 
 * {
@@ -21,8 +26,4 @@
 body {
   font-size: 16px;
   font-family: var(--font-family);
-}
-
-img {
-  width: 100%;
 }
