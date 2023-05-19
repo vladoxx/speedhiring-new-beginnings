@@ -1,0 +1,145 @@
+.about,
+.objective {
+  margin-top: 3.75rem;
+  padding: 0 1.5rem;
+}
+
+.about__title,
+.objective__title,
+.services__title,
+.virtues__title,
+.partners_title,
+.contact__title,
+.partners__title {
+  font-size: var(--font-size-h3-mobile);
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--cinza-azulado);
+}
+
+.objective__image {
+  width: 100%;
+  margin-top: 1.625rem;
+  padding-bottom: 2rem;
+}
+
+.connection {
+  padding: 2rem 1.5rem;
+  background-color: var(--branco-acinzentado);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.connection__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.connection__container img {
+  margin: 0 0 1rem 0;
+}
+
+.connection h4 {
+  text-align: center;
+  color: var(--cinza-azulado);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.connection p {
+  font-size: var(--font-size-p-mobile);
+  color: var(--black);
+  text-align: center;
+}
+
+.services {
+  margin-top: 2rem;
+  padding: 1.5rem;
+}
+
+.services__companies_title,
+.services__candidate_title {
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 1.25rem;
+}
+
+.services__companies img,
+.services__candidate img {
+  width: 100%;
+}
+
+.virtues {
+  background-color: var(--branco-acinzentado);
+  padding: 3rem 1.5rem;
+}
+
+.virtues__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.virtues__title {
+  margin-bottom: 2rem;
+}
+
+.virtues__inclusion,
+.virtues__empathy,
+.virtues__respect {
+  background-color: var(--branco);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  height: 250px;
+}
+
+.virtues__inclusion h4,
+.virtues__empathy h4,
+.virtues__respect h4 {
+  font-size: 1.5rem;
+  border-bottom: 1px solid #dfe3e5;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 1rem;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.virtues__inclusion h4 {
+  color: var(--roxo-claro);
+}
+
+.virtues__empathy h4 {
+  color: var(--verde-azulado);
+}
+
+.virtues__respect h4 {
+  color: var(--roxo-escuro);
+}
+
+.virtues__inclusion p,
+.virtues__empathy p,
+.virtues__respect p {
+  margin-top: 2rem;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 28px;
+  text-align: center;
+  color: var(--cinza-azulado);
+}
+
+.partners {
+  padding: 3rem 1.5rem;
+}
+
+.partners__title {
+  margin-bottom: 2rem;
+}
