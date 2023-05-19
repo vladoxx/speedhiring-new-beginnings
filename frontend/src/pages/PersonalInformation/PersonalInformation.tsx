@@ -4,9 +4,9 @@ function PersonalInformation() {
             <div className="personal-information__box-info">
                 <h3 className="personal-information__info-tittle">Informações Pessoais</h3>
                 <h4 className="personal-information__name">Nome/Sobrenome</h4>
-                <input className="personal-information__input???" type=""></input>
+                <input className="personal-information__image" type=""></input>
                 <h4 className="personal-information__about-you-tittle">Sobre Voce</h4>
-                <input className="personal-information__input???" type=""></input>
+                <input className="personal-information__text-area" type=""></input>
 
                 <h5 className="personal-information__data-info-tittle">Dados Pessoais</h5>
                 <p className="personal-information__date-of-birth">Data de Nascimento: 20/02/1980</p>
@@ -39,7 +39,7 @@ function PersonalInformation() {
                 <p className="personal-information__career">Engenharia Ambiental</p>
                 <p className="personal-information__graduation">Graduação</p>
                 <p className="personal-information__formation-country">Venezuela</p>
-                <p className="personal-information__formation-data">2004 - 2020</p>
+                <p className="personal-information__formation-data">2004 - 2010</p>
                 <p className="personal-information__formation-status">Concluido</p>
 
                 <h4 className="personal-information__university">Instituto Universitario de Tecnologia de Maracaibo IUTM</h4>

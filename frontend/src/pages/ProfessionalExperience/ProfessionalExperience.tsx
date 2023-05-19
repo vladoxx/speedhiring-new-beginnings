@@ -1,12 +1,13 @@
 function ProfessionalExperience() {
     return (
-        <div>
-            <h3>Experiência Profissional</h3>
-            <label>Empresa*</label>
-            <input></input>
+        <div className="professional-experience">
+            <h3 className="professional-experience__tittle">Experiência Profissional</h3>
 
-            <label>Pais*</label>
-            <select name="pais">
+            <label className="professional__company">Empresa*</label>
+            <input className="professional__"></input>
+
+            <label className="professional__country">Pais*</label>
+            <select className="professional__country_select" name="pais">
                 <option value="AF">Afganistán</option>
                 <option value="AL">Albania</option>
                 <option value="DE">Alemania</option>
@@ -243,8 +244,8 @@ function ProfessionalExperience() {
                 <option value="ZW">Zimbabue</option>
             </select>
 
-            <label>Setor*</label>
-            <select name="setor">
+            <label className="professional__sector">Setor*</label>
+            <select className="professional__sector_select" name="setor">
                 <option value="educacao">Educação</option>
                 <option value="informatica-comunicacao">Informática e Comunicação</option>
                 <option value="programacao">Programação</option>
@@ -264,17 +265,17 @@ function ProfessionalExperience() {
 
             </select>
 
-            <label>Site da Empresa*</label>
-            <input></input>
+            <label className="professional__site_company">Site da Empresa*</label>
+            <input className="professional__"></input>
 
-            <label>Responsabilidades*</label>
-            <input></input>
+            <label className="professional__responsability_description">Responsabilidades*</label>
+            <input className="professional__"></input>
 
-            <label>Cargo*</label>
-            <input></input>
+            <label className="professional__position">Cargo*</label>
+            <input className="professional__"></input>
 
-            <label>Nivel*</label>
-            <select name="nivel">
+            <label className="professional__seniority">Nivel*</label>
+            <select className="professional__seniority_select" name="nivel">
                 <option value="ceo">CEO</option>
                 <option value="presidente">Presidente</option>
                 <option value="diretor">Diretor</option>
@@ -285,24 +286,24 @@ function ProfessionalExperience() {
                 <option value="auxiliar">Auxiliar</option>
             </select>
 
-            <label>Área</label>
-            <select name="area">
+            <label className="professional__area">Área</label>
+            <select className="professional__area_select" name="area">
                 <option value="">area</option>
             </select>
 
-            <label>De*</label>
-            <input type="text" placeholder="01/2011" required />
+            <label className="professional__work_started">De*</label>
+            <input className="professional__" type="text" placeholder="01/2011" required />
 
-            <label>Até*</label>
-            <input type="text" placeholder="01/2013" required />
+            <label className="professional__work_ending">Até*</label>
+            <input className="professional__" type="text" placeholder="01/2013" required />
 
-            <input type="checkbox"></input>
-            <p>Meu cargo atual</p>
+            <input className="professional__" type="checkbox"></input>
+            <p className="professional__charge">Meu cargo atual</p>
 
-            <button>Salvar</button>
-            <button>Editar</button>
-            <button>Deletar</button>
-            <p>Cancelar</p>
+            <button className="professional__save_button">Salvar</button>
+            <button className="professional__edit_button">Editar</button>
+            <button className="professional__delete_button">Deletar</button>
+            <p className="professional__cancel">Cancelar</p>
         </div>
     )
 }
