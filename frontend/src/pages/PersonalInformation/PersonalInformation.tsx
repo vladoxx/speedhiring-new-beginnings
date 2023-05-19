@@ -40,6 +40,86 @@ function PersonalInformation() {
                 <p className="personal-information__country">Venezuela</p>
                 <p className="personal-information__?"></p>
                 <p className="personal-information__?"></p>
+                <p>2004-2010</p>
+                <p>Concluído</p>
+
+                <h4>Instituto Universitario de Tecnologia de Maracaibo IUTM</h4>
+                <p>Turismo</p>
+                <p>Técnico</p>
+                <p>Venezuela</p>
+                <p>2011-2013</p>
+                <p>Em andamento</p>
+
+                <button>Editar dados</button>
+            </div>
+
+            <div>
+                <h3>Experiencia profissional</h3>
+                <h4>Professor de Química</h4>
+                <p>Universidad de Los Andes</p>
+                <p>Venezuela</p>
+                <p>2014-2019</p>
+                <p>Responsabilidades</p>
+                <input></input>
+
+                <h4>Atendente de Caixa</h4>
+                <p>Assai Atacadista</p>
+                <p>Brasil</p>
+                <p>2020-2021</p>
+                <p>Responsabilidades</p>
+                <input></input>
+
+                <h4>Serviços Gerais</h4>
+                <p>Hotel Hilton</p>
+                <p>Brasil</p>
+                <p>2021-2023</p>
+                <p>Responsabilidades</p>
+                <input></input>
+
+                <button>Editar dados</button>
+            </div>
+
+            <div>
+                <h3>Cursos e Certificações</h3>
+                <h4>Geração Crescer</h4>
+                <p>Marketing</p>
+                <p>Brasil</p>
+                <p>01/2023 - 03/2023</p>
+                <input></input>
+             
+                <h3>ONE Oracle Next Education</h3>
+                <h4>Programação Full Stack</h4>
+                <p>Brasil</p>
+                <p>04/2022 - 10/2022</p>
+                <input></input>
+                
+                <h3>Toti</h3>
+                <h4>Programação Full Stack</h4>
+                <p>Brasil</p>
+                <p>06/2020 - 10/2020</p>
+                <input></input>
+
+                <button>Editar dados</button>
+            </div>
+
+            <div>
+                <h3>Idiomas</h3>
+                <h4>Espanhol</h4>
+                <p>Fluente</p>
+                <h4>Português</h4>
+                <p>Avançãdo</p>
+                <h4>Inglês</h4>
+                <p>Básico</p>
+                <button>Editar dados</button>
+            </div>
+
+            <div>
+                <h3>Habilidades</h3>
+                <label>*Habilidade</label>
+                <input></input>
+                <button>+</button>
+                <p>HTML</p>
+                <button>Voltar ao Início</button>
             </div>
         </div>
     )
