@@ -22,11 +22,21 @@ function Header() {
                   <li>
                     <Link to={"/"}>Início</Link>
                   </li>
-                  <li>Para empresas</li>
-                  <li>Candidato</li>
-                  <li>Vagas</li>
-                  <li>Benefícios</li>
-                  <li>Contato</li>
+                  <li>
+                    <Link to={"/"}>Para empresas</Link>
+                  </li>
+                  <li>
+                    <Link to={"/"}>Candidato</Link>
+                  </li>
+                  <li>
+                    <Link to={"/"}>Vagas</Link>
+                  </li>
+                  <li>
+                    <Link to={"/"}>Benefícios</Link>
+                  </li>
+                  <li>
+                    <Link to={"/"}>Contato</Link>
+                  </li>
                   <li>
                     <Link to={"/login"}>Login</Link>
                   </li>
