@@ -279,8 +279,8 @@ function ProfessionalExperience() {
             <input className="professional__"></input>
 
             <label className="professional__responsability_description">Responsabilidades*</label>
-            <input className="professional__"></input>
-
+            <textarea className="professional__responsability_textarea" rows={4} cols={35}></textarea>
+           
             <label className="professional__position">Cargo*</label>
             <input className="professional__"></input>
 

@@ -62,21 +62,21 @@ function PersonalInformation() {
                 <p className="personal-information__job-country">Venezuela</p>
                 <p className="personal-information__job-data">2014-2019</p>
                 <p className="personal-information__job-responsibilities-description">Responsabilidades</p>
-                <input></input>
+                <textarea className="personal-information__job-responsibilities-description-textarea" rows={4} cols={35}></textarea>
 
                 <h4 className="personal-information__job-tittle">Atendente de Caixa</h4>
                 <p className="personal-information__job-experience-institution">Assai Atacadista</p>
                 <p className="personal-information__job-country">Brasil</p>
                 <p className="personal-information__job-data">2020-2021</p>
                 <p className="personal-information__job-responsibilities-description">Responsabilidades</p>
-                <input></input>
+                <textarea className="personal-information__job-responsibilities-description-textarea" rows={4} cols={35}></textarea>
 
                 <h4 className="personal-information__job-tittle">Serviços Gerais</h4>
                 <p className="personal-information__job-experience-institution">Hotel Hilton</p>
                 <p className="personal-information__job-country">Brasil</p>
                 <p className="personal-information__job-data">2021-2023</p>
                 <p className="personal-information__job-responsibilities-description">Responsabilidades</p>
-                <input></input>
+                <textarea className="personal-information__job-responsibilities-description-textarea" rows={4} cols={35}></textarea>
 
                 <button className="personal-information__button-job-experience" type="button">Editar dados</button>
             </div>
