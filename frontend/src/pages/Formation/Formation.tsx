@@ -1,10 +1,10 @@
 function Formation() {
     return (
-        <div>
-            <h3>Formação</h3>
+        <div className="formation">
+            <h3 className="formation__tittle">Formação</h3>
 
-            <label>Pais*</label>
-            <select name="pais">
+            <label className="formation__country">Pais*</label>
+            <select className="formation__country_select" name="pais">
                 <option value="AF">Afganistán</option>
                 <option value="AL">Albania</option>
                 <option value="DE">Alemania</option>
@@ -241,8 +241,8 @@ function Formation() {
                 <option value="ZW">Zimbabue</option>
             </select>
 
-            <label>Nivel*</label>
-            <select name="nivel">
+            <label className="formation__level">Nivel*</label>
+            <select className="formation__level_select" name="nivel">
                  <option value="ensinoFundamental">EnsinoFundamental</option>               
                  <option value="ensinoMedio">Ensino Médio</option>               
                  <option value="cursoTecnico">Curso Técnico</option>               
@@ -252,29 +252,29 @@ function Formation() {
                  <option value="doutorado">Doutorado</option>               
             </select>
 
-            <label>Institução*</label>
-            <input type="text" required />
+            <label className="formation__institution">Institução*</label>
+            <input className="formation__institution_select" type="text" required />
 
-            <label>Curso*</label>
-            <input></input>
+            <label className="formation__course">Curso*</label>
+            <input className="formation__course_name"></input>
 
-            <label>Inicio*</label>
-            <input type="text" placeholder="01/2011" required />
+            <label className="formation__start_date">Inicio*</label>
+            <input className="formation__start_date_select" type="text" placeholder="01/2011" required />
 
-            <label>Previsão/Data de Conclusão*</label>
-            <input type="text" placeholder="08/2013" required />
+            <label className="formation__end_date">Previsão/Data de Conclusão*</label>
+            <input className="formation__end_date_select" type="text" placeholder="08/2013" required />
             
-            <label>Status*</label>
-            <select name="status">
+            <label className="formation__status">Status*</label>
+            <select className="formation__status_select" name="status">
                 <option value="concluido">Concluido</option>
                 <option value="cursando">Cursando</option>
                 <option value="trancado">Trancado</option>
             </select>
 
-            <button>Salvar</button>
-            <button>Editar</button>
-            <button>Deletar</button>
-            <p>Cancelar</p>
+            <button className="formation__save_button">Salvar</button>
+            <button className= "formation__edit_button">Editar</button>
+            <button className= "formation__delete_button">Deletar</button>
+            <p className="formation__cancel">Cancelar</p>
         </div>
     )
 }
