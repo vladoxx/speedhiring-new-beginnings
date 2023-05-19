@@ -3,6 +3,7 @@ function Notification() {
     <div className="notification">
       <h3 className="notification__tittle">Notificação de e-mail</h3>
       <span className="notification__message">Mensagens</span>
+
       <form action="">
         <label className="notification__alert_on" htmlFor="">
           <input className="notification__input_checkbox" type="checkbox" />
@@ -14,6 +15,7 @@ function Notification() {
         </label>
         <input className="notification__button" type="submit" value="Salvar" />
       </form>
+      
     </div>
   );
 }

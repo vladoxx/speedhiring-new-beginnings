@@ -4,9 +4,9 @@ function PersonalInformation() {
             <div className="personal-information__box-info">
                 <h3 className="personal-information__info-tittle">Informações Pessoais</h3>
                 <h4 className="personal-information__name">Nome/Sobrenome</h4>
-                <input className="personal-information__input???" type=""></input>
+                <img className="personal-information__image" src="" alt="foto-usuario" ></img>
                 <h4 className="personal-information__about-you-tittle">Sobre Voce</h4>
-                <input className="personal-information__input???" type=""></input>
+                <textarea className="personal-information__text-area" rows={4} cols={16}></textarea>
 
                 <h5 className="personal-information__data-info-tittle">Dados Pessoais</h5>
                 <p className="personal-information__date-of-birth">Data de Nascimento: 20/02/1980</p>
@@ -23,13 +23,15 @@ function PersonalInformation() {
                 <p className="personal-information__email">E-mail: blavlada@gmail.com</p>
                 <p className="personal-information__phone">Celular: (21)336998855</p>
 
+                <input className="" type="submit" value="Editar dados" />
+
                 <h5 className="personal-information__address-tittle">Endereço</h5>
                 <p className="personal-information__post-mail">CEP: 227770-352</p>
                 <p className="personal-information__street">Rua Emiliano Zapata, 343</p>
                 <p className="personal-information__neighborhood">Bairro: Taquara</p>
                 <p className="personal-information__city">Cidade: Rio de Janeiro</p>
 
-                <button className="personal-information__edit-button" type="button">Editar dados</button>
+                <input className="personal-information__edit-button" type="button" value="Editar dados"/>
             </div>
 
             <div>
@@ -38,11 +40,9 @@ function PersonalInformation() {
                 <p className="personal-information__career">Engenharia Ambiental</p>
                 <p className="personal-information__graduation">Graduação</p>
                 <p className="personal-information__country">Venezuela</p>
-                <p className="personal-information__?"></p>
-                <p className="personal-information__?"></p>
-                <p>2004-2010</p>
-                <p>Concluído</p>
-
+                <p className="personal-information__formation-data">2004-2010</p>
+                <p className="personal-information__formation-status">Concluído</p>
+            
                 <h4>Instituto Universitario de Tecnologia de Maracaibo IUTM</h4>
                 <p>Turismo</p>
                 <p>Técnico</p>
@@ -50,7 +50,7 @@ function PersonalInformation() {
                 <p>2011-2013</p>
                 <p>Em andamento</p>
 
-                <button>Editar dados</button>
+                <input className="" type="submit" value="Editar dados" />
             </div>
 
             <div>
@@ -60,23 +60,24 @@ function PersonalInformation() {
                 <p>Venezuela</p>
                 <p>2014-2019</p>
                 <p>Responsabilidades</p>
-                <input></input>
+                <textarea className="" rows={4} cols={16}></textarea>
 
                 <h4>Atendente de Caixa</h4>
                 <p>Assai Atacadista</p>
                 <p>Brasil</p>
                 <p>2020-2021</p>
                 <p>Responsabilidades</p>
-                <input></input>
+                <textarea className="" rows={4} cols={16}></textarea>
 
                 <h4>Serviços Gerais</h4>
                 <p>Hotel Hilton</p>
                 <p>Brasil</p>
                 <p>2021-2023</p>
                 <p>Responsabilidades</p>
-                <input></input>
+                <textarea className="" rows={4} cols={16}></textarea>
 
-                <button>Editar dados</button>
+
+                <input className="" type="submit" value="Editar dados" />
             </div>
 
             <div>
@@ -85,21 +86,24 @@ function PersonalInformation() {
                 <p>Marketing</p>
                 <p>Brasil</p>
                 <p>01/2023 - 03/2023</p>
-                <input></input>
+                <textarea className="" rows={4} cols={16}></textarea>
+
              
                 <h3>ONE Oracle Next Education</h3>
                 <h4>Programação Full Stack</h4>
                 <p>Brasil</p>
                 <p>04/2022 - 10/2022</p>
-                <input></input>
+                <textarea className="" rows={4} cols={16}></textarea>
+
                 
                 <h3>Toti</h3>
                 <h4>Programação Full Stack</h4>
                 <p>Brasil</p>
                 <p>06/2020 - 10/2020</p>
-                <input></input>
+                <textarea className="" rows={4} cols={16}></textarea>
 
-                <button>Editar dados</button>
+
+                <input className="" type="submit" value="Editar dados" />
             </div>
 
             <div>
@@ -115,11 +119,16 @@ function PersonalInformation() {
 
             <div>
                 <h3>Habilidades</h3>
-                <label>*Habilidade</label>
-                <input></input>
+
+                <label>Habilidades*
+                    <input type="text" placeholder="React" required />
+                </label>
+
                 <button>+</button>
                 <p>HTML</p>
-                <button>Voltar ao Início</button>
+                
+                <button className="" type="button">Voltar ao Início</button>
+
             </div>
         </div>
     )
