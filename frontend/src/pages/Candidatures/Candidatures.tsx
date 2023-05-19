@@ -10,10 +10,10 @@ function Candidatures() {
                     Ullam dolores autem, alias vel earum veniam minus quos delectus
                     excepturi obcaecati eos nesciunt deserunt, in dicta consequatur
                     repellat corporis eaque corrupti.</p>
-                <button className="candidatures__button_job" type="button">Ver vaga</button>
+                <input className="candidatures__button_job" type="submit" value="Ver vaga" />
             </div>
-
-            <button className="candidatures__button_home" type="button">Voltar ao Início</button>
+            
+            <input className="candidatures__button_home" type="submit" value="Voltar ao Início" />
         </div>
     )
 }
