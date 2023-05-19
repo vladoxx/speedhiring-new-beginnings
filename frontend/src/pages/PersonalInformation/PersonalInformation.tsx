@@ -4,7 +4,7 @@ function PersonalInformation() {
             <div className="personal-information__box-info">
                 <h3 className="personal-information__info-tittle">Informações Pessoais</h3>
                 <h4 className="personal-information__name">Nome/Sobrenome</h4>
-                <input className="personal-information__image" type=""></input>
+                <input className="personal-information__image" type=""/>
                 <h4 className="personal-information__about-you-tittle">Sobre Voce</h4>
                 <input className="personal-information__text-area" type=""></input>
 
@@ -23,13 +23,15 @@ function PersonalInformation() {
                 <p className="personal-information__email">E-mail: blavlada@gmail.com</p>
                 <p className="personal-information__phone">Celular: (21)336998855</p>
 
+                <input className="" type="submit" value="Editar dados" />
+
                 <h5 className="personal-information__address-tittle">Endereço</h5>
                 <p className="personal-information__post-mail">CEP: 227770-352</p>
                 <p className="personal-information__street">Rua Emiliano Zapata, 343</p>
                 <p className="personal-information__neighborhood">Bairro: Taquara</p>
                 <p className="personal-information__city">Cidade: Rio de Janeiro</p>
 
-                <button className="personal-information__edit-button" type="button">Editar dados</button>
+                <input className="personal-information__edit-button" type="button" value="Editar dados"/>
             </div>
 
             <div className="personal-information__box-formations">

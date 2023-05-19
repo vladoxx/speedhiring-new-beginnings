@@ -2,7 +2,7 @@ function CoursesCertifications() {
     return (
         <div className="certifications">
             <h3 className="certifications__tittle">Cursos e Cerfiticações</h3>
-        
+        <form>
             <label className="certifications__country">Pais*</label>
             <select className="certifications__country_select" name="pais">
                 <option value="AF">Afganistán</option>
@@ -246,29 +246,40 @@ function CoursesCertifications() {
                 <option value="curso">Curso</option>
                 <option value="certificacoes">Certificação</option>
                 <option value="voluntariado">Voluntariado</option>
-
-
             </select>
 
-            <label className="certifications-institution">Institução*</label>
-            <input></input>
+                <label>Categoria*</label>
+                <select name="categoria">
+                    <option value="curso">Curso</option>
+                    <option value="certificacoes">Certificação</option>
+                    <option value="voluntariado">Voluntariado</option>
+                </select>
 
-            <label className="certifications__course_tittle">Título*</label>
-            <input></input>
+                <label className="certifications-institution" htmlFor=""> Institução*
+                    <input className="" type="text" />
+                </label>
 
-            <label className="certifications__start_date">Início*</label>
-            <input className="certifications__start_date_input" type="text" placeholder="01/2011" required />
+                <label className="certifications__course_tittle" htmlFor=""> Título*
+                    <input className="" type="text" />
+                </label>
 
-            <label className="certifications__end_date">Previsão/Data de Conclusão*</label>
-            <input className="certifications__end_date_input" type="text" placeholder="01/2013" required />
+                <label className="certifications__start_date" htmlFor=""> Início* 
+                    <input className="certifications__start_date_input" type="text" placeholder="01/2011" required />
+                </label>
+                
+                <label className="certifications__end_date" htmlFor=""> Previsão/Data de Conclusão*
+                <input className="certifications__end_date_input" type="text" placeholder="01/2013" required />
+                </label>
 
-            <label className="certifications__description">Descripção</label>
-            <input></input>
+                <label className="certifications__description">Descripção</label>
+                <textarea name="mitextarea">texto que contiene el campo text area</textarea>
 
-            <button className="save_button">Salvar</button>
-            <button className="certifications__edit_button">Editar</button>
-            <button className="certifications__delete_button">Deletar</button>
-            <p className="certifications__cancel">Cancelar</p>
+                <input className="save_button" type="submit" value="Salvar" />
+                <input className="certifications__edit_button" type="submit" value="Editar" />
+                <input className="certifications__delete_button" type="submit" value="Deletar" />
+                <button className="certifications__cancel">Cancelar</button>
+            </form>
+
         </div>
     )
 }

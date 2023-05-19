@@ -261,8 +261,18 @@ function ProfessionalExperience() {
                 <option value="financas">Finanças</option>
                 <option value="saude">Saúde</option>
                 <option value="restaurantes">Restaurantes e Bares</option>
+            </select>
 
-
+            <label>Nivel*</label>
+            <select name="nivel">
+                <option value="ceo">CEO</option>
+                <option value="presidente">Presidente</option>
+                <option value="diretor">Diretor</option>
+                <option value="gerente">Gerente</option>
+                <option value="coordinador">Coordinador</option>
+                <option value="analista" selected>Analista</option>
+                <option value="assistente">Assistente</option>
+                <option value="auxiliar">Auxiliar</option>
             </select>
 
             <label className="professional__site_company">Site da Empresa*</label>

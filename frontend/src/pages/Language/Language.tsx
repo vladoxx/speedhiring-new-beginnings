@@ -4,6 +4,8 @@ function Language() {
       <h3 className="languages__tittle">Idiomas</h3>
       <label className="languages__select">Idiomas*</label>
 
+      <form action="">
+        <label className="languages__select">Idiomas*</label>
 
       <label className="languages__proficiency">Proficiência</label>
       <select className="languages__proficiency_level" name="proficiencia">
@@ -12,6 +14,7 @@ function Language() {
         <option value="avancado">Avançado</option>
         <option value="nativo">Nativo</option>
       </select>
+      </form>
     </div>
   )
 }
