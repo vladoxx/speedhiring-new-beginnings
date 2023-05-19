@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer.tsx";
 
 import "./assets/styles/index.css";
 import "normalize.css";
+
 import Company from "./pages/Company/Company.tsx";
 import User from "./pages/User/User.tsx";
 import RegisterUser from "./pages/RegisterUser/RegisterUser.tsx";
@@ -32,21 +33,27 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register-user" element={<RegisterUser/>} />
-        <Route path="/register-company" element={<RegisterCompany/>} />
-        <Route path="/advertise-vacancy" element={<AdvertiseVacancy/>} />
-        <Route path="/description-vacancy" element={<DescriptionVacancy/>} />
-        <Route path="/company" element={<Company/>} />
-        <Route path="/user" element={<User/>} />
-        <Route path="/vacancy" element={<Vacancy/>} />
-        <Route path="/change-password" element={<ChangePassword/>} />
-        <Route path="/notification" element={<Notification/>} />
-        <Route path="/candidatures" element={<Candidatures/>} />
-        <Route path="/personal-information" element={<PersonalInformation/>} />
-        <Route path="/formation" element={<Formation/>} />
-        <Route path="/professional-experience" element={<ProfessionalExperience/>} />
-        <Route path="/courses-certifications" element={<CoursesCertifications/>} />
-        <Route path="/language" element={<Language/>} />
+        <Route path="/register-user" element={<RegisterUser />} />
+        <Route path="/register-company" element={<RegisterCompany />} />
+        <Route path="/advertise-vacancy" element={<AdvertiseVacancy />} />
+        <Route path="/description-vacancy" element={<DescriptionVacancy />} />
+        <Route path="/company" element={<Company />} />
+        <Route path="/user" element={<User />} />
+        <Route path="/vacancy" element={<Vacancy />} />
+        <Route path="/change-password" element={<ChangePassword />} />
+        <Route path="/notification" element={<Notification />} />
+        <Route path="/candidatures" element={<Candidatures />} />
+        <Route path="/personal-information" element={<PersonalInformation />} />
+        <Route path="/formation" element={<Formation />} />
+        <Route
+          path="/professional-experience"
+          element={<ProfessionalExperience />}
+        />
+        <Route
+          path="/courses-certifications"
+          element={<CoursesCertifications />}
+        />
+        <Route path="/language" element={<Language />} />
       </Routes>
 
       <Footer />
