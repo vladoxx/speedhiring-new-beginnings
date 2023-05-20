@@ -230,17 +230,18 @@ input[type="checkbox"]:checked ~ .menu-items {
 
   .header__navbar_button {
     border-radius: 16px;
-    background-color: #f4a261;
+    background-color: var(--laranja-escuro);
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-      7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
     outline: none;
-    position: relative;
     display: inline-block;
-    width: 100px;
-    height: 40px;
+    width: 120px;
+    height: 36px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--branco);
   }
 }
 
