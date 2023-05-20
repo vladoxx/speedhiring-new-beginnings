@@ -221,26 +221,25 @@ input[type="checkbox"]:checked ~ .menu-items {
 
   .header__navbar_button {
     border-radius: 16px;
-    background-color: #f4a261;
+    background-color: var(--laranja-escuro);
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-      7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
     outline: none;
-    position: relative;
     display: inline-block;
-    width: 100px;
-    height: 40px;
+    width: 120px;
+    height: 36px;
     text-align: center;
-    margin-left: 100px;
-    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--branco);
   }
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
   .navbar {
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
 
   .header__nav {
@@ -259,14 +258,9 @@ input[type="checkbox"]:checked ~ .menu-items {
     left: 2rem;
   }
 
-  .header__ul li {
-    /* margin-left: 1rem; */
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
-
   .header_title {
     font-size: 3rem;
+    margin-top: -1.4rem;
   }
 
   .nav-container .checkbox {
@@ -292,9 +286,19 @@ input[type="checkbox"]:checked ~ .menu-items {
   }
 
   .header__navbar_button {
-    margin: 0 0.6rem 0 0;
+    border-radius: 16px;
+    background-color: var(--laranja-escuro);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    display: inline-block;
     width: 120px;
     height: 36px;
-    border: 1px solid #ffffff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--branco);
+    margin: 0 2rem 0 0.7rem;
   }
 }
