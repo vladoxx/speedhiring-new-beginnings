@@ -161,7 +161,7 @@ function Home() {
             />
             <h3 className="partner__companie">Usaid</h3>
             <p className="partners__companie_description">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. lok!
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
             </p>
           </div>
 
