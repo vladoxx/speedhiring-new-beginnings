@@ -239,6 +239,10 @@ input[type="checkbox"]:checked ~ .menu-items {
 
 /* Desktop */
 @media (min-width: 1024px) {
+  .navbar {
+    padding: 0 3rem;
+  }
+
   .header__nav {
     position: relative;
     display: block;
@@ -252,11 +256,11 @@ input[type="checkbox"]:checked ~ .menu-items {
     width: 120px;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 2rem;
   }
 
   .header__ul li {
-    margin-left: 1.5rem;
+    /* margin-left: 1rem; */
     font-size: 1.2rem;
     font-weight: 600;
   }
@@ -289,6 +293,8 @@ input[type="checkbox"]:checked ~ .menu-items {
 
   .header__navbar_button {
     margin: 0;
-    margin: 0;
+    width: 120px;
+    height: 36px;
+    border: 1px solid #ffffff;
   }
 }
