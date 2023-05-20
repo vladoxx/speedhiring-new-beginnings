@@ -1,0 +1,57 @@
+.login{
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    position: relative;
+    text-align: center;
+}
+.login__inputs {
+    display: flex;
+    flex-direction: column;   
+    }
+
+.login__input_password{
+    border-radius: 16px;
+    margin-bottom: 25px;
+    height: 35px;
+    width: 350px;
+}
+
+.login__input_email{
+    border-radius: 16px;
+    margin-bottom: 25px;
+    height: 35px;
+}
+
+
+
+.login__image{
+    display:block;
+    align-items: center;
+    width: 150px;
+    margin-top: 45px;
+    margin-left: 30%;
+}
+
+.login__tittle{
+    font-size: 1.688rem;
+    color: var(--cinza-azulado);
+}
+
+.login__register{
+    text-align: ;
+}
+
+
+@media (min-width: 768px) {
+
+
+
+
+
+
+}

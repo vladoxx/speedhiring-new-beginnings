@@ -18,17 +18,25 @@ function Header() {
                 <span className="line line3"></span>
               </div>
               <ul className="header__ul menu-items">
-                <li id="inicio">
-                  <Link to={"/"}>Início</Link>
-                </li>
-                <li>Para empresas</li>
-                <li>Candidato</li>
-                <li>Vagas</li>
-                <li>Contato</li>
-                <li id="login">
-                  <Link to={"/login"}>Login</Link>
-                </li>
-              </ul>
+                  <li>
+                    <Link to={"/"}>Início</Link>
+                  </li>
+                  <li>
+                    <Link to={"/register-company"}>Para empresas</Link>
+                  </li>
+                  <li>
+                    <Link to={"/register-user"}>Candidato</Link>
+                  </li>
+                  <li>
+                    <Link to={"/vacancy"}>Vagas</Link>
+                  </li>
+                  <li>
+                    <Link to={"/"}>Contato</Link>
+                  </li>
+                  <li id="login">
+                    <Link className="header__navbar_button" to={"/login"}>Login</Link>
+                  </li>
+                </ul>
             </div>
           </div>
         </nav>

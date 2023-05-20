@@ -6,6 +6,15 @@ function Language() {
 
       <form action="">
         <label className="languages__select">Idiomas*</label>
+        <select className="languages__select_idioma" name="idioma">
+        <option value="ingles">Inglês</option>
+        <option value="mandarim">Mandarim</option>
+        <option value="espanhol">Espanhol</option>
+        <option value="portugues">Português</option>
+        <option value="frances">Francês</option>
+        <option value="arabe">Árabe</option>
+        <option value="russo">Russo</option>
+      </select>
 
       <label className="languages__proficiency">Proficiência</label>
       <select className="languages__proficiency_level" name="proficiencia">

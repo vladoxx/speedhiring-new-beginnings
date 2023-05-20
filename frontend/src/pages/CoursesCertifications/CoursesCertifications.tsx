@@ -272,7 +272,7 @@ function CoursesCertifications() {
                 </label>
 
                 <label className="certifications__description">Descripção</label>
-                <textarea name="mitextarea">texto que contiene el campo text area</textarea>
+                <textarea className="certifications__description-textarea" rows={4} cols={35}>texto que contiene el campo text area</textarea>
 
                 <input className="save_button" type="submit" value="Salvar" />
                 <input className="certifications__edit_button" type="submit" value="Editar" />
