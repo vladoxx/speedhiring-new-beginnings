@@ -240,7 +240,7 @@ input[type="checkbox"]:checked ~ .menu-items {
 /* Desktop */
 @media (min-width: 1024px) {
   .navbar {
-    padding: 0 3rem;
+    padding: 0 2rem;
   }
 
   .header__nav {
@@ -292,7 +292,7 @@ input[type="checkbox"]:checked ~ .menu-items {
   }
 
   .header__navbar_button {
-    margin: 0;
+    margin: 0 0.6rem 0 0;
     width: 120px;
     height: 36px;
     border: 1px solid #ffffff;
