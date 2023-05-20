@@ -25,6 +25,7 @@
 .form > input {
   width: 100%;
   height: 40px;
+  outline: none;
   background-color: var(--branco-acinzentado);
   border-radius: 1rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -40,6 +41,7 @@
   background-color: var(--laranja-escuro);
   border: 1px solid var(--branco);
   box-shadow: unset;
+  cursor: pointer;
   font-weight: 700;
   text-align: center;
   color: var(--branco);
@@ -53,7 +55,7 @@
 }
 
 @media (min-width: 768px) {
-  .register-company__tittle {
+  .register-company__title {
     font-size: 1.688rem;
     color: var(--cinza-azulado);
     margin-top: 55px;
@@ -61,28 +63,6 @@
   }
 
   .register-company__input {
-    border-radius: 16px;
     margin-bottom: 25px;
-    margin-left: 14px;
-    border-color: var(--verde-azulado);
-    height: 45px;
-    width: 350px;
-  }
-
-  .register-company__button {
-    border-radius: 16px;
-    background-color: #f4a261;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-      7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-    outline: none;
-    position: relative;
-    display: inline-block;
-    width: 150px;
-    height: 50px;
-    text-align: center;
-    color: var(--branco);
-    margin-top: 25px;
   }
 }
