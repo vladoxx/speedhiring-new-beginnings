@@ -143,3 +143,48 @@
 .partners__title {
   margin-bottom: 2rem;
 }
+
+
+
+
+/*------Tablet---------*/
+
+@media (min-width:768px) {
+
+  .about,
+  .objective {
+    padding: 0 1.8rem;
+  }
+  .connection p {
+    color: var(--black);
+    text-align: center;
+    margin:15px;
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+.services__companies_image
+.services__candidate_image{
+  position: relative;
+  text-align: center;
+  /* padding-left: 5%;
+  padding-right: 5%; */
+
+}
+.services__companies_title
+.services__candidate_title{
+  margin-bottom: 35px;
+}
+
+.virtues__container{
+  padding-right: 45px;
+  padding-left: 45px;
+}
+
+/* .partners__image{
+  padding-right: 45px;
+  padding-left: 45px;
+} */
+
+
+
+}
