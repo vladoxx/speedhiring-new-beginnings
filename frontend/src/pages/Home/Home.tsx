@@ -57,6 +57,7 @@ function Home() {
             economia brasileira e em geral.
           </p>
         </div>
+
         <div className="connection__container">
           <img
             className="connection__companies_logo"
@@ -69,6 +70,7 @@ function Home() {
             implementar a diversidade e inclusão nas suas equipes
           </p>
         </div>
+
         <div className="connection__container">
           <img
             className="connection__link_logo"
@@ -159,8 +161,7 @@ function Home() {
             />
             <h3 className="partner__companie">Usaid</h3>
             <p className="partners__companie_description">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              lok!
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. lok!
             </p>
           </div>
 
