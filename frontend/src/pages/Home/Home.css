@@ -465,11 +465,27 @@ margin-right: 20%;
     font-size: var(--font-size-p-mobile);
     color: var(--black);
     text-align: center;
+    margin-top: 2px;
+  }
+
+  #imigrant {
+    margin: 2.5rem 0 0 4rem;
+    width: 408.5px;
+  }
+
+  #companies {
+    margin: 2rem 4rem 0 0;
+  }
+
+  #connection {
+    margin-top: -3rem;
   }
 
   .services {
     margin-top: 2rem;
     padding: 1.5rem;
+    display: flex;
+    flex-direction: row;
   }
 
   .services__companies_title,
@@ -481,7 +497,7 @@ margin-right: 20%;
 
   .services__companies img,
   .services__candidate img {
-    width: 100%;
+    width: 430px;
   }
 
   .virtues {
