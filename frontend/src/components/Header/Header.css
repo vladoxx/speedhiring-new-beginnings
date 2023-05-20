@@ -249,6 +249,10 @@ input[type="checkbox"]:checked ~ .menu-items {
 
 /* Desktop */
 @media (min-width: 1024px) {
+  .navbar {
+    padding: 0 1rem;
+  }
+
   .header__nav {
     position: relative;
     display: block;
@@ -262,17 +266,12 @@ input[type="checkbox"]:checked ~ .menu-items {
     width: 120px;
     position: absolute;
     top: 0;
-    left: 0;
-  }
-
-  .header__ul li {
-    margin-left: 1.5rem;
-    font-size: 1.2rem;
-    font-weight: 600;
+    left: 2rem;
   }
 
   .header_title {
     font-size: 3rem;
+    margin-top: -1.4rem;
   }
 
   .header_subtitle {
@@ -290,7 +289,19 @@ input[type="checkbox"]:checked ~ .menu-items {
   }
 
   .header__navbar_button {
-    margin: 0;
-    margin: 0;
+    border-radius: 16px;
+    background-color: var(--laranja-escuro);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    display: inline-block;
+    width: 120px;
+    height: 36px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--branco);
+    margin: 0 2rem 0 0.7rem;
   }
 }
