@@ -1,56 +1,181 @@
-.login{
-    padding: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-form{
-    position: relative;
-    text-align: center;
-}
-.login__inputs {
-    display: flex;
-    flex-direction: column;   
-    }
-
-.login__input_password{
-    border-radius: 16px;
-    margin-bottom: 25px;
-    height: 35px;
-    width: 350px;
-}
-
-.login__input_email{
-    border-radius: 16px;
-    margin-bottom: 25px;
-    height: 35px;
-}
 
 
 
-.login__image{
-    display:block;
-    align-items: center;
-    width: 150px;
-    margin-top: 45px;
-    margin-left: 30%;
-}
 
-.login__tittle{
-    font-size: 1.688rem;
-    color: var(--cinza-azulado);
-}
 
-.login__register{
-    text-align: ;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (min-width: 768px) {
+    .login {
+        padding: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
+    form {
+        position: relative;
+        text-align: center;
+    }
 
+    .login__image {
+        display: block;
+        align-items: center;
+        width: 150px;
+        margin-top: 45px;
+        margin-left: 30%;
+    }
 
+    .login__tittle {
+        font-size: 1.688rem;
+        color: var(--cinza-azulado);
+        margin-top: 45px;
+        margin-bottom: 15%;
+    }
+
+    .login__register {
+        padding-top: px;
+    }
+
+    .login__inputs {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login__input_password {
+        border-radius: 16px;
+        margin-bottom: 25px;
+        border-color: var(--verde-azulado);
+        height: 45px;
+        width: 350px;
+    }
+
+    .login__input_email {
+        border-radius: 16px;
+        margin-bottom: 25px;
+        border-color: var(--verde-azulado);
+        height: 45px;
+    }
+
+    .login__register {
+        text-align: left;
+        margin-bottom: 10px;
+
+    }
+    .login__forgot_password{
+        text-align: left;
+        margin-bottom: 35px;
+    }
+
+    .login__button {
+        border-radius: 16px;
+        background-color: #F4A261;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+            7px 7px 20px 0px rgba(0, 0, 0, .1),
+            4px 4px 5px 0px rgba(0, 0, 0, .1);
+        outline: none;
+        position: relative;
+        display: inline-block;
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        color: var(--branco);
+
+    }
 
 
 

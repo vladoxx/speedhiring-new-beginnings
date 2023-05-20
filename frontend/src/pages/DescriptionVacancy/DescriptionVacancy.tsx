@@ -1,3 +1,5 @@
+import "./DescriptionVacancy.css"
+
 function DescriptionVacancy() {
   return (
     <div className="vacancy">
