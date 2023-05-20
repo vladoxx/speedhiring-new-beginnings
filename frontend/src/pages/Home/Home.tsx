@@ -43,7 +43,7 @@ function Home() {
       </section>
 
       <section className="connection">
-        <div className="connection__container" id="imigrant">
+        <div className="connection__container">
           <img
             className="connection__immigrant_logo"
             src={Migrantes}
@@ -58,7 +58,7 @@ function Home() {
           </p>
         </div>
 
-        <div className="connection__container"  id="companies">
+        <div className="connection__container">
           <img
             className="connection__companies_logo"
             src={Empresas}
@@ -71,7 +71,7 @@ function Home() {
           </p>
         </div>
 
-        <div className="connection__container"  id="connection">
+        <div className="connection__container">
           <img
             className="connection__link_logo"
             src={Conexao}
@@ -88,22 +88,24 @@ function Home() {
       <section className="services">
         <h3 className="services__title">Cadastros</h3>
 
-        <div className="services__companies">
-          <h4 className="services__companies_title">Para empresas</h4>
-          <img
-            className="services__companies_image"
-            src={Empresa}
-            alt="Imagem Cumprimento"
-          />
-        </div>
+        <div className="services__container">
+          <div className="services__companies">
+            <h4 className="services__companies_title">Para empresas</h4>
+            <img
+              className="services__companies_image"
+              src={Empresa}
+              alt="Imagem Cumprimento"
+            />
+          </div>
 
-        <div className="services__candidate">
-          <h4 className="services__candidate_title">Para candidatos</h4>
-          <img
-            className="services__candidate_image"
-            src={Candidato}
-            alt="Imagem de Usuário"
-          />
+          <div className="services__candidate">
+            <h4 className="services__candidate_title">Para candidatos</h4>
+            <img
+              className="services__candidate_image"
+              src={Candidato}
+              alt="Imagem de Usuário"
+            />
+          </div>
         </div>
       </section>
 
@@ -161,7 +163,7 @@ function Home() {
             />
             <h3 className="partner__companie">Usaid</h3>
             <p className="partners__companie_description">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
             </p>
           </div>
 
@@ -180,7 +182,7 @@ function Home() {
       </section>
 
       <section className="contact">
-        <h3 className="contact__title">Contacto</h3>
+        <h3 className="contact__title">Contato</h3>
 
         <p className="contact__text">
           Se você é um imigrante em busca de emprego ou deseja saber mais sobre
