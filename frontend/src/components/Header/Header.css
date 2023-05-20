@@ -146,18 +146,18 @@ input[type="checkbox"]:checked ~ .menu-items {
   margin: 0 0 0 0.5rem;
 }
 
-.header_subtitle {
+.header__subtitle {
   font-size: var(--font-size-h2-mobile);
   color: var(--branco);
   text-align: center;
-  margin-top: 2rem;
+  margin: 2rem auto;
 }
 
 .header__paragraph {
   font-size: var(--font-size-p-mobile);
   color: var(--branco);
   text-align: center;
-  margin-top: 2rem;
+  margin: 2rem auto;
 }
 
 @media (max-width: 320px) {
@@ -197,11 +197,6 @@ input[type="checkbox"]:checked ~ .menu-items {
 
   .navbar .menu-items {
     display: contents;
-  }
-
-  .nav-container {
-    display: flex;
-    justify-content: space-between;
   }
 
   .nav-container .checkbox {
@@ -274,7 +269,7 @@ input[type="checkbox"]:checked ~ .menu-items {
     margin-top: -1.4rem;
   }
 
-  .header_subtitle {
+  .header__subtitle {
     font-size: 2rem;
     margin: auto;
     text-transform: uppercase;

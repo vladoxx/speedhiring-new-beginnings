@@ -50,7 +50,7 @@ function Header() {
             <h1 className="header_title">New Beginnings</h1>
           </div>
         </div>
-        <h2 className="header_subtitle">
+        <h2 className="header__subtitle">
           Solução de empregos para imigrantes e refugiados
         </h2>
         <p className="header__paragraph">
