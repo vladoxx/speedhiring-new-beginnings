@@ -1,0 +1,345 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Desktop */
+@media (min-width: 1024px) {
+
+    .candidatures {
+    }
+
+    .candidatures__tittle {
+        text-align: center;
+        padding: 3rem 0;
+        font-size: 1.8rem;
+    }
+
+    .candidatures__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    
+    .candidatures__box_jobs {
+        background:  var(--branco-acinzentado);
+        width: 30%;
+        border: 1px solid var(--roxo-claro);
+        border-radius: 16px;
+        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    }
+    
+    .candidatures__role {
+        font-size: 22px;
+    }
+
+    .candidatures__city {
+        font-size: 14px;
+    }
+
+    .candidatures__company {
+        font-size: 12px;
+    }
+
+    .candidatures__job_description {
+        font-size: 16px;
+    }
+        
+    .candidatures__button_job {}
+    
+    .candidatures__button_home {}
+}
