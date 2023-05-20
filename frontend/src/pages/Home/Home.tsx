@@ -43,7 +43,7 @@ function Home() {
       </section>
 
       <section className="connection">
-        <div className="connection__container">
+        <div className="connection__container" id="imigrant">
           <img
             className="connection__immigrant_logo"
             src={Migrantes}
@@ -58,7 +58,7 @@ function Home() {
           </p>
         </div>
 
-        <div className="connection__container">
+        <div className="connection__container"  id="companies">
           <img
             className="connection__companies_logo"
             src={Empresas}
@@ -71,7 +71,7 @@ function Home() {
           </p>
         </div>
 
-        <div className="connection__container">
+        <div className="connection__container"  id="connection">
           <img
             className="connection__link_logo"
             src={Conexao}
