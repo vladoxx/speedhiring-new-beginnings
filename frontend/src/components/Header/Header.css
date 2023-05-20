@@ -175,19 +175,18 @@ input[type="checkbox"]:checked ~ .menu-items {
   }
 }
 
-@media (min-width: 375px) {
+@media only screen and (min-width: 375px) {
   .header__div {
     margin: 40px 0 0 0;
   }
 }
 
-@media (min-width: 412px) {
+@media only screen and (min-width: 412px) {
 }
-
 
 /*-----Tablet--------*/
 
-@media (min-width: 768px) {
+@media only screen and (min-width: 768px) {
   .header__img {
     width: 80px;
   }
