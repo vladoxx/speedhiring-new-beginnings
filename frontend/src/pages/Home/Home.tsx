@@ -43,7 +43,7 @@ function Home() {
       </section>
 
       <section className="connection">
-        <div className="connection__container">
+        <div className="connection__container" id="imigrant">
           <img
             className="connection__immigrant_logo"
             src={Migrantes}
@@ -58,7 +58,7 @@ function Home() {
           </p>
         </div>
 
-        <div className="connection__container">
+        <div className="connection__container"  id="companies">
           <img
             className="connection__companies_logo"
             src={Empresas}
@@ -67,11 +67,11 @@ function Home() {
           <h4 className="connection__companies__title">Empresas parceiras</h4>
           <p className="connection__companies_paragraph">
             Empresas brasileiras de diferentes setores que tem interesse em
-            implementar a diversidade e inclusão nas suas equipes
+            implementar a diversidade e inclusão nas suas equipes.
           </p>
         </div>
 
-        <div className="connection__container">
+        <div className="connection__container"  id="connection">
           <img
             className="connection__link_logo"
             src={Conexao}
@@ -80,7 +80,7 @@ function Home() {
           <h4 className="connection__link__title">Conexão</h4>
           <p className="connection__link_paragraph">
             Queremos conectar pessoas em busca de novas oportunidades com
-            empresas parceiras, colocando-as no mercado de trabalho brasileiro
+            empresas parceiras, colocando-as no mercado de trabalho brasileiro.
           </p>
         </div>
       </section>

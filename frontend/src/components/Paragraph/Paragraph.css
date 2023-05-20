@@ -5,3 +5,34 @@
   text-align: center;
   margin-top: 30px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1024px) {
+  .about__paragraph {
+    font-size: 20px;
+    color: var(--black);
+    line-height: 1.4;
+    text-align: center;
+    margin: 30px 3rem 0 3rem;
+  }
+}
