@@ -139,7 +139,7 @@ function Home() {
         <h3 className="partners__title">Empresas parceiras</h3>
 
         <div className="partners__list">
-          <div className="partners__list_1">
+          <div className="partners__list_container">
             <img
               className="partners__image"
               src={Toti}
@@ -150,7 +150,8 @@ function Home() {
               Startup que forma migrantes e refugiados programação.
             </p>
           </div>
-          <div className="partners__list_2">
+
+          <div className="partners__list_container">
             <img
               className="partners__image"
               src={Usaid}
@@ -162,7 +163,8 @@ function Home() {
               Quibusdam illo itaque excepturi!
             </p>
           </div>
-          <div className="partners__list_3">
+
+          <div className="partners__list_container">
             <img
               className="partners__image"
               src={Caritas}
