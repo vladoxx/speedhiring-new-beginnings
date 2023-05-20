@@ -185,3 +185,83 @@
     height: 67vh;
   }
 }
+
+
+
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .header__img {
+    width: 120px;
+    position: absolute;
+    left: 4rem;
+    top: 2rem;
+  }
+  
+  .navbar .menu-items {
+    margin: 3.7rem 0 0 13.4rem;
+    align-items: center;
+  }
+
+  .navbar .nav-container a {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 0;
+  }
+
+  .nav-container .checkbox {
+    display: none;
+  }
+  
+  .nav-container .hamburger-lines {
+    display: none;
+  }
+  
+  .navbar .menu-items {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin-right: 2rem;
+    height: 0;
+    transform: none;
+    justify-content: flex-end;
+  }
+  
+  .navbar .menu-items li {
+    margin-left: 1.5rem;
+    margin-bottom: 3.2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .header_title {
+    font-size: 3rem;
+    margin-top: 1.7rem;
+  }
+  
+  .header_subtitle {
+    font-size: 2rem;
+    padding-top: 2rem;
+    margin: auto;
+    text-transform: uppercase;
+    width: 600px;
+  }
+  
+  .header__paragraph {
+    width: 800px;
+    font-size: 1.3rem;
+    margin: auto;
+    padding: 2rem 0 2rem 0;
+  }
+
+  #login {
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 16px;
+    padding: 6px 16px 0 30px;
+    width: 120px;
+    height: 36px;
+    background: #F4A261;
+  }
+}
