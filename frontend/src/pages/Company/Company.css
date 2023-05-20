@@ -1,0 +1,28 @@
+/*--------Tablet-------*/
+
+@media (min-width: 768px) {
+
+    .company {
+        padding: 3rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .company__tittle {
+        font-size: 1.688rem;
+        color: var(--cinza-azulado);
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .company__image {
+        display: block;
+        align-items: center;
+        width: 150px;
+    }
+
+
+  
+}

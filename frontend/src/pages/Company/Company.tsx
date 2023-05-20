@@ -1,11 +1,14 @@
+import "./Company.css"
+import LogoToti from "../../assets/images/icon_logo_toti.png";
+
 function Company() {
     return (
         <div className="company">
             <h3 className="company__tittle">Perfil da Empresa</h3>
 
-            <img className="company__image" src="" alt="Logo Empresa" />
+            <img className="company__image" src={LogoToti} alt="Logo Empresa" />
             <p className="company__localization">Matriz: Rio de Janeiro</p>
-            <p className="company__site">Site: www.toti.com</p>
+            <p className="company__site">Site: www.toti.com.br</p>
             <p className="company__sector">Sector: Educação</p>
             <p className="company__email">E-mail: toti@empresa.com</p>
             <p className="company__cnpj">CNPJ: 69.976.803/0001/82</p>

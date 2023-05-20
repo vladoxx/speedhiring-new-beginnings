@@ -52,6 +52,9 @@
   }
 }
 
+
+/*--------Tablet-------*/
+
 @media (min-width: 768px) {
   .register-company__tittle {
     font-size: 1.688rem;
