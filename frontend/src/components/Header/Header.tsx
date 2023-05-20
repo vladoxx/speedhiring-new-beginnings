@@ -35,8 +35,10 @@ function Header() {
                   <li>
                     <Link to={"/"}>Contato</Link>
                   </li>
-                  <li >
-                    <Link className="header__navbar_button" to={"/login"}>Login</Link>
+                  <li>
+                    <Link className="header__navbar_button" to={"/login"}>
+                      Login
+                    </Link>
                   </li>
                 </ul>
               </div>
