@@ -201,7 +201,6 @@ input[type="checkbox"]:checked ~ .menu-items {
     font-size: 1.1rem;
     font-weight: 400;
     color: var(--branco);
-    margin-bottom: 1.2rem;
   }
 
   .header_title {
@@ -250,12 +249,46 @@ input[type="checkbox"]:checked ~ .menu-items {
   }
 
   .header__img {
+    width: 120px;
     position: absolute;
     top: 0;
     left: 0;
   }
 
   .header__ul li {
-    margin: 22px 16px;
+    margin-left: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .header_title {
+    font-size: 3rem;
+  }
+
+  .nav-container .checkbox {
+    display: none;
+  }
+
+  .nav-container .hamburger-lines {
+    display: none;
+  }
+
+  .header_subtitle {
+    font-size: 2rem;
+    margin: auto;
+    text-transform: uppercase;
+    width: 600px;
+  }
+
+  .header__paragraph {
+    width: 800px;
+    font-size: 1.3rem;
+    margin: auto;
+    padding: 2rem 0;
+  }
+
+  .header__navbar_button {
+    margin: 0;
+    margin: 0;
   }
 }
