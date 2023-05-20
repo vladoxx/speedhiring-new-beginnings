@@ -1,0 +1,142 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+
+    .register-user {
+        padding: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .register-user__tittle {
+        font-size: 1.688rem;
+        color: var(--cinza-azulado);
+        margin-top: 55px;
+        margin-bottom: 55px;
+    }
+
+    .register-user__input {
+        border-radius: 16px;
+        margin-bottom: 25px;
+        margin-left: 14px;
+        border-color: var(--verde-azulado);
+        height: 45px;
+        width: 350px;
+    }
+
+    .register-user__button {
+        border-radius: 16px;
+        background-color: #F4A261;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+            7px 7px 20px 0px rgba(0, 0, 0, .1),
+            4px 4px 5px 0px rgba(0, 0, 0, .1);
+        outline: none;
+        position: relative;
+        display: inline-block;
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        color: var(--branco);
+        margin-top: 25px;
+
+    }
+}

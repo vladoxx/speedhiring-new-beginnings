@@ -1,3 +1,5 @@
+import "./ProfessionalExperience.css"
+
 function ProfessionalExperience() {
     return (
         <div className="professional-experience">

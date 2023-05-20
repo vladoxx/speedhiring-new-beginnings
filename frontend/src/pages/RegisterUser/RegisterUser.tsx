@@ -1,3 +1,5 @@
+import "./RegisterUser.css"
+
 function RegisterUser() {
   return (
     <div className="register-user">
