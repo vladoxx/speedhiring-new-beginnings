@@ -99,6 +99,7 @@
   border-radius: 5px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   height: 250px;
+  max-width: 310px;
 }
 
 .virtues__inclusion h4,
@@ -145,8 +146,46 @@
   margin-bottom: 2rem;
 }
 
+.partners__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
 
+.partners__list_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--branco-acinzentado);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  padding: 1rem;
+  max-width: 310px;
+}
 
+.partners__image {
+  width: 100px;
+  border-radius: 50%;
+  border: 1px solid var(--cinza-azulado);
+}
+
+.partners__list_container h3 {
+  margin-top: 1rem;
+}
+
+.contact {
+  background-color: var(--branco-acinzentado);
+  padding: 3rem 1.5rem;
+}
+
+.contact__text {
+  font-size: var(--font-size-p-mobile);
+  color: var(--black);
+  line-height: 1.4;
+  text-align: center;
+  margin-top: 30px;
+}
 
 /*------Tablet---------*/
 
@@ -154,7 +193,7 @@
 
   .about,
   .objective {
-    padding: 0 1.8rem;
+    padding: 0 9rem;
   }
   .connection p {
     color: var(--black);
@@ -165,27 +204,29 @@
   }
 .services__companies_image
 .services__candidate_image{
-  position: relative;
+  position: flex;
   text-align: center;
-  /* padding-left: 5%;
-  padding-right: 5%; */
-
 }
 .services__companies_title
 .services__candidate_title{
   margin-bottom: 35px;
 }
 
-.virtues__container{
+ .virtues__container{
   padding-right: 45px;
   padding-left: 45px;
+} 
+.contact__text{
+margin-left: 20%;
+margin-right: 20%;
 }
-
-/* .partners__image{
-  padding-right: 45px;
-  padding-left: 45px;
+/* .virtues__respect_paragraph,
+.virtues__inclusion_paragraph,
+.virtues__empathy_paragraph{
+ 
 } */
-
-
-
 }
+
+
+
+
