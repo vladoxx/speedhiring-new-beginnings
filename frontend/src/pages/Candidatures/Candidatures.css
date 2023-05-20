@@ -301,6 +301,7 @@
 @media (min-width: 1024px) {
 
     .candidatures {
+        text-align: center;
     }
 
     .candidatures__tittle {
@@ -320,26 +321,63 @@
         width: 30%;
         border: 1px solid var(--roxo-claro);
         border-radius: 16px;
-        padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+        padding: 0.5rem 0.5rem 0.6rem 0.5rem;
     }
     
     .candidatures__role {
         font-size: 22px;
+        text-align: center;
     }
 
     .candidatures__city {
         font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    hr {
+        margin-top: 0.2rem;
+        padding: 0.2rem 0;
     }
 
     .candidatures__company {
         font-size: 12px;
+        font-weight: 600;
+        padding: 0 0 0.6rem;
     }
 
     .candidatures__job_description {
         font-size: 16px;
+        padding: 0 0 0.6rem;
+    }
+
+    .candidatures__box_input_job {
+        text-align: center;
     }
         
-    .candidatures__button_job {}
+    .candidatures__button_job {
+        width: 120px;
+        height: 25px;
+        border-radius: 1rem;
+        border: none;
+        color: var(--branco);
+        background-color: var(--laranja-escuro);
+        
+    }
+
+    .candidatures__box_input_home {
+        text-align: center;
+    }
     
-    .candidatures__button_home {}
+    .candidatures__button_home {
+        font-size: 20px;
+        font-weight: bold;
+        width: 230px;
+        height: 36px;
+        margin: 3rem 0;
+        border-radius: 1rem;
+        border: none;
+        background-color: var(--laranja-escuro);
+        color: var(--branco);
+    }
 }
