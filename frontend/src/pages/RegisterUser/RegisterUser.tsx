@@ -1,15 +1,12 @@
+import { FormEvent, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 
 import { UserProps } from "../../@types/user";
+import { InputChange } from "../../@types/general";
 
 import * as userService from "../../service/UserService";
 
 import "./RegisterUser.css";
-
-type InputChange = ChangeEvent<
-  HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
->;
 
 function RegisterUser() {
   let navigate = useNavigate();
