@@ -10,6 +10,7 @@
   font-size: var(--font-size-h3-mobile);
   text-transform: uppercase;
   color: var(--cinza-azulado);
+  text-align: center;
 }
 
 .registerUser__form {
