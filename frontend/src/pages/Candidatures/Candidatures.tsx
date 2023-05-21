@@ -13,9 +13,7 @@ function Candidatures() {
           <p className="candidatures__company">Empresa Lorem</p>
           <p className="candidatures__job_description">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam
-            dolores autem, alias vel earum veniam minus quos delectus excepturi
-            obcaecati eos nesciunt deserunt, in dicta consequatur repellat
-            corporis eaque corrupti.
+            dolores autem, alias vel earum veniam minus quos delectus excepturi.
           </p>
 
           <div className="candidatures__box_input_job">
@@ -33,9 +31,7 @@ function Candidatures() {
           <p className="candidatures__company">Empresa Lorem</p>
           <p className="candidatures__job_description">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam
-            dolores autem, alias vel earum veniam minus quos delectus excepturi
-            obcaecati eos nesciunt deserunt, in dicta consequatur repellat
-            corporis eaque corrupti.
+            dolores autem, alias vel earum veniam minus quos delectus excepturi.
           </p>
 
           <div className="candidatures__box_input_job">
