@@ -45,7 +45,7 @@ function RegisterUser() {
       await userService.updateUser(params.id, user);
     }
 
-    navigate("/");
+    navigate("/login");
   };
 
   const getUser = async (id: string) => {
