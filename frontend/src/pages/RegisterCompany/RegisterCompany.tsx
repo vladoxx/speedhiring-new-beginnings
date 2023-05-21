@@ -1,68 +1,32 @@
+import React from "react";
 import Input from "../../components/Input/Input";
 import "./RegisterCompany.css";
 
-function RegisterCompany() {
+const RegisterCompany = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Lógica para lidar com o envio do formulário
+  };
+
   return (
     <div className="register-company">
       <h3 className="register-company__title">Cadastro da Empresa</h3>
-      <form className="form" action="">
-        <input
-          className="register-company__input"
-          type="text"
-          placeholder="Razão Social*"
-          required
-        />
+      <form className="form" onSubmit={handleSubmit}>
         <Input placeholder="Razão Social*" type="text" />
-        <input
-          className="register-company__input"
-          type=""
-          placeholder="Sector*"
-          required
-        />
-        <input
-          className="register-company__input"
-          type="text"
-          placeholder="Endereço*"
-          required
-        />
-        <input
-          className="register-company__input"
-          type="text"
-          placeholder="CNPJ*"
-          required
-        />
-        <input
-          className="register-company__input"
-          type="tel"
-          placeholder="Telefone*"
-          required
-        />
-        <input
-          className="register-company__input"
-          type="text"
-          placeholder="Website"
-          required
-        />
-        <input
-          className="register-company__input"
-          type="password"
-          placeholder="Senha*"
-          required
-        />
-        <input
-          className="register-company__input"
-          type="password"
-          placeholder="Confirmar a Senha*"
-          required
-        />
-        <input
-          className="register-company__button"
-          type="submit"
-          value="Cadastrar"
-        />
+        <Input placeholder="Sector*" type="text" />
+        <Input placeholder="Endereço*" type="text" />
+        <Input placeholder="CNPJ*" type="text" />
+        <Input placeholder="Telefone*" type="tel" />
+        <Input placeholder="Website" type="text" />
+        <Input placeholder="Senha*" type="password" />
+        <Input placeholder="Confirmar a Senha*" type="password" />
+
+        <button className="register-company__button" type="submit">
+          Cadastrar
+        </button>
       </form>
     </div>
   );
-}
+};
 
 export default RegisterCompany;
