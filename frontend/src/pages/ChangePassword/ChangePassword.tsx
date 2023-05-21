@@ -1,21 +1,30 @@
+import "./ChangePassword.css";
+
 function ChangePassword() {
   return (
-    <div className="change-password">
-      <h3 className="change-password__tittle">Alterar Senha</h3>
+    <div className="change__password">
+      <h3 className="change__password__title">Alterar Senha</h3>
 
-      <form action="">
-        <label className="change-password__current-password">Senha Atual</label>
-        <input className="change-password__input"/>
-        <label className="change-password__new-password">Nova Senha</label>
-        <input className="change-password__input"/>
-        <label className="change-password__repeat-password">Repetir Senha</label>
-        <input className="change-password__input"/>
-        
-        <input className="change-password__button" type="submit" value="Salvar" />
+      <form className="change__password-form" action="">
+        <label className="change__password__current-password">
+          Senha Atual
+          <input className="change__password__input" type="password" />
+        </label>
+        <label className="change__password__new-password">
+          Nova Senha
+          <input className="change__password__input" type="password" />
+        </label>
+        <label className="change__password__repeat-password">
+          Repetir Senha
+          <input className="change__password__input" type="password" />
+        </label>
+
+        <button className="change__password__button" type="submit">
+          Salvar
+        </button>
       </form>
     </div>
-  )
-}          
+  );
+}
 
-
-export default ChangePassword
+export default ChangePassword;
