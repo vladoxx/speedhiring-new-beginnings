@@ -8,15 +8,15 @@ function ChangePassword() {
       <form className="change__password-form" action="">
         <label className="change__password__current-password">
           Senha Atual
-          <input className="change__password__input" />
+          <input className="change__password__input" type="password" />
         </label>
         <label className="change__password__new-password">
           Nova Senha
-          <input className="change__password__input" />
+          <input className="change__password__input" type="password" />
         </label>
         <label className="change__password__repeat-password">
           Repetir Senha
-          <input className="change__password__input" />
+          <input className="change__password__input" type="password" />
         </label>
 
         <button className="change__password__button" type="submit">
