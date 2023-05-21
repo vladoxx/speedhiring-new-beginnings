@@ -20,6 +20,7 @@
   width: 100%;
   padding: 0 2rem;
   gap: 1rem;
+  max-width: 75rem;
 }
 
 .form > input {

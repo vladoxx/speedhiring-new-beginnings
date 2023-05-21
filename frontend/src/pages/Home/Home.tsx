@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 import Objetivo from "../../assets/images/objetivo1.jpg";
 import Conexao from "../../assets/images/conexao.png";
 import Empresas from "../../assets/images/empresas.png";
@@ -12,6 +14,7 @@ import "./Home.css";
 import Paragraph from "../../components/Paragraph/Paragraph";
 
 function Home() {
+  const contactRef = useRef<HTMLDivElement>(null);
   return (
     <>
       <section className="about">
@@ -181,7 +184,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="contact">
+      <section className="contact" id="contact">
         <h3 className="contact__title">Contato</h3>
 
         <p className="contact__text">

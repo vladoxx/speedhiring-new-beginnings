@@ -108,13 +108,14 @@
   left: -24px;
   height: 100vh;
   top: 30px;
+  padding: 0;
 }
 
 .header__ul li {
   margin: 22px 0;
 }
 
-.navbar .menu-items li > a {
+.navbar .menu-items li {
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--branco);
