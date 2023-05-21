@@ -1,0 +1,85 @@
+.personal-information {}
+
+{/* data information */}
+.personal-information__box-data {}
+.personal-information__info-tittle {}
+.personal-information__box_name_image {}
+.personal-information__name {}
+.personal-information__image {}
+.personal-information__box_about_description {}
+.personal-information__about-you-tittle {}
+.personal-information__text-area {}
+.personal-information__box_data-info {}
+.personal-information__data-info-tittle {}
+.personal-information__date-of-birth {}
+.personal-information__nationality {}
+.personal-information__cpf {}
+.personal-information__state {}
+.personal-information__gender {}
+.personal-information__pronoun {}
+.personal-information__sexual-orientation {}
+.personal-information__skin-breed-ethnicity {}
+.personal-information__physical-deficiency {}
+.personal-information__box_address {}
+.personal-information__address-tittle {}
+.personal-information__post-mail {}
+.personal-information__street {}
+.personal-information__neighborhood {}
+.personal-information__city {}
+.personal-information__contact-tittle {}
+.personal-information__email {}
+.personal-information__phone {}
+.personal-information__edit-button {}
+
+   {/* formation */}
+.personal-information__box-formations {}
+.personal-information__formations-tittle {}
+.personal-information__box_info-formations {}
+.personal-information__university {}
+.personal-information__career {}
+.personal-information__graduation {}
+.personal-information__formation-country {}
+.personal-information__formation-data {}
+.personal-information__formation-status {}
+.personal-information__edit-button-formation {}
+        
+{/* professional experience */}
+.personal-information__box-job-experience {}
+.personal-information__job-experience-tittle {}
+.personal-information__box-experiences {}
+.personal-information__job-tittle {}
+.personal-information__job-experience-institution {}
+.personal-information__job-country {}
+.personal-information__job-data {}
+.personal-information__job-responsibilities-description {}
+.personal-information__job-responsibilities-description-textarea {}
+.personal-information__edi-button-job-experience {}
+
+{/* certifications */}
+.personal-information__box-certifications {}
+.personal-information__certification-tittle {}
+.personal-information__box-course-certification {}
+.personal-information__certifications-institution {}
+.personal-information__certifications-course {}
+.personal-information__certifications-country {}
+.personal-information__certifications-data {}
+.personal-information__certification-description {}
+.personal-information__edit-button-certifications {}
+
+{/* languages */}
+.personal-information__language {}
+.personal-information__language-tittle {}
+.personal-information__box-languages {}                   
+.personal-information__language-practiced {}
+.personal-information__language-proficiency {}
+.personal-information__edit-language-button {}
+
+{/* skills */}
+.personal-information__skills {}
+.personal-information__skills-tittle {}
+.personal-information__skills-name {}
+.personal-information__skill-input {}
+.personal-information__skills-add {}
+.personal-information__skill {}
+.personal-information__added-skill {}
+.personal-information__skill-button-home {}
