@@ -3,12 +3,14 @@ import bcrypt from "bcryptjs";
 
 interface ICompany extends Document {
   corporate_name: string;
+  sector: string;
   cnpj: string;
   email: string;
   website?: string;
   address: string;
   phone: string;
   password: string;
+  confirm_password: string;
   receivedCurriculums?: {
     user: Schema.Types.ObjectId;
     curriculum: Schema.Types.ObjectId;
@@ -26,6 +28,11 @@ const companySchema = new Schema(
       require: true,
       trim: true,
       unique: true,
+    },
+    sector: {
+      type: String,
+      require: true,
+      trim: true,
     },
     cnpj: {
       type: String,
@@ -57,6 +64,12 @@ const companySchema = new Schema(
       type: String,
       required: true,
       trim: true,
+    },
+    confirm_password: {
+      type: String,
+      require: true,
+      trim: true,
+      select: false,
     },
     receivedCurriculums: [
       {

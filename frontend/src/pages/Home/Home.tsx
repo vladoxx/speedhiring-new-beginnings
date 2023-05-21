@@ -9,7 +9,6 @@ import Toti from "../../assets/images/icon_logo_toti.png";
 import Caritas from "../../assets/images/pares_caritas.jpg";
 
 import "./Home.css";
-import Paragraph from "../../components/Paragraph/Paragraph";
 
 function Home() {
   return (
@@ -17,21 +16,24 @@ function Home() {
       <section className="about">
         <h3 className="about__title">Sobre</h3>
 
-        <Paragraph
-          text={
-            "O nosso projeto é focado em ajudar imigrantes e refugiados a se inserirem no mercado de trabalho do país. Sabemos que esse processo pode ser difícil e desafiador, e por isso, estamos aqui para auxiliar em cada etapa."
-          }
-        />
+        <p className="about__paragraph">
+          O nosso projeto é focado em ajudar imigrantes e refugiados a se
+          inserirem no mercado de trabalho do país. Sabemos que esse processo
+          pode ser difícil e desafiador, e por isso, estamos aqui para auxiliar
+          em cada etapa.
+        </p>
       </section>
 
       <section className="objective">
         <h3 className="objective__title">Objetivo</h3>
 
-        <Paragraph
-          text={
-            "A nosso objetivo é facilitar a procura por emprego para imigrantes e refugiados, oferecendo informações, ferramentas e oportunidades que permitam a eles se inserirem no mercado de trabalho. Queremos ser um guia para imigrantes que buscam uma vida melhor e mais digna em nosso país."
-          }
-        />
+        <p className="about__paragraph">
+          A nosso objetivo é facilitar a procura por emprego para imigrantes e
+          refugiados, oferecendo informações, ferramentas e oportunidades que
+          permitam a eles se inserirem no mercado de trabalho. Queremos ser um
+          guia para imigrantes que buscam uma vida melhor e mais digna em nosso
+          país.
+        </p>
 
         <p className="objective__paragraph"></p>
 
@@ -181,7 +183,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="contact">
+      <section className="contact" id="contact">
         <h3 className="contact__title">Contato</h3>
 
         <p className="contact__text">
