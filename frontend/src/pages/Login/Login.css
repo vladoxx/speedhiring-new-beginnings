@@ -44,7 +44,7 @@
   letter-spacing: 0.5px;
 }
 
-input[type="submit"] {
+input.login__button {
   width: 200px;
   padding: 0;
   text-align: center;
