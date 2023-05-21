@@ -54,6 +54,9 @@
   }
 }
 
+
+/*--------Tablet-------*/
+
 @media (min-width: 768px) {
   .form {
     display: grid;

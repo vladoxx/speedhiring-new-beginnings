@@ -288,7 +288,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .connection__container:nth-child(3) {
+  .virtues__respect {
     grid-column: 1/3;
     width: 517px;
     place-self: center;

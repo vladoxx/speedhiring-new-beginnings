@@ -15,6 +15,16 @@
   --font-size-h2-mobile: 1.5rem;
   --font-size-h3-mobile: 1.25rem;
   --font-size-p-mobile: 1rem;
+  
+  --font-size-h1-tablet: 1.75rem;
+  --font-size-h2-tablet: 1.5rem;
+  --font-size-h3-tablet: 1.5rem;
+  --font-size-p-tablet: 1.25rem;
+  
+  --font-size-h1-desktop: 1.75rem;
+  --font-size-h2-desktop: 1.5rem;
+  --font-size-h3-desktop: 1.7rem;
+  --font-size-p-desktop: 1.5rem;
 }
 
 * {
