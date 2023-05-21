@@ -42,7 +42,7 @@ function RegisterUser() {
       await userService.updateUser(params.id, user);
     }
 
-    navigate("/login");
+    navigate("/login"); // Após o cadastro, leva para o login
   };
 
   const getUser = async (id: string) => {
