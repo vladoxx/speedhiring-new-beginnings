@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import Logo from "../../assets/images/logo.png";
 
@@ -9,6 +10,9 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const value = "Contato";
 
+  const location = useLocation();
+  const isHome = location.pathname !== "/";
+
   const handleLinkClick = () => {
     const contactSection = document.getElementById("contact");
     const target = event?.target as HTMLElement;
@@ -16,6 +20,7 @@ function Header() {
 
     if (contactSection && value) {
       contactSection.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false);
     } else {
       setMenuOpen(false);
     }
@@ -67,11 +72,19 @@ function Header() {
                       Vagas
                     </Link>
                   </li>
-                  <li>
-                    <Link to={""} onClick={handleLinkClick} data-value={value}>
-                      Contato
-                    </Link>
-                  </li>
+
+                  {isHome ? null : (
+                    <li className={`${value}`}>
+                      <Link
+                        to={""}
+                        onClick={handleLinkClick}
+                        data-value={value}
+                      >
+                        Contato
+                      </Link>
+                    </li>
+                  )}
+
                   <li>
                     <Link
                       className="header__navbar_button"
