@@ -55,6 +55,12 @@
 }
 
 @media (min-width: 768px) {
+  .form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+
   .register-company__title {
     font-size: 1.688rem;
     color: var(--cinza-azulado);
@@ -64,5 +70,9 @@
 
   .register-company__input {
     margin-bottom: 25px;
+  }
+
+  .form > input[type="submit"] {
+    grid-column: 1/3;
   }
 }

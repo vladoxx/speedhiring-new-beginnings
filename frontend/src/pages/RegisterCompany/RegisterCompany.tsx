@@ -1,3 +1,4 @@
+import Input from "../../components/Input/Input";
 import "./RegisterCompany.css";
 
 function RegisterCompany() {
@@ -11,9 +12,10 @@ function RegisterCompany() {
           placeholder="Razão Social*"
           required
         />
+        <Input placeholder="Razão Social*" type="text" />
         <input
           className="register-company__input"
-          type="text"
+          type=""
           placeholder="Sector*"
           required
         />
