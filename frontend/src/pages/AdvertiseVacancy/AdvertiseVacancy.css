@@ -287,36 +287,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-/* Desktop */
-@media (min-width: 1024px) {
-    .advertisement {
-
-    }
-
-    form
-
-    .advertisement__tittle {
-
-    }
-
-    .form {
-
-    }
-
-    .advertisement__input {
-        width: 28.2rem;
-        height: 3.4rem;
-    }
-}
-      
-
