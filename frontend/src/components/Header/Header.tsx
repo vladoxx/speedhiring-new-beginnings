@@ -52,21 +52,26 @@ function Header() {
                 <ul
                   className={`header__ul menu-items ${menuOpen ? "open" : ""}`}
                 >
-                  <li>
-                    <Link to={"/"} onClick={handleLinkClick}>
-                      Início
-                    </Link>
-                  </li>
+                  {!isHome ? null : (
+                    <li>
+                      <Link to={"/"} onClick={handleLinkClick}>
+                        Início
+                      </Link>
+                    </li>
+                  )}
+
                   <li>
                     <Link to={"/register-company"} onClick={handleLinkClick}>
                       Para empresas
                     </Link>
                   </li>
+
                   <li>
                     <Link to={"/register-user"} onClick={handleLinkClick}>
                       Candidato
                     </Link>
                   </li>
+
                   <li>
                     <Link to={"/vacancy"} onClick={handleLinkClick}>
                       Vagas

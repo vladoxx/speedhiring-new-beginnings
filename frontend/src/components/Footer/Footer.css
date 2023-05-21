@@ -55,3 +55,23 @@
     display: none;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .footer__title {
+    font-size: var(--font-size-h2-tablet);
+  }
+
+  .footer_paragraph {
+    font-size: var(--font-size-p-tablet);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footer__title {
+    font-size: var(--font-size-h2-desktop);
+  }
+
+  .footer_paragraph {
+    font-size: var(--font-size-p-desktop);
+  }
+}

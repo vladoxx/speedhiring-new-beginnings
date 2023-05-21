@@ -142,7 +142,7 @@ input[type="checkbox"]:checked ~ .menu-items {
 }
 
 .header_title {
-  font-size: 1.625rem;
+  font-size: var(--font-size-h1-desktop);
   color: var(--roxo-escuro);
   margin: 0 0 0 0.5rem;
 }
