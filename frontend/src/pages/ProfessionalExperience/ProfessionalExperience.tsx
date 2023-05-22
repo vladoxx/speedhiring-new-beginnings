@@ -261,13 +261,13 @@ function ProfessionalExperience() {
           </select>
         </label>
 
-        <label className="professional__site_company">
-          Site da Empresa*
-          <input className="professional__"></input>
-        </label>
         <label className="professional__responsability_description">
           Responsabilidades*
           <textarea className="professional__responsability-textarea"></textarea>
+        </label>
+        <label className="professional__site_company">
+          Site da Empresa*
+          <input className="professional__"></input>
         </label>
 
         <label className="professional__position">
@@ -302,7 +302,7 @@ function ProfessionalExperience() {
           De*
           <input
             className="professional__"
-            type="text"
+            type="date"
             placeholder="01/2011"
             required
           />
@@ -312,14 +312,14 @@ function ProfessionalExperience() {
           Até*
           <input
             className="professional__"
-            type="text"
+            type="date"
             placeholder="01/2013"
             required
           />
         </label>
 
-        <label>
-          <input className="professional__charge" type="checkbox" />
+        <label className="professional__chargue-label">
+          <input className="professional__chargue-input" type="checkbox" />
           Meu cargo atual
         </label>
 
