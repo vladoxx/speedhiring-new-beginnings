@@ -19,7 +19,7 @@
 }
 
 .candidatures__container .candidatures__box_jobs {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .candidatures__role {
@@ -92,10 +92,8 @@
     transition: 0.7s;
 }
 
-
 /* Tablet */
 @media (min-width: 768px) {
-
   .candidatures__tittle {
       font-size: 2rem;
       padding: 4rem;
@@ -126,7 +124,6 @@
 
 /* Desktop */
 @media (min-width: 1024px) {
-
   .candidatures__tittle {
       font-size: 2.5rem;
       padding: 4rem;

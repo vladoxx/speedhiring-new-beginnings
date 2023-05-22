@@ -17,6 +17,15 @@
   color: var(--cinza-azulado);
 }
 
+.about__paragraph {
+  font-size: var(--font-size-p-mobile);
+  color: var(--black);
+  line-height: 1.4;
+  text-align: center;
+  margin-top: 30px;
+  letter-spacing: 0.2px;
+}
+
 .objective__image {
   width: 100%;
   margin-top: 1.625rem;
@@ -67,7 +76,7 @@
 .services__candidate_title {
   text-align: center;
   margin: 1rem 0;
-  font-size: 1.25rem;
+  font-size: var(--font-size-h4-mobile);
 }
 
 .services__companies img,
@@ -106,10 +115,10 @@
   max-width: 310px;
 }
 
-.virtues__inclusion h4,
-.virtues__empathy h4,
-.virtues__respect h4 {
-  font-size: 1.5rem;
+.virtues__inclusion_title,
+.virtues__empathy__title,
+.virtues__respect__title {
+  font-size: var(--font-size-h4-mobile);
   border-bottom: 1px solid #dfe3e5;
   width: 100%;
   text-align: center;
@@ -130,13 +139,13 @@
   color: var(--roxo-escuro);
 }
 
-.virtues__inclusion p,
-.virtues__empathy p,
-.virtues__respect p,
+.virtues__inclusion_paragraph,
+.virtues__empathy_paragraph,
+.virtues__respect_paragraph,
 .partners__list_container p {
   margin-top: 2rem;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: var(--font-size-p-mobile);
   line-height: 28px;
   text-align: center;
   color: var(--cinza-azulado);
@@ -199,6 +208,20 @@
     padding: 0 9rem;
   }
 
+  .about__title,
+  .objective__title,
+  .services__title,
+  .virtues__title,
+  .partners_title,
+  .contact__title,
+  .partners__title {
+    font-size: var(--font-size-h3-tablet);
+  }
+
+  .about__paragraph {
+    font-size: var(--font-size-p-tablet);
+  }
+
   .connection {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -221,13 +244,15 @@
     position: flex;
     text-align: center;
   }
-  .services__companies_title .services__candidate_title {
+
+  .services__companies_title,
+  .services__candidate_title {
+    font-size: var(--font-size-h4-tablet);
     margin-bottom: 35px;
   }
 
   .contact__text {
-    margin-left: 20%;
-    margin-right: 20%;
+    font-size: var(--font-size-p-tablet);
   }
 
   .virtues__respect {
@@ -238,6 +263,19 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
+  }
+
+  .virtues__inclusion_title,
+  .virtues__empathy__title,
+  .virtues__respect__title {
+    font-size: var(--font-size-h4-tablet);
+  }
+
+  .virtues__inclusion_paragraph,
+  .virtues__empathy_paragraph,
+  .virtues__respect_paragraph,
+  .partners__list_container p {
+    font-size: var(--font-size-p-tablet);
   }
 
   .partners__list {
@@ -254,18 +292,6 @@
 
 /*------ Desktop ---------*/
 @media only screen and (min-width: 1024px) {
-  .about,
-  .objective {
-    margin-top: 3.75rem;
-    padding: 0 1.5rem;
-    font-size: 10rem;
-    text-align: center;
-  }
-
-  .objective {
-    margin-top: 2rem;
-  }
-
   .about__title,
   .objective__title,
   .services__title,
@@ -273,12 +299,22 @@
   .partners_title,
   .contact__title,
   .partners__title {
-    font-size: 38px;
+    font-size: var(--font-size-h3-desktop);
+  }
+
+  .about__paragraph {
+    font-size: var(--font-size-p-desktop);
+  }
+
+  .objective {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .objective__image {
     width: 70%;
-    margin: 4rem 0 0 0;
+    margin: 4rem 0;
     padding-bottom: 2rem;
     border-radius: 60px;
   }
@@ -288,10 +324,23 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .connection__container:nth-child(3) {
+  .virtues__respect {
     grid-column: 1/3;
     width: 517px;
     place-self: center;
+  }
+
+  .virtues__inclusion_title,
+  .virtues__empathy__title,
+  .virtues__respect__title {
+    font-size: var(--font-size-h4-desktop);
+  }
+
+  .virtues__inclusion_paragraph,
+  .virtues__empathy_paragraph,
+  .virtues__respect_paragraph,
+  .partners__list_container p {
+    font-size: var(--font-size-p-desktop);
   }
 
   .connection__container {
@@ -311,9 +360,13 @@
     margin-bottom: 0.5rem;
   }
 
+  .connection__container:nth-child(3) {
+    width: 540px;
+  }
+
   .services__companies_title,
   .services__candidate_title {
-    font-size: 1.5rem;
+    font-size: var(--font-size-h4-desktop);
   }
 
   .virtues__container {
@@ -327,5 +380,13 @@
     flex-direction: row;
     justify-content: center;
     gap: 2rem;
+  }
+
+  .partners__list_container:nth-child(3) {
+    margin: unset;
+  }
+
+  .contact__text {
+    font-size: var(--font-size-p-desktop);
   }
 }
