@@ -110,7 +110,7 @@ function Header() {
           </div>
         </div>
         <h2 className="header__subtitle">
-          Solução de empregos para imigrantes e refugiados
+          Solução de emprego para imigrantes e refugiados
         </h2>
         <p className="header__paragraph">
           Ajude imigrantes e refugiados a encontrar empregos e superar as
