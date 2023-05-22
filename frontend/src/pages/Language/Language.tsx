@@ -23,7 +23,7 @@ function Language() {
           Proficiência*
           <select className="languages__proficiency_level" name="proficiencia">
             <option value="basico">Básico</option>
-            <option value="intermediario">Intermêdiario</option>
+            <option value="intermediario">Intermediário</option>
             <option value="avancado">Avançado</option>
             <option value="nativo">Nativo</option>
           </select>
