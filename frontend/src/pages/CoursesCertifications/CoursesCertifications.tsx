@@ -4,7 +4,7 @@ function CoursesCertifications() {
     return (
         <div className="certifications">
             <h3 className="certifications__tittle">Cursos e Cerfiticações</h3>
-            <form>
+            <form className="certifications__form">
                 <label className="certifications__country" htmlFor="">Pais*
                     <select className="certifications__country_select" name="pais">
                         <option value="AF">Afganistán</option>
@@ -253,7 +253,7 @@ function CoursesCertifications() {
                 </label>
 
                 <label className="certifications-institution" htmlFor=""> Institução*
-                    <input className="" type="text" />
+                    <input className="certifications-institution_input" type="text" />
                 </label>
 
                 <label className="certifications__course_tittle" htmlFor=""> Título*
@@ -273,9 +273,9 @@ function CoursesCertifications() {
                 </label>
 
                 <div className="certifications__buttons">
-                    <input className="save_button" type="submit" value="Salvar" />
-                    <input className="certifications__edit_button" type="submit" value="Editar" />
-                    <input className="certifications__delete_button" type="submit" value="Deletar" />
+                    <button className="save_button">Salvar</button>
+                    <button className="certifications__edit_button">Editar</button>
+                    <button className="certifications__delete_button">Deletar</button>
                     <button className="certifications__cancel">Cancelar</button>
                 </div>
             </form>
