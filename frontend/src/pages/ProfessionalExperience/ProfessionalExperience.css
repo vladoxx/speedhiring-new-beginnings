@@ -1,0 +1,53 @@
+.professional__experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+.professional__experience-title {
+  font-size: var(--font-size-h3-mobile);
+  color: var(--cinza-azulado);
+  margin: 0 0 2rem;
+  text-align: center;
+}
+
+.professional__experience-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.professional__experience-form > label {
+  font-size: var(--font-size-p-mobile);
+  color: var(--black);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  margin: 0 0 1rem;
+}
+
+.professional__experience-form label input,
+.professional__experience-form label select {
+  background-color: var(--branco-acinzentado);
+  border-radius: 1rem;
+  border: 1px solid var(--verde-azulado);
+  font-size: var(--font-size-p-mobile);
+  height: 2.5rem;
+  outline: none;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.professional__responsability-textarea {
+  height: 100px;
+  width: 100%;
+  border: 1px solid var(--verde-azulado);
+  border-radius: 1rem;
+  resize: none;
+}
