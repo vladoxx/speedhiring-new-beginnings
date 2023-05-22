@@ -345,14 +345,6 @@
     border-radius: 100%;
 }
 
-.personal-information__added-skill {
-    width: 80px;
-    text-align: center;
-    font-weight: 900;
-    border: 1px solid var(--laranja-escuro);
-    border-radius: 1rem;
-}
-
 .personal-information__box-home-button {
     text-align: center;
     padding: 3rem 0 2rem; 

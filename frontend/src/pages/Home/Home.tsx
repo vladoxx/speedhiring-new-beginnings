@@ -153,7 +153,7 @@ function Home() {
             />
             <h3 className="partner__companie">Toti</h3>
             <p className="partners__companie_description">
-              Startup que forma migrantes e refugiados programação.
+                Startup que forma migrantes e refugiados em programação no Brasil.
             </p>
           </div>
 
@@ -165,7 +165,7 @@ function Home() {
             />
             <h3 className="partner__companie">Usaid</h3>
             <p className="partners__companie_description">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Agência mundial de desenvolvimento internacional, Usaid.
             </p>
           </div>
 
@@ -177,7 +177,7 @@ function Home() {
             />
             <h3 className="partner__companie">Pares CaritasRJ</h3>
             <p className="partners__companie_description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error.
+              Primeiro trabalho sistematizado de atendimento a refugiados no Brasil.
             </p>
           </div>
         </div>

@@ -53,11 +53,13 @@
 
 .candidatures__box_input_job {
   text-align: center;
+  margin-bottom: 0.7rem;
 }
 
 .candidatures__button_job {
   width: 120px;
   height: 25px;
+  font-weight: 500;
   border-radius: 1rem;
   border: none;
   color: var(--branco);

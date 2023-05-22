@@ -181,7 +181,8 @@ function PersonalInformation() {
                 <div className="personal-information__box-skills-information">
                     <div className="personal-information__box-skill-input">
                         <input className="personal-information__skill-input" type="text" placeholder="Habilidade"></input>
-                        <button className="personal-information__skills-add-button" type="button">+</button>
+                        <button className="personal-information__skills-add-button">+
+                        </button>
                     </div>
                     <div className="personal-information__skill">
                         <ChipComponent />
