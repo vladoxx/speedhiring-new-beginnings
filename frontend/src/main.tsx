@@ -24,6 +24,7 @@ import Formation from "./pages/Formation/Formation.tsx";
 import ProfessionalExperience from "./pages/ProfessionalExperience/ProfessionalExperience.tsx";
 import CoursesCertifications from "./pages/CoursesCertifications/CoursesCertifications.tsx";
 import Language from "./pages/Language/Language.tsx";
+import Home from "./pages/Home/Home.tsx";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -31,7 +32,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       <Header />
 
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register-user" element={<RegisterUser />} />
         <Route path="/register-company" element={<RegisterCompany />} />

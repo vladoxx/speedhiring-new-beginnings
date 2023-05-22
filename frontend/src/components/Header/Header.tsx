@@ -9,6 +9,7 @@ import "./Header.css";
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const value = "Contato";
+  const isLogged = false;
 
   const location = useLocation();
   const isHome = location.pathname !== "/";
@@ -91,13 +92,23 @@ function Header() {
                   )}
 
                   <li>
-                    <Link
-                      className="header__navbar_button"
-                      to={"/login"}
-                      onClick={handleLinkClick}
-                    >
-                      Login
-                    </Link>
+                    {isLogged ? (
+                      <Link
+                        className="header__navbar_button"
+                        to={"/logout"}
+                        onClick={handleLinkClick}
+                      >
+                        Logout
+                      </Link>
+                    ) : (
+                      <Link
+                        className="header__navbar_button"
+                        to={"/login"}
+                        onClick={handleLinkClick}
+                      >
+                        Login
+                      </Link>
+                    )}
                   </li>
                 </ul>
               </div>

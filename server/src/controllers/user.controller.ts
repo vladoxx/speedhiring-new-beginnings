@@ -26,23 +26,23 @@ export const createUser: RequestHandler = async (req, res) => {
   }
 
   if (!name) {
-    return res.status(422).json({ msg: "Nome obrigatório" });
+    return res.status(422).json({ message: "Nome obrigatório" });
   }
 
   if (!phone) {
-    return res.status(422).json({ msg: "Telefone obrigatório" });
+    return res.status(422).json({ message: "Telefone obrigatório" });
   }
 
   if (!address) {
-    return res.status(422).json({ msg: "Endereço obrigatório" });
+    return res.status(422).json({ message: "Endereço obrigatório" });
   }
 
   if (!password) {
-    return res.status(422).json({ msg: "Senha obrigatória" });
+    return res.status(422).json({ message: "Senha obrigatória" });
   }
 
   if (password !== confirm_password) {
-    return res.status(422).json({ msg: "As senhas não conferem" });
+    return res.status(422).json({ message: "As senhas não conferem" });
   }
 
   console.log(req.body);
@@ -61,11 +61,11 @@ export const loginUser: RequestHandler = async (req, res) => {
   const user = await User.findOne({ email }).select("+password"); // adiciona o campo password
 
   if (!user) {
-    return res.status(400).json({ msg: "Usuário não encontrado" });
+    return res.status(400).json({ message: "Usuário não encontrado" });
   }
 
   if (!(await bcrypt.compare(password, user.password || ""))) {
-    return res.status(400).send({ msj: "Senha inválida" });
+    return res.status(400).send({ message: "Senha inválida" });
   }
 
   user.password = undefined; // remover o campo password do objeto saveUser antes de enviar a resposta
