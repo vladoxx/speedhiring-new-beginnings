@@ -1,0 +1,169 @@
+.certifications {
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.certifications__tittle {
+    font-size: 1.20rem;
+    text-transform: uppercase;
+    color: var(--cinza-azulado);
+    margin: 1rem 0 2rem;
+}
+
+textarea,
+select,
+input {
+    width: 90%;
+    height: 2.813rem;
+    padding: 0 0 0 1rem;
+    margin-bottom: 1.563rem;
+    margin-left: 5%;
+    border-radius: 1rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: var(--branco-acinzentado);
+    border: 1px solid var(--verde-azulado);
+    align-items: center;
+    /* flex-direction: column; */
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--cinza-escuro);
+}
+
+
+label {
+    margin-left: 2rem;
+    font-weight: 500;
+}
+
+.certifications__description-textarea {
+    height: 150px;
+    resize: none;
+    padding-top: 15px;
+    color: var(--cinza-escuro);
+}
+
+/* ~~~~~~~~~~~~~~botoes~~~~~~~~~~~~~~ */
+
+.certifications__buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0 0;
+    gap: 1rem;
+}
+
+.save_button,
+.certifications__edit_button,
+.certifications__delete_button,
+.certifications__cancel,
+.btn {
+    min-width: 107px;
+    min-height: 40px;
+    border: 1px solid var(--branco);
+    border-radius: 1rem;
+    color: var(--branco);
+    font-size: var(--font-size-p-mobile);
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.save_button {
+    background-color: var(--laranja-escuro);
+}
+
+.certifications__edit_button {
+    background-color: var(--verde-azulado);
+}
+
+.certifications__delete_button {
+    background-color: #f50707;
+}
+
+.certifications__cancel {
+    background: unset;
+    color: var(--roxo-escuro);
+}
+
+@media only screen and (min-width: 768px) {
+    .certifications__tittle {
+        font-size: var(--font-size-h3-tablet);
+    }
+    label{
+        font-size: var(--font-size-p-desktop);
+    }
+
+    .certifications__form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        justify-items: center;
+        gap: 1rem;
+    }
+
+    .certifications__form>label>select,
+    .certifications-institution_input {
+        margin: 0;
+        font-size: var(--font-size-p-tablet);
+    }
+
+    .certifications__description {
+        grid-column: 1/3;
+        max-width: 310px;
+    }
+
+    .save_button,
+    .certifications__edit_button,
+    .certifications__delete_button,
+    .certifications__cancel,
+    .btn {
+        font-size: var(--font-size-p-tablet);
+    }
+
+    .certifications__form {
+        grid-template-rows: repeat(3, 1fr);
+       justify-content: center;
+       
+    }
+
+    .certifications__buttons {
+        grid-column: 1/3;
+    }
+
+    textarea,
+    select,
+    input {
+        width: 292px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .certifications__tittle {
+        font-size: var(--font-size-h3-desktop);
+    }
+
+    .certifications__form {
+        width: 70%;
+    }
+
+
+    .certifications__form>label>select,
+    .certifications-institution_input {
+        font-size: var(--font-size-p-desktop);
+    }
+
+    .save_button,
+    .certifications__edit_button,
+    .certifications__delete_button,
+    .certifications__cancel,
+    .btn {
+        font-size: var(--font-size-p-desktop);
+    }
+
+
+}
