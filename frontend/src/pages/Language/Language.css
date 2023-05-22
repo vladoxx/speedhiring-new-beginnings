@@ -1,0 +1,63 @@
+.languages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem;
+}
+
+.languages__title {
+  font-size: var(--font-size-h3-mobile);
+  text-transform: uppercase;
+  color: var(--cinza-azulado);
+  margin: 0 0 2rem;
+}
+
+.languages__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.languages__select,
+.languages__proficiency {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-p-mobile);
+  color: var(--black);
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+
+.languages__select_idioma,
+.languages__proficiency_level {
+  min-width: 270px;
+  height: 40px;
+  border-radius: 1rem;
+  background-color: var(--branco-acinzentado);
+  border: 1px solid var(--verde-azulado);
+  padding: 0 1rem;
+  outline: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .languages__title {
+    font-size: var(--font-size-h3-tablet);
+  }
+
+  .languages__select,
+  .languages__proficiency {
+    font-size: var(--font-size-p-tablet);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .languages__title {
+    font-size: var(--font-size-h3-desktop);
+  }
+
+  .languages__select,
+  .languages__proficiency {
+    font-size: var(--font-size-p-desktop);
+  }
+}

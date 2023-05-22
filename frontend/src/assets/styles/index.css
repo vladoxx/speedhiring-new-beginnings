@@ -11,10 +11,30 @@
   --branco-acinzentado: #e4e4e4;
 
   --font-family: "Montserrat", sans-serif;
-  --font-size-h1-mobile: 1.625rem;
-  --font-size-h2-mobile: 1.5rem;
-  --font-size-h3-mobile: 1.25rem;
-  --font-size-p-mobile: 1rem;
+
+  --font-size-h1-mobile: 1.5rem; /* 24px */
+  --font-size-h2-mobile: 1.25rem; /* 20px */
+  --font-size-h3-mobile: 1.125rem; /* 18px */
+  --font-size-h4-mobile: 1rem; /* 16px */
+  --font-size-p-mobile: 0.875rem; /* 14px */
+  --placeholder-mobile: 0.875rem; /* 14px */
+  --span-mobile: 0.75rem; /* 12px */
+
+  --font-size-h1-tablet: 2rem; /* 32px */
+  --font-size-h2-tablet: 1.5rem; /* 24px */
+  --font-size-h3-tablet: 1.25rem; /* 20px */
+  --font-size-h4-tablet: 1.125rem; /* 18px */
+  --font-size-p-tablet: 1rem; /* 16px */
+  --placeholder-tablet: 1rem; /* 16px */
+  --span-tablet: 0.875; /* 14px */
+
+  --font-size-h1-desktop: 2.5rem; /* 40px */
+  --font-size-h2-desktop: 2rem; /* 32px */
+  --font-size-h3-desktop: 1.5rem; /* 24px */
+  --font-size-h4-desktop: 1.25rem; /* 20px */
+  --font-size-p-desktop: 1.125rem; /* 18px */
+  --placeholder-desktop: 1.125rem; /* 18px */
+  --span-desktop: 1rem; /* 16px */
 }
 
 * {
@@ -24,6 +44,6 @@
 }
 
 body {
-  font-size: 16px;
   font-family: var(--font-family);
+  font-size: 16px;
 }

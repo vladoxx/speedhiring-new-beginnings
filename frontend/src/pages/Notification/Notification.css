@@ -1,0 +1,62 @@
+.notification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem;
+}
+
+.notification__title {
+  font-size: var(--font-size-h3-mobile);
+  color: var(--cinza-azulado);
+  text-transform: uppercase;
+  margin: 0 0 2rem;
+}
+
+.notification__message {
+  font-size: var(--font-size-p-mobile);
+  align-self: self-start;
+  color: var(--cinza-azulado);
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0 0 0.5rem;
+}
+
+.notification__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.notification__form label {
+  font-size: var(--font-size-p-mobile);
+  cursor: pointer;
+  user-select: none;
+}
+
+.notification__form label input {
+  margin: 0 1rem 0 0;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+@media only screen and (min-width: 768px) {
+  .notification__title {
+    font-size: var(--font-size-h3-tablet);
+  }
+
+  .notification__message,
+  .notification__form label {
+    font-size: var(--font-size-p-tablet);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .notification__title {
+    font-size: var(--font-size-h3-desktop);
+  }
+
+  .notification__message,
+  .notification__form label {
+    font-size: var(--font-size-p-tablet);
+  }
+}
