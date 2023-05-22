@@ -2,11 +2,12 @@ import Objetivo from "../../assets/images/objetivo1.jpg";
 import Conexao from "../../assets/images/conexao.png";
 import Empresas from "../../assets/images/empresas.png";
 import Migrantes from "../../assets/images/migrantes.png";
-import Candidato from "../../assets/images/cadastro_candidato.png";
-import Empresa from "../../assets/images/cadastro_empresa.png";
 import Usaid from "../../assets/images/New-USAID-logo.jpg";
 import Toti from "../../assets/images/icon_logo_toti.png";
 import Caritas from "../../assets/images/pares_caritas.jpg";
+import CadastroUser from "../../assets/images/candidata.png"
+import Recrutadores from "../../assets/images/trabajadores.png"
+
 
 import "./Home.css";
 
@@ -95,7 +96,7 @@ function Home() {
             <h4 className="services__companies_title">Para empresas</h4>
             <img
               className="services__companies_image"
-              src={Empresa}
+              src={Recrutadores}
               alt="Imagem Cumprimento"
             />
           </div>
@@ -104,7 +105,7 @@ function Home() {
             <h4 className="services__candidate_title">Para candidatos</h4>
             <img
               className="services__candidate_image"
-              src={Candidato}
+              src={CadastroUser}
               alt="Imagem de Usuário"
             />
           </div>
