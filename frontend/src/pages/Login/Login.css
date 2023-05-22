@@ -36,7 +36,7 @@
 }
 
 .login__forgot_password {
-  font-size: 0.875rem;
+  font-size: var(--span-mobile);
   margin: 6px 0 3rem;
   align-self: flex-end;
   line-height: 1.563rem;
@@ -59,7 +59,7 @@ input.login__button {
 }
 
 .login__register {
-  font-size: 0.875rem;
+  font-size: var(--font-size-p-mobile);
   color: var(--cinza-escuro);
 }
 
@@ -75,11 +75,7 @@ input.login__button {
   }
 
   .login__title {
-    font-size: 1.688rem;
-  }
-
-  .login__register {
-    padding-top: px;
+    font-size: var(--font-size-h2-tablet);
   }
 
   .login__input_email {
@@ -87,11 +83,26 @@ input.login__button {
   }
 
   .login__forgot_password {
-    font-size: 1rem;
+    font-size: var(--span-tablet);
     cursor: pointer;
   }
 
   .login__register {
     font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .login__title {
+    font-size: var(--font-size-h2-desktop);
+  }
+
+  .login__forgot_password {
+    font-size: var(--span-desktop);
+    cursor: pointer;
+  }
+
+  .login__register {
+    font-size: var(--font-size-p-desktop);
   }
 }
