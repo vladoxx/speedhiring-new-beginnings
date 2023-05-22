@@ -19,7 +19,7 @@
 }
 
 .candidatures__container .candidatures__box_jobs {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .candidatures__role {
@@ -46,8 +46,8 @@
 }
 
 .candidatures__box_jobs:hover {
-    background-color: var(--roxo-escuro);
-    color: var(--branco);
+  background-color: var(--roxo-escuro);
+  color: var(--branco);
 }
 
 .candidatures__box_input_job {
@@ -64,8 +64,8 @@
 }
 
 .candidatures__button_job:hover {
-    background-color: var(--laranja-claro);
-    color: black;
+  background-color: var(--laranja-claro);
+  color: black;
 }
 
 .candidatures__box_input_home {
@@ -85,57 +85,54 @@
 }
 
 .candidatures__button_home:hover {
-    background-color: var(--laranja-claro);
-    color: black;
+  background-color: var(--laranja-claro);
+  color: black;
 }
-
 
 /* Tablet */
 @media (min-width: 768px) {
-
   .candidatures__tittle {
-      font-size: 2rem;
-      padding: 4rem;
-    }
-    
-    .candidatures__container {
-      flex-direction: row;
-      justify-content: space-evenly;
-    }
-    
-    .candidatures__box_jobs {
-      width: 36%;
-    }
-    
-    .candidatures__container .candidatures__box_jobs {
-        margin-bottom: 3rem;
-    }
-    
-    .candidatures__box_input_home {
-      margin: 0.5rem 0 3rem;
-    }
+    font-size: 2rem;
+    padding: 4rem;
+  }
+
+  .candidatures__container {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .candidatures__box_jobs {
+    width: 36%;
+  }
+
+  .candidatures__container .candidatures__box_jobs {
+    margin-bottom: 3rem;
+  }
+
+  .candidatures__box_input_home {
+    margin: 0.5rem 0 3rem;
+  }
 }
 
 /* Desktop */
 @media (min-width: 1024px) {
-
   .candidatures__tittle {
-      font-size: 2.5rem;
-      padding: 4rem;
-    }
-    
-    .candidatures__container {
-      flex-direction: row;
-      justify-content: space-evenly;
-    }
-    
-    .candidatures__box_jobs {
-      width: 30%;
-    }
-    
-    .candidatures__box_input_home {
-      margin: 0.5rem 0 3rem;
-    }
+    font-size: 2.5rem;
+    padding: 4rem;
+  }
+
+  .candidatures__container {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .candidatures__box_jobs {
+    width: 30%;
+  }
+
+  .candidatures__box_input_home {
+    margin: 0.5rem 0 3rem;
+  }
 }
 
 @media (min-width: 1115px) {
