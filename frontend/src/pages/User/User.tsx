@@ -21,7 +21,7 @@ function User() {
         </Link>
 
         <Link className="user__buttons" to={"/vacancy"}>
-          Area de Vagas
+          Área de Vagas
         </Link>
       </div>
     </div>
