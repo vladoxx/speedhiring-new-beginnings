@@ -77,11 +77,16 @@
   margin-bottom: 1rem;
 }
 
+.services__container a {
+  text-decoration: none;
+}
+
 .services__companies_title,
 .services__candidate_title {
   text-align: center;
   margin: 1rem 0;
   font-size: var(--font-size-h4-mobile);
+  color: var(--black);
 }
 
 .services__companies img,
