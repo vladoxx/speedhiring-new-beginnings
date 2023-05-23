@@ -72,7 +72,7 @@ function LoginCompany() {
           type="text"
           name="cnpj"
           onChange={handleInputChangeLogin}
-          value={companyLogin.email}
+          value={companyLogin.cnpj}
           placeholder="CNPJ"
           required
         />
@@ -90,9 +90,7 @@ function LoginCompany() {
         <span className="login__forgot_password">Esqueceu sua senha?</span>
 
         {loginSucess && (
-          <span className="login__forgot_erro">
-            {/* E-mail/CNPJ e Senha inválidos */}
-          </span>
+          <span className="login__forgot_erro">{loginSucess}</span>
         )}
 
         <button className="login__button" type="submit">
