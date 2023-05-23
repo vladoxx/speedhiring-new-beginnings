@@ -241,6 +241,25 @@ input[type="checkbox"]:checked ~ .menu-items {
     justify-content: center;
     border: 1px solid var(--branco);
   }
+
+  .logout {
+    border-radius: 16px;
+    background-color: red;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    display: inline-block;
+    width: 120px;
+    height: 36px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--branco);
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--branco);
+  }
 }
 
 /* Desktop */

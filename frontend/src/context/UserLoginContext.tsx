@@ -1,8 +1,20 @@
-// import React, { createContext, useContext } from "react";
+import { createContext, useState } from "react";
 
-// import { UserProps } from "../@types/user";
+import { UserContextProps, UserContextProviderProps } from "../@types/user";
 
-// type userLoginContextProvidarProps {
-// }
+const UserContext = createContext<UserContextProps>({
+  jwt: "",
+  setJwt: () => {},
+});
 
-export const UserLoginContextProvider = () => {};
+export function UserContextProvider({ children }: UserContextProviderProps) {
+  const [jwt, setJwt] = useState<any>(null);
+
+  return (
+    <UserContext.Provider value={{ jwt, setJwt }}>
+      {children}
+    </UserContext.Provider>
+  );
+}
+
+export default UserContext;

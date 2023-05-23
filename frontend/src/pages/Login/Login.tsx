@@ -1,17 +1,22 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { UserProps } from "../../@types/user";
 import { InputChange } from "../../@types/general";
 
+import useUser from "../../hooks/useUser";
+
 import * as loginService from "../../service/LoginService";
 
 import LogoLogin from "../../assets/images/logo-login.png";
+
 import "./Login.css";
 
 function Login() {
   let navigate = useNavigate();
   let params = useParams();
+
+  const { login, isLoggedIn } = useUser();
 
   const initialStateLogin = {
     email: "",
@@ -33,8 +38,14 @@ function Login() {
       setUserLogin(initialStateLogin);
     }
 
-    navigate("/");
+    login();
   };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/");
+    }
+  }, [isLoggedIn, navigate]);
 
   return (
     <div className="login">
