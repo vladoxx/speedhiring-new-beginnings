@@ -68,10 +68,13 @@ function Header() {
                     </li>
                   )}
 
-                  <li>
-                    <Link to={"/register-company"} onClick={handleLinkClick}>
-                      Para empresas
-                    </Link>
+                  <li className="dropdown">
+                    Para empresas
+                    <div className="dropdown-content">
+                      <Link to={"/register-company"} onClick={handleLinkClick}>
+                        Cadastrar
+                      </Link>
+                    </div>
                   </li>
 
                   <li>

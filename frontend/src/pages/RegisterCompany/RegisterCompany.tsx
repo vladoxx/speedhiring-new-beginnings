@@ -89,7 +89,7 @@ function RegisterCompany() {
       <h3 className="register-company__title">Cadastro da Empresa</h3>
 
       <form
-        className="form"
+        className="register__form"
         onSubmit={handleSubmitCompany}
         action="/register-company"
       >
