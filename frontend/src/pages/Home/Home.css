@@ -236,6 +236,8 @@
 
   .about__paragraph {
     font-size: var(--font-size-p-tablet);
+    padding: 0 10rem;
+
   }
 
   .connection {
@@ -243,6 +245,7 @@
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     gap: 4rem;
+    padding: 3rem 10rem;
   }
 
   .connection__container h4 {
@@ -251,6 +254,8 @@
 
   .connection__container p {
     font-size: var(--font-size-p-tablet);
+    padding: 0 9rem;
+
   }
 
   .connection__container:nth-child(3) {
@@ -278,6 +283,7 @@
 
   .contact__text {
     font-size: var(--font-size-p-tablet);
+    padding: 3rem 16rem;
   }
 
   .virtues__respect {
