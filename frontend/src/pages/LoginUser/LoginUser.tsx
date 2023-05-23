@@ -90,7 +90,9 @@ function LoginUser() {
 
         <span className="login__forgot_password">Esqueceu sua senha?</span>
 
-        {loginSucess && <span className="login__forgot_erro"></span>}
+        {loginSucess && (
+          <span className="login__forgot_erro">{loginSucess}</span>
+        )}
 
         <button className="login__button" type="submit">
           Login
