@@ -41,7 +41,7 @@ function RegisterCompany() {
       setCompany(initialStateCompany);
     }
 
-    navigate("/login");
+    navigate("/login-company");
   };
 
   const getCompany = async (id: string) => {
