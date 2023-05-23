@@ -10,13 +10,13 @@ import * as loginService from "../../service/LoginService";
 
 import LogoLogin from "../../assets/images/logo-login.png";
 
-import "./Login.css";
+import "./LoginUser.css";
 
-function Login() {
+function LoginUser() {
   let navigate = useNavigate();
   let params = useParams();
 
-  const { login, isLoggedIn } = useUser();
+  const { loginUser, isLoggedInUser } = useUser();
 
   const initialStateLogin = {
     email: "",
@@ -24,6 +24,7 @@ function Login() {
   };
 
   const [userLogin, setUserLogin] = useState<UserProps>(initialStateLogin);
+  const [loginSucess, setLoginSucess] = useState("");
 
   const handleInputChangeLogin = (e: InputChange) => {
     setUserLogin({ ...userLogin, [e.target.name]: e.target.value });
@@ -33,19 +34,28 @@ function Login() {
     e.preventDefault();
 
     if (!params.id) {
-      await loginService.loginUser(userLogin);
+      try {
+        const resLogin = await loginService.loginUser(userLogin);
 
-      setUserLogin(initialStateLogin);
+        loginUser(resLogin.data.token);
+
+        setUserLogin(initialStateLogin);
+      } catch (error: any) {
+        const errorMessage =
+          error.response?.data?.message || "Erro desconhecido";
+
+        console.log("Erro de login:", errorMessage);
+
+        setLoginSucess(errorMessage);
+      }
     }
-
-    login();
   };
 
   useEffect(() => {
-    if (isLoggedIn) {
-      navigate("/");
+    if (isLoggedInUser) {
+      navigate("/user");
     }
-  }, [isLoggedIn, navigate]);
+  }, [isLoggedInUser, navigate]);
 
   return (
     <div className="login">
@@ -56,7 +66,7 @@ function Login() {
       <form
         className="login__form"
         onSubmit={handleSubmitLogin}
-        action="/login"
+        action="/login-user"
       >
         <input
           className="login__input_email"
@@ -64,7 +74,7 @@ function Login() {
           name="email"
           onChange={handleInputChangeLogin}
           value={userLogin.email}
-          placeholder="E-mail/CNPJ"
+          placeholder="E-mail"
           required
         />
 
@@ -79,6 +89,8 @@ function Login() {
         />
 
         <span className="login__forgot_password">Esqueceu sua senha?</span>
+
+        {loginSucess && <span className="login__forgot_erro"></span>}
 
         <button className="login__button" type="submit">
           Login
@@ -95,4 +107,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginUser;

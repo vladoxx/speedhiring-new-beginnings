@@ -12,7 +12,7 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const value = "Contato";
 
-  const { isLoggedIn, logout } = useUser();
+  const { isLoggedInUser, logoutUser } = useUser();
 
   const location = useLocation();
   const isHome = location.pathname !== "/";
@@ -35,7 +35,7 @@ function Header() {
   };
 
   const handleLinkClickLogout = () => {
-    logout();
+    logoutUser();
   };
 
   return (
@@ -68,16 +68,22 @@ function Header() {
                     </li>
                   )}
 
-                  <li>
-                    <Link to={"/register-company"} onClick={handleLinkClick}>
-                      Para empresas
-                    </Link>
+                  <li className="dropdown">
+                    Para empresas
+                    <div className="dropdown-content">
+                      <Link to={"/register-company"} onClick={handleLinkClick}>
+                        Cadastrar
+                      </Link>
+                    </div>
                   </li>
 
-                  <li>
-                    <Link to={"/register-user"} onClick={handleLinkClick}>
-                      Candidato
-                    </Link>
+                  <li className="dropdown">
+                    Candidato
+                    <div className="dropdown-content">
+                      <Link to={"/register-user"} onClick={handleLinkClick}>
+                        Cadastrar
+                      </Link>
+                    </div>
                   </li>
 
                   <li>
@@ -99,10 +105,10 @@ function Header() {
                   )}
 
                   <li>
-                    {isLoggedIn ? (
+                    {isLoggedInUser ? (
                       <button
                         className={`${
-                          !isLoggedIn ? "header__navbar_button" : "logout"
+                          !isLoggedInUser ? "header__navbar_button" : "logout"
                         }`}
                         onClick={handleLinkClickLogout}
                       >
@@ -111,7 +117,7 @@ function Header() {
                     ) : (
                       <Link
                         className="header__navbar_button"
-                        to={"/login"}
+                        to={"/general-login"}
                         onClick={handleLinkClick}
                       >
                         Login
@@ -122,15 +128,18 @@ function Header() {
               </div>
             </div>
           </nav>
+
           <div className="header__div">
             <img className="header__img" src={Logo} />
 
             <h1 className="header_title">New Beginnings</h1>
           </div>
         </div>
+
         <h2 className="header__subtitle">
           Solução de emprego para imigrantes e refugiados
         </h2>
+
         <p className="header__paragraph">
           Ajude imigrantes e refugiados a encontrar empregos e superar as
           barreiras que muitas vezes impedem a integração no mercado de
