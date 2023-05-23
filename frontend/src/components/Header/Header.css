@@ -244,7 +244,7 @@ input[type="checkbox"]:checked ~ .menu-items {
 
   .logout {
     border-radius: 16px;
-    background-color: red;
+    background-color: #ff0000;
     cursor: pointer;
     transition: all 0.3s ease;
     outline: none;
@@ -318,5 +318,9 @@ input[type="checkbox"]:checked ~ .menu-items {
     justify-content: center;
     border: 1px solid var(--branco);
     margin: 0 2rem 0 0.7rem;
+  }
+
+  .logout:hover {
+    background-color: #f78585;
   }
 }
