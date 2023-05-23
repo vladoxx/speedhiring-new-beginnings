@@ -117,7 +117,7 @@ function Header() {
                     ) : (
                       <Link
                         className="header__navbar_button"
-                        to={"/login"}
+                        to={"/general-login"}
                         onClick={handleLinkClick}
                       >
                         Login

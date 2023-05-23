@@ -96,6 +96,11 @@
   max-height: 16.813rem;
   border-radius: 1rem;
   margin-bottom: 3.125rem;
+  object-fit: cover;
+}
+
+.services__candidate img {
+  object-position: 0 15%;
 }
 
 .virtues {
@@ -262,10 +267,10 @@
     margin: 3rem 0;
   }
 
-  .services__companies_image,
-  .services__candidate_image {
-    position: flex;
-    text-align: center;
+  .services__companies img,
+  .services__candidate img {
+    margin: 0;
+    height: 200px;
   }
 
   .services__companies_title,
