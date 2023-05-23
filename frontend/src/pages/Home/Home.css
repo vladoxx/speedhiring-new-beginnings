@@ -71,6 +71,9 @@
   margin-top: 2rem;
   padding: 1.5rem;
 }
+.services__title{
+  margin-bottom: 1rem;
+}
 
 .services__companies_title,
 .services__candidate_title {
@@ -82,8 +85,12 @@
 .services__companies img,
 .services__candidate img {
   width: 100%;
-  max-height: 269px;
+  height: 100%;
+  max-height: 16.813rem;
+  border-radius: 1rem;
+  margin-bottom: 3.125rem;
 }
+
 
 .virtues {
   background-color: var(--branco-acinzentado);
@@ -240,7 +247,8 @@
     margin: 3rem 0;
   }
 
-  .services__companies_image .services__candidate_image {
+  .services__companies_image,
+  .services__candidate_image {
     position: flex;
     text-align: center;
   }

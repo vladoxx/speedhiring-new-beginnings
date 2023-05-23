@@ -44,12 +44,12 @@ function Candidatures() {
         </div>
       </div>
 
-        <div className="candidatures__box_input_home">
-          <input
+        <div className="candidatures__box_button_home">
+          <button
             className="candidatures__button_home"
-            type="submit"
-            value="Voltar ao Início"
-      />
+            type="button">
+              Voltar ao Início
+          </button>
         </div>
     </div>
   );

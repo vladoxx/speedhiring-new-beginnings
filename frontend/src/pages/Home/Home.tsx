@@ -2,11 +2,12 @@ import Objetivo from "../../assets/images/objetivo1.jpg";
 import Conexao from "../../assets/images/conexao.png";
 import Empresas from "../../assets/images/empresas.png";
 import Migrantes from "../../assets/images/migrantes.png";
-import Candidato from "../../assets/images/cadastro_candidato.png";
-import Empresa from "../../assets/images/cadastro_empresa.png";
 import Usaid from "../../assets/images/New-USAID-logo.jpg";
 import Toti from "../../assets/images/icon_logo_toti.png";
 import Caritas from "../../assets/images/pares_caritas.jpg";
+import CadastroUser from "../../assets/images/candidata.png"
+import Recrutadores from "../../assets/images/trabajadores.png"
+
 
 import "./Home.css";
 
@@ -95,7 +96,7 @@ function Home() {
             <h4 className="services__companies_title">Para empresas</h4>
             <img
               className="services__companies_image"
-              src={Empresa}
+              src={Recrutadores}
               alt="Imagem Cumprimento"
             />
           </div>
@@ -104,7 +105,7 @@ function Home() {
             <h4 className="services__candidate_title">Para candidatos</h4>
             <img
               className="services__candidate_image"
-              src={Candidato}
+              src={CadastroUser}
               alt="Imagem de Usuário"
             />
           </div>
@@ -153,7 +154,7 @@ function Home() {
             />
             <h3 className="partner__companie">Toti</h3>
             <p className="partners__companie_description">
-              Startup que forma migrantes e refugiados programação.
+                Startup que forma migrantes e refugiados em programação no Brasil.
             </p>
           </div>
 
@@ -165,7 +166,7 @@ function Home() {
             />
             <h3 className="partner__companie">Usaid</h3>
             <p className="partners__companie_description">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Agência mundial de desenvolvimento internacional, Usaid.
             </p>
           </div>
 
@@ -177,7 +178,7 @@ function Home() {
             />
             <h3 className="partner__companie">Pares CaritasRJ</h3>
             <p className="partners__companie_description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error.
+              Primeiro trabalho sistematizado de atendimento a refugiados no Brasil.
             </p>
           </div>
         </div>
