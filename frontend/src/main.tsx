@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { UserContextProvider } from "./context/UserLoginContext.tsx";
-import Login from "./pages/Login/Login.tsx";
 import Header from "./components/Header/Header.tsx";
 import Footer from "./components/Footer/Footer.tsx";
 
@@ -26,6 +25,8 @@ import CoursesCertifications from "./pages/CoursesCertifications/CoursesCertific
 import Language from "./pages/Language/Language.tsx";
 import Home from "./pages/Home/Home.tsx";
 import GeneralLogin from "./pages/GeneralLogin/GeneralLogin.tsx";
+import LoginUser from "./pages/LoginUser/LoginUser.tsx";
+import LoginCompany from "./pages/LoginCompany/LoginCompany.tsx";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -40,7 +41,8 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
           <Route path="/candidatures" element={<Candidatures />} />
           <Route path="/change-password" element={<ChangePassword />} />
           <Route path="/description-vacancy" element={<DescriptionVacancy />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login-user" element={<LoginUser />} />
+          <Route path="/login-company" element={<LoginCompany />} />
           <Route path="/general-login" element={<GeneralLogin />} />
           <Route path="/notification" element={<Notification />} />
           <Route path="/register-user" element={<RegisterUser />} />

@@ -12,7 +12,7 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const value = "Contato";
 
-  const { isLoggedIn, logout } = useUser();
+  const { isLoggedInUser, logoutUser } = useUser();
 
   const location = useLocation();
   const isHome = location.pathname !== "/";
@@ -35,7 +35,7 @@ function Header() {
   };
 
   const handleLinkClickLogout = () => {
-    logout();
+    logoutUser();
   };
 
   return (
@@ -105,10 +105,10 @@ function Header() {
                   )}
 
                   <li>
-                    {isLoggedIn ? (
+                    {isLoggedInUser ? (
                       <button
                         className={`${
-                          !isLoggedIn ? "header__navbar_button" : "logout"
+                          !isLoggedInUser ? "header__navbar_button" : "logout"
                         }`}
                         onClick={handleLinkClickLogout}
                       >

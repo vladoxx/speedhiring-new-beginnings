@@ -4,21 +4,21 @@ import Context from "../context/UserLoginContext";
 function useUser() {
   const { jwt, setJwt } = useContext(Context);
 
-  const login = useCallback(
+  const loginUser = useCallback(
     (userLogin: string) => {
       setJwt(userLogin);
     },
     [setJwt]
   );
 
-  const logout = useCallback(() => {
+  const logoutUser = useCallback(() => {
     setJwt("");
   }, [setJwt]);
 
   return {
-    isLoggedIn: Boolean(jwt),
-    login,
-    logout,
+    isLoggedInUser: Boolean(jwt),
+    loginUser,
+    logoutUser,
   };
 }
 
