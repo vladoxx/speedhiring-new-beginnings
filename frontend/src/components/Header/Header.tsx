@@ -77,10 +77,13 @@ function Header() {
                     </div>
                   </li>
 
-                  <li>
-                    <Link to={"/register-user"} onClick={handleLinkClick}>
-                      Candidato
-                    </Link>
+                  <li className="dropdown">
+                    Candidato
+                    <div className="dropdown-content">
+                      <Link to={"/register-user"} onClick={handleLinkClick}>
+                        Cadastrar
+                      </Link>
+                    </div>
                   </li>
 
                   <li>
@@ -125,15 +128,18 @@ function Header() {
               </div>
             </div>
           </nav>
+
           <div className="header__div">
             <img className="header__img" src={Logo} />
 
             <h1 className="header_title">New Beginnings</h1>
           </div>
         </div>
+
         <h2 className="header__subtitle">
           Solução de emprego para imigrantes e refugiados
         </h2>
+
         <p className="header__paragraph">
           Ajude imigrantes e refugiados a encontrar empregos e superar as
           barreiras que muitas vezes impedem a integração no mercado de

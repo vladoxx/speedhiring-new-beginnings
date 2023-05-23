@@ -39,8 +39,6 @@ function RegisterCompany() {
       await companyService.createCompany(company);
 
       setCompany(initialStateCompany);
-    } else {
-      await companyService.updateCompany(params.id, company);
     }
 
     navigate("/login");
@@ -136,6 +134,15 @@ function RegisterCompany() {
           onChange={handleInputChangeCompany}
           value={company.phone}
           placeholder="Telefone*"
+          required
+        />
+        <input
+          className="register-company__input"
+          type="email"
+          name="email"
+          onChange={handleInputChangeCompany}
+          value={company.email}
+          placeholder="E-mail*"
           required
         />
         <input

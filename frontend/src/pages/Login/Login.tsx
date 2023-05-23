@@ -44,7 +44,7 @@ function Login() {
         const errorMessage =
           error.response?.data?.message || "Erro desconhecido";
 
-        // console.log("Erro de login:", errorMessage);
+        console.log("Erro de login:", errorMessage);
 
         setLoginSucess(errorMessage);
       }
@@ -53,7 +53,7 @@ function Login() {
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigate("/user");
+      navigate("/");
     }
   }, [isLoggedIn, navigate]);
 
@@ -93,7 +93,6 @@ function Login() {
         {loginSucess && (
           <span className="login__forgot_erro">
             {/* E-mail/CNPJ e Senha inválidos */}
-            {loginSucess}
           </span>
         )}
 
