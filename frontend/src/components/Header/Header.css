@@ -49,7 +49,7 @@
   text-decoration: none;
   color: #fff;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: var(--font-size-p-desktop);
   padding: 0.7rem;
   list-style: none;
 }

@@ -13,17 +13,17 @@
   margin-bottom: 2rem;
 }
 
-.register__form {
+.register__company-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   padding: 0 2rem;
   gap: 1rem;
-  max-width: 75rem;
+  max-width: 60rem;
 }
 
-.register__form > input {
+.register__company-form > input {
   width: 100%;
   height: 40px;
   outline: none;
@@ -50,7 +50,7 @@
 }
 
 @media only screen and (max-width: 320px) {
-  .register__form {
+  .register__company-form {
     padding: 0;
   }
 }
@@ -58,17 +58,21 @@
 /*--------Tablet-------*/
 
 @media only screen and (min-width: 768px) {
-  .register__form {
+  .register-company__title {
+    font-size: var(--font-size-h3-tablet);
+  }
+
+  .register__company-form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
   }
 
-  .register-company__title {
-    font-size: var(--font-size-h3-tablet);
+  .corporate_name {
+    grid-column: 1/3;
   }
 
-  .register__form > input {
+  .register__company-form > input {
     margin: 0;
   }
 
