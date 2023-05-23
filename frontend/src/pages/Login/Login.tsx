@@ -24,6 +24,7 @@ function Login() {
   };
 
   const [userLogin, setUserLogin] = useState<UserProps>(initialStateLogin);
+  const [loginSucess, setLoginSucess] = useState("");
 
   const handleInputChangeLogin = (e: InputChange) => {
     setUserLogin({ ...userLogin, [e.target.name]: e.target.value });
@@ -33,17 +34,26 @@ function Login() {
     e.preventDefault();
 
     if (!params.id) {
-      await loginService.loginUser(userLogin);
+      try {
+        const resLogin = await loginService.loginUser(userLogin);
 
-      setUserLogin(initialStateLogin);
+        login(resLogin.data.token);
+
+        setUserLogin(initialStateLogin);
+      } catch (error: any) {
+        const errorMessage =
+          error.response?.data?.message || "Erro desconhecido";
+
+        // console.log("Erro de login:", errorMessage);
+
+        setLoginSucess(errorMessage);
+      }
     }
-
-    login();
   };
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigate("/");
+      navigate("/user");
     }
   }, [isLoggedIn, navigate]);
 
@@ -79,6 +89,13 @@ function Login() {
         />
 
         <span className="login__forgot_password">Esqueceu sua senha?</span>
+
+        {loginSucess && (
+          <span className="login__forgot_erro">
+            {/* E-mail/CNPJ e Senha inválidos */}
+            {loginSucess}
+          </span>
+        )}
 
         <button className="login__button" type="submit">
           Login
