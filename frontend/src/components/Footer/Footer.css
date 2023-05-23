@@ -63,6 +63,7 @@
 
   .footer_paragraph {
     font-size: var(--font-size-p-tablet);
+    padding: 0 9rem;
   }
 }
 
