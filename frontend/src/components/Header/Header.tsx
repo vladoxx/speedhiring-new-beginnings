@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
+import useUser from "../../hooks/useUser";
+
 import Logo from "../../assets/images/logo.png";
 
 import "./Header.css";
@@ -9,6 +11,8 @@ import "./Header.css";
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const value = "Contato";
+
+  const { isLoggedIn, logout } = useUser();
 
   const location = useLocation();
   const isHome = location.pathname !== "/";
@@ -28,6 +32,10 @@ function Header() {
 
   const handleCheckboxChange = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handleLinkClickLogout = () => {
+    logout();
   };
 
   return (
@@ -91,13 +99,24 @@ function Header() {
                   )}
 
                   <li>
-                    <Link
-                      className="header__navbar_button"
-                      to={"/login"}
-                      onClick={handleLinkClick}
-                    >
-                      Login
-                    </Link>
+                    {isLoggedIn ? (
+                      <button
+                        className={`${
+                          !isLoggedIn ? "header__navbar_button" : "logout"
+                        }`}
+                        onClick={handleLinkClickLogout}
+                      >
+                        Logout
+                      </button>
+                    ) : (
+                      <Link
+                        className="header__navbar_button"
+                        to={"/login"}
+                        onClick={handleLinkClick}
+                      >
+                        Login
+                      </Link>
+                    )}
                   </li>
                 </ul>
               </div>

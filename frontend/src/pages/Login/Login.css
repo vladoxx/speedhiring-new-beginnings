@@ -44,7 +44,9 @@
   letter-spacing: 0.5px;
 }
 
-input.login__button {
+.login__button {
+  border-radius: 1rem;
+  height: 40px;
   width: 200px;
   padding: 0;
   text-align: center;
