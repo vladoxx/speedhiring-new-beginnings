@@ -7,6 +7,7 @@ interface ICompany extends Document {
   cnpj: string;
   email: string;
   website?: string;
+  description_company?: string;
   address: string;
   phone: string;
   password: string;
@@ -50,6 +51,10 @@ const companySchema = new Schema(
       type: String,
       trim: true,
     },
+    description_company: {
+      type: String,
+      trim: true,
+    },
     address: {
       type: String,
       require: true,
@@ -64,6 +69,7 @@ const companySchema = new Schema(
       type: String,
       required: true,
       trim: true,
+      select: false,
     },
     confirm_password: {
       type: String,

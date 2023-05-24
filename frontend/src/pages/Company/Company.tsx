@@ -1,7 +1,30 @@
-import "./Company.css";
+import { useEffect, useState } from "react";
+import * as serviceCompany from "../../service/CompanyService";
+
 import LogoToti from "../../assets/images/icon_logo_toti.png";
 
+import useCompany from "../../hooks/useCompany";
+
+import "./Company.css";
+import { CompanyProps } from "../../@types/company";
+import { Link } from "react-router-dom";
+
 function Company() {
+  const [company, setCompany] = useState<CompanyProps>();
+  const { companyId, isLoggedInCompany } = useCompany();
+
+  const loadCompany = async (id: string) => {
+    const res = await serviceCompany.getOneCompany(id);
+
+    setCompany(res.data);
+  };
+
+  useEffect(() => {
+    if (companyId) {
+      loadCompany(companyId);
+    }
+  }, [isLoggedInCompany]);
+
   return (
     <div className="company">
       <h3 className="company__tittle">Perfil da Empresa</h3>
@@ -9,21 +32,23 @@ function Company() {
       <img className="company__image" src={LogoToti} alt="Logo Empresa" />
       <div className="company__list">
         <ul>
+          <li>{company?.corporate_name}</li>
           <li className="company__localization">Matriz: Rio de Janeiro</li>
-          <li className="company__site">Site: www.toti.com.br</li>
-          <li className="company__sector">Sector: Educação</li>
-          <li className="company__email">E-mail: toti@empresa.com</li>
-          <li className="company__cnpj">CNPJ: 69.976.803/0001/82</li>
+          <li className="company__site">Site: {company?.website}</li>
+          <li className="company__sector">Sector: {company?.sector}</li>
+          <li className="company__email">E-mail: {company?.email}</li>
+          <li className="company__cnpj">CNPJ: {company?.cnpj}</li>
           <li className="company__description">
-            A toti é a primeira plataforma brasileira de ensino e inculsão de
-            pessoas refugiadas e migrantes no mercado de trabalho de tecnologia.
+            {company?.description_company}
           </li>
         </ul>
       </div>
 
-      <button className="company__vacancies" type="button">
-        Voltar ás vagas
-      </button>
+      <Link to={"/vacancy"}>
+        <button className="company__vacancies" type="button">
+          Voltar ás vagas
+        </button>
+      </Link>
       <button className="company__edit" type="button">
         Editar dados
       </button>

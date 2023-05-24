@@ -16,11 +16,11 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const { isLoggedInUser, logoutUser, userId } = useUser();
-  const { isLoggedInCompany, logoutCompany } = useCompany();
+  const { isLoggedInCompany, logoutCompany, companyId } = useCompany();
 
   const value = "Contato";
   const isHome = location.pathname === "/";
-  const isPageCompany = location.pathname === "/company";
+  const isPageCompany = location.pathname === "/company/:id?";
   const isPageUser = location.pathname === "/user";
   const isPageAdvertiseVacancy = location.pathname === "/advertise-vacancy";
 
@@ -85,20 +85,34 @@ function Header() {
                       Para empresas
                       <div className="dropdown-content">
                         <Link
-                          to={"/advertise-vacancy"}
+                          to={`/company/${companyId}`}
                           onClick={handleLinkClick}
                         >
-                          Cadastrar vaga
+                          Perfil
                         </Link>
                       </div>
                     </li>
                   )}
 
-                  {isLoggedInCompany && isPageAdvertiseVacancy && (
+                  {isLoggedInCompany && isHome && (
                     <li className="dropdown">
                       Para empresas
                       <div className="dropdown-content">
-                        <Link to={"/company"} onClick={handleLinkClick}>
+                        {!isPageCompany ? (
+                          ""
+                        ) : (
+                          <Link
+                            to={"/advertise-vacancy"}
+                            onClick={handleLinkClick}
+                          >
+                            Cadastrar vaga
+                          </Link>
+                        )}
+
+                        <Link
+                          to={`/company/${companyId}`}
+                          onClick={handleLinkClick}
+                        >
                           Perfil
                         </Link>
                       </div>
@@ -180,7 +194,7 @@ function Header() {
                   )}
 
                   <li>
-                    {isLoggedInUser ? (
+                    {isLoggedInUser || isLoggedInCompany ? (
                       <button
                         className={`${
                           !isLoggedInUser || !isLoggedInCompany

@@ -28,51 +28,62 @@ import GeneralLogin from "./pages/GeneralLogin/GeneralLogin.tsx";
 import LoginUser from "./pages/LoginUser/LoginUser.tsx";
 import LoginCompany from "./pages/LoginCompany/LoginCompany.tsx";
 import { UserIdContextProvider } from "./context/UserIdContext.tsx";
+import { CompanyIdContextProvider } from "./context/CompanyIdContext.tsx";
+import CompanyTokenContext, {
+  CompanyTokenContextProvider,
+} from "./context/CompanyTokenContext.tsx";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <UserIdContextProvider>
-        <UserTokenContextProvider>
-          <Header />
+      <CompanyIdContextProvider>
+        <UserIdContextProvider>
+          <CompanyTokenContextProvider>
+            <UserTokenContextProvider>
+              <Header />
 
-          <Routes>
-            <Route path="/:id?" element={<Home />} />
-            <Route path="/advertise-vacancy" element={<AdvertiseVacancy />} />
-            <Route path="/company" element={<Company />} />
-            <Route path="/candidatures/:id" element={<Candidatures />} />
-            <Route path="/change-password" element={<ChangePassword />} />
-            <Route
-              path="/description-vacancy"
-              element={<DescriptionVacancy />}
-            />
-            <Route path="/login-user" element={<LoginUser />} />
-            <Route path="/login-company" element={<LoginCompany />} />
-            <Route path="/general-login" element={<GeneralLogin />} />
-            <Route path="/notification" element={<Notification />} />
-            <Route path="/register-user" element={<RegisterUser />} />
-            <Route path="/register-company" element={<RegisterCompany />} />
-            <Route path="/user/:id" element={<User />} />
-            <Route path="/vacancy" element={<Vacancy />} />
-            <Route
-              path="/personal-information"
-              element={<PersonalInformation />}
-            />
-            <Route path="/formation" element={<Formation />} />
-            <Route
-              path="/professional-experience"
-              element={<ProfessionalExperience />}
-            />
-            <Route
-              path="/courses-certifications"
-              element={<CoursesCertifications />}
-            />
-            <Route path="/language" element={<Language />} />
-          </Routes>
+              <Routes>
+                <Route path="/:id?" element={<Home />} />
+                <Route
+                  path="/advertise-vacancy"
+                  element={<AdvertiseVacancy />}
+                />
+                <Route path="/company/:id" element={<Company />} />
+                <Route path="/candidatures/:id" element={<Candidatures />} />
+                <Route path="/change-password" element={<ChangePassword />} />
+                <Route
+                  path="/description-vacancy"
+                  element={<DescriptionVacancy />}
+                />
+                <Route path="/login-user" element={<LoginUser />} />
+                <Route path="/login-company" element={<LoginCompany />} />
+                <Route path="/general-login" element={<GeneralLogin />} />
+                <Route path="/notification" element={<Notification />} />
+                <Route path="/register-user" element={<RegisterUser />} />
+                <Route path="/register-company" element={<RegisterCompany />} />
+                <Route path="/user/:id" element={<User />} />
+                <Route path="/vacancy" element={<Vacancy />} />
+                <Route
+                  path="/personal-information"
+                  element={<PersonalInformation />}
+                />
+                <Route path="/formation" element={<Formation />} />
+                <Route
+                  path="/professional-experience"
+                  element={<ProfessionalExperience />}
+                />
+                <Route
+                  path="/courses-certifications"
+                  element={<CoursesCertifications />}
+                />
+                <Route path="/language" element={<Language />} />
+              </Routes>
 
-          <Footer />
-        </UserTokenContextProvider>
-      </UserIdContextProvider>
+              <Footer />
+            </UserTokenContextProvider>
+          </CompanyTokenContextProvider>
+        </UserIdContextProvider>
+      </CompanyIdContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
