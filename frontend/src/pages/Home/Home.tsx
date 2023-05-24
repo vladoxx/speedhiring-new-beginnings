@@ -5,11 +5,11 @@ import Migrantes from "../../assets/images/migrantes.png";
 import Usaid from "../../assets/images/New-USAID-logo.jpg";
 import Toti from "../../assets/images/icon_logo_toti.png";
 import Caritas from "../../assets/images/pares_caritas.jpg";
-import CadastroUser from "../../assets/images/candidata.png"
-import Recrutadores from "../../assets/images/trabajadores.png"
-
+import CadastroUser from "../../assets/images/candidata.png";
+import Recrutadores from "../../assets/images/trabajadores.png";
 
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -92,22 +92,26 @@ function Home() {
         <h3 className="services__title">Cadastros</h3>
 
         <div className="services__container">
-          <div className="services__companies">
-            <h4 className="services__companies_title">Para empresas</h4>
-            <img
-              className="services__companies_image"
-              src={Recrutadores}
-              alt="Imagem Cumprimento"
-            />
-          </div>
+          <Link to="/register-company">
+            <div className="services__companies">
+              <h4 className="services__companies_title">Para empresas</h4>
+              <img
+                className="services__companies_image"
+                src={Recrutadores}
+                alt="Imagem Cumprimento"
+              />
+            </div>
+          </Link>
 
           <div className="services__candidate">
-            <h4 className="services__candidate_title">Para candidatos</h4>
-            <img
-              className="services__candidate_image"
-              src={CadastroUser}
-              alt="Imagem de Usuário"
-            />
+            <Link to={"/register-user"}>
+              <h4 className="services__candidate_title">Para candidatos</h4>
+              <img
+                className="services__candidate_image"
+                src={CadastroUser}
+                alt="Imagem de Usuário"
+              />
+            </Link>
           </div>
         </div>
       </section>
@@ -154,7 +158,7 @@ function Home() {
             />
             <h3 className="partner__companie">Toti</h3>
             <p className="partners__companie_description">
-                Startup que forma migrantes e refugiados em programação no Brasil.
+              Startup que forma migrantes e refugiados em programação no Brasil.
             </p>
           </div>
 
@@ -178,7 +182,8 @@ function Home() {
             />
             <h3 className="partner__companie">Pares CaritasRJ</h3>
             <p className="partners__companie_description">
-              Primeiro trabalho sistematizado de atendimento a refugiados no Brasil.
+              Primeiro trabalho sistematizado de atendimento a refugiados no
+              Brasil.
             </p>
           </div>
         </div>

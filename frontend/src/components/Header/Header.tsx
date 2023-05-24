@@ -1,17 +1,28 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+
+import useUser from "../../hooks/useUser";
+import useCompany from "../../hooks/useCompany";
 
 import Logo from "../../assets/images/logo.png";
 
 import "./Header.css";
 
 function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const value = "Contato";
-
   const location = useLocation();
-  const isHome = location.pathname !== "/";
+  const navigate = useNavigate();
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const { isLoggedInUser, logoutUser } = useUser();
+  const { isLoggedInCompany, logoutCompany } = useCompany();
+
+  const value = "Contato";
+  const isHome = location.pathname === "/";
+  const isPageCompany = location.pathname === "/company";
+  const isPageUser = location.pathname === "/user";
+  const isPageAdvertiseVacancy = location.pathname === "/advertise-vacancy";
 
   const handleLinkClick = () => {
     const contactSection = document.getElementById("contact");
@@ -28,6 +39,13 @@ function Header() {
 
   const handleCheckboxChange = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handleLinkClickLogout = () => {
+    logoutUser();
+    logoutCompany();
+
+    navigate("/");
   };
 
   return (
@@ -52,7 +70,7 @@ function Header() {
                 <ul
                   className={`header__ul menu-items ${menuOpen ? "open" : ""}`}
                 >
-                  {!isHome ? null : (
+                  {isHome ? null : (
                     <li>
                       <Link to={"/"} onClick={handleLinkClick}>
                         Início
@@ -60,17 +78,82 @@ function Header() {
                     </li>
                   )}
 
-                  <li>
-                    <Link to={"/register-company"} onClick={handleLinkClick}>
-                      Para empresas
-                    </Link>
-                  </li>
+                  {/* Logica Company */}
 
-                  <li>
-                    <Link to={"/register-user"} onClick={handleLinkClick}>
+                  {isLoggedInCompany && isPageCompany && (
+                    <li className="dropdown">
+                      Para empresas
+                      <div className="dropdown-content">
+                        <Link
+                          to={"/advertise-vacancy"}
+                          onClick={handleLinkClick}
+                        >
+                          Cadastrar vaga
+                        </Link>
+                      </div>
+                    </li>
+                  )}
+
+                  {isLoggedInCompany && isPageAdvertiseVacancy && (
+                    <li className="dropdown">
+                      Para empresas
+                      <div className="dropdown-content">
+                        <Link to={"/company"} onClick={handleLinkClick}>
+                          Perfil
+                        </Link>
+                      </div>
+                    </li>
+                  )}
+
+                  {!isLoggedInCompany && !isPageCompany && (
+                    <li className="dropdown">
+                      Para empresas
+                      <div className="dropdown-content">
+                        <Link
+                          to={"/register-company"}
+                          onClick={handleLinkClick}
+                        >
+                          Cadastrar empresa
+                        </Link>
+                      </div>
+                    </li>
+                  )}
+
+                  {/* Lógica Candidato */}
+
+                  {isLoggedInUser && !isPageUser && (
+                    <li className="dropdown">
                       Candidato
-                    </Link>
-                  </li>
+                      <div className="dropdown-content">
+                        {!isLoggedInUser ? (
+                          <Link to={"/register-user"} onClick={handleLinkClick}>
+                            Cadastrar candidato
+                          </Link>
+                        ) : (
+                          <Link to={"/user"} onClick={handleLinkClick}>
+                            Perfil
+                          </Link>
+                        )}
+                      </div>
+                    </li>
+                  )}
+
+                  {!isLoggedInUser && !isLoggedInCompany && (
+                    <li className="dropdown">
+                      Candidato
+                      <div className="dropdown-content">
+                        {!isLoggedInUser ? (
+                          <Link to={"/register-user"} onClick={handleLinkClick}>
+                            Cadastrar candidato
+                          </Link>
+                        ) : (
+                          <Link to={"/user"} onClick={handleLinkClick}>
+                            Perfil
+                          </Link>
+                        )}
+                      </div>
+                    </li>
+                  )}
 
                   <li>
                     <Link to={"/vacancy"} onClick={handleLinkClick}>
@@ -78,7 +161,7 @@ function Header() {
                     </Link>
                   </li>
 
-                  {isHome ? null : (
+                  {!isHome ? null : (
                     <li className={`${value}`}>
                       <Link
                         to={""}
@@ -91,27 +174,43 @@ function Header() {
                   )}
 
                   <li>
-                    <Link
-                      className="header__navbar_button"
-                      to={"/login"}
-                      onClick={handleLinkClick}
-                    >
-                      Login
-                    </Link>
+                    {isLoggedInUser ? (
+                      <button
+                        className={`${
+                          !isLoggedInUser || !isLoggedInCompany
+                            ? "header__navbar_button"
+                            : "logout"
+                        }`}
+                        onClick={handleLinkClickLogout}
+                      >
+                        Logout
+                      </button>
+                    ) : (
+                      <Link
+                        className="header__navbar_button"
+                        to={"/general-login"}
+                        onClick={handleLinkClick}
+                      >
+                        Login
+                      </Link>
+                    )}
                   </li>
                 </ul>
               </div>
             </div>
           </nav>
+
           <div className="header__div">
             <img className="header__img" src={Logo} />
 
             <h1 className="header_title">New Beginnings</h1>
           </div>
         </div>
+
         <h2 className="header__subtitle">
           Solução de emprego para imigrantes e refugiados
         </h2>
+
         <p className="header__paragraph">
           Ajude imigrantes e refugiados a encontrar empregos e superar as
           barreiras que muitas vezes impedem a integração no mercado de

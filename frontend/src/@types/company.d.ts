@@ -1,13 +1,13 @@
 export interface CompanyProps {
-  corporate_name: string;
-  sector: string;
-  cnpj: string;
-  email: string;
+  corporate_name?: string;
+  sector?: string;
+  cnpj?: string;
+  email?: string;
   website?: string;
-  address: string;
-  phone: string;
-  password: string;
-  confirm_password: string;
+  address?: string;
+  phone?: string;
+  password?: string;
+  confirm_password?: string;
   receivedCurriculums?: ReceivedCurriculumProps[];
   jobs?: JobProps[];
 }

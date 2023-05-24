@@ -7,6 +7,7 @@ router.get("/companies", companyController.getAllCompanies);
 router.get("/company/:id", companyController.getOneCompany);
 router.get("/company/:id/jobs", companyController.getJobsCompany);
 router.post("/company/register", companyController.createCompany);
+router.post("/company/login", companyController.loginCompany);
 router.put("/company/:id", companyController.updateCompany);
 router.delete("/company/:id", companyController.deleteCompany);
 

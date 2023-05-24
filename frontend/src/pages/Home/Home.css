@@ -51,11 +51,12 @@
   margin: 0 0 1rem 0;
 }
 
-.connection h4 {
+.connection__container h4 {
   text-align: center;
   color: var(--cinza-azulado);
   text-transform: uppercase;
   margin-bottom: 0.5rem;
+  font-size: var(--font-size-h4-mobile);
 }
 
 .connection p {
@@ -68,18 +69,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
-  padding: 1.5rem;
+  padding: 3rem 1.5rem;
 }
-.services__title{
-  margin-bottom: 1rem;
+
+.services__title {
+  margin: 0 0 2rem;
+}
+
+.services__container a {
+  text-decoration: none;
 }
 
 .services__companies_title,
 .services__candidate_title {
   text-align: center;
-  margin: 1rem 0;
   font-size: var(--font-size-h4-mobile);
+  color: var(--black);
 }
 
 .services__companies img,
@@ -89,8 +94,12 @@
   max-height: 16.813rem;
   border-radius: 1rem;
   margin-bottom: 3.125rem;
+  object-fit: cover;
 }
 
+.services__candidate img {
+  object-position: 0 15%;
+}
 
 .virtues {
   background-color: var(--branco-acinzentado);
@@ -227,6 +236,8 @@
 
   .about__paragraph {
     font-size: var(--font-size-p-tablet);
+    padding: 0 10rem;
+
   }
 
   .connection {
@@ -234,7 +245,19 @@
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     gap: 4rem;
+    padding: 3rem 10rem;
   }
+
+  .connection__container h4 {
+    font-size: var(--font-size-h4-tablet);
+  }
+
+  .connection__container p {
+    font-size: var(--font-size-p-tablet);
+    padding: 0 9rem;
+
+  }
+
   .connection__container:nth-child(3) {
     grid-column: 1/3;
     width: 344px;
@@ -244,13 +267,12 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
-    margin: 3rem 0;
   }
 
-  .services__companies_image,
-  .services__candidate_image {
-    position: flex;
-    text-align: center;
+  .services__companies img,
+  .services__candidate img {
+    margin: 0;
+    height: 200px;
   }
 
   .services__companies_title,
@@ -261,6 +283,7 @@
 
   .contact__text {
     font-size: var(--font-size-p-tablet);
+    padding: 3rem 16rem;
   }
 
   .virtues__respect {
@@ -330,6 +353,14 @@
   .connection {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .connection__container h4 {
+    font-size: var(--font-size-h4-desktop);
+  }
+
+  .connection__container p {
+    font-size: var(--font-size-p-desktop);
   }
 
   .virtues__respect {

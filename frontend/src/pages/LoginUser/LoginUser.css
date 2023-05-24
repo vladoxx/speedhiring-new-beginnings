@@ -16,6 +16,7 @@
 }
 
 .login__form {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,7 +45,16 @@
   letter-spacing: 0.5px;
 }
 
-input.login__button {
+.login__forgot_erro {
+  font-size: var(--font-size-p-mobile);
+  position: absolute;
+  top: -10px;
+  color: red;
+}
+
+.login__button {
+  border-radius: 1rem;
+  height: 40px;
   width: 200px;
   padding: 0;
   text-align: center;
@@ -87,12 +97,16 @@ input.login__button {
     cursor: pointer;
   }
 
+  .login__forgot_erro {
+    font-size: var(--font-size-p-tablet);
+  }
+
   .login__register {
     font-size: 1rem;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .login__title {
     font-size: var(--font-size-h2-desktop);
   }
