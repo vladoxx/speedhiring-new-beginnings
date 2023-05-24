@@ -16,6 +16,7 @@
 }
 
 .login__form {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,6 +43,13 @@
   line-height: 1.563rem;
   color: var(--roxo-escuro);
   letter-spacing: 0.5px;
+}
+
+.login__forgot_erro {
+  font-size: var(--font-size-p-mobile);
+  position: absolute;
+  top: -10px;
+  color: red;
 }
 
 .login__button {
@@ -89,12 +97,16 @@
     cursor: pointer;
   }
 
+  .login__forgot_erro {
+    font-size: var(--font-size-p-tablet);
+  }
+
   .login__register {
     font-size: 1rem;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .login__title {
     font-size: var(--font-size-h2-desktop);
   }

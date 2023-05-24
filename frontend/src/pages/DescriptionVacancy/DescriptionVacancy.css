@@ -1,88 +1,83 @@
-.vacancy{
-    padding: 3rem 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--cinza-azulado);
+.vacancy {
+  padding: 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--cinza-azulado);
 }
 
 .vacancy__tittle {
-    font-size: 1.20rem;
-    text-align:start;
-    text-transform: uppercase;
-    margin-top: 50px;
-    margin-bottom: 25px;
-   
+  font-size: 1.2rem;
+  text-align: start;
+  text-transform: uppercase;
+  margin-top: 50px;
+  margin-bottom: 25px;
 }
 
-ul {
-    list-style: none;
-    padding-left: 5%;
-    margin-top: 2.188rem;
-}
-.vacancy__company{
-    margin-top: 18px;
-    font-size: 14px;
-    text-transform: uppercase;
+.vacancy__list ul {
+  list-style: none;
+  padding-left: 5%;
+  margin-top: 2.188rem;
 }
 
-
-.vacancy__description{
-    margin-bottom: 1rem;
+.vacancy__company {
+  margin-top: 18px;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
-.vacancy__tittle_job{
-    font-size: 1.20rem;
+.vacancy__description {
+  margin-bottom: 1rem;
 }
 
-.vacancy__email{
-    margin-bottom: 3rem;
+.vacancy__tittle_job {
+  font-size: 1.2rem;
+}
 
+.vacancy__email {
+  margin-bottom: 3rem;
 }
 
 @media (min-width: 768px) {
-
-    .vacancy__tittle {
+  .vacancy__tittle {
     font-size: var(--font-size-h3-tablet);
-    }
+  }
 
-    .vacancy__tittle_job{
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-    
-    .vacancy__company{
-        margin-top: 1.25rem;
-        font-size: 1.25rem;
-        text-transform: uppercase;
-    }
-    ul {
-        padding-left: 15%;
-        max-width: 900px;
-    }
+  .vacancy__tittle_job {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
 
+  .vacancy__company {
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  .vacancy__list ul {
+    padding-left: 15%;
+    max-width: 900px;
+  }
 }
 
 @media (min-width: 1024px) {
-
-
-    .vacancy__tittle {
+  .vacancy__tittle {
     font-size: var(--font-size-h3-desktop);
-    }
+  }
 
-    .vacancy__tittle_job{
-        font-size: 1.75rem;
-        margin-bottom: 1rem;
-    }
-    
-    .vacancy__company{
-        margin-top: 1.25rem;
-        font-size: 1.25rem;
-        text-transform: uppercase;
-    }
-    ul {
-        max-width: 900px;
-    }
+  .vacancy__tittle_job {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
 
+  .vacancy__company {
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  .vacancy__list ul {
+    max-width: 900px;
+  }
 }

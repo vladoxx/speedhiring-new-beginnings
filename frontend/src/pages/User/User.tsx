@@ -1,16 +1,48 @@
+// import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+
+import "./User.css";
+import { useEffect, useState } from "react";
+
 function User() {
+  const params = useParams();
+
+  const [userIdCandidature, setUserIdCandidature] = useState("");
+
+  useEffect(() => {
+    if (params.id) {
+      setUserIdCandidature(params.id);
+    }
+  }, []);
+
+  console.log(userIdCandidature);
+
   return (
     <div className="user">
       <h3 className="register-use__tittle">Perfil do candidato</h3>
 
-      <button className="register-user__button-personal-info" type="button">Informações Pessoais</button>
-      <button className="register-user__button-candidatures" type="button">Minhas Candidaturas</button>
-      <button className="register-user__button-privacy" type="button">Privacidade</button>
-      <button className="register-user__button-account" type="button">Conta</button>
+      <div className="user__container">
+        <Link className="user__buttons" to={"/personal-information"}>
+          Informações Pessoais
+        </Link>
 
-      <button className="register-user__button-vacancies" type="button">Area de Vagas</button>
+        <Link
+          className="user__buttons"
+          to={`/candidatures/${userIdCandidature}`}
+        >
+          Minhas Candidaturas
+        </Link>
+
+        <Link className="user__buttons" to={"/change-password"}>
+          Privacidade
+        </Link>
+
+        <Link className="user__buttons" to={"/vacancy"}>
+          Área de Vagas
+        </Link>
+      </div>
     </div>
-  )
+  );
 }
 
-export default User
+export default User;
