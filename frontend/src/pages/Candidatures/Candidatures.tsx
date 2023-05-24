@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 
-import { CandidatureJobs, JobProps } from "../../@types/job";
+import { JobProps } from "../../@types/job";
 
 import { getAllCandidatures } from "../../service/VacancyService";
 
@@ -39,24 +39,22 @@ function Candidatures() {
                 key={candidature._id}
                 className="candidatures__box-container"
               >
-                <div className="candidatures__box_jobs">
-                  <h4 className="candidatures__role">{candidature.jobTitle}</h4>
-                  <p className="candidatures__city">
-                    {candidature.state || "Não informado"}
-                  </p>
-                  <hr />
-                  <p className="candidatures__company">{candidature.company}</p>
-                  <p className="candidatures__job_description">
-                    {candidature.jobDescription}
-                  </p>
+                <h4 className="candidatures__role">{candidature.jobTitle}</h4>
+                <p className="candidatures__city">
+                  {candidature.state || "Não informado"}
+                </p>
+                <hr />
+                <p className="candidatures__company">{candidature.company}</p>
+                <p className="candidatures__job_description">
+                  {candidature.jobDescription}
+                </p>
 
-                  <div className="candidatures__box_input_job">
-                    <input
-                      className="candidatures__button_job"
-                      type="submit"
-                      value="Ver vaga"
-                    />
-                  </div>
+                <div className="candidatures__box_input_job">
+                  <input
+                    className="candidatures__button_job"
+                    type="submit"
+                    value="Ver vaga"
+                  />
                 </div>
               </div>
             );

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 3rem 1.5rem;
 }
 
 .candidatures__tittle {
@@ -14,24 +15,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 2rem;
+  margin: 0 0 2rem;
 }
 
 .candidatures__box-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.candidatures__box_jobs {
   background: var(--branco-acinzentado);
-  width: 65%;
   border: 1px solid var(--roxo-claro);
   border-radius: 16px;
   padding: 0.5rem 0.5rem 0 0.5rem;
-}
-
-.candidatures__container .candidatures__box_jobs {
-  margin-bottom: 1.5rem;
+  max-width: 350px;
 }
 
 .candidatures__role {
@@ -54,7 +50,8 @@
 
 .candidatures__job_description {
   font-size: 1rem;
-  padding: 0 0 0.8rem;
+  padding: 1rem;
+  min-height: 200px;
 }
 
 .candidatures__box_jobs:hover {
@@ -84,11 +81,6 @@
   transition: 0.7s;
 }
 
-.candidatures__box_button_home {
-  text-align: center;
-  margin: 0.5rem 0 1.5rem;
-}
-
 .candidatures__button_home {
   font-size: 1rem;
   font-weight: bold;
@@ -114,21 +106,13 @@
   }
 
   .candidatures__container {
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
-  }
-
-  .candidatures__box_jobs {
-    width: 36%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
   }
 
   .candidatures__container .candidatures__box_jobs {
     margin-bottom: 3rem;
-  }
-
-  .candidatures__box_button_home {
-    margin: 0.5rem 0 3rem;
   }
 
   .candidatures__button_home {
@@ -153,18 +137,15 @@
     width: 30%;
   }
 
-  .candidatures__box_button_home {
-    margin: 0.5rem 0 3rem;
-  }
-
   .candidatures__button_home {
     width: 320px;
     height: 40px;
   }
 }
 
-@media (min-width: 1115px) {
-  .candidatures__box_jobs {
-    width: 25%;
+@media (min-width: 1024px) {
+  .candidatures__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
