@@ -1,15 +1,17 @@
-import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { JobProps } from "../../@types/job";
 
 import { getAllCandidatures } from "../../service/VacancyService";
 
 import "./Candidatures.css";
-import { useEffect, useState } from "react";
+
+import useUser from "../../hooks/useUser";
 
 function Candidatures() {
-  const params = useParams();
   const [candidatures, setCandidatures] = useState<JobProps[]>([]);
+  const { userId } = useUser();
 
   const loadCandidatures = async (id: string) => {
     const res = await getAllCandidatures(id);
@@ -17,11 +19,9 @@ function Candidatures() {
     setCandidatures(res.data);
   };
 
-  console.log(params);
-
   useEffect(() => {
-    if (params.id) {
-      loadCandidatures(params.id);
+    if (userId) {
+      loadCandidatures(userId);
     }
   }, []);
 

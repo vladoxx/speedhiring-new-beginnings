@@ -15,7 +15,7 @@ function Header() {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const { isLoggedInUser, logoutUser } = useUser();
+  const { isLoggedInUser, logoutUser, userId } = useUser();
   const { isLoggedInCompany, logoutCompany } = useCompany();
 
   const value = "Contato";
@@ -130,7 +130,10 @@ function Header() {
                             Cadastrar candidato
                           </Link>
                         ) : (
-                          <Link to={`/user/`} onClick={handleLinkClick}>
+                          <Link
+                            to={`/user/${userId}`}
+                            onClick={handleLinkClick}
+                          >
                             Perfil
                           </Link>
                         )}
@@ -147,7 +150,10 @@ function Header() {
                             Cadastrar candidato
                           </Link>
                         ) : (
-                          <Link to={`/user/`} onClick={handleLinkClick}>
+                          <Link
+                            to={`/user/${userId}`}
+                            onClick={handleLinkClick}
+                          >
                             Perfil
                           </Link>
                         )}

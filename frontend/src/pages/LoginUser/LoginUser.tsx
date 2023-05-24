@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useId, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { UserProps } from "../../@types/user";
@@ -16,17 +16,15 @@ function LoginUser() {
   let navigate = useNavigate();
   let params = useParams();
 
-  const { tokenUser, isLoggedInUser } = useUser();
+  const { tokenUser, isLoggedInUser, getIdUser, userId } = useUser();
 
   const initialStateLogin = {
-    _id: "",
     email: "",
     password: "",
   };
 
   const [userLogin, setUserLogin] = useState<UserProps>(initialStateLogin);
   const [loginSucess, setLoginSucess] = useState("");
-  const [userId, setUserId] = useState<UserProps>(initialStateLogin);
 
   const handleInputChangeLogin = (e: InputChange) => {
     setUserLogin({ ...userLogin, [e.target.name]: e.target.value });
@@ -40,7 +38,7 @@ function LoginUser() {
         const resLogin = await loginService.loginUserBack(userLogin);
 
         tokenUser(resLogin.data.token);
-        setUserId(resLogin.data.user._id);
+        getIdUser(resLogin.data.user._id);
 
         setUserLogin(initialStateLogin);
       } catch (error: any) {

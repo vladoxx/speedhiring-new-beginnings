@@ -21,8 +21,8 @@ export interface UserTokenContextProps {
 }
 
 export interface UserIdContextProps {
-  userId: string | null;
-  setUserId: (userId: string | null) => void;
+  userId: string;
+  setUserId: (userId: string) => void;
 }
 
 export interface UserContextProviderProps {

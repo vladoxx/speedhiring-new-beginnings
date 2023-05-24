@@ -27,11 +27,12 @@ import Home from "./pages/Home/Home.tsx";
 import GeneralLogin from "./pages/GeneralLogin/GeneralLogin.tsx";
 import LoginUser from "./pages/LoginUser/LoginUser.tsx";
 import LoginCompany from "./pages/LoginCompany/LoginCompany.tsx";
+import { UserIdContextProvider } from "./context/UserIdContext.tsx";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <UserTokenContextProvider>
+      <UserIdContextProvider>
         <UserTokenContextProvider>
           <Header />
 
@@ -71,7 +72,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 
           <Footer />
         </UserTokenContextProvider>
-      </UserTokenContextProvider>
+      </UserIdContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
