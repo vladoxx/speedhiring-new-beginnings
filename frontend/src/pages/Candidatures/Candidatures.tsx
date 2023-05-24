@@ -17,7 +17,7 @@ function Candidatures() {
     setCandidatures(res.data);
   };
 
-  console.log(candidatures);
+  console.log(params);
 
   useEffect(() => {
     if (params.id) {

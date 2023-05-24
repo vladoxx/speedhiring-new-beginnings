@@ -72,7 +72,7 @@ function Header() {
                 >
                   {isHome ? null : (
                     <li>
-                      <Link to={"/"} onClick={handleLinkClick}>
+                      <Link to={`/`} onClick={handleLinkClick}>
                         Início
                       </Link>
                     </li>
@@ -130,7 +130,7 @@ function Header() {
                             Cadastrar candidato
                           </Link>
                         ) : (
-                          <Link to={"/user"} onClick={handleLinkClick}>
+                          <Link to={`/user/`} onClick={handleLinkClick}>
                             Perfil
                           </Link>
                         )}
@@ -147,7 +147,7 @@ function Header() {
                             Cadastrar candidato
                           </Link>
                         ) : (
-                          <Link to={"/user"} onClick={handleLinkClick}>
+                          <Link to={`/user/`} onClick={handleLinkClick}>
                             Perfil
                           </Link>
                         )}

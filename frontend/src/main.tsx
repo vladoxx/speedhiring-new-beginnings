@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { UserContextProvider } from "./context/UserLoginContext.tsx";
+import { UserTokenContextProvider } from "./context/UserTokenContext.tsx";
 import Header from "./components/Header/Header.tsx";
 import Footer from "./components/Footer/Footer.tsx";
 
@@ -31,42 +31,47 @@ import LoginCompany from "./pages/LoginCompany/LoginCompany.tsx";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <UserContextProvider>
-        <Header />
+      <UserTokenContextProvider>
+        <UserTokenContextProvider>
+          <Header />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/advertise-vacancy" element={<AdvertiseVacancy />} />
-          <Route path="/company" element={<Company />} />
-          <Route path="/candidatures/:id" element={<Candidatures />} />
-          <Route path="/change-password" element={<ChangePassword />} />
-          <Route path="/description-vacancy" element={<DescriptionVacancy />} />
-          <Route path="/login-user" element={<LoginUser />} />
-          <Route path="/login-company" element={<LoginCompany />} />
-          <Route path="/general-login" element={<GeneralLogin />} />
-          <Route path="/notification" element={<Notification />} />
-          <Route path="/register-user" element={<RegisterUser />} />
-          <Route path="/register-company" element={<RegisterCompany />} />
-          <Route path="/user/:id" element={<User />} />
-          <Route path="/vacancy" element={<Vacancy />} />
-          <Route
-            path="/personal-information"
-            element={<PersonalInformation />}
-          />
-          <Route path="/formation" element={<Formation />} />
-          <Route
-            path="/professional-experience"
-            element={<ProfessionalExperience />}
-          />
-          <Route
-            path="/courses-certifications"
-            element={<CoursesCertifications />}
-          />
-          <Route path="/language" element={<Language />} />
-        </Routes>
+          <Routes>
+            <Route path="/:id?" element={<Home />} />
+            <Route path="/advertise-vacancy" element={<AdvertiseVacancy />} />
+            <Route path="/company" element={<Company />} />
+            <Route path="/candidatures/:id" element={<Candidatures />} />
+            <Route path="/change-password" element={<ChangePassword />} />
+            <Route
+              path="/description-vacancy"
+              element={<DescriptionVacancy />}
+            />
+            <Route path="/login-user" element={<LoginUser />} />
+            <Route path="/login-company" element={<LoginCompany />} />
+            <Route path="/general-login" element={<GeneralLogin />} />
+            <Route path="/notification" element={<Notification />} />
+            <Route path="/register-user" element={<RegisterUser />} />
+            <Route path="/register-company" element={<RegisterCompany />} />
+            <Route path="/user/:id" element={<User />} />
+            <Route path="/vacancy" element={<Vacancy />} />
+            <Route
+              path="/personal-information"
+              element={<PersonalInformation />}
+            />
+            <Route path="/formation" element={<Formation />} />
+            <Route
+              path="/professional-experience"
+              element={<ProfessionalExperience />}
+            />
+            <Route
+              path="/courses-certifications"
+              element={<CoursesCertifications />}
+            />
+            <Route path="/language" element={<Language />} />
+          </Routes>
 
-        <Footer />
-      </UserContextProvider>
+          <Footer />
+        </UserTokenContextProvider>
+      </UserTokenContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

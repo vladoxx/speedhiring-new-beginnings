@@ -16,7 +16,7 @@ function LoginUser() {
   let navigate = useNavigate();
   let params = useParams();
 
-  const { loginUser, isLoggedInUser } = useUser();
+  const { tokenUser, isLoggedInUser } = useUser();
 
   const initialStateLogin = {
     _id: "",
@@ -37,9 +37,9 @@ function LoginUser() {
 
     if (!params.id) {
       try {
-        const resLogin = await loginService.loginUser(userLogin);
+        const resLogin = await loginService.loginUserBack(userLogin);
 
-        loginUser(resLogin.data.token);
+        tokenUser(resLogin.data.token);
         setUserId(resLogin.data.user._id);
 
         setUserLogin(initialStateLogin);

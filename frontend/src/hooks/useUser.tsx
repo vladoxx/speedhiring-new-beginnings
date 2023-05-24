@@ -1,25 +1,37 @@
 import { useContext, useCallback } from "react";
-import Context from "../context/UserLoginContext";
+import UserTokenContext from "../context/UserTokenContext";
+import UserIdContext from "../context/UserIdContext";
 
-function useUser() {
-  const { jwt, setJwt } = useContext(Context);
+function useUserToken() {
+  const { jwt, setJwt } = useContext(UserTokenContext);
+  const { userId, setUserId } = useContext(UserIdContext);
 
-  const loginUser = useCallback(
-    (userLogin: string) => {
-      setJwt(userLogin);
+  const tokenUser = useCallback(
+    (userToken: string) => {
+      setJwt(userToken);
     },
     [setJwt]
   );
 
   const logoutUser = useCallback(() => {
     setJwt("");
-  }, [setJwt]);
+    setUserId("");
+  }, [setJwt, setUserId]);
+
+  const idUser = useCallback(
+    (userId: string) => {
+      setJwt(userId);
+    },
+    [setUserId]
+  );
 
   return {
     isLoggedInUser: Boolean(jwt),
-    loginUser,
+    isIdUser: Boolean(userId),
+    tokenUser,
     logoutUser,
+    idUser,
   };
 }
 
-export default useUser;
+export default useUserToken;

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CandidatureJobs, JobProps } from "../@types/job";
+import { JobProps } from "../@types/job";
 
 const API = "http://localhost:3333";
 

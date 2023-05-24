@@ -1,8 +1,8 @@
 // import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import "./User.css";
-import { useEffect, useState } from "react";
 
 function User() {
   const params = useParams();
@@ -14,8 +14,6 @@ function User() {
       setUserIdCandidature(params.id);
     }
   }, []);
-
-  console.log(userIdCandidature);
 
   return (
     <div className="user">
