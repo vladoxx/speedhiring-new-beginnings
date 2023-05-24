@@ -345,6 +345,12 @@
     border-radius: 100%;
 }
 
+.personal-information__skill {
+    display: flex;
+    justify-content: center;
+}
+
+
 .personal-information__box-home-button {
     text-align: center;
     padding: 3rem 0 2rem; 
