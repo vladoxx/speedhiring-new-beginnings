@@ -28,6 +28,7 @@ function Vacancy() {
   return (
     <div className="vacant">
       <h2 className="vacant__title">Vagas</h2>
+
       <div className="vacant__container">
         {jobs.map((job) => {
           return (
