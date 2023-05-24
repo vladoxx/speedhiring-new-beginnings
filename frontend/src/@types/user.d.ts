@@ -2,6 +2,7 @@ import { jwt } from "jsonwebtoken";
 import React, { Dispatch, ReactNode } from "react";
 
 export interface UserProps {
+  _id?: string;
   name?: string;
   email: string;
   phone?: string;

@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-import { CandidatureJobs } from "../../@types/job";
+import { CandidatureJobs, JobProps } from "../../@types/job";
 
 import { getAllCandidatures } from "../../service/VacancyService";
 
@@ -8,10 +8,11 @@ import "./Candidatures.css";
 import { useEffect, useState } from "react";
 
 function Candidatures() {
-  const [candidatures, setCandidatures] = useState<CandidatureJobs[]>([]);
+  const params = useParams();
+  const [candidatures, setCandidatures] = useState<JobProps[]>([]);
 
-  const loadCandidatures = async () => {
-    const res = await getAllCandidatures();
+  const loadCandidatures = async (id: string) => {
+    const res = await getAllCandidatures(id);
 
     setCandidatures(res.data);
   };
@@ -19,7 +20,9 @@ function Candidatures() {
   console.log(candidatures);
 
   useEffect(() => {
-    loadCandidatures();
+    if (params.id) {
+      loadCandidatures(params.id);
+    }
   }, []);
 
   return (
@@ -28,32 +31,29 @@ function Candidatures() {
 
       {candidatures.map((candidature) => {
         return (
-          <div>
-            <h1>{candidature.user}</h1>
+          <div className="candidatures__container">
+            <div className="candidatures__box_jobs">
+              <h4 className="candidatures__role">{candidature.jobTitle}</h4>
+              <p className="candidatures__city">
+                {candidature.state || "Não informado"}
+              </p>
+              <hr />
+              <p className="candidatures__company">{candidature.company}</p>
+              <p className="candidatures__job_description">
+                {candidature.jobDescription}
+              </p>
+
+              <div className="candidatures__box_input_job">
+                <input
+                  className="candidatures__button_job"
+                  type="submit"
+                  value="Ver vaga"
+                />
+              </div>
+            </div>
           </div>
         );
       })}
-
-      <div className="candidatures__container">
-        <div className="candidatures__box_jobs">
-          <h4 className="candidatures__role">Atendente de Caixa</h4>
-          <p className="candidatures__city">Rio de Janeiro</p>
-          <hr />
-          <p className="candidatures__company">Empresa Lorem</p>
-          <p className="candidatures__job_description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam
-            dolores autem, alias vel earum veniam minus quos delectus excepturi.
-          </p>
-
-          <div className="candidatures__box_input_job">
-            <input
-              className="candidatures__button_job"
-              type="submit"
-              value="Ver vaga"
-            />
-          </div>
-        </div>
-      </div>
 
       <div className="candidatures__box_button_home">
         <Link to={"/"}>

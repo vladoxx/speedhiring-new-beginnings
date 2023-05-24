@@ -7,6 +7,6 @@ export const getAllJobs = async () => {
   return await axios.get<JobProps[]>(`${API}/jobs`);
 };
 
-export const getAllCandidatures = async () => {
-  return await axios.get<CandidatureJobs[]>(`${API}/jobs`);
+export const getAllCandidatures = async (id: string) => {
+  return await axios.get<JobProps[]>(`${API}/user/${id}/jobs`);
 };
