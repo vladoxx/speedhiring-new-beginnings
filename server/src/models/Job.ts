@@ -11,6 +11,7 @@ interface IJob extends Document {
   salary: number;
   jobDescription: string;
   company: string;
+  state: string;
 }
 
 const jobSchema = new Schema(
@@ -57,6 +58,11 @@ const jobSchema = new Schema(
     jobDescription: {
       type: String,
       required: true,
+      trim: true,
+    },
+    state: {
+      type: String,
+      require: true,
       trim: true,
     },
     company: {

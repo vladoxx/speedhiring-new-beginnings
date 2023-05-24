@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 3rem 1.5rem;
+  gap: 2rem;
 }
 
 .vacant__title {
@@ -26,6 +27,7 @@
   background-color: var(--branco-acinzentado);
   border-radius: 1rem;
   max-width: 350px;
+  min-height: 400px;
 }
 
 .vacant__box_info-header {
@@ -46,6 +48,10 @@
 .vacant__localization {
   font-size: var(--span-mobile);
   color: var(--branco);
+}
+
+.vacant__description {
+  min-height: 180px;
 }
 
 .vacant__description-container {
@@ -95,6 +101,7 @@ button.vacant__button {
   .vacant__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
   }
 
   .vacant__job_title {

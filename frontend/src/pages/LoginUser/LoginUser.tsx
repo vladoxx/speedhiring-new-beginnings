@@ -19,12 +19,14 @@ function LoginUser() {
   const { loginUser, isLoggedInUser } = useUser();
 
   const initialStateLogin = {
+    _id: "",
     email: "",
     password: "",
   };
 
   const [userLogin, setUserLogin] = useState<UserProps>(initialStateLogin);
   const [loginSucess, setLoginSucess] = useState("");
+  const [userId, setUserId] = useState<UserProps>(initialStateLogin);
 
   const handleInputChangeLogin = (e: InputChange) => {
     setUserLogin({ ...userLogin, [e.target.name]: e.target.value });
@@ -38,6 +40,7 @@ function LoginUser() {
         const resLogin = await loginService.loginUser(userLogin);
 
         loginUser(resLogin.data.token);
+        setUserId(resLogin.data.user._id);
 
         setUserLogin(initialStateLogin);
       } catch (error: any) {
@@ -53,7 +56,7 @@ function LoginUser() {
 
   useEffect(() => {
     if (isLoggedInUser) {
-      navigate("/user");
+      navigate(`/user/${userId}`);
     }
   }, [isLoggedInUser, navigate]);
 
