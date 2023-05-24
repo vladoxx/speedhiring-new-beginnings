@@ -22,7 +22,6 @@ function Header() {
   const isHome = location.pathname === "/";
   const isPageCompany = location.pathname === "/company/:id?";
   const isPageUser = location.pathname === "/user";
-  const isPageAdvertiseVacancy = location.pathname === "/advertise-vacancy";
 
   const handleLinkClick = () => {
     const contactSection = document.getElementById("contact");
