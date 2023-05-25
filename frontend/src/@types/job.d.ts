@@ -1,4 +1,5 @@
 export interface JobProps {
+  _id?: string;
   jobTitle?: string;
   professionalArea?: string;
   hierarchicalLevel?: string;

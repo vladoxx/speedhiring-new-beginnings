@@ -44,9 +44,9 @@ function Company() {
         </ul>
       </div>
 
-      <Link to={"/vacancy"}>
+      <Link to={"/company-vacancies"}>
         <button className="company__vacancies" type="button">
-          Ir às vagas
+          Administrar vagas
         </button>
       </Link>
       <button className="company__edit" type="button">
