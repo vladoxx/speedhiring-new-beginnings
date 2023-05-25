@@ -1,13 +1,22 @@
 import { RequestHandler } from "express";
 
 import Job from "../models/Job";
+import Company from "../models/Company";
 
 export const createJob: RequestHandler = async (req, res) => {
   console.log(req.body);
 
   const job = new Job(req.body);
   const jobUser = await job.save();
-  res.json(jobUser);
+
+  // após salvar o trabalho, atualiza a empresa relacionada adicionando o trabalho à lista de trabalhos.
+  const updateCompany = await Company.findByIdAndUpdate(
+    req.body.company,
+    { $push: { jobs: jobUser._id } },
+    { new: true }
+  );
+
+  res.json({ jobUser, updateCompany });
 };
 
 export const getAllJobs: RequestHandler = async (req, res) => {

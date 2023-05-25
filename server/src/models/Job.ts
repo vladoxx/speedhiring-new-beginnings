@@ -10,7 +10,7 @@ interface IJob extends Document {
   contractType: string;
   salary: number;
   jobDescription: string;
-  company: string;
+  company: Schema.Types.ObjectId;
   state: string;
 }
 
@@ -66,7 +66,7 @@ const jobSchema = new Schema(
       trim: true,
     },
     company: {
-      type: String,
+      type: Schema.Types.ObjectId,
       ref: "Company",
       required: true,
     },
