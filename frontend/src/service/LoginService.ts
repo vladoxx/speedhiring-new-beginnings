@@ -4,10 +4,10 @@ import { CompanyProps } from "../@types/company";
 
 const API = "http://localhost:3333";
 
-export const loginUser = async (user: UserProps) => {
+export const loginUserBack = async (user: UserProps) => {
   return await axios.post(`${API}/user/login`, user);
 };
 
-export const loginCompany = async (company: CompanyProps) => {
+export const loginCompanyBack = async (company: CompanyProps) => {
   return await axios.post(`${API}/company/login`, company);
 };

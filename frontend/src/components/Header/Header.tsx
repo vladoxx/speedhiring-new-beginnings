@@ -15,14 +15,13 @@ function Header() {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const { isLoggedInUser, logoutUser } = useUser();
-  const { isLoggedInCompany, logoutCompany } = useCompany();
+  const { isLoggedInUser, logoutUser, userId } = useUser();
+  const { isLoggedInCompany, logoutCompany, companyId } = useCompany();
 
   const value = "Contato";
   const isHome = location.pathname === "/";
-  const isPageCompany = location.pathname === "/company";
+  const isPageCompany = location.pathname === "/company/:id?";
   const isPageUser = location.pathname === "/user";
-  const isPageAdvertiseVacancy = location.pathname === "/advertise-vacancy";
 
   const handleLinkClick = () => {
     const contactSection = document.getElementById("contact");
@@ -72,7 +71,7 @@ function Header() {
                 >
                   {isHome ? null : (
                     <li>
-                      <Link to={"/"} onClick={handleLinkClick}>
+                      <Link to={`/`} onClick={handleLinkClick}>
                         Início
                       </Link>
                     </li>
@@ -85,20 +84,34 @@ function Header() {
                       Para empresas
                       <div className="dropdown-content">
                         <Link
-                          to={"/advertise-vacancy"}
+                          to={`/company/${companyId}`}
                           onClick={handleLinkClick}
                         >
-                          Cadastrar vaga
+                          Perfil
                         </Link>
                       </div>
                     </li>
                   )}
 
-                  {isLoggedInCompany && isPageAdvertiseVacancy && (
+                  {isLoggedInCompany && isHome && (
                     <li className="dropdown">
                       Para empresas
                       <div className="dropdown-content">
-                        <Link to={"/company"} onClick={handleLinkClick}>
+                        {!isPageCompany ? (
+                          ""
+                        ) : (
+                          <Link
+                            to={"/advertise-vacancy"}
+                            onClick={handleLinkClick}
+                          >
+                            Cadastrar vaga
+                          </Link>
+                        )}
+
+                        <Link
+                          to={`/company/${companyId}`}
+                          onClick={handleLinkClick}
+                        >
                           Perfil
                         </Link>
                       </div>
@@ -130,7 +143,10 @@ function Header() {
                             Cadastrar candidato
                           </Link>
                         ) : (
-                          <Link to={"/user"} onClick={handleLinkClick}>
+                          <Link
+                            to={`/user/${userId}`}
+                            onClick={handleLinkClick}
+                          >
                             Perfil
                           </Link>
                         )}
@@ -147,7 +163,10 @@ function Header() {
                             Cadastrar candidato
                           </Link>
                         ) : (
-                          <Link to={"/user"} onClick={handleLinkClick}>
+                          <Link
+                            to={`/user/${userId}`}
+                            onClick={handleLinkClick}
+                          >
                             Perfil
                           </Link>
                         )}
@@ -174,7 +193,7 @@ function Header() {
                   )}
 
                   <li>
-                    {isLoggedInUser ? (
+                    {isLoggedInUser || isLoggedInCompany ? (
                       <button
                         className={`${
                           !isLoggedInUser || !isLoggedInCompany

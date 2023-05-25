@@ -8,13 +8,14 @@ import useCompany from "../../hooks/useCompany";
 
 import * as loginService from "../../service/LoginService";
 
-import LogoLogin from "../../assets/images/logo-login.png";
+import LogoLoginCompany from "../../assets/images/logo-login.png";
 
 function LoginCompany() {
   let navigate = useNavigate();
   let params = useParams();
 
-  const { loginCompany, isLoggedInCompany } = useCompany();
+  const { tokenCompany, isLoggedInCompany, getIdCompany, companyId } =
+    useCompany();
 
   const initialStateLogin = {
     cnpj: "",
@@ -34,9 +35,12 @@ function LoginCompany() {
 
     if (!params.id) {
       try {
-        const resLogin = await loginService.loginCompany(companyLogin);
+        const resLoginCompany = await loginService.loginCompanyBack(
+          companyLogin
+        );
 
-        loginCompany(resLogin.data.token);
+        tokenCompany(resLoginCompany.data.token);
+        getIdCompany(resLoginCompany.data.company._id);
 
         setCompanyLogin(initialStateLogin);
       } catch (error: any) {
@@ -52,13 +56,13 @@ function LoginCompany() {
 
   useEffect(() => {
     if (isLoggedInCompany) {
-      navigate("/company");
+      navigate(`/company/${companyId}`);
     }
   }, [isLoggedInCompany, navigate]);
 
   return (
     <div className="login">
-      <img className="login__image" src={LogoLogin} alt="Logo Login" />
+      <img className="login__image" src={LogoLoginCompany} alt="Logo Login" />
 
       <h3 className="login__title">Login</h3>
 
@@ -100,7 +104,7 @@ function LoginCompany() {
 
       <span className="login__register">
         Não tem cadastro?{" "}
-        <Link to={"/register"} className="login__register-link">
+        <Link to={"/register-company"} className="login__register-link">
           Clique aqui
         </Link>
       </span>

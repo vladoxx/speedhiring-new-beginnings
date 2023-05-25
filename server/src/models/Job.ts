@@ -10,7 +10,7 @@ interface IJob extends Document {
   contractType: string;
   salary: number;
   jobDescription: string;
-  company: string;
+  company: Schema.Types.ObjectId;
   state: string;
 }
 
