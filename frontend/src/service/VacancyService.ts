@@ -3,6 +3,10 @@ import { JobProps } from "../@types/job";
 
 const API = "http://localhost:3333";
 
+export const createJob = async (job: JobProps) => {
+  return await axios.post(`${API}/job`, job);
+};
+
 export const getAllJobs = async () => {
   return await axios.get<JobProps[]>(`${API}/jobs`);
 };

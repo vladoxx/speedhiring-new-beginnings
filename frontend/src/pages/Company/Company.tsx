@@ -29,7 +29,7 @@ function Company() {
     <div className="company">
       <h3 className="company__tittle">Perfil da Empresa</h3>
 
-      <img className="company__image" src={LogoToti} alt="Logo Empresa" />
+      {/* <img className="company__image" src={LogoToti} alt="Logo Empresa" /> */}
       <div className="company__list">
         <ul>
           <li>{company?.corporate_name}</li>
@@ -46,15 +46,17 @@ function Company() {
 
       <Link to={"/vacancy"}>
         <button className="company__vacancies" type="button">
-          Voltar ás vagas
+          Ir às vagas
         </button>
       </Link>
       <button className="company__edit" type="button">
         Editar dados
       </button>
-      <button className="company__register" type="button">
-        Cadastrar vaga
-      </button>
+      <Link to={"/advertise-vacancy"}>
+        <button className="company__register" type="button">
+          Cadastrar vaga
+        </button>
+      </Link>
     </div>
   );
 }

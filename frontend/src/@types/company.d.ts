@@ -14,6 +14,19 @@ export interface CompanyProps {
   jobs?: JobProps[];
 }
 
+export interface CompanyVacancyProps {
+  _id?: string;
+  jobs?: JobProps[];
+  corporate_name?: string;
+  cnpj?: string;
+  email?: string;
+  website?: string;
+  address?: string;
+  phone?: string;
+  job?: string;
+  receivedCurriculums?: ReceivedCurriculumProps[];
+}
+
 export interface ReceivedCurriculumProps {
   user: string;
   curriculum: string;

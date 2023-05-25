@@ -32,7 +32,7 @@ function Vacancy() {
       <div className="vacant__container">
         {jobs.map((job) => {
           return (
-            <div key={job._id} className="vacant__box_info">
+            <div key={job.company} className="vacant__box_info">
               <div className="vacant__box_info-header">
                 <h3 className="vacant__job_title">{job.jobTitle}</h3>
                 <span className="vacant__localization">

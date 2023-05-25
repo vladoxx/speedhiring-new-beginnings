@@ -36,7 +36,7 @@ function Candidatures() {
           candidatures.map((candidature) => {
             return (
               <div
-                key={candidature._id}
+                key={candidature.company}
                 className="candidatures__box-container"
               >
                 <h4 className="candidatures__role">{candidature.jobTitle}</h4>

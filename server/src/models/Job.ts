@@ -66,7 +66,7 @@ const jobSchema = new Schema(
       trim: true,
     },
     company: {
-      type: Schema.Types.ObjectId,
+      type: String,
       ref: "Company",
       required: true,
     },

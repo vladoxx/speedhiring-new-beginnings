@@ -19,6 +19,10 @@
   width: 150px;
 }
 
+.company__list {
+  margin: 2rem 0 0;
+}
+
 .company__list ul {
   list-style: none;
   padding-left: 10%;
