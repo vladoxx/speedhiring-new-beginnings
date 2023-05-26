@@ -4,23 +4,28 @@ import Job from "../models/Job";
 import Company from "../models/Company";
 
 export const createJob: RequestHandler = async (req, res) => {
-  console.log(req.body);
+  try {
+    const job = new Job(req.body);
+    const savedJob = await job.save();
 
-  const job = new Job(req.body);
-  const jobUser = await job.save();
+    console.log(savedJob);
 
-  /**
-   * Cria um novo trabalho.
-   * Salva o trabalho no banco de dados e atualiza a empresa relacionada adicionando o trabalho à lista de trabalhos.
-   * Retorna o trabalho criado e a empresa atualizada.
-   */
-  const updateCompany = await Company.findByIdAndUpdate(
-    req.body.company,
-    { $push: { jobs: jobUser._id } },
-    { new: true }
-  );
+    /**
+     * Cria um novo trabalho.
+     * Salva o trabalho no banco de dados e atualiza a empresa relacionada adicionando o trabalho à lista de trabalhos.
+     * Retorna o trabalho criado e a empresa atualizada.
+     */
 
-  res.json({ jobUser, updateCompany });
+    const updateCompany = await Company.findByIdAndUpdate(
+      req.body.companyId,
+      { $push: { jobs: savedJob.companyId } },
+      { new: true }
+    );
+
+    res.json({ job: savedJob, companyId: updateCompany });
+  } catch (error) {
+    res.status(500).json({ message: "Erro ao criar a vaga de emprego." });
+  }
 };
 
 /**
