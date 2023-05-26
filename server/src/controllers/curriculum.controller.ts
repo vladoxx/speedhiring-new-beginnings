@@ -5,13 +5,13 @@ import Curriculum from "../models/Curriculum";
 export const createCurriculum: RequestHandler = async (req, res) => {
   const curriculumFound = await Curriculum.findOne({ email: req.body.email });
 
-  // if (curriculumFound) {
-  //   return res
-  //     .status(301)
-  //     .json({ message: "Já existe um usuário com este e-mail!" });
-  // }
+  if (curriculumFound) {
+    return res
+      .status(301)
+      .json({ message: "Já existe um usuário com este e-mail!" });
+  }
 
-  // console.log(req.body);
+  console.log(req.body);
 
   const curriculum = new Curriculum(req.body);
   const curriculumUser = await curriculum.save();
