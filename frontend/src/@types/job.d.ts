@@ -13,6 +13,10 @@ export interface JobProps {
   state?: string;
 }
 
+export interface JobOneProps {
+  jobs?: string[];
+}
+
 export interface CandidatureJobs {
   _id?: string;
   user?: string;

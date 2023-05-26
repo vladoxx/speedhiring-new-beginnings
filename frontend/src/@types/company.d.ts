@@ -11,7 +11,7 @@ export interface CompanyProps {
   password?: string;
   confirm_password?: string;
   receivedCurriculums?: ReceivedCurriculumProps[];
-  jobs?: JobProps[];
+  jobs?: string[];
 }
 
 export interface CompanyVacancyProps {
@@ -31,10 +31,6 @@ export interface ReceivedCurriculumProps {
   user: string;
   curriculum: string;
   receivedDate: string;
-}
-
-export interface JobProps {
-  job: string;
 }
 
 export interface CompanyTokenContextProps {

@@ -7,6 +7,10 @@ export const createJob = async (job: JobProps) => {
   return await axios.post(`${API}/job`, job);
 };
 
+export const getOneJob = async (id: string) => {
+  return await axios.get<JobProps>(`${API}/job/${id}`);
+};
+
 export const getAllJobs = async () => {
   return await axios.get<JobProps[]>(`${API}/jobs`);
 };
