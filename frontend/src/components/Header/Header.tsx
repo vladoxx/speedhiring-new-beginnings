@@ -220,21 +220,26 @@ function Header() {
           </nav>
 
           <div className="header__div">
-            <img className="header__img" src={Logo} />
+            <Link to={"/"}>
+              <img className="header__img" src={Logo} />
+            </Link>
 
             <h1 className="header_title">New Beginnings</h1>
           </div>
         </div>
 
-        <h2 className="header__subtitle">
-          Solução de emprego para imigrantes e refugiados
-        </h2>
-
-        <p className="header__paragraph">
-          Ajude imigrantes e refugiados a encontrar empregos e superar as
-          barreiras que muitas vezes impedem a integração no mercado de
-          trabalho.
-        </p>
+        {isHome && (
+          <>
+            <h2 className="header__subtitle">
+              Solução de emprego para imigrantes e refugiados
+            </h2>
+            <p className="header__paragraph">
+              Ajude imigrantes e refugiados a encontrar empregos e superar as
+              barreiras que muitas vezes impedem a integração no mercado de
+              trabalho.
+            </p>
+          </>
+        )}
       </header>
     </>
   );

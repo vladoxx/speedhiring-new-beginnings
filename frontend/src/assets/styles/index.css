@@ -9,7 +9,6 @@
   --cinza-escuro: #7c7c7c;
   --black: #000000;
   --branco-acinzentado: #e4e4e4;
-  
 
   --font-family: "Montserrat", sans-serif;
 
@@ -47,4 +46,11 @@
 body {
   font-family: var(--font-family);
   font-size: 16px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
 }

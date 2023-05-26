@@ -6,7 +6,7 @@
 .header__nav {
   position: relative;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .header__div {
@@ -186,7 +186,7 @@ input[type="checkbox"]:checked ~ .menu-items {
 
 @media only screen and (min-width: 375px) {
   .header__div {
-    margin: 40px 0 0 0;
+    margin: 2.5rem auto;
   }
 }
 /*-----Tablet--------*/
@@ -198,6 +198,17 @@ input[type="checkbox"]:checked ~ .menu-items {
 
   .header__nav {
     display: block;
+  }
+
+  .header__nav nav {
+    max-width: 75rem;
+    margin: 2.5rem auto;
+  }
+
+  .header__div {
+    max-width: 75rem;
+    position: relative;
+    margin: 0 auto;
   }
 
   .header__ul {
@@ -286,8 +297,8 @@ input[type="checkbox"]:checked ~ .menu-items {
   .header__img {
     width: 120px;
     position: absolute;
-    top: 0;
     left: 2rem;
+    bottom: 6.25rem;
   }
 
   .header_title {
