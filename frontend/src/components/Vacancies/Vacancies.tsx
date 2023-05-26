@@ -1,5 +1,6 @@
 import { JobProps } from "../../@types/job";
 
+import "./Vacancies.css";
 interface PropsJob {
   vacancy: JobProps;
 }

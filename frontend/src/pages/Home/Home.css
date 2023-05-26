@@ -1,7 +1,12 @@
 .about,
-.objective {
-  margin-top: 3.75rem;
-  padding: 0 1.5rem;
+.objective,
+.objective,
+.connection,
+.services,
+.virtues,
+.partners,
+.contact {
+  padding: 3rem 1.5rem;
 }
 
 .about__title,
@@ -17,6 +22,15 @@
   color: var(--cinza-azulado);
 }
 
+.about__content,
+.objective__content,
+.connection__content,
+.services__content,
+.contact__content {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
 .about__paragraph {
   font-size: var(--font-size-p-mobile);
   color: var(--black);
@@ -26,6 +40,12 @@
   letter-spacing: 0.2px;
 }
 
+.objective__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .objective__image {
   width: 100%;
   margin-top: 1.625rem;
@@ -33,8 +53,10 @@
 }
 
 .connection {
-  padding: 2rem 1.5rem;
   background-color: var(--branco-acinzentado);
+}
+
+.connection__content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,7 +91,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem 1.5rem;
 }
 
 .services__title {
@@ -103,7 +124,6 @@
 
 .virtues {
   background-color: var(--branco-acinzentado);
-  padding: 3rem 1.5rem;
 }
 
 .virtues__container {
@@ -167,10 +187,6 @@
   color: var(--cinza-azulado);
 }
 
-.partners {
-  padding: 3rem 1.5rem;
-}
-
 .partners__title {
   margin-bottom: 2rem;
 }
@@ -205,7 +221,6 @@
 
 .contact {
   background-color: var(--branco-acinzentado);
-  padding: 3rem 1.5rem;
 }
 
 .contact__text {
@@ -219,11 +234,6 @@
 /*------Tablet---------*/
 
 @media only screen and (min-width: 768px) {
-  .about,
-  .objective {
-    padding: 0 9rem;
-  }
-
   .about__title,
   .objective__title,
   .services__title,
@@ -237,15 +247,12 @@
   .about__paragraph {
     font-size: var(--font-size-p-tablet);
     padding: 0 10rem;
-
   }
 
-  .connection {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  .connection__content {
     justify-items: center;
     gap: 4rem;
-    padding: 3rem 10rem;
+    align-items: stretch;
   }
 
   .connection__container h4 {
@@ -255,7 +262,6 @@
   .connection__container p {
     font-size: var(--font-size-p-tablet);
     padding: 0 9rem;
-
   }
 
   .connection__container:nth-child(3) {
@@ -283,7 +289,6 @@
 
   .contact__text {
     font-size: var(--font-size-p-tablet);
-    padding: 3rem 16rem;
   }
 
   .virtues__respect {
@@ -337,12 +342,6 @@
     font-size: var(--font-size-p-desktop);
   }
 
-  .objective {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .objective__image {
     width: 70%;
     margin: 4rem 0;
@@ -350,7 +349,7 @@
     border-radius: 60px;
   }
 
-  .connection {
+  .connection__content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }

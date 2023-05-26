@@ -50,7 +50,8 @@ function AdvertiseVacancy() {
 
     setTimeout(() => {
       navigate("/");
-    }, 2000);
+      window.scrollTo(0, 0);
+    }, 1000);
   };
 
   return (
