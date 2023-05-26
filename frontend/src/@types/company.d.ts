@@ -43,6 +43,11 @@ export interface CompanyIdContextProps {
   setCompanyId: (companyId: string) => void;
 }
 
+export interface CompanyNameContextProps {
+  companyName: string;
+  setCompanyName: (companyName: string) => void;
+}
+
 export interface CompanyContextProviderProps {
   children: ReactNode;
 }

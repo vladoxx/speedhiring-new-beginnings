@@ -1,7 +1,7 @@
 import { Schema, model, Document } from "mongoose";
 import bcrypt from "bcryptjs";
 
-interface ICompany extends Document {
+export interface ICompany extends Document {
   corporate_name: string;
   sector: string;
   cnpj: string;

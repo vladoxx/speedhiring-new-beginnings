@@ -12,7 +12,7 @@ import "./AdvertiseVacancy.css";
 
 function AdvertiseVacancy() {
   let navigate = useNavigate();
-  const { companyId } = useCompany();
+  const { companyId, companyName } = useCompany();
 
   const initialState = {
     jobTitle: "",
@@ -24,7 +24,8 @@ function AdvertiseVacancy() {
     contractType: "",
     salary: 0.0,
     jobDescription: "",
-    company: "",
+    companyId: "",
+    companyName: "",
     state: "",
   };
 
@@ -38,7 +39,11 @@ function AdvertiseVacancy() {
     e.preventDefault();
 
     if (companyId) {
-      const updateJob = { ...job, company: companyId };
+      const updateJob = {
+        ...job,
+        companyId: companyId,
+        companyName: companyName,
+      };
       await jobService.createJob(updateJob);
 
       alert("Vaga cadastrada com sucesso!");

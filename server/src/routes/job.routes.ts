@@ -8,5 +8,6 @@ router.get("/job/:id", jobController.getOneJob);
 router.post("/job", jobController.createJob);
 router.put("/job/:id", jobController.updateJob);
 router.delete("/job/:id", jobController.deleteJob);
+router.delete("/jobs", jobController.deleteAllJobs);
 
 export default router;
