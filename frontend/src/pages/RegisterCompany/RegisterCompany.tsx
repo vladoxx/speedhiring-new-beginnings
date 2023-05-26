@@ -35,13 +35,20 @@ function RegisterCompany() {
   const handleSubmitCompany = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!params.id) {
-      await companyService.createCompany(company);
+    try {
+      if (!params.id) {
+        await companyService.createCompany(company);
 
-      setCompany(initialStateCompany);
+        setCompany(initialStateCompany);
+      }
+
+      navigate("/login-company");
+    } catch (error: any) {
+      const errorMessage =
+        error.response?.data?.message || error.response.data.errors;
+
+      console.log("Erro de cadastro:", errorMessage);
     }
-
-    navigate("/login-company");
   };
 
   const getCompany = async (id: string) => {

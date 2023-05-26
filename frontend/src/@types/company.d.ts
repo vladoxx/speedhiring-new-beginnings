@@ -11,7 +11,7 @@ export interface CompanyProps {
   password?: string;
   confirm_password?: string;
   receivedCurriculums?: ReceivedCurriculumProps[];
-  jobs?: JobProps[];
+  jobs?: string[];
 }
 
 export interface CompanyVacancyProps {
@@ -33,10 +33,6 @@ export interface ReceivedCurriculumProps {
   receivedDate: string;
 }
 
-export interface JobProps {
-  job: string;
-}
-
 export interface CompanyTokenContextProps {
   jwtCompany: string;
   setJwtCompany: (jwtCompany: string) => void;
@@ -45,6 +41,11 @@ export interface CompanyTokenContextProps {
 export interface CompanyIdContextProps {
   companyId: string;
   setCompanyId: (companyId: string) => void;
+}
+
+export interface CompanyNameContextProps {
+  companyName: string;
+  setCompanyName: (companyName: string) => void;
 }
 
 export interface CompanyContextProviderProps {

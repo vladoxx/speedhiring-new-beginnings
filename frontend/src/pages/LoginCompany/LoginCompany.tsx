@@ -14,8 +14,13 @@ function LoginCompany() {
   let navigate = useNavigate();
   let params = useParams();
 
-  const { tokenCompany, isLoggedInCompany, getIdCompany, companyId } =
-    useCompany();
+  const {
+    tokenCompany,
+    isLoggedInCompany,
+    getIdCompany,
+    companyId,
+    getNameCompany,
+  } = useCompany();
 
   const initialStateLogin = {
     cnpj: "",
@@ -41,13 +46,15 @@ function LoginCompany() {
 
         tokenCompany(resLoginCompany.data.token);
         getIdCompany(resLoginCompany.data.company._id);
+        getNameCompany(resLoginCompany.data.company.corporate_name);
 
         setCompanyLogin(initialStateLogin);
       } catch (error: any) {
         const errorMessage =
-          error.response?.data?.message || "Erro desconhecido";
+          error.response?.data?.message || error.response.data.errors[0].msg;
 
         console.log("Erro de login:", errorMessage);
+        console.log("Error", error);
 
         setLoginSucess(errorMessage);
       }
@@ -78,7 +85,7 @@ function LoginCompany() {
           onChange={handleInputChangeLogin}
           value={companyLogin.cnpj}
           placeholder="CNPJ"
-          required
+          // required
         />
 
         <input
@@ -88,7 +95,7 @@ function LoginCompany() {
           onChange={handleInputChangeLogin}
           value={companyLogin.password}
           placeholder="Senha"
-          required
+          // required
         />
 
         <span className="login__forgot_password">Esqueceu sua senha?</span>

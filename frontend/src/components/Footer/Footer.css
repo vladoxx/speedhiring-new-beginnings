@@ -1,12 +1,17 @@
 .footer {
   background-color: var(--verde-azulado);
   padding: 3rem 1.5rem;
+}
+
+.footer__content {
+  max-width: 75rem;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.footer > div {
+.footer__content > div {
   display: flex;
   flex-direction: column;
   align-items: center;
