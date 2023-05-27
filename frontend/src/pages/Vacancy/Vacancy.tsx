@@ -19,7 +19,7 @@ function Vacancy() {
 
   useEffect(() => {
     loadJobs();
-  }, [loadJobs]);
+  }, []);
 
   const handleButtonClick = () => {
     navigate("/");
@@ -32,7 +32,7 @@ function Vacancy() {
 
       <div className="vacant__container">
         {jobs.map((job) => {
-          return <Vacancies key={job._id} vacancy={job} />;
+          return <Vacancies key={job._id} vacancy={job} fetchJobs={loadJobs} />;
         })}
       </div>
 
