@@ -18,13 +18,14 @@ export const createJob: RequestHandler = async (req, res) => {
 
     const updateCompany = await Company.findByIdAndUpdate(
       req.body.companyId,
-      { $push: { jobs: savedJob.companyId } },
+      { $push: { jobs: savedJob.companyId }, $set: { email: savedJob.email } },
       { new: true }
     );
 
     res.json({ job: savedJob, companyId: updateCompany });
   } catch (error) {
     res.status(500).json({ message: "Erro ao criar a vaga de emprego." });
+    console.error(error);
   }
 };
 

@@ -1,4 +1,10 @@
+import { Link, useLocation } from "react-router-dom";
+
 import { JobProps } from "../../@types/job";
+
+import useCompany from "../../hooks/useCompany";
+
+import { handleButtonClick } from "../../utils/scrollTop";
 
 import "./Vacancies.css";
 interface PropsJob {
@@ -6,6 +12,11 @@ interface PropsJob {
 }
 
 export default function Vacancies({ vacancy }: PropsJob) {
+  const location = useLocation();
+  const { isLoggedInCompany } = useCompany();
+
+  const isPageVacancy = location.pathname === "/vacancy";
+
   return (
     <div key={vacancy?._id} className="vacant__box_info">
       <div className="vacant__box_info-header">
@@ -19,9 +30,23 @@ export default function Vacancies({ vacancy }: PropsJob) {
           {vacancy?.companyName}
         </span>
         <p className="vacant__description">{vacancy?.jobDescription}</p>
-        <button className="vacant__box_info-button" type="submit" value="">
-          Ver Vaga
-        </button>
+
+        {!isLoggedInCompany && (
+          <Link
+            to={`/description-vacancy/${vacancy?._id}`}
+            className="vacant__box_info-button"
+            onClick={handleButtonClick}
+          >
+            Ver vaga
+          </Link>
+        )}
+
+        {isLoggedInCompany && !isPageVacancy && (
+          <div>
+            <button className="vacant__box_info-button">Editar</button>
+            <button className="vacant__box_info-button">Deletar</button>
+          </div>
+        )}
       </div>
     </div>
   );

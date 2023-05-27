@@ -57,7 +57,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
                   <Route path="/candidatures/:id" element={<Candidatures />} />
                   <Route path="/change-password" element={<ChangePassword />} />
                   <Route
-                    path="/description-vacancy"
+                    path="/description-vacancy/:id"
                     element={<DescriptionVacancy />}
                   />
                   <Route path="/login-user" element={<LoginUser />} />
