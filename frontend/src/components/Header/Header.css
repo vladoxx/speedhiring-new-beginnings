@@ -42,23 +42,14 @@
 
 .header__ul li {
   margin: 22px 0;
-}
-
-.header__ul a,
-.header__ul li {
+  cursor: pointer;
   text-decoration: none;
   color: #fff;
-  font-weight: 400;
   font-size: var(--font-size-p-desktop);
   padding: 0.7rem;
   list-style: none;
 }
 
-.header__ul a:hover {
-  font-weight: bolder;
-}
-
-.header__ul a:hover,
 .header__ul li:hover {
   font-weight: bolder;
 }

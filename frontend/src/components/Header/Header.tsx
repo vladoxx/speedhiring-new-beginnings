@@ -22,9 +22,8 @@ function Header() {
   const value = "Contato";
   const isHome = location.pathname === "/";
   const isPageCompany = location.pathname === "/company/:id?";
-  const isPageVacancy = location.pathname === "/vacancy";
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (path: string) => {
     const contactSection = document.getElementById("contact");
     const target = event?.target as HTMLElement;
     const value = target.dataset.value;
@@ -35,6 +34,8 @@ function Header() {
     } else {
       setMenuOpen(false);
     }
+
+    navigate(path);
   };
 
   const handleCheckboxChange = () => {
@@ -71,11 +72,7 @@ function Header() {
                   className={`header__ul menu-items ${menuOpen ? "open" : ""}`}
                 >
                   {isHome ? null : (
-                    <li>
-                      <Link to={`/`} onClick={handleLinkClick}>
-                        Início
-                      </Link>
-                    </li>
+                    <li onClick={() => handleLinkClick("/")}>Início</li>
                   )}
 
                   {/* Logica Company */}
@@ -83,13 +80,11 @@ function Header() {
                   {isLoggedInCompany && isPageCompany && (
                     <li className="dropdown">
                       Para empresas
-                      <div className="dropdown-content">
-                        <Link
-                          to={`/company/${companyId}`}
-                          onClick={handleLinkClick}
-                        >
-                          Perfil
-                        </Link>
+                      <div
+                        className="dropdown-content"
+                        onClick={() => handleLinkClick(`/company/${companyId}`)}
+                      >
+                        Perfil
                       </div>
                     </li>
                   )}
@@ -97,13 +92,11 @@ function Header() {
                   {isLoggedInCompany && !isPageCompany && (
                     <li className="dropdown">
                       Para empresas
-                      <div className="dropdown-content">
-                        <Link
-                          to={`/company/${companyId}`}
-                          onClick={handleLinkClick}
-                        >
-                          Perfil
-                        </Link>
+                      <div
+                        className="dropdown-content"
+                        onClick={() => handleLinkClick(`/company/${companyId}`)}
+                      >
+                        Perfil
                       </div>
                     </li>
                   )}
@@ -113,10 +106,11 @@ function Header() {
                   {isLoggedInUser && (
                     <li className="dropdown">
                       Candidato
-                      <div className="dropdown-content">
-                        <Link to={`/user/${userId}`} onClick={handleLinkClick}>
-                          Perfil
-                        </Link>
+                      <div
+                        className="dropdown-content"
+                        onClick={() => handleLinkClick(`/user/${userId}`)}
+                      >
+                        Perfil
                       </div>
                     </li>
                   )}
@@ -125,42 +119,35 @@ function Header() {
                     <>
                       <li className="dropdown">
                         Para empresas
-                        <div className="dropdown-content">
-                          <Link
-                            to={"/register-company"}
-                            onClick={handleLinkClick}
-                          >
-                            Cadastrar empresa
-                          </Link>
+                        <div
+                          className="dropdown-content"
+                          onClick={() => handleLinkClick("/register-company")}
+                        >
+                          Cadastrar empresa
                         </div>
                       </li>
 
                       <li className="dropdown">
                         Candidato
-                        <div className="dropdown-content">
-                          <Link to={"/register-user"} onClick={handleLinkClick}>
-                            Cadastrar candidato
-                          </Link>
+                        <div
+                          className="dropdown-content"
+                          onClick={() => handleLinkClick("/register-user")}
+                        >
+                          Cadastrar candidato
                         </div>
                       </li>
                     </>
                   )}
 
-                  <li>
-                    <Link to={"/vacancy"} onClick={handleLinkClick}>
-                      Vagas
-                    </Link>
-                  </li>
+                  <li onClick={() => handleLinkClick("/vacancy")}>Vagas</li>
 
                   {!isHome ? null : (
-                    <li className={`${value}`}>
-                      <Link
-                        to={""}
-                        onClick={handleLinkClick}
-                        data-value={value}
-                      >
-                        Contato
-                      </Link>
+                    <li
+                      className={`${value}`}
+                      data-value={value}
+                      onClick={() => handleLinkClick("")}
+                    >
+                      Contato
                     </li>
                   )}
 
@@ -176,11 +163,11 @@ function Header() {
                         width="6.875rem"
                       />
                     ) : (
-                      <>
-                        <Link to={"/general-login"} onClick={handleLinkClick}>
-                          <Button text="Login" width="6.875rem" />
-                        </Link>
-                      </>
+                      <Button
+                        text="Login"
+                        width="6.875rem"
+                        onClick={() => navigate("/general-login")}
+                      />
                     )}
                   </li>
                 </ul>
