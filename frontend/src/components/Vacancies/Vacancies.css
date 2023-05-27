@@ -34,6 +34,7 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .vacant__description-empresa {
   font-size: var(--span-mobile);
@@ -41,6 +42,7 @@
   letter-spacing: 0.5px;
   text-transform: uppercase;
   margin: 0 0 0.625rem;
+  align-self: flex-start;
 }
 
 .vacant__description {
@@ -54,16 +56,12 @@
   white-space: pre-wrap;
 }
 
-.vacant__box_info-button {
-  align-self: center;
-  background-color: var(--laranja-escuro);
-  border-radius: 1rem;
-  border: 1px solid var(--branco);
-  color: var(--branco);
-  font-weight: 700;
-  height: 30px;
-  text-align: center;
-  width: 132px;
+.vacancies__containerButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0 0;
 }
 
 @media only screen and (min-width: 768px) {
@@ -91,6 +89,10 @@
 
   .vacant__description {
     font-size: var(--font-size-p-tablet);
+  }
+
+  .vacancies__containerButtons {
+    flex-direction: row;
   }
 }
 

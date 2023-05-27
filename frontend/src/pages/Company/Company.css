@@ -35,24 +35,6 @@
   gap: 1rem;
 }
 
-.buttons__company {
-  align-items: center;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
-    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-  background-color: var(--laranja-escuro);
-  border: 1px solid var(--laranja-escuro);
-  border-radius: 16px;
-  color: var(--branco);
-  cursor: pointer;
-  display: flex;
-  font-size: var(--font-size-p-mobile);
-  font-weight: 700;
-  height: 40px;
-  justify-content: center;
-  width: 170px;
-  text-decoration: none;
-}
-
 /*--------Tablet-------*/
 
 @media (min-width: 768px) {
@@ -66,10 +48,6 @@
 
   .buttons__company-container {
     flex-direction: row;
-  }
-
-  .buttons__company {
-    font-size: var(--font-size-p-tablet);
   }
 }
 

@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import { JobProps } from "../../@types/job";
 
@@ -8,6 +8,8 @@ import * as vacancyService from "../../service/VacancyService";
 import { handleButtonClick } from "../../utils/scrollTop";
 
 import "./Vacancies.css";
+import { useEffect } from "react";
+import Button from "../Button/Button";
 interface PropsJob {
   vacancy: JobProps | undefined;
   fetchJobs: () => void;
@@ -15,15 +17,30 @@ interface PropsJob {
 
 export default function Vacancies({ vacancy, fetchJobs }: PropsJob) {
   const location = useLocation();
+  const navigate = useNavigate();
   const { isLoggedInCompany } = useCompany();
 
   const isPageVacancy = location.pathname === "/vacancy";
 
   const vacancyDelete = async (id: string) => {
-    await vacancyService.deleteOneJob(id);
+    try {
+      await vacancyService.deleteOneJob(id);
 
-    fetchJobs();
+      fetchJobs();
+    } catch (error) {
+      console.error(error);
+    }
   };
+
+  const handleButtonNavigate = (id: string | undefined) => {
+    handleButtonClick();
+
+    navigate(`/description-vacancy/${id}`);
+  };
+
+  useEffect(() => {
+    fetchJobs();
+  }, []);
 
   return (
     <div key={vacancy?._id} className="vacant__box_info">
@@ -39,25 +56,28 @@ export default function Vacancies({ vacancy, fetchJobs }: PropsJob) {
         </span>
         <p className="vacant__description">{vacancy?.jobDescription}</p>
 
-        {!isLoggedInCompany && (
-          <Link
-            to={`/description-vacancy/${vacancy?._id}`}
-            className="vacant__box_info-button"
-            onClick={handleButtonClick}
-          >
-            Ver vaga
-          </Link>
-        )}
+        <div>
+          {!isLoggedInCompany && (
+            <Button
+              text="Ver Vaga"
+              onClick={() => handleButtonNavigate(`${vacancy?._id}`)}
+            />
+          )}
+        </div>
 
         {isLoggedInCompany && !isPageVacancy && (
-          <div>
-            <button className="vacant__box_info-button">Editar</button>
-            <button
-              className="vacant__box_info-button"
+          <div className="vacancies__containerButtons">
+            <Button
+              text="Editar"
+              onClick={() => navigate(`/advertise-vacancy/${vacancy?._id}`)}
+              className="btn-edit"
+            />
+
+            <Button
+              text="Deletar"
               onClick={() => vacancy?._id && vacancyDelete(vacancy?._id)}
-            >
-              Deletar
-            </button>
+              className="btn-delete"
+            />
           </div>
         )}
       </div>

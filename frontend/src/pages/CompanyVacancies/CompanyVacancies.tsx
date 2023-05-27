@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { JobProps } from "../../@types/job";
 
 import * as companyService from "../../service/CompanyService";
+import { handleButtonClick } from "../../utils/scrollTop";
 
 import useCompany from "../../hooks/useCompany";
 import Vacancies from "../../components/Vacancies/Vacancies";
+import Button from "../../components/Button/Button";
 
 export default function CompanyVacancies() {
+  const navigate = useNavigate();
+
   const [job, setJob] = useState<JobProps[]>([]);
 
   const { companyId } = useCompany();
@@ -20,6 +25,12 @@ export default function CompanyVacancies() {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const handleGoBack = () => {
+    handleButtonClick();
+
+    navigate(-1);
   };
 
   useEffect(() => {
@@ -40,6 +51,8 @@ export default function CompanyVacancies() {
           );
         })}
       </div>
+
+      <Button text="Voltar ao perfil" onClick={handleGoBack} />
     </div>
   );
 }

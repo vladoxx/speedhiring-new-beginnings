@@ -75,12 +75,6 @@
   background-color: var(--laranja-escuro);
 }
 
-.candidatures__button_job:hover {
-  background-color: var(--laranja-claro);
-  color: var(--black);
-  transition: 0.7s;
-}
-
 .candidatures__button_home {
   font-size: 1rem;
   font-weight: bold;
@@ -90,12 +84,6 @@
   border: none;
   background-color: var(--laranja-escuro);
   color: var(--branco);
-}
-
-.candidatures__button_home:hover {
-  background-color: var(--laranja-claro);
-  color: var(--black);
-  transition: 0.7s;
 }
 
 /* Tablet */

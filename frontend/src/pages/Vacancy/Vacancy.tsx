@@ -6,6 +6,7 @@ import * as vacancyService from "../../service/VacancyService";
 
 import "./Vacancy.css";
 import Vacancies from "../../components/Vacancies/Vacancies";
+import Button from "../../components/Button/Button";
 
 function Vacancy() {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ function Vacancy() {
 
   useEffect(() => {
     loadJobs();
-  }, [loadJobs]);
+  }, []);
 
   const handleButtonClick = () => {
     navigate("/");
@@ -32,19 +33,11 @@ function Vacancy() {
 
       <div className="vacant__container">
         {jobs.map((job) => {
-          return <Vacancies key={job._id} vacancy={job} />;
+          return <Vacancies key={job._id} vacancy={job} fetchJobs={loadJobs} />;
         })}
       </div>
 
-      <Link to={"/"}>
-        <button
-          className="vacant__button"
-          type="button"
-          onClick={handleButtonClick}
-        >
-          Voltar ao Inicio
-        </button>
-      </Link>
+      <Button text="Voltar ao Início" onClick={handleButtonClick} />
     </div>
   );
 }
