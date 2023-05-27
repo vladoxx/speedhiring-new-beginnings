@@ -35,7 +35,7 @@ export default function Vacancies({ vacancy, fetchJobs }: PropsJob) {
   const handleButtonNavigate = (id: string | undefined) => {
     handleButtonClick();
 
-    navigate(`/advertise-vacancy/${id}`);
+    navigate(`/description-vacancy/${id}`);
   };
 
   useEffect(() => {
@@ -56,15 +56,14 @@ export default function Vacancies({ vacancy, fetchJobs }: PropsJob) {
         </span>
         <p className="vacant__description">{vacancy?.jobDescription}</p>
 
-        {!isLoggedInCompany && (
-          <Link
-            to={`/description-vacancy/${vacancy?._id}`}
-            className="vacant__box_info-button"
-            onClick={handleButtonClick}
-          >
-            Ver vaga
-          </Link>
-        )}
+        <div>
+          {!isLoggedInCompany && (
+            <Button
+              text="Ver Vaga"
+              onClick={() => handleButtonNavigate(`${vacancy?._id}`)}
+            />
+          )}
+        </div>
 
         {isLoggedInCompany && !isPageVacancy && (
           <div className="vacancies__containerButtons">

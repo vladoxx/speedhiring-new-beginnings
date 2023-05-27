@@ -22,7 +22,7 @@ function Header() {
   const value = "Contato";
   const isHome = location.pathname === "/";
   const isPageCompany = location.pathname === "/company/:id?";
-  const isPageUser = location.pathname === "/user";
+  const isPageVacancy = location.pathname === "/vacancy";
 
   const handleLinkClick = () => {
     const contactSection = document.getElementById("contact");
@@ -94,21 +94,10 @@ function Header() {
                     </li>
                   )}
 
-                  {isLoggedInCompany && isHome && (
+                  {isLoggedInCompany && !isPageCompany && (
                     <li className="dropdown">
                       Para empresas
                       <div className="dropdown-content">
-                        {!isPageCompany ? (
-                          ""
-                        ) : (
-                          <Link
-                            to={"/advertise-vacancy"}
-                            onClick={handleLinkClick}
-                          >
-                            Cadastrar vaga
-                          </Link>
-                        )}
-
                         <Link
                           to={`/company/${companyId}`}
                           onClick={handleLinkClick}
@@ -119,60 +108,42 @@ function Header() {
                     </li>
                   )}
 
-                  {!isLoggedInCompany && !isPageCompany && (
+                  {/* Lógica Candidato */}
+
+                  {isLoggedInUser && (
                     <li className="dropdown">
-                      Para empresas
+                      Candidato
                       <div className="dropdown-content">
-                        <Link
-                          to={"/register-company"}
-                          onClick={handleLinkClick}
-                        >
-                          Cadastrar empresa
+                        <Link to={`/user/${userId}`} onClick={handleLinkClick}>
+                          Perfil
                         </Link>
                       </div>
                     </li>
                   )}
 
-                  {/* Lógica Candidato */}
-
-                  {isLoggedInUser && !isPageUser && (
-                    <li className="dropdown">
-                      Candidato
-                      <div className="dropdown-content">
-                        {!isLoggedInUser ? (
-                          <Link to={"/register-user"} onClick={handleLinkClick}>
-                            Cadastrar candidato
-                          </Link>
-                        ) : (
-                          <Link
-                            to={`/user/${userId}`}
-                            onClick={handleLinkClick}
-                          >
-                            Perfil
-                          </Link>
-                        )}
-                      </div>
-                    </li>
-                  )}
-
                   {!isLoggedInUser && !isLoggedInCompany && (
-                    <li className="dropdown">
-                      Candidato
-                      <div className="dropdown-content">
-                        {!isLoggedInUser ? (
+                    <>
+                      <li className="dropdown">
+                        Para empresas
+                        <div className="dropdown-content">
+                          <Link
+                            to={"/register-company"}
+                            onClick={handleLinkClick}
+                          >
+                            Cadastrar empresa
+                          </Link>
+                        </div>
+                      </li>
+
+                      <li className="dropdown">
+                        Candidato
+                        <div className="dropdown-content">
                           <Link to={"/register-user"} onClick={handleLinkClick}>
                             Cadastrar candidato
                           </Link>
-                        ) : (
-                          <Link
-                            to={`/user/${userId}`}
-                            onClick={handleLinkClick}
-                          >
-                            Perfil
-                          </Link>
-                        )}
-                      </div>
-                    </li>
+                        </div>
+                      </li>
+                    </>
                   )}
 
                   <li>
