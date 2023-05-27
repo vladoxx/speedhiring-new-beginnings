@@ -46,7 +46,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
                 <Routes>
                   <Route path="/:id?" element={<Home />} />
                   <Route
-                    path="/advertise-vacancy"
+                    path="/advertise-vacancy/:id?"
                     element={<AdvertiseVacancy />}
                   />
                   <Route path="/company/:id" element={<Company />} />

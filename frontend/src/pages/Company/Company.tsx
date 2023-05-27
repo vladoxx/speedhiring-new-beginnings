@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import { CompanyProps } from "../../@types/company";
@@ -8,11 +8,13 @@ import useCompany from "../../hooks/useCompany";
 import * as serviceCompany from "../../service/CompanyService";
 
 import "./Company.css";
+import Button from "../../components/Button/Button";
 
 function Company() {
   const [company, setCompany] = useState<CompanyProps>();
   const { companyId, isLoggedInCompany } = useCompany();
 
+  let navigate = useNavigate();
   const loadCompany = async (id: string) => {
     const res = await serviceCompany.getOneCompany(id);
 
@@ -65,21 +67,22 @@ function Company() {
         </ul>
 
         <div className="buttons__company-container">
-          <Link
-            to={"/company-vacancies"}
-            className="buttons__company company__vacancies"
-          >
-            Administrar vagas
-          </Link>
-          <Link to={""} className="buttons__company company__edit">
-            Editar dados
-          </Link>
-          <Link
-            to={"/advertise-vacancy"}
-            className="buttons__company company__register"
-          >
-            Cadastrar vaga
-          </Link>
+          <Button
+            text="Administrar vagas"
+            onClick={() => navigate("/company-vacancies")}
+          />
+
+          <Button
+            text="Editar dados"
+            onClick={() => navigate("/")}
+            className="btn-edit"
+          />
+
+          <Button
+            text="Cadastrar vaga"
+            onClick={() => navigate("/advertise-vacancy")}
+            className="btn-open"
+          />
         </div>
       </div>
     </div>

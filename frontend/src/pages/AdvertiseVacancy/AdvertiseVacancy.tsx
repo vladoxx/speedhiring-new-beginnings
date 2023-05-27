@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { FormEvent, useEffect, useState } from "react";
 
 import { InputChange } from "../../@types/general";
@@ -12,6 +12,7 @@ import "./AdvertiseVacancy.css";
 
 function AdvertiseVacancy() {
   let navigate = useNavigate();
+  let params = useParams();
   const { companyId, companyName } = useCompany();
 
   const initialState = {
@@ -38,7 +39,7 @@ function AdvertiseVacancy() {
   const handleSubmitJob = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (companyId) {
+    if (!params.id) {
       const updateJob = {
         ...job,
         companyId: companyId,
@@ -50,11 +51,13 @@ function AdvertiseVacancy() {
 
       setJob(initialState);
     } else {
-      await jobService.updateOneJob(companyId, job);
+      await jobService.updateOneJob(params.id, job);
+
+      alert("Vaga atualizada com sucesso!");
     }
 
     setTimeout(() => {
-      navigate("/");
+      navigate(-1);
       window.scrollTo(0, 0);
     }, 1000);
   };
@@ -90,14 +93,19 @@ function AdvertiseVacancy() {
   };
 
   useEffect(() => {
-    if (companyId) {
-      getJob(companyId);
+    if (params.id) {
+      getJob(params.id);
     }
   }, []);
 
   return (
     <div className="advertisement">
-      <h3 className="advertisement__title">Anuncie sua Vaga</h3>
+      {params.id ? (
+        <h3 className="advertisement__title">Editando Vaga</h3>
+      ) : (
+        <h3 className="advertisement__title">Anuncie sua Vaga</h3>
+      )}
+
       <form
         className="advertisement__form"
         onSubmit={handleSubmitJob}
@@ -195,9 +203,13 @@ function AdvertiseVacancy() {
         />
 
         <div className="advertisement__button_submit">
-          <button className="advertisement__button" type="submit">
-            Cadastrar vaga?
-          </button>
+          {params.id ? (
+            <button>Atualizar</button>
+          ) : (
+            <button className="advertisement__button" type="submit">
+              Cadastrar vaga
+            </button>
+          )}
         </div>
       </form>
     </div>

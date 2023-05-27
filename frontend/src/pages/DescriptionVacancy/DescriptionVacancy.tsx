@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import { JobProps } from "../../@types/job";
 
@@ -7,9 +7,11 @@ import * as vacancyService from "../../service/VacancyService";
 import { handleButtonClick } from "../../utils/scrollTop";
 
 import "./DescriptionVacancy.css";
+import Button from "../../components/Button/Button";
 
 function DescriptionVacancy() {
   const params = useParams();
+  const navigate = useNavigate();
 
   const initialState = {
     jobTitle: "",
@@ -63,13 +65,17 @@ function DescriptionVacancy() {
     });
   };
 
+  const handleButtonToVacancy = (path: string) => {
+    handleButtonClick();
+
+    navigate(path);
+  };
+
   useEffect(() => {
     if (params.id) {
       getJob(params.id);
     }
   }, []);
-
-  console.log(jobId);
 
   return (
     <div className="vacancy">
@@ -96,12 +102,13 @@ function DescriptionVacancy() {
         </ul>
       </div>
 
-      <button className="vacancy__button_apply" type="button">
-        Aplicar
-      </button>
-      <Link to={"/vacancy"} onClick={handleButtonClick}>
-        Voltar às vagas
-      </Link>
+      <div className="vacancies__containerButtons">
+        <Button text="Aplicar" className="btn-open" />
+        <Button
+          text="Voltas às vagas"
+          onClick={() => handleButtonToVacancy("/vacancy")}
+        />
+      </div>
     </div>
   );
 }

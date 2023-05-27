@@ -18,7 +18,7 @@ export const createJob: RequestHandler = async (req, res) => {
 
     const updateCompany = await Company.findByIdAndUpdate(
       req.body.companyId,
-      { $push: { jobs: savedJob.companyId }, $set: { email: savedJob.email } },
+      { $push: { jobs: savedJob._id }, $set: { email: savedJob.email } },
       { new: true }
     );
 
@@ -84,7 +84,14 @@ export const deleteJob: RequestHandler = async (req, res) => {
     return res.status(204).json();
   }
 
-  return res.json(jobFound);
+  // Remove o ID do trabalho do array de jobs da empresa
+  const updateCompany = await Company.findByIdAndUpdate(
+    jobFound.companyId,
+    { $pull: { jobs: jobFound._id } },
+    { new: true }
+  );
+
+  return res.json({ deletedJob: jobFound, updatedCompany: updateCompany });
 };
 
 /**

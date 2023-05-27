@@ -1,5 +1,6 @@
 :root {
   --verde-azulado: #05bfdb;
+  --verde-azulado-escuro: #3498db;
   --roxo-escuro: #7028df;
   --roxo-claro: #b04cd9;
   --laranja-escuro: #f4a261;
@@ -9,6 +10,8 @@
   --cinza-escuro: #7c7c7c;
   --black: #000000;
   --branco-acinzentado: #e4e4e4;
+  --vermelho: #ff5656;
+  --verde-claro: #2ecc71;
 
   --font-family: "Montserrat", sans-serif;
 
