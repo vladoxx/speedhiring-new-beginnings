@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 import { InputChange } from "../../@types/general";
 import { JobProps } from "../../@types/job";
@@ -50,7 +50,7 @@ function AdvertiseVacancy() {
 
       setJob(initialState);
     } else {
-      alert("Fazer login");
+      await jobService.updateOneJob(companyId, job);
     }
 
     setTimeout(() => {
@@ -58,6 +58,42 @@ function AdvertiseVacancy() {
       window.scrollTo(0, 0);
     }, 1000);
   };
+
+  const getJob = async (id: string) => {
+    const res = await jobService.getOneJob(id);
+
+    const {
+      jobTitle,
+      professionalArea,
+      hierarchicalLevel,
+      workday,
+      workModel,
+      educationLevel,
+      contractType,
+      salary,
+      jobDescription,
+      state,
+    } = res.data;
+
+    setJob({
+      jobTitle,
+      professionalArea,
+      hierarchicalLevel,
+      workday,
+      workModel,
+      educationLevel,
+      contractType,
+      salary,
+      jobDescription,
+      state,
+    });
+  };
+
+  useEffect(() => {
+    if (companyId) {
+      getJob(companyId);
+    }
+  }, []);
 
   return (
     <div className="advertisement">
@@ -160,7 +196,7 @@ function AdvertiseVacancy() {
 
         <div className="advertisement__button_submit">
           <button className="advertisement__button" type="submit">
-            Cadastrar ou Anunciar?
+            Cadastrar vaga?
           </button>
         </div>
       </form>
