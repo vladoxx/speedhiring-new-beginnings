@@ -12,6 +12,10 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 
 function Home() {
+
+  const goToTheTop = () => {
+    window.scrollTo(0,0)
+  }
   return (
     <>
       <section className="about">
@@ -201,6 +205,8 @@ function Home() {
           </p>
         </div>
       </section>
+
+      <button className="" type="button" onClick={goToTheTop}>Voltar ao topo</button>
     </>
   );
 }

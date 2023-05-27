@@ -35,7 +35,6 @@
   display: flex;
   flex-direction: column;
 }
-
 .vacant__description-empresa {
   font-size: var(--span-mobile);
   font-weight: 600;
@@ -50,6 +49,9 @@
   text-align: justify;
   line-height: 1.2;
   margin: 0 0 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre-wrap;
 }
 
 .vacant__box_info-button {
@@ -102,7 +104,7 @@
   }
 
   .vacant__job_title {
-    font-size: var(--font-size-h3-desktop);
+    font-size: var(--font-size-h3-tablet);
   }
 
   .vacant__localization {
