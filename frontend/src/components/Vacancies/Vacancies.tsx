@@ -9,6 +9,7 @@ import { handleButtonClick } from "../../utils/scrollTop";
 
 import "./Vacancies.css";
 import { useEffect } from "react";
+import Button from "../Button/Button";
 interface PropsJob {
   vacancy: JobProps | undefined;
   fetchJobs: () => void;
@@ -66,19 +67,18 @@ export default function Vacancies({ vacancy, fetchJobs }: PropsJob) {
         )}
 
         {isLoggedInCompany && !isPageVacancy && (
-          <div>
-            <button
-              className="vacant__box_info-button"
-              onClick={() => handleButtonNavigate(vacancy?._id)}
-            >
-              Editar
-            </button>
-            <button
-              className="vacant__box_info-button"
+          <div className="vacancies__containerButtons">
+            <Button
+              text="Editar"
+              onClick={() => navigate(`/advertise-vacancy/${vacancy?._id}`)}
+              className="btn-edit"
+            />
+
+            <Button
+              text="Deletar"
               onClick={() => vacancy?._id && vacancyDelete(vacancy?._id)}
-            >
-              Deletar
-            </button>
+              className="btn-delete"
+            />
           </div>
         )}
       </div>

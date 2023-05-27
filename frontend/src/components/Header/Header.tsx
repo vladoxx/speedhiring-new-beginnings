@@ -8,6 +8,7 @@ import useCompany from "../../hooks/useCompany";
 import Logo from "../../assets/images/logo.png";
 
 import "./Header.css";
+import Button from "../Button/Button";
 
 function Header() {
   const location = useLocation();
@@ -205,13 +206,11 @@ function Header() {
                         Logout
                       </button>
                     ) : (
-                      <Link
-                        className="header__navbar_button"
-                        to={"/general-login"}
-                        onClick={handleLinkClick}
-                      >
-                        Login
-                      </Link>
+                      <>
+                        <Link to={"/general-login"} onClick={handleLinkClick}>
+                          <Button text="Login" />
+                        </Link>
+                      </>
                     )}
                   </li>
                 </ul>

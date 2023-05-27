@@ -8,6 +8,7 @@ import { handleButtonClick } from "../../utils/scrollTop";
 
 import useCompany from "../../hooks/useCompany";
 import Vacancies from "../../components/Vacancies/Vacancies";
+import Button from "../../components/Button/Button";
 
 export default function CompanyVacancies() {
   const navigate = useNavigate();
@@ -51,7 +52,7 @@ export default function CompanyVacancies() {
         })}
       </div>
 
-      <button onClick={handleGoBack}>Voltar ao perfil</button>
+      <Button text="Voltar ao perfil" onClick={handleGoBack} />
     </div>
   );
 }

@@ -6,6 +6,7 @@ import * as vacancyService from "../../service/VacancyService";
 
 import "./Vacancy.css";
 import Vacancies from "../../components/Vacancies/Vacancies";
+import Button from "../../components/Button/Button";
 
 function Vacancy() {
   const navigate = useNavigate();
@@ -36,15 +37,7 @@ function Vacancy() {
         })}
       </div>
 
-      <Link to={"/"}>
-        <button
-          className="vacant__button"
-          type="button"
-          onClick={handleButtonClick}
-        >
-          Voltar ao Inicio
-        </button>
-      </Link>
+      <Button text="Voltar ao Início" onClick={handleButtonClick} />
     </div>
   );
 }
