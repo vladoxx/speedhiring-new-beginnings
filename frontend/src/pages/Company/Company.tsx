@@ -25,8 +25,6 @@ function Company() {
     }
   }, [isLoggedInCompany]);
 
-  console.log(company);
-
   return (
     <div className="company">
       <h3 className="company__tittle">Perfil da Empresa</h3>

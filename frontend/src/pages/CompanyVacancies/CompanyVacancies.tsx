@@ -12,6 +12,8 @@ export default function CompanyVacancies() {
 
   const { companyId } = useCompany();
 
+  console.log(job);
+
   const fetchJobs = async () => {
     try {
       const res = await companyService.getJobsCompany(companyId);
