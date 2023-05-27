@@ -195,20 +195,19 @@ function Header() {
 
                   <li>
                     {isLoggedInUser || isLoggedInCompany ? (
-                      <button
+                      <Button
+                        text="Logout"
                         className={`${
-                          !isLoggedInUser || !isLoggedInCompany
-                            ? "header__navbar_button"
-                            : "logout"
+                          (!isLoggedInUser && "logout") ||
+                          (!isLoggedInCompany && "logout")
                         }`}
                         onClick={handleLinkClickLogout}
-                      >
-                        Logout
-                      </button>
+                        width="6.875rem"
+                      />
                     ) : (
                       <>
                         <Link to={"/general-login"} onClick={handleLinkClick}>
-                          <Button text="Login" />
+                          <Button text="Login" width="6.875rem" />
                         </Link>
                       </>
                     )}
