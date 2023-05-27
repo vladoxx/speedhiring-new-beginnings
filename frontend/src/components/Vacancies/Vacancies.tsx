@@ -3,19 +3,27 @@ import { Link, useLocation } from "react-router-dom";
 import { JobProps } from "../../@types/job";
 
 import useCompany from "../../hooks/useCompany";
+import * as vacancyService from "../../service/VacancyService";
 
 import { handleButtonClick } from "../../utils/scrollTop";
 
 import "./Vacancies.css";
 interface PropsJob {
   vacancy: JobProps | undefined;
+  fetchJobs: () => void;
 }
 
-export default function Vacancies({ vacancy }: PropsJob) {
+export default function Vacancies({ vacancy, fetchJobs }: PropsJob) {
   const location = useLocation();
   const { isLoggedInCompany } = useCompany();
 
   const isPageVacancy = location.pathname === "/vacancy";
+
+  const vacancyDelete = async (id: string) => {
+    await vacancyService.deleteOneJob(id);
+
+    fetchJobs();
+  };
 
   return (
     <div key={vacancy?._id} className="vacant__box_info">
@@ -44,7 +52,12 @@ export default function Vacancies({ vacancy }: PropsJob) {
         {isLoggedInCompany && !isPageVacancy && (
           <div>
             <button className="vacant__box_info-button">Editar</button>
-            <button className="vacant__box_info-button">Deletar</button>
+            <button
+              className="vacant__box_info-button"
+              onClick={() => vacancy?._id && vacancyDelete(vacancy?._id)}
+            >
+              Deletar
+            </button>
           </div>
         )}
       </div>
