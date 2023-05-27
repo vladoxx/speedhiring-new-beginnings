@@ -229,11 +229,13 @@ export const getJobsCompany: RequestHandler = async (req, res) => {
   try {
     const company = await Company.findById(req.params.id);
 
+    console.log(req.params);
+
     if (!company) {
       return res.status(400).json({ message: "Empresa não encontrada" });
     }
 
-    const jobs = await Job.find({ company: company._id });
+    const jobs = await Job.find({ companyId: company.id });
 
     return res.status(200).json(jobs);
   } catch (error) {
