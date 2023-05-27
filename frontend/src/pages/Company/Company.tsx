@@ -1,35 +1,90 @@
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+import { CompanyProps } from "../../@types/company";
+
+import useCompany from "../../hooks/useCompany";
+
+import * as serviceCompany from "../../service/CompanyService";
+
 import "./Company.css";
-import LogoToti from "../../assets/images/icon_logo_toti.png";
+import Button from "../../components/Button/Button";
 
 function Company() {
+  const [company, setCompany] = useState<CompanyProps>();
+  const { companyId, isLoggedInCompany } = useCompany();
+
+  let navigate = useNavigate();
+  const loadCompany = async (id: string) => {
+    const res = await serviceCompany.getOneCompany(id);
+
+    setCompany(res.data);
+  };
+
+  useEffect(() => {
+    if (companyId) {
+      loadCompany(companyId);
+    }
+  }, [isLoggedInCompany]);
+
   return (
     <div className="company">
       <h3 className="company__tittle">Perfil da Empresa</h3>
 
-      <img className="company__image" src={LogoToti} alt="Logo Empresa" />
-      <div className="company__list">
-        <ul>
-          <li className="company__localization">Matriz: Rio de Janeiro</li>
-          <li className="company__site">Site: www.toti.com.br</li>
-          <li className="company__sector">Sector: Educação</li>
-          <li className="company__email">E-mail: toti@empresa.com</li>
-          <li className="company__cnpj">CNPJ: 69.976.803/0001/82</li>
-          <li className="company__description">
-            A toti é a primeira plataforma brasileira de ensino e inculsão de
-            pessoas refugiadas e migrantes no mercado de trabalho de tecnologia.
+      <div className="company__container">
+        <ul className="company__list__ul">
+          <li>
+            <strong>Nome:</strong> {company?.corporate_name}
           </li>
+          <li className="company__localization">
+            <strong>Matriz:</strong> {company?.address}
+          </li>
+          {company?.website && (
+            <li className="company__site">
+              <strong>Site:</strong> {company?.website}
+            </li>
+          )}
+          <li className="company__sector">
+            <strong>Sector:</strong> {company?.sector}
+          </li>
+          <li className="company__email">
+            <strong>E-mail:</strong> {company?.email}
+          </li>
+          <li className="company__cnpj">
+            <strong>CNPJ:</strong> {company?.cnpj}
+          </li>
+          <li className="company__description">
+            <strong>Telefone:</strong> {company?.phone}
+          </li>
+          <li className="company__description">
+            <strong>Vagas cadastradas:</strong> {company?.jobs?.length}
+          </li>
+          {company?.description_company && (
+            <li className="company__description">
+              <strong>Descrição:</strong> {company?.description_company}
+            </li>
+          )}
         </ul>
-      </div>
 
-      <button className="company__vacancies" type="button">
-        Voltar ás vagas
-      </button>
-      <button className="company__edit" type="button">
-        Editar dados
-      </button>
-      <button className="company__register" type="button">
-        Cadastrar vaga
-      </button>
+        <div className="buttons__company-container">
+          <Button
+            text="Administrar vagas"
+            onClick={() => navigate("/company-vacancies")}
+          />
+
+          <Button
+            text="Editar dados"
+            onClick={() => navigate("/")}
+            className="btn-edit"
+          />
+
+          <Button
+            text="Cadastrar vaga"
+            onClick={() => navigate("/advertise-vacancy")}
+            className="btn-open"
+          />
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { JobProps } from "../../@types/job";
 import * as vacancyService from "../../service/VacancyService";
 
 import "./Vacancy.css";
+import Vacancies from "../../components/Vacancies/Vacancies";
+import Button from "../../components/Button/Button";
 
 function Vacancy() {
   const navigate = useNavigate();
@@ -31,39 +33,11 @@ function Vacancy() {
 
       <div className="vacant__container">
         {jobs.map((job) => {
-          return (
-            <div key={job._id} className="vacant__box_info">
-              <div className="vacant__box_info-header">
-                <h3 className="vacant__job_title">{job.jobTitle}</h3>
-                <span className="vacant__localization">
-                  {job.state || "Não anunciado"}
-                </span>
-              </div>
-              <div className="vacant__description-container">
-                <span className="vacant__description-empresa">
-                  {job.company}
-                </span>
-                <p className="vacant__description">{job.jobDescription}</p>
-                <button
-                  className="vacant__box_info-button"
-                  type="submit"
-                  value=""
-                >
-                  Ver Vaga
-                </button>
-              </div>
-            </div>
-          );
+          return <Vacancies key={job._id} vacancy={job} fetchJobs={loadJobs} />;
         })}
       </div>
 
-      <button
-        className="vacant__button"
-        type="button"
-        onClick={handleButtonClick}
-      >
-        Voltar ao Inicio
-      </button>
+      <Button text="Voltar ao Início" onClick={handleButtonClick} />
     </div>
   );
 }

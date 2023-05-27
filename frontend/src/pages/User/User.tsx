@@ -1,21 +1,11 @@
 // import { useParams } from "react-router-dom";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./User.css";
-import { useEffect, useState } from "react";
+import useUser from "../../hooks/useUser";
 
 function User() {
-  const params = useParams();
-
-  const [userIdCandidature, setUserIdCandidature] = useState("");
-
-  useEffect(() => {
-    if (params.id) {
-      setUserIdCandidature(params.id);
-    }
-  }, []);
-
-  console.log(userIdCandidature);
+  const { userId } = useUser();
 
   return (
     <div className="user">
@@ -26,10 +16,7 @@ function User() {
           Informações Pessoais
         </Link>
 
-        <Link
-          className="user__buttons"
-          to={`/candidatures/${userIdCandidature}`}
-        >
+        <Link className="user__buttons" to={`/candidatures/${userId}`}>
           Minhas Candidaturas
         </Link>
 

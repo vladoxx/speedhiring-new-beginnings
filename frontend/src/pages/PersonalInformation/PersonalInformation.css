@@ -1,735 +1,701 @@
 .personal-information {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 /* data information */
 .personal-information__box-data {
-    padding: 1rem 0 0;
-    line-height: 1.3rem;
+  padding: 1rem 0 0;
+  line-height: 1.3rem;
 }
 
 .personal-information__info-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 900;
-    padding-bottom: 3rem;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  padding-bottom: 3rem;
 }
 
 .personal-information__box_name_image {
-    text-align: center;
+  text-align: center;
 }
 
 .personal-information__name {
-    font-size: 1.45rem;
-    font-weight: 500;
-    padding-bottom: 1rem;
+  font-size: 1.45rem;
+  font-weight: 500;
+  padding-bottom: 1rem;
 }
 
 .personal-information__image {
-    width: 120px;
-    border: 2px solid var(--verde-azulado);
-    border-radius: 100%;
+  width: 120px;
+  border: 2px solid var(--verde-azulado);
+  border-radius: 100%;
 }
 
 .personal-information__box_about_description {
-    padding: 1rem 0 1rem;
+  padding: 1rem 0 1rem;
 }
 
 .personal-information__about-you-title {
-    padding-top: 3rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-    font-style: italic
+  padding-top: 3rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-style: italic;
 }
 
 .personal-information__text-area {
-    width: 100%;
-    height: 4rem;
-    border: 1px solid rgb(5, 191, 219, 06);
-    border-radius: 16px;
-    margin: 0.2rem 0 2rem;
-    padding: 0.4rem;
-    outline: none;
+  width: 100%;
+  height: 4rem;
+  border: 1px solid rgb(5, 191, 219, 06);
+  border-radius: 16px;
+  margin: 0.2rem 0 2rem;
+  padding: 0.4rem;
+  outline: none;
 }
 
 .personal-information__box_data-info {
-    padding-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 .personal-information__data-info-title {
-    font-size: 1.1rem;
-    padding-bottom: 0.2rem;
+  font-size: 1.1rem;
+  padding-bottom: 0.2rem;
 }
 
 .personal-information__box_address {
-    padding-bottom: 1rem;
-    line-height: 1.2rem;
+  padding-bottom: 1rem;
+  line-height: 1.2rem;
 }
 
 .personal-information__address-title {
-    font-size: 1.1rem;
-    padding-bottom: 0.2rem;
+  font-size: 1.1rem;
+  padding-bottom: 0.2rem;
 }
 
 .personal-information__contact-title {
-    font-size: 1.1rem;
-    padding-bottom: 0.2rem;
+  font-size: 1.1rem;
+  padding-bottom: 0.2rem;
 }
 
 .personal-information__box-button-data {
-    text-align: center;
-    padding: 3rem 0;
+  text-align: center;
+  padding: 3rem 0;
 }
 
 .personal-information__edit-button {
-    width: 200px;
-    height: 36px;
-    font-weight: 900;
-    color: var(--branco);
-    border: none;
-    border-radius: 16px;
-    background-color: var(--laranja-escuro);
-}
-
-.personal-information__edit-button:hover {
-    background-color: var(--laranja-claro);
-    transition: 0.6s;
-    color: var(--preto);
+  width: 200px;
+  height: 36px;
+  font-weight: 900;
+  color: var(--branco);
+  border: none;
+  border-radius: 16px;
+  background-color: var(--laranja-escuro);
 }
 
 /* formation */
 .personal-information__box-formations {
-    line-height: 1.4rem;
+  line-height: 1.4rem;
 }
 
 .personal-information__formations-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 900;
-    padding-bottom: 3rem;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  padding-bottom: 3rem;
 }
 
 .personal-information__box_info-formations {
-    padding-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 
 .personal-information__university {
-    font-size: 1.1rem;
-    padding-bottom: 0.2rem;
+  font-size: 1.1rem;
+  padding-bottom: 0.2rem;
 }
 
 .personal-information__career {
-    color: var(--verde-azulado);
-    font-weight: 500;
+  color: var(--verde-azulado);
+  font-weight: 500;
 }
 
 .personal-information__formation-country {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .personal-information__box-button-formation {
-    text-align: center;
-    padding: 2rem 0 3rem; 
+  text-align: center;
+  padding: 2rem 0 3rem;
 }
 
 .personal-information__edit-button-formation {
-    width: 200px;
-    height: 36px;
-    font-weight: 900;
-    color: var(--branco);
-    border: none;
-    border-radius: 16px;
-    background-color: var(--laranja-escuro);
+  width: 200px;
+  height: 36px;
+  font-weight: 900;
+  color: var(--branco);
+  border: none;
+  border-radius: 16px;
+  background-color: var(--laranja-escuro);
 }
 
-.personal-information__edit-button-formation:hover {
-    background-color: var(--laranja-claro);
-    transition: 0.6s;
-    color: var(--preto);
-}
-        
 /* professional experience */
 .personal-information__box-job-experience {
-    line-height: 1.4rem;
+  line-height: 1.4rem;
 }
 
 .personal-information__job-experience-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 900;
-    padding-bottom: 3rem;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  padding-bottom: 3rem;
 }
 
 .personal-information__box-experiences {
-    padding-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .personal-information__job-title {
-    font-size: 1.1rem;
-    padding-bottom: 0.2rem;
+  font-size: 1.1rem;
+  padding-bottom: 0.2rem;
 }
 
 .personal-information__job-experience-institution {
-    color: var(--verde-azulado);
-    font-weight: 500;
+  color: var(--verde-azulado);
+  font-weight: 500;
 }
 
 .personal-information__job-country {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .personal-information__job-responsibilities-description {
-    padding: 0.3rem 0 0.1rem;
-    font-weight: 500;
-    font-style: italic;
+  padding: 0.3rem 0 0.1rem;
+  font-weight: 500;
+  font-style: italic;
 }
 
 .personal-information__job-responsibilities-description-textarea {
-    width: 100%;
-    border: 1px solid var(--verde-azulado);
-    border-radius: 1rem;
-    padding: 0.5rem;
-    outline: none;
+  width: 100%;
+  border: 1px solid var(--verde-azulado);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  outline: none;
 }
 
 .personal-information__box-button_experiences {
-    text-align: center;
-    padding: 2rem 0 3rem;
+  text-align: center;
+  padding: 2rem 0 3rem;
 }
 
 .personal-information__edit-button-job-experience {
-    width: 200px;
-    height: 36px;
-    font-weight: 900;
-    color: var(--branco);
-    border: none;
-    border-radius: 16px;
-    background-color: var(--laranja-escuro);
-}
-
-.personal-information__edit-button-job-experience:hover {
-    background-color: var(--laranja-claro);
-    transition: 0.6s;
-    color: var(--preto);
+  width: 200px;
+  height: 36px;
+  font-weight: 900;
+  color: var(--branco);
+  border: none;
+  border-radius: 16px;
+  background-color: var(--laranja-escuro);
 }
 
 /* certifications */
 .personal-information__box-certifications {
-    line-height: 1.4rem;
+  line-height: 1.4rem;
 }
 
 .personal-information__certification-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 900;
-    padding-bottom: 3rem;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  padding-bottom: 3rem;
 }
 
 .personal-information__box-course-certification {
-    padding-bottom: 1.5rem;
-
+  padding-bottom: 1.5rem;
 }
 
 .personal-information__certifications-institution {
-    font-size: 1.1rem;
-    padding-bottom: 0.2rem;
+  font-size: 1.1rem;
+  padding-bottom: 0.2rem;
 }
 
 .personal-information__certifications-course {
-    color: var(--verde-azulado);
-    font-weight: 500;
+  color: var(--verde-azulado);
+  font-weight: 500;
 }
 
 .personal-information__certifications-country {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .personal-information__certification-description {
-    width: 100%;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    border: 1px solid var(--verde-azulado);
-    border-radius: 1rem;
-    outline: none;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid var(--verde-azulado);
+  border-radius: 1rem;
+  outline: none;
 }
 
 .personal-information__box-button-certification {
-    text-align: center;
-    padding: 2rem 0 3rem; 
+  text-align: center;
+  padding: 2rem 0 3rem;
 }
 
 .personal-information__edit-button-certifications {
-    width: 200px;
-    height: 36px;
-    font-weight: 900;
-    color: var(--branco);
-    border: none;
-    border-radius: 16px;
-    background-color: var(--laranja-escuro);
-}
-
-.personal-information__edit-button-certifications:hover {
-    background-color: var(--laranja-claro);
-    transition: 0.6s;
-    color: var(--preto);
+  width: 200px;
+  height: 36px;
+  font-weight: 900;
+  color: var(--branco);
+  border: none;
+  border-radius: 16px;
+  background-color: var(--laranja-escuro);
 }
 
 /* languages */
 .personal-information__language {
-    line-height: 1.4rem;
-
+  line-height: 1.4rem;
 }
 
 .personal-information__language-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 900;
-    padding-bottom: 3rem;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  padding-bottom: 3rem;
 }
 
 .personal-information__box-languages {
-    padding-bottom: 1rem;
-} 
+  padding-bottom: 1rem;
+}
 
 .personal-information__box-button-language {
-    text-align: center;
-    padding: 2rem 0 3rem; 
+  text-align: center;
+  padding: 2rem 0 3rem;
 }
 
 .personal-information__edit-language-button {
-    width: 200px;
-    height: 36px;
-    font-weight: 900;
-    color: var(--branco);
-    border: none;
-    border-radius: 16px;
-    background-color: var(--laranja-escuro);
-}
-
-.personal-information__edit-language-button:hover {
-    background-color: var(--laranja-claro);
-    transition: 0.6s;
-    color: var(--preto);
+  width: 200px;
+  height: 36px;
+  font-weight: 900;
+  color: var(--branco);
+  border: none;
+  border-radius: 16px;
+  background-color: var(--laranja-escuro);
 }
 
 /* skills */
 .personal-information__skills-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 900;
-    padding-bottom: 3rem;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  padding-bottom: 3rem;
 }
 
 .personal-information__box-skill-input {
-    text-align: center;
+  text-align: center;
 }
 
 .personal-information__skill-input {
-    font-weight: 900;
-    text-align: center;
-    width: 70%;
-    height: 30px;
-    padding: 0.5rem;
-    margin-right: 0.14rem;
-    margin-bottom: 3rem;
-    border: 1px solid var(--verde-azulado);
-    border-radius: 1rem;
-    outline: none;
+  font-weight: 900;
+  text-align: center;
+  width: 70%;
+  height: 30px;
+  padding: 0.5rem;
+  margin-right: 0.14rem;
+  margin-bottom: 3rem;
+  border: 1px solid var(--verde-azulado);
+  border-radius: 1rem;
+  outline: none;
 }
 
 .personal-information__skills-add-button {
-    font-weight: 900;
-    width: 2rem;
-    height: 2rem;
-    border: 1px solid var(--verde-azulado);
-    border-radius: 100%;
+  font-weight: 900;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--verde-azulado);
+  border-radius: 100%;
+}
+
+.personal-information__skill {
+  display: flex;
+  justify-content: center;
 }
 
 .personal-information__box-home-button {
-    text-align: center;
-    padding: 3rem 0 2rem; 
+  text-align: center;
+  padding: 3rem 0 2rem;
 }
 
 .personal-information__home-button {
-    width: 200px;
-    height: 36px;
-    font-weight: 900;
-    color: var(--branco);
-    border: none;
-    border-radius: 16px;
-    background-color: var(--laranja-escuro);
-}
-
-.personal-information__home-button:hover {
-    background-color: var(--laranja-claro);
-    transition: 0.6s;
-    color: var(--preto);
+  width: 200px;
+  height: 36px;
+  font-weight: 900;
+  color: var(--branco);
+  border: none;
+  border-radius: 16px;
+  background-color: var(--laranja-escuro);
 }
 
 /* Tablet */
 @media (min-width: 768px) {
-    .personal-information {
-        padding: 3rem;
-    }
-    
-    /* data information */
-    .personal-information__box-data {
-        padding: 3rem 0 0;
-        line-height: 1.4rem;
-    }
-    
-    .personal-information__info-title {
-        font-size: 28px;
-        padding-bottom: 4rem;
-    }
-    
-    .personal-information__name {
-        font-size: 1.5rem;
-    }
-    
-    .personal-information__image {
-        width: 140px;
-    }
-    
-    .personal-information__box_about_description {
-        padding: 1rem 0 3rem;
-    }
-    
-    .personal-information__about-you-title {
-        padding-top: 4rem;
-        font-size: 1.2rem;
-    }
+  .personal-information {
+    padding: 3rem;
+  }
 
-    .personal-information__text-area {
-        height: 6rem;
-    }
+  /* data information */
+  .personal-information__box-data {
+    padding: 3rem 0 0;
+    line-height: 1.4rem;
+  }
 
-    .personal-information__data-info-title {
-        font-size: 1.2rem;
-    }
+  .personal-information__info-title {
+    font-size: 28px;
+    padding-bottom: 4rem;
+  }
 
-    .personal-information__box_data-info p {
-        font-size: 1.1rem;
-    }
+  .personal-information__name {
+    font-size: 1.5rem;
+  }
 
-    .personal-information__box_address {
-        line-height: 1.5rem;
-    }
+  .personal-information__image {
+    width: 140px;
+  }
 
-    .personal-information__address-title {
-        font-size: 1.2rem;
-    }
-    
-    .personal-information__box_address p {
-        font-size: 1.1rem;
-    }
+  .personal-information__box_about_description {
+    padding: 1rem 0 3rem;
+  }
 
-    .personal-information__contact-title {
-        font-size: 1.2rem;
-    }
+  .personal-information__about-you-title {
+    padding-top: 4rem;
+    font-size: 1.2rem;
+  }
 
-    .personal-information__box-contact p {
-        font-size: 1.1rem;
-    }
+  .personal-information__text-area {
+    height: 6rem;
+  }
 
-    .personal-information__box-button-data {
-        padding: 5rem 0;
-    }
-    
-    .personal-information__edit-button {
-        width: 275px;
-        height: 36px;
-    }
-    
-    /* formation */
-    .personal-information__box-formations {
-        line-height: 1.5rem;
-    }
-    
-    .personal-information__formations-title {
-        font-size: 28px;
-        padding-bottom: 5rem;
-    }
-    
-    .personal-information__box_info-formations {
-        padding-bottom: 1.5rem;
-    }
-    
-    .personal-information__university {
-        font-size: 1.2rem;
-    }
+  .personal-information__data-info-title {
+    font-size: 1.2rem;
+  }
 
-    .personal-information__box_info-formations p {
-        font-size: 1.1rem;
-    }
-    
-    .personal-information__box-button-formation {
-        padding: 3.5rem 0 5rem; 
-    }
-    
-    .personal-information__edit-button-formation {
-        width: 275px;
-        height: 36px;
-    }
-    
-    /* professional experience */
-    .personal-information__box-job-experience {
-        line-height: 1.5rem;
-    }
-    
-    .personal-information__job-experience-title {
-        font-size: 28px;
-        padding-bottom: 5rem;
-    }
-    
-    .personal-information__box-experiences {
-        padding-bottom: 2rem;
-    }
-    
-    .personal-information__job-title {
-        font-size: 1.2rem;
-    }
+  .personal-information__box_data-info p {
+    font-size: 1.1rem;
+  }
 
-    .personal-information__box-experiences p {
-        font-size: 1.1rem;
-    }
+  .personal-information__box_address {
+    line-height: 1.5rem;
+  }
 
-    .personal-information__job-responsibilities-description {
-        padding: 0.5rem 0 0.3rem;
-    }
+  .personal-information__address-title {
+    font-size: 1.2rem;
+  }
 
-    .personal-information__box-button_experiences {
-        padding: 3rem 0 5rem; 
-    }
-    
-    .personal-information__edit-button-job-experience {
-        width: 275px;
-        height: 36px;
-    }
-    
-    /* certifications */
-    .personal-information__box-certifications {
-        line-height: 1.5rem;
-    }
-    
-    .personal-information__certification-title {
-        font-size: 28px;
-        padding-bottom: 5rem;
-    }
-    
-    .personal-information__box-course-certification {
-        padding-bottom: 2rem;
-    
-    }
-    
-    .personal-information__certifications-institution {
-        font-size: 1.2rem;
-    }
-    
-    .personal-information__box-course-certification p {
-        font-size: 1.1rem;
-    }
-    
-    .personal-information__certification-description {
-        margin-top: 0.7rem;
-    }
-    
-    .personal-information__box-button-certification {
-        padding: 3rem 0 5rem; 
-    }
-    
-    .personal-information__edit-button-certifications {
-        width: 275px;
-        height: 36px;
-    }
-    
-    /* languages */
-    .personal-information__language-title {
-        font-size: 28px;
-        padding-bottom: 5rem;
-    }
-    
-    .personal-information__box-languages {
-        font-size: 1.1rem;
-    } 
-    
-    .personal-information__box-button-language {
-        padding: 4rem 0 5rem; 
-    }
-    
-    .personal-information__edit-language-button {
-        width: 275px;
-        height: 36px;
-    }
-    
-    /* skills */
-    .personal-information__skills-title {
-        font-size: 28px;
-        padding-bottom: 5rem;
-    }
-    
-    .personal-information__skill-input {
-        height: 35px;
-    }
-    
-    .personal-information__skills-add-button {
-        width: 2.3rem;
-        height: 2.3rem;
-    }
-    
-    .personal-information__box-home-button {
-        padding: 5rem 0 2rem; 
-    }
-    
-    .personal-information__home-button {
-        width: 275px;
-        height: 36px;
-    }
-}    
+  .personal-information__box_address p {
+    font-size: 1.1rem;
+  }
+
+  .personal-information__contact-title {
+    font-size: 1.2rem;
+  }
+
+  .personal-information__box-contact p {
+    font-size: 1.1rem;
+  }
+
+  .personal-information__box-button-data {
+    padding: 5rem 0;
+  }
+
+  .personal-information__edit-button {
+    width: 275px;
+    height: 36px;
+  }
+
+  /* formation */
+  .personal-information__box-formations {
+    line-height: 1.5rem;
+  }
+
+  .personal-information__formations-title {
+    font-size: 28px;
+    padding-bottom: 5rem;
+  }
+
+  .personal-information__box_info-formations {
+    padding-bottom: 1.5rem;
+  }
+
+  .personal-information__university {
+    font-size: 1.2rem;
+  }
+
+  .personal-information__box_info-formations p {
+    font-size: 1.1rem;
+  }
+
+  .personal-information__box-button-formation {
+    padding: 3.5rem 0 5rem;
+  }
+
+  .personal-information__edit-button-formation {
+    width: 275px;
+    height: 36px;
+  }
+
+  /* professional experience */
+  .personal-information__box-job-experience {
+    line-height: 1.5rem;
+  }
+
+  .personal-information__job-experience-title {
+    font-size: 28px;
+    padding-bottom: 5rem;
+  }
+
+  .personal-information__box-experiences {
+    padding-bottom: 2rem;
+  }
+
+  .personal-information__job-title {
+    font-size: 1.2rem;
+  }
+
+  .personal-information__box-experiences p {
+    font-size: 1.1rem;
+  }
+
+  .personal-information__job-responsibilities-description {
+    padding: 0.5rem 0 0.3rem;
+  }
+
+  .personal-information__box-button_experiences {
+    padding: 3rem 0 5rem;
+  }
+
+  .personal-information__edit-button-job-experience {
+    width: 275px;
+    height: 36px;
+  }
+
+  /* certifications */
+  .personal-information__box-certifications {
+    line-height: 1.5rem;
+  }
+
+  .personal-information__certification-title {
+    font-size: 28px;
+    padding-bottom: 5rem;
+  }
+
+  .personal-information__box-course-certification {
+    padding-bottom: 2rem;
+  }
+
+  .personal-information__certifications-institution {
+    font-size: 1.2rem;
+  }
+
+  .personal-information__box-course-certification p {
+    font-size: 1.1rem;
+  }
+
+  .personal-information__certification-description {
+    margin-top: 0.7rem;
+  }
+
+  .personal-information__box-button-certification {
+    padding: 3rem 0 5rem;
+  }
+
+  .personal-information__edit-button-certifications {
+    width: 275px;
+    height: 36px;
+  }
+
+  /* languages */
+  .personal-information__language-title {
+    font-size: 28px;
+    padding-bottom: 5rem;
+  }
+
+  .personal-information__box-languages {
+    font-size: 1.1rem;
+  }
+
+  .personal-information__box-button-language {
+    padding: 4rem 0 5rem;
+  }
+
+  .personal-information__edit-language-button {
+    width: 275px;
+    height: 36px;
+  }
+
+  /* skills */
+  .personal-information__skills-title {
+    font-size: 28px;
+    padding-bottom: 5rem;
+  }
+
+  .personal-information__skill-input {
+    height: 35px;
+  }
+
+  .personal-information__skills-add-button {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .personal-information__box-home-button {
+    padding: 5rem 0 2rem;
+  }
+
+  .personal-information__home-button {
+    width: 275px;
+    height: 36px;
+  }
+}
 
 /* Desktop     */
 @media (min-width: 1024px) {
-    .personal-information {
-        padding: 4rem 4rem 3rem;
-    }
-    
-    /* data information */
-    .personal-information__box-data {
-        padding: 3rem 0 0;
-        line-height: 1.5rem;
-    }
-    
-    .personal-information__info-title {
-        font-size: 3rem;
-        padding-bottom: 5rem;
-    }
-    
-    .personal-information__name {
-        font-size: 2rem;
-        padding-bottom: 2rem;
-    }
-    
-    .personal-information__image {
-        width: 170px;
-    }
+  .personal-information {
+    padding: 4rem 4rem 3rem;
+  }
 
-    .personal-information__about-you-title {
-        font-size: 1.5rem;
-    }
+  /* data information */
+  .personal-information__box-data {
+    padding: 3rem 0 0;
+    line-height: 1.5rem;
+  }
 
-    .personal-information__data-info-title {
-        font-size: 1.3rem;
-    }
+  .personal-information__info-title {
+    font-size: 3rem;
+    padding-bottom: 5rem;
+  }
 
-    .personal-information__address-title {
-        font-size: 1.3rem;
-    }
+  .personal-information__name {
+    font-size: 2rem;
+    padding-bottom: 2rem;
+  }
 
-    .personal-information__contact-title {
-        font-size: 1.3rem;
-    }
+  .personal-information__image {
+    width: 170px;
+  }
 
-    .personal-information__box-button-data {
-        padding: 7rem 0;
-    }
-    
-    .personal-information__edit-button {
-        width: 320px;
-        height: 40px;
-    }
-    
-    /* formation */
-    .personal-information__formations-title {
-        font-size: 2.2rem;
-    }
-    
-    .personal-information__university {
-        font-size: 1.3rem;
-    }
-    
-    .personal-information__box-button-formation {
-        padding: 5.5rem 0 7rem; 
-    }
-    
-    .personal-information__edit-button-formation {
-        width: 320px;
-        height: 40px;
-    }
-    
-    /* professional experience */
-    .personal-information__job-experience-title {
-        font-size: 2.2rem;
-    }
-    
-    .personal-information__job-title {
-        font-size: 1.3rem;
-    }
+  .personal-information__about-you-title {
+    font-size: 1.5rem;
+  }
 
-    .personal-information__box-button_experiences {
-        padding: 5rem 0 7rem; 
-    }
-    
-    .personal-information__edit-button-job-experience {
-        width: 320px;
-        height: 40px;
-    }
-    
-    /* certifications */
-    .personal-information__certification-title {
-        font-size: 2.2rem;
-    }
-    
-    .personal-information__certifications-institution {
-        font-size: 1.3rem;
-    }
-    
-    .personal-information__box-button-certification {
-        padding: 5rem 0 7rem; 
-    }
-    
-    .personal-information__edit-button-certifications {
-        width: 320px;
-        height: 40px;
-    }
-    
-    /* languages */
-    .personal-information__language-title {
-        font-size: 2.2rem;
-    }
-    
-    .personal-information__box-languages h4 {
-        font-size: 1.3rem;
-    }
-    
-    .personal-information__box-button-language {
-        padding: 6rem 0 7rem; 
-    }
-    
-    .personal-information__edit-language-button {
-        width: 320px;
-        height: 40px;
-    }
-    
-    /* skills */
-    .personal-information__skills-title {
-        font-size: 2.2rem;
-    }
-    
-    .personal-information__skill-input {
-        height: 40px;
-    }
-    
-    .personal-information__skills-add-button {
-        width: 2.7rem;
-        height: 2.7rem;
-    }
-    
-    .personal-information__box-home-button {
-        padding: 7rem 0 4rem; 
-    }
-    
-    .personal-information__home-button {
-        width: 320px;
-        height: 40px;
-    }
+  .personal-information__data-info-title {
+    font-size: 1.3rem;
+  }
+
+  .personal-information__address-title {
+    font-size: 1.3rem;
+  }
+
+  .personal-information__contact-title {
+    font-size: 1.3rem;
+  }
+
+  .personal-information__box-button-data {
+    padding: 7rem 0;
+  }
+
+  .personal-information__edit-button {
+    width: 320px;
+    height: 40px;
+  }
+
+  /* formation */
+  .personal-information__formations-title {
+    font-size: 2.2rem;
+  }
+
+  .personal-information__university {
+    font-size: 1.3rem;
+  }
+
+  .personal-information__box-button-formation {
+    padding: 5.5rem 0 7rem;
+  }
+
+  .personal-information__edit-button-formation {
+    width: 320px;
+    height: 40px;
+  }
+
+  /* professional experience */
+  .personal-information__job-experience-title {
+    font-size: 2.2rem;
+  }
+
+  .personal-information__job-title {
+    font-size: 1.3rem;
+  }
+
+  .personal-information__box-button_experiences {
+    padding: 5rem 0 7rem;
+  }
+
+  .personal-information__edit-button-job-experience {
+    width: 320px;
+    height: 40px;
+  }
+
+  /* certifications */
+  .personal-information__certification-title {
+    font-size: 2.2rem;
+  }
+
+  .personal-information__certifications-institution {
+    font-size: 1.3rem;
+  }
+
+  .personal-information__box-button-certification {
+    padding: 5rem 0 7rem;
+  }
+
+  .personal-information__edit-button-certifications {
+    width: 320px;
+    height: 40px;
+  }
+
+  /* languages */
+  .personal-information__language-title {
+    font-size: 2.2rem;
+  }
+
+  .personal-information__box-languages h4 {
+    font-size: 1.3rem;
+  }
+
+  .personal-information__box-button-language {
+    padding: 6rem 0 7rem;
+  }
+
+  .personal-information__edit-language-button {
+    width: 320px;
+    height: 40px;
+  }
+
+  /* skills */
+  .personal-information__skills-title {
+    font-size: 2.2rem;
+  }
+
+  .personal-information__skill-input {
+    height: 40px;
+  }
+
+  .personal-information__skills-add-button {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+
+  .personal-information__box-home-button {
+    padding: 7rem 0 4rem;
+  }
+
+  .personal-information__home-button {
+    width: 320px;
+    height: 40px;
+  }
 }

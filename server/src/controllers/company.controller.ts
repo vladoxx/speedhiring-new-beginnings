@@ -1,4 +1,5 @@
 import { RequestHandler } from "express";
+import { validationResult } from "express-validator";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
@@ -7,100 +8,234 @@ dotenv.config();
 import Company from "../models/Company";
 import Job from "../models/Job";
 
+/**
+ * Gera um token JWT com base nos parâmetros fornecidos.
+ * @param {object} params - Parâmetros para gerar o token.
+ * @returns {string} Token JWT gerado.
+ */
 function generateToken(params = {}) {
   return jwt.sign(params, process.env.SECRET || "", {
     expiresIn: 86400,
   });
 }
 
+/**
+ * Cria uma nova empresa.
+ * Verifica se já existe uma empresa com o CNPJ fornecido.
+ * Cria a nova empresa com os dados fornecidos no corpo da solicitação.
+ * Retorna a empresa criada.
+ */
 export const createCompany: RequestHandler = async (req, res) => {
-  const companyFound = await Company.findOne({ cnpj: req.body.cnpj });
-
-  if (companyFound) {
-    return res
-      .status(301)
-      .json({ message: "Já existe uma empresas com este CNPJ" });
-  }
-
-  console.log(req.body);
-
-  const company = new Company(req.body);
-  const saveCompany = await company.save();
-  res.json(saveCompany);
-};
-
-export const loginCompany: RequestHandler = async (req, res) => {
-  const { cnpj, password } = req.body;
-
-  const company = await Company.findOne({ cnpj }).select("+password"); // adiciona o campo password
-
-  if (!company) {
-    return res.status(400).json({ message: "Empresa não encontrada" });
-  }
-
-  if (!(await bcrypt.compare(password, company.password || ""))) {
-    return res.status(400).send({ message: "Senha inválida" });
-  }
-
-  company.password = ""; // remover o campo password do objeto saveUser antes de enviar a resposta
-
-  res.json({ company, token: generateToken({ id: company.id }) });
-};
-
-export const getAllCompanies: RequestHandler = async (req, res) => {
   try {
-    const companies = await Company.find();
-    return res.json(companies);
-  } catch (error) {
-    res.json(error);
-  }
-};
+    const errors = validationResult(req);
 
-export const getOneCompany: RequestHandler = async (req, res) => {
-  const companyFound = await Company.findById(req.params.id);
-
-  if (!companyFound) {
-    return res.status(204).json();
-  }
-
-  return res.json(companyFound);
-};
-
-export const updateCompany: RequestHandler = async (req, res) => {
-  const companyUpdate = await Company.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    {
-      new: true,
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
     }
-  );
 
-  if (!companyUpdate) {
-    return res.status(204).json();
+    const { cnpj } = req.body;
+
+    // Verifica se a empresa já existe
+    const companyFound = await Company.findOne({ cnpj });
+
+    if (companyFound) {
+      return res
+        .status(301)
+        .json({ message: "Já existe uma empresa com este CNPJ" });
+    }
+    console.log(req.body);
+
+    // // Hash da senha antes de salvar -- Outra opção de encryptar senha
+    // const hashedPassword = await bcrypt.hash(password, 10);
+
+    // const company = new Company({
+    //   cnpj,
+    //   password: hashedPassword,
+    //   ...req.body,
+    // });
+
+    const company = new Company(req.body);
+    const savedCompany = await company.save();
+
+    res.json(savedCompany);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Erro ao criar empresa" });
   }
-
-  res.json(companyUpdate);
 };
 
-export const deleteCompany: RequestHandler = async (req, res) => {
-  const companyFound = await Company.findByIdAndDelete(req.params.id);
-
-  if (!companyFound) {
-    return res.status(204).json();
-  }
-
-  return res.json(companyFound);
-};
-
-export const getJobsCompany: RequestHandler = async (req, res) => {
+/**
+ * Realiza o login da empresa.
+ * Verifica se a empresa com o CNPJ fornecido existe e se a senha está correta.
+ * Retorna a empresa e um token JWT de autenticação.
+ */
+export const loginCompany: RequestHandler = async (req, res) => {
   try {
-    const company = await Company.findById(req.params.id);
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { cnpj, password } = req.body;
+
+    const company = await Company.findOne({ cnpj }).select("+password");
 
     if (!company) {
       return res.status(400).json({ message: "Empresa não encontrada" });
     }
 
-    const jobs = await Job.find({ company: company._id });
+    const passwordMatch = await bcrypt.compare(
+      password,
+      company.password || ""
+    );
+
+    if (!passwordMatch) {
+      return res.status(400).json({ message: "Senha inválida" });
+    }
+
+    company.password = "";
+
+    const token = generateToken({ id: company.id });
+
+    res.json({ company, token });
+  } catch (error) {
+    console.error(error);
+
+    return res
+      .status(500)
+      .json({ message: "Erro ao realizar login da empresa" });
+  }
+};
+
+/**
+ * Obtém todas as empresas.
+ * Retorna uma lista de todas as empresas no banco de dados.
+ * Retorna uma resposta de erro em caso de falha.
+ */
+export const getAllCompanies: RequestHandler = async (req, res) => {
+  try {
+    const companies = await Company.find();
+    return res.json(companies);
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Erro ao obter todas as empresas" });
+  }
+};
+
+/**
+ * Obtém uma empresa específica com base no ID.
+ * Verifica se a empresa existe no banco de dados.
+ * Retorna a empresa encontrada ou uma resposta de status 204 se não for encontrada.
+ */
+export const getOneCompany: RequestHandler = async (req, res) => {
+  try {
+    const companyFound = await Company.findById(req.params.id);
+
+    if (!companyFound) {
+      return res.status(204).json();
+    }
+
+    return res.json(companyFound);
+  } catch (error) {
+    console.error(error);
+    return res
+      .status(500)
+      .json({ message: "Erro ao obter empresa específica" });
+  }
+};
+
+/**
+ * Atualiza uma empresa específica com base no ID.
+ * Verifica se a empresa existe no banco de dados.
+ * Atualiza a empresa com os dados fornecidos no corpo da solicitação.
+ * Retorna a empresa atualizada ou uma resposta de status 204 se não for encontrada.
+ */
+export const updateCompany: RequestHandler = async (req, res) => {
+  try {
+    const companyUpdate = await Company.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+      }
+    );
+
+    if (!companyUpdate) {
+      return res.status(204).json();
+    }
+
+    res.json(companyUpdate);
+  } catch (error) {
+    console.error(error);
+    return res
+      .status(500)
+      .json({ message: "Erro ao atualizar empresa específica" });
+  }
+};
+
+/**
+ * Exclui uma empresa específica com base no ID.
+ * Verifica se a empresa existe no banco de dados.
+ * Exclui a empresa do banco de dados.
+ * Retorna a empresa excluída ou uma resposta de status 204 se não for encontrada.
+ */
+export const deleteCompany: RequestHandler = async (req, res) => {
+  try {
+    const companyFound = await Company.findByIdAndDelete(req.params.id);
+
+    if (!companyFound) {
+      return res.status(204).json();
+    }
+
+    return res.json(companyFound);
+  } catch (error) {
+    console.error(error);
+    return res
+      .status(500)
+      .json({ message: "Erro ao excluir empresa específica" });
+  }
+};
+
+/**
+ * Exclui todas as empresas do banco de dados.
+ * Retorna uma mensagem de sucesso e informações sobre as empresas excluídas.
+ * Retorna uma resposta de erro em caso de falha.
+ */
+export const deleteAllCompanies: RequestHandler = async (req, res) => {
+  try {
+    // Excluir todas as empresas
+    const deleteCompanies = await Company.deleteMany();
+
+    return res.json({
+      message: "Todas as empresas foram excluídas com sucesso.",
+      deleteCompanies,
+    });
+  } catch (error) {
+    console.error("Erro ao excluir todas as empresas:", error);
+    return res
+      .status(500)
+      .json({ message: "Erro ao excluir todas as empresas." });
+  }
+};
+
+/**
+ * Obtém todas as vagas de uma empresa específica com base no ID da empresa.
+ * Verifica se a empresa existe no banco de dados.
+ * Retorna uma lista de todas as vagas da empresa encontrada.
+ * Retorna uma resposta de erro em caso de falha.
+ */
+export const getJobsCompany: RequestHandler = async (req, res) => {
+  try {
+    const company = await Company.findById(req.params.id);
+
+    console.log(req.params);
+
+    if (!company) {
+      return res.status(400).json({ message: "Empresa não encontrada" });
+    }
+
+    const jobs = await Job.find({ companyId: company.id });
 
     return res.status(200).json(jobs);
   } catch (error) {

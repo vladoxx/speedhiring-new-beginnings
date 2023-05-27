@@ -1,6 +1,7 @@
 import { Schema, model, Document } from "mongoose";
+import { ICompany } from "./Company";
 
-interface IJob extends Document {
+export interface IJob extends Document {
   jobTitle: string;
   professionalArea: string;
   hierarchicalLevel: string;
@@ -10,7 +11,9 @@ interface IJob extends Document {
   contractType: string;
   salary: number;
   jobDescription: string;
-  company: string;
+  companyName: string;
+  email: string;
+  companyId: ICompany["_id"];
   state: string;
 }
 
@@ -65,7 +68,16 @@ const jobSchema = new Schema(
       require: true,
       trim: true,
     },
-    company: {
+    companyName: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    email: {
+      type: String,
+      trim: true,
+    },
+    companyId: {
       type: Schema.Types.ObjectId,
       ref: "Company",
       required: true,

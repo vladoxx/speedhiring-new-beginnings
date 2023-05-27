@@ -1,24 +1,45 @@
 import { useContext, useCallback } from "react";
-import Context from "../context/UserLoginContext";
+import CompanyTokenContext from "../context/CompanyTokenContext";
+import CompanyIdContext from "../context/CompanyIdContext";
+import CompanyNameContext from "../context/CompanyName";
 
 function useCompany() {
-  const { jwt, setJwt } = useContext(Context);
+  const { jwtCompany, setJwtCompany } = useContext(CompanyTokenContext);
+  const { companyId, setCompanyId } = useContext(CompanyIdContext);
+  const { companyName, setCompanyName } = useContext(CompanyNameContext);
 
-  const loginCompany = useCallback(
-    (companyLogin: string) => {
-      setJwt(companyLogin);
+  const tokenCompany = useCallback(
+    (companyToken: string) => {
+      setJwtCompany(companyToken);
     },
-    [setJwt]
+    [setJwtCompany]
   );
 
   const logoutCompany = useCallback(() => {
-    setJwt("");
-  }, [setJwt]);
+    setJwtCompany("");
+    setCompanyId("");
+  }, [setJwtCompany, setCompanyId]);
+
+  const getIdCompany = useCallback(
+    (companyId: string) => {
+      setCompanyId(companyId);
+    },
+    [setCompanyId]
+  );
+
+  const getNameCompany = useCallback((companyName: string) => {
+    setCompanyName(companyName);
+  }, []);
 
   return {
-    isLoggedInCompany: Boolean(jwt),
-    loginCompany,
+    isLoggedInCompany: Boolean(jwtCompany),
+    tokenCompany,
+    jwtCompany,
     logoutCompany,
+    getIdCompany,
+    companyId,
+    companyName,
+    getNameCompany,
   };
 }
 

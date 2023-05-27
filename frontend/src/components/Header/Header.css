@@ -6,7 +6,7 @@
 .header__nav {
   position: relative;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .header__div {
@@ -42,23 +42,14 @@
 
 .header__ul li {
   margin: 22px 0;
-}
-
-.header__ul a,
-.header__ul li {
+  cursor: pointer;
   text-decoration: none;
   color: #fff;
-  font-weight: 400;
   font-size: var(--font-size-p-desktop);
   padding: 0.7rem;
   list-style: none;
 }
 
-.header__ul a:hover {
-  font-weight: bolder;
-}
-
-.header__ul a:hover,
 .header__ul li:hover {
   font-weight: bolder;
 }
@@ -186,7 +177,7 @@ input[type="checkbox"]:checked ~ .menu-items {
 
 @media only screen and (min-width: 375px) {
   .header__div {
-    margin: 40px 0 0 0;
+    margin: 2.5rem auto;
   }
 }
 /*-----Tablet--------*/
@@ -198,6 +189,17 @@ input[type="checkbox"]:checked ~ .menu-items {
 
   .header__nav {
     display: block;
+  }
+
+  .header__nav nav {
+    max-width: 75rem;
+    margin: 2.5rem auto;
+  }
+
+  .header__div {
+    max-width: 75rem;
+    position: relative;
+    margin: 0 auto;
   }
 
   .header__ul {
@@ -231,41 +233,6 @@ input[type="checkbox"]:checked ~ .menu-items {
   .nav-container .hamburger-lines {
     display: none;
   }
-
-  .header__navbar_button {
-    border-radius: 16px;
-    background-color: var(--laranja-escuro);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    outline: none;
-    display: inline-block;
-    width: 120px;
-    height: 36px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--branco);
-  }
-
-  .logout {
-    border-radius: 16px;
-    background-color: #ff0000;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    outline: none;
-    display: inline-block;
-    width: 120px;
-    height: 36px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--branco);
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: var(--branco);
-  }
 }
 
 /* Desktop */
@@ -286,8 +253,8 @@ input[type="checkbox"]:checked ~ .menu-items {
   .header__img {
     width: 120px;
     position: absolute;
-    top: 0;
     left: 2rem;
+    bottom: 6.25rem;
   }
 
   .header_title {
@@ -307,26 +274,5 @@ input[type="checkbox"]:checked ~ .menu-items {
     font-size: 1.3rem;
     margin: auto;
     padding: 2rem 0;
-  }
-
-  .header__navbar_button {
-    border-radius: 16px;
-    background-color: var(--laranja-escuro);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    outline: none;
-    display: inline-block;
-    width: 120px;
-    height: 36px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--branco);
-    margin: 0 2rem 0 0.7rem;
-  }
-
-  .logout:hover {
-    background-color: #f78585;
   }
 }

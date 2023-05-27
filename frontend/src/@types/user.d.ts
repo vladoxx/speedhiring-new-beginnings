@@ -15,9 +15,14 @@ export interface UserProps {
   confirm_password?: string | undefined;
 }
 
-export interface UserContextProps {
+export interface UserTokenContextProps {
   jwt: string;
   setJwt: (jwt: string) => void;
+}
+
+export interface UserIdContextProps {
+  userId: string;
+  setUserId: (userId: string) => void;
 }
 
 export interface UserContextProviderProps {

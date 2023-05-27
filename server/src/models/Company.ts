@@ -1,12 +1,13 @@
 import { Schema, model, Document } from "mongoose";
 import bcrypt from "bcryptjs";
 
-interface ICompany extends Document {
+export interface ICompany extends Document {
   corporate_name: string;
   sector: string;
   cnpj: string;
   email: string;
   website?: string;
+  description_company?: string;
   address: string;
   phone: string;
   password: string;
@@ -16,9 +17,7 @@ interface ICompany extends Document {
     curriculum: Schema.Types.ObjectId;
     receivedDate: Date;
   }[];
-  jobs?: {
-    job: Schema.Types.ObjectId;
-  }[];
+  jobs?: string[];
 }
 
 const companySchema = new Schema(
@@ -50,6 +49,10 @@ const companySchema = new Schema(
       type: String,
       trim: true,
     },
+    description_company: {
+      type: String,
+      trim: true,
+    },
     address: {
       type: String,
       require: true,
@@ -64,6 +67,7 @@ const companySchema = new Schema(
       type: String,
       required: true,
       trim: true,
+      select: false,
     },
     confirm_password: {
       type: String,
