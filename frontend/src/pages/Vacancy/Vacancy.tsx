@@ -19,7 +19,7 @@ function Vacancy() {
 
   useEffect(() => {
     loadJobs();
-  }, []);
+  }, [loadJobs]);
 
   const handleButtonClick = () => {
     navigate("/");

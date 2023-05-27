@@ -12,8 +12,6 @@ export default function CompanyVacancies() {
 
   const { companyId } = useCompany();
 
-  console.log(job);
-
   const fetchJobs = async () => {
     try {
       const res = await companyService.getJobsCompany(companyId);
@@ -33,7 +31,13 @@ export default function CompanyVacancies() {
       <h2 className="vacant__title">Vagas anunciadas</h2>
       <div className="vacant__container">
         {job.map((jobItem) => {
-          return <Vacancies key={jobItem?._id} vacancy={jobItem} />;
+          return (
+            <Vacancies
+              key={jobItem?._id}
+              vacancy={jobItem}
+              fetchJobs={fetchJobs}
+            />
+          );
         })}
       </div>
     </div>

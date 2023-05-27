@@ -22,3 +22,7 @@ export const getAllJobs = async () => {
 export const getAllCandidatures = async (id: string) => {
   return await axios.get<JobProps[]>(`${API}/user/${id}/jobs`);
 };
+
+export const deleteOneJob = async (id: string) => {
+  return await axios.delete<JobProps>(`${API}/job/${id}`);
+};
