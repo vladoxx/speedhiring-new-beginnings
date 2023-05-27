@@ -36,7 +36,7 @@ function Candidatures() {
           candidatures.map((candidature) => {
             return (
               <div
-                key={candidature.company}
+                key={candidature._id}
                 className="candidatures__box-container"
               >
                 <h4 className="candidatures__role">{candidature.jobTitle}</h4>
@@ -44,7 +44,7 @@ function Candidatures() {
                   {candidature.state || "Não informado"}
                 </p>
                 <hr />
-                <p className="candidatures__company">{candidature.company}</p>
+                <p className="candidatures__company">{candidature._id}</p>
                 <p className="candidatures__job_description">
                   {candidature.jobDescription}
                 </p>

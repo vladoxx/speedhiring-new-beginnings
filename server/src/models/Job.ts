@@ -12,6 +12,7 @@ export interface IJob extends Document {
   salary: number;
   jobDescription: string;
   companyName: string;
+  email: string;
   companyId: ICompany["_id"];
   state: string;
 }
@@ -70,6 +71,10 @@ const jobSchema = new Schema(
     companyName: {
       type: String,
       required: true,
+      trim: true,
+    },
+    email: {
+      type: String,
       trim: true,
     },
     companyId: {

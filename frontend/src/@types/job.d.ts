@@ -9,8 +9,9 @@ export interface JobProps {
   contractType?: string;
   salary?: number;
   jobDescription?: string;
+  email?: string;
   companyName?: string;
-  companyId: string;
+  companyId?: string;
   state?: string;
 }
 
