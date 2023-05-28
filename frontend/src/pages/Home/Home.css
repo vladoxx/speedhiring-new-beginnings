@@ -236,10 +236,10 @@
 }
 
 .home__return_button{
-  margin: 25px 0 25px;
-  width: 10.625rem;
-  padding: 10px;
-
+display: block;
+padding: 0.5rem 1rem;
+width: 200px;
+margin: 25px auto;
 }
 
 /*------Tablet---------*/
