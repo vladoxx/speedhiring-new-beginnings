@@ -67,6 +67,8 @@ function LoginCompany() {
     }
   }, [isLoggedInCompany, navigate]);
 
+  console.log(isLoggedInCompany);
+
   return (
     <div className="login">
       <img className="login__image" src={LogoLoginCompany} alt="Logo Login" />

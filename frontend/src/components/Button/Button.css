@@ -1,7 +1,7 @@
 .button__all {
   align-items: center;
   background-color: var(--laranja-escuro);
-  border: 1px solid var(--laranja-escuro);
+  border: none;
   border-radius: 16px;
   color: var(--branco);
   cursor: pointer;
@@ -10,6 +10,7 @@
   font-weight: 700;
   height: 40px;
   justify-content: center;
+  transition: all 0.4s;
 }
 
 .button__all:hover {
