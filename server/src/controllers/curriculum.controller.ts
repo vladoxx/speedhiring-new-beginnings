@@ -3,19 +3,26 @@ import { RequestHandler } from "express";
 import Curriculum from "../models/Curriculum";
 
 export const createCurriculum: RequestHandler = async (req, res) => {
-  const curriculumFound = await Curriculum.findOne({ email: req.body.email });
+  const { user } = req.body;
 
-  if (curriculumFound) {
-    return res
-      .status(301)
-      .json({ message: "Já existe um usuário com este e-mail!" });
+  try {
+    const curriculumFound = await Curriculum.findOne({ user });
+
+    if (curriculumFound) {
+      return res
+        .status(301)
+        .json({ message: "Já existe um currículo para este usuário!" });
+    }
+
+    console.log(req.body);
+
+    const curriculum = new Curriculum(req.body);
+    const curriculumUser = await curriculum.save();
+    res.json(curriculumUser);
+  } catch (error) {
+    console.error("Erro ao criar currículo:", error);
+    res.status(500).json({ message: "Erro ao criar currículo" });
   }
-
-  console.log(req.body);
-
-  const curriculum = new Curriculum(req.body);
-  const curriculumUser = await curriculum.save();
-  res.json(curriculumUser);
 };
 
 export const getAllCurriculums: RequestHandler = async (req, res) => {
