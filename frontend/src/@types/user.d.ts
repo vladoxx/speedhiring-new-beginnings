@@ -11,7 +11,7 @@ export interface UserProps {
   city?: string;
   state?: string;
   job?: string;
-  curriculum_id?: string;
+  curriculumId?: string;
   password: string | undefined;
   confirm_password?: string | undefined;
 }

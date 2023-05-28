@@ -5,7 +5,7 @@ export interface Curriculum {
   objective: string;
   professional_experience: ProfessionalExperience[];
   education: Education[];
-  skills: Skill[];
+  skills: Skill[] | undefined;
   courses: Course[];
   certifications: Certification[];
   languages: Language[];
