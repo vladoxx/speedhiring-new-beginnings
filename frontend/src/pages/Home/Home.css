@@ -87,7 +87,7 @@
   text-align: center;
 }
 
-.connection__companies_logo{
+.connection__companies_logo {
   height: 37px;
 }
 
@@ -263,6 +263,7 @@ margin: 25px auto;
   .connection__content {
     justify-items: center;
     justify-content: center;
+    align-items: start;
     padding: 3rem 9rem;
     gap: 4rem;
     align-items: start;
@@ -277,15 +278,14 @@ margin: 25px auto;
 
   .connection__container p {
     font-size: var(--font-size-p-tablet);
-    padding: 0 2rem;
-    
+    padding: 0 9rem;
   }
 
   .connection__container:nth-child(3) {
     grid-column: 1/3;
     width: 344px;
   }
- 
+
   .services__container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

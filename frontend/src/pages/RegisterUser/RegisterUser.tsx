@@ -7,10 +7,13 @@ import { InputChange } from "../../@types/general";
 import * as userService from "../../service/UserService";
 
 import "./RegisterUser.css";
+import Button from "../../components/Button/Button";
 
 function RegisterUser() {
   let navigate = useNavigate();
   let params = useParams();
+
+  const [messageErro, setMessageErro] = useState("");
 
   const initialStateUser = {
     name: "",
@@ -34,15 +37,23 @@ function RegisterUser() {
   const handleSubmitUser = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!params.id) {
-      await userService.createUser(user);
+    try {
+      if (!params.id) {
+        await userService.createUser(user);
 
-      setUser(initialStateUser);
-    } else {
-      await userService.updateUser(params.id, user);
+        setUser(initialStateUser);
+      } else {
+        await userService.updateUser(params.id, user);
+      }
+
+      navigate("/login-user"); // Após o cadastro, leva para o login
+    } catch (error: any) {
+      const errorMessage = error.response.data.message;
+
+      setMessageErro(errorMessage);
+
+      console.error("Erro de cadastro:", errorMessage);
     }
-
-    navigate("/login-user"); // Após o cadastro, leva para o login
   };
 
   const getUser = async (id: string) => {
@@ -119,7 +130,7 @@ function RegisterUser() {
         />
         <input
           className="registerUser__input"
-          type="number"
+          type="text"
           name="cep"
           onChange={handleInputChangeUser}
           value={user.cep}
@@ -181,9 +192,13 @@ function RegisterUser() {
           required
         />
 
-        <button className="registerUser__button" type="submit">
-          Cadastrar
-        </button>
+        <span className="registerUser__message-erro">{messageErro}</span>
+
+        <Button
+          text="Cadastrar"
+          className="registerUser__button"
+          type="submit"
+        />
       </form>
     </div>
   );

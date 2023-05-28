@@ -1,7 +1,8 @@
 import { Schema, model, Document } from "mongoose";
+import { IUser } from "./User";
 
-interface ICurriculum extends Document {
-  user: Schema.Types.ObjectId;
+export interface ICurriculum extends Document {
+  userId: IUser["_id"];
   personalInfo: {
     birthDate?: string;
     nationality?: string;
@@ -58,7 +59,7 @@ interface ICurriculum extends Document {
 
 const curriculumSchema = new Schema(
   {
-    user: {
+    userId: {
       type: Schema.Types.ObjectId,
       ref: "User",
       require: true,
@@ -213,11 +214,11 @@ const curriculumSchema = new Schema(
           trim: true,
         },
         startDate: {
-          type: Date,
+          type: String,
           required: true,
         },
         endDate: {
-          type: Date,
+          type: String,
           required: true,
         },
       },

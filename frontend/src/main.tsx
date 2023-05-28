@@ -72,7 +72,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
                   <Route path="/user/:id" element={<User />} />
                   <Route path="/vacancy" element={<Vacancy />} />
                   <Route
-                    path="/personal-information"
+                    path="/personal-information/:id"
                     element={<PersonalInformation />}
                   />
                   <Route path="/formation" element={<Formation />} />

@@ -21,6 +21,7 @@
   margin: 2rem 0;
   gap: 1rem;
   max-width: 60rem;
+  position: relative;
 }
 
 .registerUser__input {
@@ -36,6 +37,14 @@
   width: 100%;
 }
 
+.registerUser__message-erro {
+  font-size: var(--span-mobile);
+  position: absolute;
+  bottom: 6.875rem;
+  color: var(--vermelho);
+  font-weight: 700;
+}
+
 .registerUser__button {
   margin-top: 3rem;
   height: 40px;
@@ -47,6 +56,7 @@
   font-weight: 700;
   text-align: center;
   color: var(--branco);
+  outline: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -58,6 +68,11 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
+  }
+
+  .registerUser__message-erro {
+    font-size: var(--span-tablet);
+    bottom: 5.938rem;
   }
 
   .registerUser__button {

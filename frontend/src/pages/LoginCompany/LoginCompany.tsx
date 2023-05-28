@@ -44,6 +44,8 @@ function LoginCompany() {
           companyLogin
         );
 
+        console.log(resLoginCompany);
+
         tokenCompany(resLoginCompany.data.token);
         getIdCompany(resLoginCompany.data.company._id);
         getNameCompany(resLoginCompany.data.company.corporate_name);
@@ -65,7 +67,7 @@ function LoginCompany() {
     if (isLoggedInCompany) {
       navigate(`/company/${companyId}`);
     }
-  }, [isLoggedInCompany, navigate]);
+  }, [isLoggedInCompany]);
 
   return (
     <div className="login">
