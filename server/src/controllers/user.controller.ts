@@ -15,44 +15,59 @@ function generateToken(params = {}) {
 }
 
 export const createUser: RequestHandler = async (req, res) => {
-  const { name, email, phone, address, password, confirm_password } = req.body;
+  try {
+    const { name, email, phone, address, password, confirm_password } =
+      req.body;
 
-  const userFound = await User.findOne({ email: email });
+    const userFound = await User.findOne({ email: email });
 
-  if (userFound) {
-    return res
-      .status(301)
-      .json({ message: "Já existe um usuário com este e-mail!" });
+    if (userFound) {
+      return res
+        .status(301)
+        .json({ message: "Já existe um usuário com este e-mail!" });
+    }
+
+    if (!name) {
+      return res.status(422).json({ message: "Nome obrigatório" });
+    }
+
+    if (!phone) {
+      return res.status(422).json({ message: "Telefone obrigatório" });
+    }
+
+    if (!address) {
+      return res.status(422).json({ message: "Endereço obrigatório" });
+    }
+
+    if (!password) {
+      return res.status(422).json({ message: "Senha obrigatória" });
+    }
+
+    if (password !== confirm_password) {
+      return res.status(422).json({ message: "As senhas não conferem" });
+    }
+
+    console.log(req.body);
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const user = new User({
+      name,
+      email,
+      phone,
+      address,
+      password: hashedPassword,
+      confirm_password: hashedPassword,
+    });
+
+    const savedUser = await user.save();
+    savedUser.password = undefined;
+    savedUser.confirm_password = undefined;
+
+    res.json({ user: savedUser, token: generateToken({ id: user.id }) });
+  } catch (error) {
+    console.error("Erro ao criar usuário:", error);
+    res.status(500).json({ message: "Erro ao criar usuário" });
   }
-
-  if (!name) {
-    return res.status(422).json({ message: "Nome obrigatório" });
-  }
-
-  if (!phone) {
-    return res.status(422).json({ message: "Telefone obrigatório" });
-  }
-
-  if (!address) {
-    return res.status(422).json({ message: "Endereço obrigatório" });
-  }
-
-  if (!password) {
-    return res.status(422).json({ message: "Senha obrigatória" });
-  }
-
-  if (password !== confirm_password) {
-    return res.status(422).json({ message: "As senhas não conferem" });
-  }
-
-  console.log(req.body);
-
-  const user = new User(req.body);
-  const saveUser = await user.save();
-
-  saveUser.password = undefined; // remover o campo password do objeto saveUser antes de enviar a resposta
-  saveUser.confirm_password = undefined; // remover o campo confirm_password do objeto saveUser antes de enviar a resposta
-  res.json({ saveUser, token: generateToken({ id: user.id }) });
 };
 
 export const loginUser: RequestHandler = async (req, res) => {
@@ -112,6 +127,23 @@ export const deleteUser: RequestHandler = async (req, res) => {
   }
 
   return res.json(userFound);
+};
+
+export const deleteAllUsers: RequestHandler = async (req, res) => {
+  try {
+    // Excluir todos os trabalhos
+    const deleteJobs = await User.deleteMany();
+
+    return res.json({
+      message: "Todos os usuários foram excluídos com sucesso.",
+      deleteJobs,
+    });
+  } catch (error) {
+    console.error("Erro ao excluir todos os usuários:", error);
+    return res
+      .status(500)
+      .json({ message: "Erro ao excluir todos os usuários." });
+  }
 };
 
 export const getAllJobApplications: RequestHandler = async (req, res) => {

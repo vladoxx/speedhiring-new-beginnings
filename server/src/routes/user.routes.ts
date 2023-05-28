@@ -10,5 +10,6 @@ router.post("/user/register", userController.createUser);
 router.post("/user/login", userController.loginUser);
 router.put("/user/:id", userController.updateUser);
 router.delete("/user/:id", userController.deleteUser);
+router.delete("/users", userController.deleteAllUsers);
 
 export default router;

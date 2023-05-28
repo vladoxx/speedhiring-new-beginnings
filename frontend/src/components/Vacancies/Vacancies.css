@@ -4,6 +4,13 @@
   width: 100%;
   max-width: 350px;
   min-height: 400px;
+  user-select: none;
+  outline: 4px solid transparent;
+  transition: all 0.4s;
+}
+
+.vacant__box_info:hover {
+  outline-color: var(--verde-azulado);
 }
 
 .vacant__box_info-header {

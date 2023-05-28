@@ -1,6 +1,7 @@
+import { ButtonHTMLAttributes } from "react";
 import "./Button.css";
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   onClick?: () => void;
   className?: string; // Adicionando uma propriedade opcional para classNames adicionais
