@@ -1,7 +1,8 @@
 import { Schema, model, Document } from "mongoose";
-import bcrypt from "bcryptjs"; // biblioteca de criptografia de senhas
+// import bcrypt from "bcryptjs"; // biblioteca de criptografia de senhas
+import { ICurriculum } from "./Curriculum";
 
-interface IUser extends Document {
+export interface IUser extends Document {
   name: string;
   email: string;
   phone: string;
@@ -10,6 +11,7 @@ interface IUser extends Document {
   city: string;
   state: string;
   job: string;
+  curriculumId: ICurriculum["_id"];
   password: string | undefined;
   confirm_password: string | undefined;
 }
@@ -52,6 +54,11 @@ const userSchema = new Schema(
       type: String,
       trim: true,
     },
+    curriculumId: {
+      type: String,
+      ref: "Curriculum",
+      trim: true,
+    },
     password: {
       type: String,
       required: true,
@@ -60,7 +67,7 @@ const userSchema = new Schema(
     },
     confirm_password: {
       type: String,
-      require: true,
+      required: true,
       trim: true,
       select: false,
     },
@@ -72,12 +79,12 @@ const userSchema = new Schema(
 );
 
 // encriptar a senha do usuário antes de salvar no banco de dados
-userSchema.pre("save", async function (next) {
-  const hash = await bcrypt.hash(this.password, 10);
-  this.password = hash;
-  this.confirm_password = hash;
+// userSchema.pre("save", async function (next) {
+//   const hash = await bcrypt.hash(this.password, 10);
+//   this.password = hash;
+//   this.confirm_password = hash;
 
-  next();
-});
+//   next();
+// });
 
 export default model<IUser>("User", userSchema);

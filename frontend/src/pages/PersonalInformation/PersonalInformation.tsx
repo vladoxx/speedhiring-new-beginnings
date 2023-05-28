@@ -1,7 +1,35 @@
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 import ChipComponent from "../../components/ChipComponent/ChipComponent";
+
+import * as serviceUser from "../../service/UserService";
+import * as serviceCurriculum from "../../service/CurriculumService";
+
+import useUser from "../../hooks/useUser";
+
 import "./PersonalInformation.css";
 
 function PersonalInformation() {
+  let params = useParams();
+  const { userId } = useUser();
+
+  const loadUser = async (id: string) => {
+    try {
+      const resUser = await serviceUser.getOneUser(id);
+      const resCurriculum = await serviceCurriculum.getOneCurriculum(userId);
+
+      console.log(resUser);
+      console.log(resCurriculum);
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    if (params.id) {
+      loadUser(params.id);
+    }
+  }, []);
+
   return (
     <div className="personal-information">
       {/* data information */}
