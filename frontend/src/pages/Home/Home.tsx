@@ -10,12 +10,15 @@ import Recrutadores from "../../assets/images/trabajadores.png";
 
 import "./Home.css";
 import { Link } from "react-router-dom";
+import Button from "../../components/Button/Button";
+
 
 function Home() {
 
   const goToTheTop = () => {
     window.scrollTo(0,0)
   }
+
   return (
     <>
       <section className="about">
@@ -206,7 +209,7 @@ function Home() {
         </div>
       </section>
 
-      <button className="" type="button" onClick={goToTheTop}>Voltar ao topo</button>
+      <Button className="home__return_button"  text="Voltar ao Topo" onClick={goToTheTop} />
     </>
   );
 }
