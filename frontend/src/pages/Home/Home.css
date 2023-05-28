@@ -87,6 +87,10 @@
   text-align: center;
 }
 
+.connection__companies_logo {
+  height: 37px;
+}
+
 .services {
   display: flex;
   flex-direction: column;
@@ -231,6 +235,12 @@
   margin-top: 30px;
 }
 
+.home__return_button {
+  margin: 25px 0 25px;
+  width: 10.625rem;
+  padding: 10px;
+}
+
 /*------Tablet---------*/
 
 @media only screen and (min-width: 768px) {
@@ -253,8 +263,12 @@
     justify-items: center;
     justify-content: center;
     align-items: start;
+    padding: 3rem 9rem;
     gap: 4rem;
-    align-items: stretch;
+    align-items: start;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
   }
 
   .connection__container h4 {
@@ -263,6 +277,7 @@
 
   .connection__container p {
     font-size: var(--font-size-p-tablet);
+    padding: 0 9rem;
   }
 
   .connection__container:nth-child(3) {

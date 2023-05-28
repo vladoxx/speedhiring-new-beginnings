@@ -71,12 +71,14 @@ export default function Vacancies({ vacancy, fetchJobs }: PropsJob) {
               text="Editar"
               onClick={() => navigate(`/advertise-vacancy/${vacancy?._id}`)}
               className="btn-edit"
+              width="9rem"
             />
 
             <Button
               text="Deletar"
               onClick={() => vacancy?._id && vacancyDelete(vacancy?._id)}
               className="btn-delete"
+              width="9rem"
             />
           </div>
         )}
