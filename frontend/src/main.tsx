@@ -32,6 +32,7 @@ import { CompanyIdContextProvider } from "./context/CompanyIdContext.tsx";
 import { CompanyTokenContextProvider } from "./context/CompanyTokenContext.tsx";
 import CompanyVacancies from "./pages/CompanyVacancies/CompanyVacancies.tsx";
 import { CompanyNameContextProvider } from "./context/CompanyName.tsx";
+import GeneralInformation from "./pages/GeneralInformation/GeneralInformation.tsx";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -63,6 +64,10 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
                   <Route path="/login-user" element={<LoginUser />} />
                   <Route path="/login-company" element={<LoginCompany />} />
                   <Route path="/general-login" element={<GeneralLogin />} />
+                  <Route
+                    path="/general-information/:id"
+                    element={<GeneralInformation />}
+                  />
                   <Route path="/notification" element={<Notification />} />
                   <Route path="/register-user" element={<RegisterUser />} />
                   <Route

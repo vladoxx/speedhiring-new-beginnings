@@ -40,12 +40,12 @@ function AdvertiseVacancy() {
     e.preventDefault();
 
     if (!params.id) {
-      const updateJob = {
+      const createJob = {
         ...job,
         companyId: companyId,
         companyName: companyName,
       };
-      await jobService.createJob(updateJob);
+      await jobService.createJob(createJob);
 
       alert("Vaga cadastrada com sucesso!");
 

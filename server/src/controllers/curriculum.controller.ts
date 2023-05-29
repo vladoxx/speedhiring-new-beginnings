@@ -97,6 +97,16 @@ export const deleteCurriculum: RequestHandler = async (req, res) => {
   return res.json(curriculumFound);
 };
 
+export const deleteCurriculumValue: RequestHandler = async (req, res) => {
+  try {
+  } catch (error) {
+    console.error("Erro ao deletar valor da chave do currículo:", error);
+    res
+      .status(500)
+      .json({ message: "Erro ao deletar valor da chave do currículo" });
+  }
+};
+
 export const deleteAllCurriculums: RequestHandler = async (req, res) => {
   try {
     // Excluir todos os currículos

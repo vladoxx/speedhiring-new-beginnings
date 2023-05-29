@@ -1,27 +1,27 @@
 export interface Curriculum {
   personalInfo: PersonalInfo;
-  _id: string;
-  user_id: string;
-  objective: string;
-  professional_experience: ProfessionalExperience[];
-  education: Education[];
-  skills: Skill[] | undefined;
-  courses: Course[];
-  certifications: Certification[];
-  languages: Language[];
+  _id?: string;
+  user_id?: string;
+  objective?: string;
+  professional_experience?: ProfessionalExperience[];
+  education?: Education[];
+  skills?: Skill[] | undefined;
+  courses?: Course[];
+  certifications?: Certification[];
+  languages?: Language[];
 }
 
 export interface PersonalInfo {
-  birth_date: string;
-  nationality: string;
-  cpf: string;
-  marital_status: string;
-  gender_identity: string;
-  pronouns: string;
-  sexual_orientation: string;
-  ethnicity: string;
-  disabilities: string;
-  about: string;
+  birth_date?: string;
+  nationality?: string;
+  cpf?: string;
+  marital_status?: string;
+  gender_identity?: string;
+  pronouns?: string;
+  sexual_orientation?: string;
+  ethnicity?: string;
+  disabilities?: string;
+  about?: string;
 }
 
 export interface ProfessionalExperience {
