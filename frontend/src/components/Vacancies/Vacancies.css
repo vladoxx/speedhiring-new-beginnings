@@ -69,6 +69,7 @@
   align-items: center;
   gap: 1rem;
   margin: 1rem 0 0;
+  width: 17rem;
 }
 
 @media only screen and (min-width: 768px) {
