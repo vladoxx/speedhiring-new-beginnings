@@ -9,6 +9,7 @@ import * as serviceCurriculum from "../../service/CurriculumService";
 import "./PersonalInformation.css";
 import { UserProps } from "../../@types/user";
 import { Curriculum } from "../../@types/curriculum";
+import Button from "../../components/Button/Button";
 
 function PersonalInformation() {
   let params = useParams();
@@ -47,12 +48,9 @@ function PersonalInformation() {
 
   return (
     <div className="personal-information">
+      <h3 className="personal-information__info-title">Informações Pessoais</h3>
       {/* data information */}
       <section className="personal-information__box-data">
-        <h3 className="personal-information__info-title">
-          Informações Pessoais
-        </h3>
-
         <div className="personal-information__box_name_image">
           <h4 className="personal-information__name">{infoUser?.name}</h4>
           <img
@@ -63,7 +61,7 @@ function PersonalInformation() {
         </div>
 
         <div className="personal-information__box_about_description">
-          <h4 className="personal-information__about-you-title">Sobre Voce</h4>
+          <h4 className="personal-information__about-you-title">Sobre Mim</h4>
           <textarea
             className="personal-information__text-area"
             placeholder="Nos conta um pouco sobre você..."
@@ -73,162 +71,167 @@ function PersonalInformation() {
         </div>
 
         <div className="personal-information__box_data-info">
-          <h5 className="personal-information__data-info-title">
-            Dados Pessoais
-          </h5>
-          <p className="personal-information__date-of-birth">
-            Data de Nascimento: {infoCurriculum?.personalInfo.birth_date}
-          </p>
-          <p className="personal-information__nationality">
-            Nacionalidade: {infoCurriculum?.personalInfo.nationality}
-          </p>
-          <p className="personal-information__cpf">
-            CPF: {infoCurriculum?.personalInfo.cpf}
-          </p>
-          <p className="personal-information__state">
-            Estado Civil: {infoCurriculum?.personalInfo.marital_status}
-          </p>
-          <p className="personal-information__gender">
-            Sua identidade de genero:{" "}
-            {infoCurriculum?.personalInfo.gender_identity}
-          </p>
-          <p className="personal-information__pronoun">
-            Pronome: {infoCurriculum?.personalInfo.pronouns}
-          </p>
-          <p className="personal-information__sexual-orientation">
-            Orientação Sexual: {infoCurriculum?.personalInfo.sexual_orientation}
-          </p>
-          <p className="personal-information__skin-breed-ethnicity">
-            Raçã/Etnia: {infoCurriculum?.personalInfo.ethnicity}
-          </p>
-          <p className="personal-information__physical-deficiency">
-            Deficiencia: {infoCurriculum?.personalInfo.disabilities}
-          </p>
+          <div>
+            <h5 className="personal-information__data-info-title">
+              Dados Pessoais
+            </h5>
+            <p className="personal__information-paragraph">
+              Data de Nascimento: {infoCurriculum?.personalInfo.birth_date}
+            </p>
+            <p className="personal__information-paragraph">
+              Nacionalidade: {infoCurriculum?.personalInfo.nationality}
+            </p>
+            <p className="personal__information-paragraph">
+              CPF: {infoCurriculum?.personalInfo.cpf}
+            </p>
+            <p className="personal__information-paragraph">
+              Estado Civil: {infoCurriculum?.personalInfo.marital_status}
+            </p>
+            <p className="personal__information-paragraph">
+              Sua identidade de gênero:{" "}
+              {infoCurriculum?.personalInfo.gender_identity}
+            </p>
+            <p className="personal__information-paragraph">
+              Pronome: {infoCurriculum?.personalInfo.pronouns}
+            </p>
+            <p className="personal__information-paragraph">
+              Orientação Sexual:{" "}
+              {infoCurriculum?.personalInfo.sexual_orientation}
+            </p>
+            <p className="personal__information-paragraph">
+              Raça/Etnia: {infoCurriculum?.personalInfo.ethnicity}
+            </p>
+            <p className="personal__information-paragraph">
+              Deficiência: {infoCurriculum?.personalInfo.disabilities}
+            </p>
+          </div>
+
+          <div className="personal-information__box_address">
+            <h5 className="personal-information__address-title">Endereço</h5>
+            <p className="personal__information-paragraph">
+              CEP: {infoUser?.cep}
+            </p>
+            <p className="personal__information-paragraph">
+              {infoUser?.address}
+            </p>
+            <p className="personal__information-paragraph">
+              Bairro: {infoUser?.city}
+            </p>
+            <p className="personal__information-paragraph">
+              Cidade: {infoUser?.state}
+            </p>
+          </div>
+
+          <div className="personal-information__box-contact">
+            <h5 className="personal-information__contact-title">
+              Informações de Contato
+            </h5>
+            <p className="personal__information-paragraph">
+              E-mail: {infoUser?.email}
+            </p>
+            <p className="personal__information-paragraph">
+              Celular: {infoUser?.phone}
+            </p>
+          </div>
         </div>
 
-        <div className="personal-information__box_address">
-          <h5 className="personal-information__address-title">Endereço</h5>
-          <p className="personal-information__post-mail">
-            CEP: {infoUser?.cep}
-          </p>
-          <p className="personal-information__street">{infoUser?.address}</p>
-          <p className="personal-information__neighborhood">
-            Bairro: {infoUser?.city}
-          </p>
-          <p className="personal-information__city">
-            Cidade: {infoUser?.state}
-          </p>
-        </div>
-
-        <div className="personal-information__box-contact">
-          <h5 className="personal-information__contact-title">
-            Informações de Contato
-          </h5>
-          <p className="personal-information__email">
-            E-mail: {infoUser?.email}
-          </p>
-          <p className="personal-information__phone">
-            Celular: {infoUser?.phone}
-          </p>
-        </div>
-
-        <div className="personal-information__box-button-data">
-          <button className="personal-information__edit-button" type="button">
-            Editar dados
-          </button>
-        </div>
+        <button className="personal-information__edit-button" type="button">
+          Editar dados
+        </button>
       </section>
 
       {/* formation */}
       <section className="personal-information__box-formations">
-        <h3 className="personal-information__formations-title">Formações</h3>
+        <h3 className="personal-information__info-title">Formações</h3>
 
-        {infoCurriculum?.education &&
-          infoCurriculum?.education.map((item) => {
-            return (
-              <div
-                key={item._id}
-                className="personal-information__box_info-formations"
-              >
-                <h4 className="personal-information__university">
-                  {item.institution}
-                </h4>
-                <p className="personal-information__career">
-                  {item.field_of_study}
-                </p>
-                <p className="personal-information__graduation">{item.level}</p>
-                <p className="personal-information__formation-country">
-                  {item.country}
-                </p>
-                <p className="personal-information__formation-data">
-                  {item.start_date} - {item.end_date}
-                </p>
-              </div>
-            );
-          })}
-
-        <div className="personal-information__box-button-formation">
-          <button
-            className="personal-information__edit-button-formation"
-            type="button"
-          >
-            Editar dados
-          </button>
+        <div>
+          {infoCurriculum?.education &&
+            infoCurriculum?.education.map((item) => {
+              return (
+                <div
+                  key={item._id}
+                  className="personal-information__box_info-formations"
+                >
+                  <h4 className="personal-information__university">
+                    {item.institution}
+                  </h4>
+                  <p className="personal-information__career">
+                    {item.field_of_study}
+                  </p>
+                  <p className="personal__information-paragraph">
+                    {item.level}
+                  </p>
+                  <p className="personal-information__formation-country">
+                    {item.country}
+                  </p>
+                  <p className="personal-information__formation-data">
+                    {item.start_date} - {item.end_date}
+                  </p>
+                </div>
+              );
+            })}
         </div>
+
+        <button
+          className="personal-information__edit-button-formation"
+          type="button"
+        >
+          Editar dados
+        </button>
       </section>
 
       {/* professional experience */}
       <section className="personal-information__box-job-experience">
-        <h3 className="personal-information__job-experience-title">
+        <h3 className="personal-information__info-title">
           Experiencia profissional
         </h3>
 
-        {infoCurriculum?.professional_experience &&
-          infoCurriculum?.professional_experience.map((item) => {
-            return (
-              <div
-                key={item._id}
-                className="personal-information__box-experiences"
-              >
-                <h4 className="personal-information__job-title">
-                  {item.job_title}
-                </h4>
-                <p className="personal-information__job-experience-institution">
-                  {item.company}
-                </p>
-                <p className="personal-information__job-country">
-                  {item.country}
-                </p>
-                <p className="personal-information__job-data">
-                  {item.start_date} - {item.end_date}
-                </p>
-                <p className="personal-information__job-responsibilities-description">
-                  Responsabilidades
-                </p>
-                <textarea
-                  className="personal-information__job-responsibilities-description-textarea"
-                  rows={4}
-                  cols={35}
-                  placeholder="Descripção"
-                  value={item.job_description}
-                ></textarea>
-              </div>
-            );
-          })}
-
-        <div className="personal-information__box-button_experiences">
-          <button
-            className="personal-information__edit-button-job-experience"
-            type="button"
-          >
-            Editar dados
-          </button>
+        <div>
+          {infoCurriculum?.professional_experience &&
+            infoCurriculum?.professional_experience.map((item) => {
+              return (
+                <div
+                  key={item._id}
+                  className="personal-information__box-experiences"
+                >
+                  <h4 className="personal-information__job-title">
+                    {item.job_title}
+                  </h4>
+                  <p className="personal-information__job-experience-institution">
+                    {item.company}
+                  </p>
+                  <p className="personal-information__job-country">
+                    {item.country}
+                  </p>
+                  <p className="personal-information__job-data">
+                    {item.start_date} - {item.end_date}
+                  </p>
+                  <p className="personal-information__job-responsibilities-description">
+                    Responsabilidades
+                  </p>
+                  <textarea
+                    className="personal-information__job-responsibilities-description-textarea"
+                    rows={4}
+                    cols={35}
+                    placeholder="Descrição"
+                    value={item.job_description}
+                  ></textarea>
+                </div>
+              );
+            })}
         </div>
+
+        <button
+          className="personal-information__edit-button-job-experience"
+          type="button"
+        >
+          Editar dados
+        </button>
       </section>
 
       {/* certifications */}
       <section className="personal-information__box-certifications">
-        <h3 className="personal-information__certification-title">
+        <h3 className="personal-information__info-title">
           Cursos e Certificações
         </h3>
 
@@ -257,7 +260,7 @@ function PersonalInformation() {
                   id=""
                   rows={4}
                   cols={35}
-                  placeholder="Descripção"
+                  placeholder="Descrição"
                   value={item.}
                 ></textarea> */}
               </div>
@@ -276,7 +279,7 @@ function PersonalInformation() {
 
       {/* languages */}
       <section className="personal-information__language">
-        <h3 className="personal-information__language-title">Idiomas</h3>
+        <h3 className="personal-information__info-title">Idiomas</h3>
 
         {infoCurriculum?.languages &&
           infoCurriculum?.languages.map((item) => {
@@ -307,7 +310,7 @@ function PersonalInformation() {
 
       {/* skills */}
       <section className="personal-information__skills">
-        <h3 className="personal-information__skills-title">Habilidades</h3>
+        <h3 className="personal-information__info-title">Habilidades</h3>
 
         <div className="personal-information__box-skills-information">
           <div className="personal-information__box-skill-input">
@@ -322,15 +325,13 @@ function PersonalInformation() {
             </button>
           </div>
           <div className="personal-information__skill">
-            <ChipComponent />
+            <ChipComponent skills={infoCurriculum?.skills} />
           </div>
         </div>
       </section>
 
       <div className="personal-information__box-home-button">
-        <button className="personal-information__home-button" type="button">
-          Voltar ao Início
-        </button>
+        <Button text="Voltar ao Início" />
       </div>
     </div>
   );

@@ -18,9 +18,13 @@ const ListItem = styled("li")(({ theme }) => ({
 }));
 
 export default function ChipComponent({ skills }: ChipProps) {
-  const [chipData, setChipData] = useState<readonly ChipData[]>([
-    { key: 0, label: "Angular" },
-  ]);
+  const [chipData, setChipData] = useState<readonly ChipData[]>([]);
+
+  const handleDelete = (chipToDelete: ChipData) => () => {
+    setChipData((chips) =>
+      chips.filter((chip) => chip.key !== chipToDelete.key)
+    );
+  };
 
   useEffect(() => {
     if (skills) {
@@ -33,11 +37,6 @@ export default function ChipComponent({ skills }: ChipProps) {
       console.log(formattedSkills);
     }
   }, [skills]);
-  const handleDelete = (chipToDelete: ChipData) => () => {
-    setChipData((chips) =>
-      chips.filter((chip) => chip.key !== chipToDelete.key)
-    );
-  };
 
   return (
     <Paper
