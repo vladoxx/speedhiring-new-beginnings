@@ -102,7 +102,7 @@ function LoginUser() {
 
       <span className="login__register">
         Não tem cadastro?{" "}
-        <Link to={"/register"} className="login__register-link">
+        <Link to={"/register-user"} className="login__register-link">
           Clique aqui
         </Link>
       </span>
