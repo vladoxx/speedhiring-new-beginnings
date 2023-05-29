@@ -59,12 +59,13 @@ export const getOneCurriculum: RequestHandler = async (req, res) => {
 
 export const updateCurriculum: RequestHandler = async (req, res) => {
   try {
-    const curriculumUpdate = await Curriculum.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      {
-        new: true,
-      }
+    const { userId, ...updatedData } = req.body;
+
+    // Atualizar apenas as chaves fornecidas no corpo da solicitação
+    const curriculumUpdate = await Curriculum.findOneAndUpdate(
+      { _id: req.params.id },
+      { $set: updatedData },
+      { new: true }
     );
 
     if (!curriculumUpdate) {

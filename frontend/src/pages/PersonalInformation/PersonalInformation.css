@@ -204,7 +204,17 @@
 
 /* certifications */
 .personal-information__box-certifications {
-  line-height: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.personal-information__box-certifications > div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
 }
 
 .personal-information__certification-title {
@@ -241,11 +251,6 @@
   outline: none;
 }
 
-.personal-information__box-button-certification {
-  text-align: center;
-  padding: 2rem 0 3rem;
-}
-
 .personal-information__edit-button-certifications {
   width: 200px;
   height: 36px;
@@ -254,6 +259,7 @@
   border: none;
   border-radius: 16px;
   background-color: var(--laranja-escuro);
+  margin: 0 0 3rem;
 }
 
 /* languages */
@@ -425,8 +431,10 @@
   }
 
   /* certifications */
-  .personal-information__box-certifications {
-    line-height: 1.5rem;
+  .personal-information__box-certifications > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
   }
 
   .personal-information__certification-title {
@@ -444,15 +452,6 @@
 
   .personal-information__certification-description {
     margin-top: 0.7rem;
-  }
-
-  .personal-information__box-button-certification {
-    padding: 3rem 0 5rem;
-  }
-
-  .personal-information__edit-button-certifications {
-    width: 275px;
-    height: 36px;
   }
 
   /* languages */
@@ -582,10 +581,6 @@
 
   .personal-information__certifications-institution {
     font-size: 1.3rem;
-  }
-
-  .personal-information__box-button-certification {
-    padding: 5rem 0 7rem;
   }
 
   .personal-information__edit-button-certifications {

@@ -235,46 +235,46 @@ function PersonalInformation() {
           Cursos e Certificações
         </h3>
 
-        {infoCurriculum?.courses &&
-          infoCurriculum?.courses.map((item) => {
-            return (
-              <div
-                key={item._id}
-                className="personal-information__box-course-certification"
-              >
-                <h3 className="personal-information__certifications-institution">
-                  {item.institution}
-                </h3>
-                <p className="personal-information__certifications-course">
-                  {item.courseName}
-                </p>
-                <p className="personal-information__certifications-country">
-                  {item.country}
-                </p>
-                <p className="personal-information__certifications-data">
-                  {item.startDate} - {item.endDate}
-                </p>
-                {/* <textarea
-                  className="personal-information__certification-description"
-                  name=""
-                  id=""
-                  rows={4}
-                  cols={35}
-                  placeholder="Descrição"
-                  value={item.}
-                ></textarea> */}
-              </div>
-            );
-          })}
-
-        <div className="personal-information__box-button-certification">
-          <button
-            className="personal-information__edit-button-certifications"
-            type="button"
-          >
-            Editar dados
-          </button>
+        <div>
+          {infoCurriculum?.courses &&
+            infoCurriculum?.courses.map((item) => {
+              return (
+                <div
+                  key={item._id}
+                  className="personal-information__box-course-certification"
+                >
+                  <h3 className="personal-information__certifications-institution">
+                    {item.institution}
+                  </h3>
+                  <p className="personal-information__certifications-course">
+                    {item.courseName}
+                  </p>
+                  <p className="personal-information__certifications-country">
+                    {item.country}
+                  </p>
+                  <p className="personal-information__certifications-data">
+                    {item.startDate} - {item.endDate}
+                  </p>
+                  {/* <textarea
+                    className="personal-information__certification-description"
+                    name=""
+                    id=""
+                    rows={4}
+                    cols={35}
+                    placeholder="Descrição"
+                    value={item.}
+                  ></textarea> */}
+                </div>
+              );
+            })}
         </div>
+
+        <button
+          className="personal-information__edit-button-certifications"
+          type="button"
+        >
+          Editar dados
+        </button>
       </section>
 
       {/* languages */}
