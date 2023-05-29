@@ -61,6 +61,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
                     path="/description-vacancy/:id"
                     element={<DescriptionVacancy />}
                   />
+                  <Route path="/formation/:id" element={<Formation />} />
                   <Route path="/login-user" element={<LoginUser />} />
                   <Route path="/login-company" element={<LoginCompany />} />
                   <Route path="/general-login" element={<GeneralLogin />} />
@@ -80,16 +81,15 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
                     path="/personal-information/:id"
                     element={<PersonalInformation />}
                   />
-                  <Route path="/formation" element={<Formation />} />
                   <Route
-                    path="/professional-experience"
+                    path="/professional-experience/:id"
                     element={<ProfessionalExperience />}
                   />
                   <Route
-                    path="/courses-certifications"
+                    path="/courses-certifications/:id"
                     element={<CoursesCertifications />}
                   />
-                  <Route path="/language" element={<Language />} />
+                  <Route path="/language/:id" element={<Language />} />
                 </Routes>
 
                 <Footer />

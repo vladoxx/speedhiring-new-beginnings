@@ -40,3 +40,8 @@
 .logout {
   background-color: var(--vermelho);
 }
+
+.btn-cancel {
+  background: unset;
+  color: var(--roxo-escuro);
+}

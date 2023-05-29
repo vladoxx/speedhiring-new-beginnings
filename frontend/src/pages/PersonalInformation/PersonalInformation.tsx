@@ -1,12 +1,10 @@
-import { useParams, useNavigate } from "react-router-dom";
-import Button from "../../components/Button/Button";
 import { FormEvent, useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 
-import * as serviceUser from "../../service/UserService";
 import * as serviceCurriculum from "../../service/CurriculumService";
 
-import { UserProps } from "../../@types/user";
 import { Curriculum } from "../../@types/curriculum";
+import Button from "../../components/Button/Button";
 import { InputChange } from "../../@types/general";
 
 import "./PersonalInformation.css";
@@ -30,7 +28,6 @@ function PersonalInformation() {
     },
   };
 
-  const [infoUser, setInfoUser] = useState<UserProps>();
   const [infoCurriculum, setInfoCurriculum] = useState<Curriculum>(
     initialStateCurriculum
   );

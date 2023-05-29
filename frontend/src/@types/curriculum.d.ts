@@ -4,7 +4,7 @@ export interface Curriculum {
   user_id?: string;
   objective?: string;
   professional_experience?: ProfessionalExperience[];
-  education?: Education[];
+  education?: Education[] | undefined;
   skills?: Skill[] | undefined;
   courses?: Course[];
   certifications?: Certification[];
@@ -35,13 +35,13 @@ export interface ProfessionalExperience {
 }
 
 export interface Education {
-  institution: string;
-  country: string;
-  level: string;
-  field_of_study: string;
-  start_date: string;
-  end_date: string;
-  _id: string;
+  institution?: string;
+  country?: string;
+  level?: string;
+  field_of_study?: string;
+  start_date?: string;
+  end_date?: string;
+  _id?: string;
 }
 
 export interface Skill {
