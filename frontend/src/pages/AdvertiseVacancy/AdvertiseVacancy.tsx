@@ -9,6 +9,7 @@ import useCompany from "../../hooks/useCompany";
 import * as jobService from "../../service/VacancyService";
 
 import "./AdvertiseVacancy.css";
+import Button from "../../components/Button/Button";
 
 function AdvertiseVacancy() {
   let navigate = useNavigate();
@@ -204,11 +205,12 @@ function AdvertiseVacancy() {
 
         <div className="advertisement__button_submit">
           {params.id ? (
-            <button>Atualizar</button>
+            
+            <Button className="advertisement__button-update" type="submit" text="Atualizar"/>
+
           ) : (
-            <button className="advertisement__button" type="submit">
-              Cadastrar vaga
-            </button>
+            <Button className="advertisement__button" type="submit" text="Cadastrar Vaga"
+                          />
           )}
         </div>
       </form>
