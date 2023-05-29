@@ -1,0 +1,605 @@
+.general-information {
+  padding: 3rem 1.5rem;
+  max-width: 75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* data information */
+
+.general-information__box-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+}
+
+.general-information__box_name_image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.general-information__info-title {
+  text-align: center;
+  font-size: var(--font-size-h2-mobile);
+  font-weight: 900;
+  margin: 0 0 2rem;
+}
+
+.general-information__name {
+  font-size: var(--font-size-h4-mobile);
+  font-weight: 500;
+  margin: 0 0 1rem;
+}
+
+.general-information__image {
+  width: 80px;
+  border: 2px solid var(--verde-azulado);
+  border-radius: 100%;
+}
+
+.general-information__box_about_description {
+  width: 100%;
+}
+
+.general-information__about-you-title {
+  padding-top: 2rem;
+  font-size: var(--font-size-h4-mobile);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.general-information__text-area {
+  width: 100%;
+  height: 100px;
+  border: 1px solid rgb(5, 191, 219, 06);
+  border-radius: 16px;
+  margin: 0.2rem 0 2rem;
+  padding: 0.4rem;
+  outline: none;
+  resize: none;
+  font-size: var(--font-size-p-mobile);
+}
+
+.general-information__box_data-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.general-information__box_data-info div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.personal__information-paragraph {
+  font-size: var(--font-size-p-mobile);
+  line-height: 1.3;
+}
+
+.general-information__address-title {
+  font-size: var(--font-size-h4-mobile);
+  padding-bottom: 0.2rem;
+}
+
+/* formation */
+.general-information__box-formations {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin: 0 0 3rem;
+}
+
+.general-information__box-formations > div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+.general-information__box_info-formations {
+  padding-bottom: 1rem;
+}
+
+.general-information__university {
+  font-size: 1.1rem;
+  padding-bottom: 0.2rem;
+}
+
+.general-information__career {
+  color: var(--verde-azulado);
+  font-weight: 500;
+}
+
+.general-information__formation-country {
+  font-weight: 500;
+}
+
+.general-information__box-button-formation {
+  text-align: center;
+  padding: 2rem 0 3rem;
+}
+
+.general-information__edit-button-formation {
+  width: 200px;
+  height: 36px;
+  font-weight: 900;
+  color: var(--branco);
+  border: none;
+  border-radius: 16px;
+  background-color: var(--laranja-escuro);
+}
+
+/* professional experience */
+.general-information__box-job-experience {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin: 0 0 3rem;
+}
+
+.general-information__box-experiences {
+  padding-bottom: 1.5rem;
+}
+
+.general-information__job-title {
+  font-size: 1.1rem;
+  padding-bottom: 0.2rem;
+}
+
+.general-information__job-experience-institution {
+  color: var(--verde-azulado);
+  font-weight: 500;
+}
+
+.general-information__job-country {
+  font-weight: 500;
+}
+
+.general-information__job-responsibilities-description {
+  padding: 0.3rem 0 0.1rem;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.general-information__job-responsibilities-description-textarea {
+  width: 100%;
+  border: 1px solid var(--verde-azulado);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  outline: none;
+  resize: none;
+}
+
+.general-information__edit-button-job-experience {
+  width: 200px;
+  height: 36px;
+  font-weight: 900;
+  color: var(--branco);
+  border: none;
+  border-radius: 16px;
+  background-color: var(--laranja-escuro);
+}
+
+/* certifications */
+.general-information__box-certifications {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.general-information__box-certifications > div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+.general-information__certification-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  padding-bottom: 3rem;
+}
+
+.general-information__box-course-certification {
+  padding-bottom: 1.5rem;
+}
+
+.general-information__certifications-institution {
+  font-size: 1.1rem;
+  padding-bottom: 0.2rem;
+}
+
+.general-information__certifications-course {
+  color: var(--verde-azulado);
+  font-weight: 500;
+}
+
+.general-information__certifications-country {
+  font-weight: 500;
+}
+
+.general-information__certification-description {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid var(--verde-azulado);
+  border-radius: 1rem;
+  outline: none;
+}
+
+.general-information__edit-button-certifications {
+  width: 200px;
+  height: 36px;
+  font-weight: 900;
+  color: var(--branco);
+  border: none;
+  border-radius: 16px;
+  background-color: var(--laranja-escuro);
+  margin: 0 0 3rem;
+}
+
+/* languages */
+.general-information__language {
+  line-height: 1.4rem;
+}
+
+.general-information__language-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  padding-bottom: 3rem;
+}
+
+.general-information__box-languages {
+  padding-bottom: 1rem;
+}
+
+.general-information__box-button-language {
+  text-align: center;
+  padding: 2rem 0 3rem;
+}
+
+.general-information__edit-language-button {
+  width: 200px;
+  height: 36px;
+  font-weight: 900;
+  color: var(--branco);
+  border: none;
+  border-radius: 16px;
+  background-color: var(--laranja-escuro);
+}
+
+/* skills */
+.general-information__skills-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  padding-bottom: 3rem;
+}
+
+.general-information__box-skill-input {
+  text-align: center;
+}
+
+.general-information__skill-input {
+  font-weight: 900;
+  text-align: center;
+  width: 70%;
+  height: 30px;
+  padding: 0.5rem;
+  margin-right: 0.14rem;
+  margin-bottom: 3rem;
+  border: 1px solid var(--verde-azulado);
+  border-radius: 1rem;
+  outline: none;
+}
+
+.general-information__skills-add-button {
+  font-weight: 900;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--verde-azulado);
+  border-radius: 100%;
+}
+
+.general-information__skill {
+  display: flex;
+  justify-content: center;
+}
+
+.personal__information-containerBtns {
+  margin: 2rem 0;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  /* data information */
+
+  .general-information__info-title {
+    font-size: var(--font-size-h2-tablet);
+  }
+
+  .general-information__name {
+    font-size: var(--font-size-h4-tablet);
+  }
+
+  .general-information__image {
+    width: 100px;
+  }
+
+  .general-information__about-you-title {
+    font-size: var(--font-size-h4-tablet);
+  }
+
+  .general-information__text-area {
+    font-size: var(--font-size-p-tablet);
+  }
+
+  .general-information__data-info-title {
+    font-size: var(--font-size-h4-tablet);
+  }
+
+  .general-information__box_data-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .personal__information-paragraph {
+    font-size: var(--font-size-p-tablet);
+  }
+
+  .general-information__address-title {
+    font-size: 1.2rem;
+  }
+
+  .general-information__box-formations > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+  }
+
+  /* formation */
+  .general-information__box-formations {
+    line-height: 1.5rem;
+  }
+
+  .general-information__box_info-formations {
+    padding-bottom: 1.5rem;
+  }
+
+  .general-information__university {
+    font-size: 1.2rem;
+  }
+
+  .general-information__box-button-formation {
+    padding: 3.5rem 0 5rem;
+  }
+
+  .general-information__edit-button-formation {
+    width: 275px;
+    height: 36px;
+  }
+
+  .general-information__box-job-experience > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  /* professional experience */
+
+  .general-information__box-experiences {
+    padding-bottom: 2rem;
+  }
+
+  .general-information__job-title {
+    font-size: 1.2rem;
+  }
+
+  .general-information__job-responsibilities-description {
+    padding: 0.5rem 0 0.3rem;
+  }
+
+  .general-information__edit-button-job-experience {
+    width: 275px;
+    height: 36px;
+  }
+
+  /* certifications */
+  .general-information__box-certifications > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+  }
+
+  .general-information__certification-title {
+    font-size: 28px;
+    padding-bottom: 5rem;
+  }
+
+  .general-information__box-course-certification {
+    padding-bottom: 2rem;
+  }
+
+  .general-information__certifications-institution {
+    font-size: 1.2rem;
+  }
+
+  .general-information__certification-description {
+    margin-top: 0.7rem;
+  }
+
+  /* languages */
+  .general-information__language-title {
+    font-size: 28px;
+    padding-bottom: 5rem;
+  }
+
+  .general-information__box-languages {
+    font-size: 1.1rem;
+  }
+
+  .general-information__box-button-language {
+    padding: 4rem 0 5rem;
+  }
+
+  .general-information__edit-language-button {
+    width: 275px;
+    height: 36px;
+  }
+
+  /* skills */
+  .general-information__skills-title {
+    font-size: 28px;
+    padding-bottom: 5rem;
+  }
+
+  .general-information__skill-input {
+    height: 35px;
+  }
+
+  .general-information__skills-add-button {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+}
+
+/* Desktop     */
+@media (min-width: 1024px) {
+  /* data information */
+
+  .general-information__info-title {
+    font-size: var(--font-size-h2-desktop);
+  }
+
+  .general-information__name {
+    font-size: var(--font-size-h4-desktop);
+  }
+
+  .general-information__image {
+    width: 120px;
+  }
+
+  .general-information__about-you-title {
+    font-size: var(--font-size-h4-desktop);
+  }
+
+  .general-information__box_about_description {
+    width: 60%;
+  }
+
+  .personal__information-paragraph {
+    font-size: var(--font-size-p-desktop);
+  }
+
+  .general-information__text-area {
+    font-size: var(--font-size-p-desktop);
+  }
+
+  .general-information__data-info-title {
+    font-size: var(--font-size-h4-desktop);
+  }
+
+  .general-information__address-title {
+    font-size: 1.3rem;
+  }
+
+  .general-information__box_data-info div {
+    width: unset;
+  }
+
+  .general-information__box_data-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* formation */
+
+  .general-information__university {
+    font-size: 1.3rem;
+  }
+
+  .general-information__box-button-formation {
+    padding: 5.5rem 0 7rem;
+  }
+
+  .general-information__edit-button-formation {
+    width: 320px;
+    height: 40px;
+  }
+
+  .general-information__box-formations > div {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* professional experience */
+
+  .general-information__job-title {
+    font-size: 1.3rem;
+  }
+
+  .general-information__edit-button-job-experience {
+    width: 320px;
+    height: 40px;
+  }
+
+  /* certifications */
+  .general-information__certification-title {
+    font-size: 2.2rem;
+  }
+
+  .general-information__certifications-institution {
+    font-size: 1.3rem;
+  }
+
+  .general-information__edit-button-certifications {
+    width: 320px;
+    height: 40px;
+  }
+
+  /* languages */
+  .general-information__language-title {
+    font-size: 2.2rem;
+  }
+
+  .general-information__box-languages h4 {
+    font-size: 1.3rem;
+  }
+
+  .general-information__box-button-language {
+    padding: 6rem 0 7rem;
+  }
+
+  .general-information__edit-language-button {
+    width: 320px;
+    height: 40px;
+  }
+
+  /* skills */
+  .general-information__skills-title {
+    font-size: 2.2rem;
+  }
+
+  .general-information__skill-input {
+    height: 40px;
+  }
+
+  .general-information__skills-add-button {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+}

@@ -51,10 +51,7 @@ export const createUser: RequestHandler = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = new User({
-      name,
-      email,
-      phone,
-      address,
+      ...req.body,
       password: hashedPassword,
       confirm_password: hashedPassword,
     });
@@ -108,15 +105,25 @@ export const getOneUser: RequestHandler = async (req, res) => {
 };
 
 export const updateUser: RequestHandler = async (req, res) => {
-  const userUpdate = await User.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-  });
+  try {
+    const { userId, ...updatedData } = req.body;
 
-  if (!userUpdate) {
-    return res.status(204).json();
+    // Atualizar apenas as chaves fornecidas no corpo da solicitação
+    const userUpdate = await User.findOneAndUpdate(
+      { _id: req.params.id },
+      { $set: updatedData },
+      { new: true }
+    );
+
+    if (!userUpdate) {
+      return res.status(204).json();
+    }
+
+    res.json(userUpdate);
+  } catch (error) {
+    console.error("Erro ao atualizar usuário:", error);
+    res.status(500).json({ message: "Erro ao atualizar usuário" });
   }
-
-  res.json(userUpdate);
 };
 
 export const deleteUser: RequestHandler = async (req, res) => {
