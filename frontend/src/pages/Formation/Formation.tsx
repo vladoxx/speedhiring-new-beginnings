@@ -1,3 +1,5 @@
+import Button from "../../components/Button/Button";
+
 import "./Formation.css";
 
 function Formation() {
@@ -9,22 +11,32 @@ function Formation() {
         <label className="formation__country">
           Pais*
           <select className="formation__country_select" name="selectCountry">
-            <option value="noCountry">Selecione o seu país</option>
-            <option value="afeganistan">Afeganistão</option>
-            <option value="albania">Albânia</option>
-            <option value="alemanha">Alemanha</option>
-            <option value="andorra">Andorra</option>
-            <option value="angola">Angola</option>
-            <option value="antigua-e-barbuda">Antígua e Barbuda</option>
-            <option value="arabia-saudita">Arábia Saudita</option>
-            <option value="argelia">Argélia</option>
-            <option value="argentina">Argentina</option>
-            <option value="armenia">Armênia</option>
-            <option value="australia">Austrália</option>
-            <option value="austria">Áustria</option>
-            <option value="azerbaijao">Azerbaijão</option>
-            <option value="bahamas">Bahamas</option>
-            <option value="bahrein">Bahrein</option>
+            <option value="infoCurriculum.educationnoCountry">
+              Selecione o seu país
+            </option>
+            <option value="infoCurriculum.educationafeganistan">
+              Afeganistão
+            </option>
+            <option value="infoCurriculum.educationalbania">Albânia</option>
+            <option value="infoCurriculum.educationalemanha">Alemanha</option>
+            <option value="infoCurriculum.educationandorra">Andorra</option>
+            <option value="infoCurriculum.educationangola">Angola</option>
+            <option value="infoCurriculum.educationantigua-e-barbuda">
+              Antígua e Barbuda
+            </option>
+            <option value="infoCurriculum.educationarabia-saudita">
+              Arábia Saudita
+            </option>
+            <option value="infoCurriculum.educationargelia">Argélia</option>
+            <option value="infoCurriculum.educationargentina">Argentina</option>
+            <option value="infoCurriculum.educationarmenia">Armênia</option>
+            <option value="infoCurriculum.educationaustralia">Austrália</option>
+            <option value="infoCurriculum.educationaustria">Áustria</option>
+            <option value="infoCurriculum.educationazerbaijao">
+              Azerbaijão
+            </option>
+            <option value="infoCurriculum.educationbahamas">Bahamas</option>
+            <option value="infoCurriculum.educationbahrein">Bahrein</option>
             <option value="bangladesh">Bangladesh</option>
             <option value="barbados">Barbados</option>
             <option value="belgica">Bélgica</option>
@@ -232,6 +244,9 @@ function Formation() {
           <input
             className="formation__institution-input"
             type="text"
+            name=""
+            // onChange={handleInputChangeFormation}
+            // value={infoCurriculum.education}
             required
           />
         </label>
@@ -241,6 +256,9 @@ function Formation() {
           <input
             className="formation__institution-input"
             type="text"
+            name=""
+            // onChange={handleInputChangeFormation}
+            // value={infoCurriculum.education}
             required
           />
         </label>
@@ -250,6 +268,9 @@ function Formation() {
           <input
             className="formation__institution-input"
             type="text"
+            name=""
+            // onChange={handleInputChangeFormation}
+            // value={infoCurriculum.education}
             placeholder="01/2011"
             required
           />
@@ -260,6 +281,9 @@ function Formation() {
           <input
             className="formation__institution-input"
             type="text"
+            name=""
+            // onChange={handleInputChangeFormation}
+            // value={infoCurriculum.education}
             placeholder="08/2013"
             required
           />
@@ -268,32 +292,20 @@ function Formation() {
         <label className="formation__status">
           Status*
           <select className="formation__status_select" name="status">
-            <option value="concluido">Concluido</option>
-            <option value="cursando">Cursando</option>
-            <option value="trancado">Trancado</option>
+            <option value="infoCurriculum.educationconcluido">Concluido</option>
+            <option value="infoCurriculum.educationcursando">Cursando</option>
+            <option value="infoCurriculum.educationtrancado">Trancado</option>
           </select>
         </label>
 
         <div className="formation__form__button">
-          <button className="formation__btn save_button" type="submit">
-            Salvar
-          </button>
-          <button
-            className="formation__btn certifications__edit_button"
-            type="submit"
-          >
-            Editar
-          </button>
-          <button
-            className="formation__btn certifications__delete_button"
-            type="submit"
-          >
-            Deletar
-          </button>
+          <Button text="Salvar" />
 
-          <button className="formation__btn certifications__cancel_button">
-            Cancelar
-          </button>
+          <Button text="Editar" className="btn-edit" />
+
+          <Button text="Deletar" className="btn-delete" />
+
+          <Button text="Cancelar" className="btn-cancel" />
         </div>
       </form>
     </div>

@@ -69,23 +69,6 @@
   cursor: pointer;
 }
 
-.save_button {
-  background-color: var(--laranja-escuro);
-}
-
-.certifications__edit_button {
-  background-color: var(--verde-azulado);
-}
-
-.certifications__delete_button {
-  background-color: #f50707;
-}
-
-.certifications__cancel_button {
-  background: unset;
-  color: var(--roxo-escuro);
-}
-
 @media only screen and (min-width: 768px) {
   .formation__title {
     font-size: var(--font-size-h3-tablet);
@@ -110,10 +93,6 @@
     max-width: 310px;
   }
 
-  .formation__btn {
-    font-size: var(--font-size-p-tablet);
-  }
-
   .formation__form__button {
     grid-column: 1/3;
   }
@@ -130,10 +109,6 @@
 
   .formation__form > label > select,
   .formation__institution-input {
-    font-size: var(--font-size-p-desktop);
-  }
-
-  .formation__btn {
     font-size: var(--font-size-p-desktop);
   }
 }

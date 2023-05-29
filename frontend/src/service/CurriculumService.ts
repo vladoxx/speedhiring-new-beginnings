@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Curriculum, PersonalInfo } from "../@types/curriculum";
+import { Curriculum } from "../@types/curriculum";
 
 const API = "http://localhost:3333";
 

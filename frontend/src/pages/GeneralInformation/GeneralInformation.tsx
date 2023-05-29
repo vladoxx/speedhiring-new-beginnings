@@ -138,13 +138,15 @@ export default function GeneralInformation() {
 
         <div className="personal__information-containerBtns">
           <Button
-            text="Editar Dados"
+            text="Editar dados"
             onClick={() =>
               navigate(`/personal-information/${infoUser?.curriculumId}`)
             }
           />
         </div>
       </section>
+
+      <hr />
 
       {/* formation */}
       <section className="general-information__box-formations">
@@ -178,13 +180,13 @@ export default function GeneralInformation() {
             })}
         </div>
 
-        <button
-          className="general-information__edit-button-formation"
-          type="button"
-        >
-          Editar dados
-        </button>
+        <Button
+          text="Editar dados"
+          onClick={() => navigate(`/formation/${infoUser?.curriculumId}`)}
+        />
       </section>
+
+      <hr />
 
       {/* professional experience */}
       <section className="general-information__box-job-experience">
@@ -227,13 +229,15 @@ export default function GeneralInformation() {
             })}
         </div>
 
-        <button
-          className="general-information__edit-button-job-experience"
-          type="button"
-        >
-          Editar dados
-        </button>
+        <Button
+          text="Editar dados"
+          onClick={() =>
+            navigate(`/professional-experience/${infoUser?.curriculumId}`)
+          }
+        />
       </section>
+
+      <hr />
 
       {/* certifications */}
       <section className="general-information__box-certifications">
@@ -275,44 +279,46 @@ export default function GeneralInformation() {
             })}
         </div>
 
-        <button
-          className="general-information__edit-button-certifications"
-          type="button"
-        >
-          Editar dados
-        </button>
+        <Button
+          text="Editar dados"
+          onClick={() =>
+            navigate(`/courses-certifications/${infoUser?.curriculumId}`)
+          }
+        />
       </section>
+
+      <hr />
 
       {/* languages */}
       <section className="general-information__language">
         <h3 className="general-information__info-title">Idiomas</h3>
 
-        {infoCurriculum?.languages &&
-          infoCurriculum?.languages.map((item) => {
-            return (
-              <div
-                key={item._id}
-                className="general-information__box-languages"
-              >
-                <h4 className="general-information__language-practiced">
-                  {item.language}
-                </h4>
-                <p className="general-information__language-proficiency">
-                  {item.proficiency}
-                </p>
-              </div>
-            );
-          })}
-
-        <div className="general-information__box-button-language">
-          <button
-            className="general-information__edit-language-button"
-            type="button"
-          >
-            Editar dados
-          </button>
+        <div>
+          {infoCurriculum?.languages &&
+            infoCurriculum?.languages.map((item) => {
+              return (
+                <div
+                  key={item._id}
+                  className="general-information__box-languages"
+                >
+                  <h4 className="general-information__language-practiced">
+                    {item.language}
+                  </h4>
+                  <p className="general-information__language-proficiency">
+                    {item.proficiency}
+                  </p>
+                </div>
+              );
+            })}
         </div>
+
+        <Button
+          text="Editar dados"
+          onClick={() => navigate(`/language/${infoUser?.curriculumId}`)}
+        />
       </section>
+
+      <hr />
 
       {/* skills */}
       <section className="general-information__skills">
