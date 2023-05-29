@@ -205,7 +205,6 @@ function AdvertiseVacancy() {
 
         <div className="advertisement__button_submit">
           {params.id ? (
-            
             <Button className="advertisement__button-update" type="submit" text="Atualizar"/>
 
           ) : (
