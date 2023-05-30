@@ -1,9 +1,45 @@
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+import * as serviceCurriculum from "../../service/CurriculumService";
+
 import "./CoursesCertifications.css";
+import { Curriculum } from "../../@types/curriculum";
 
 function CoursesCertifications() {
+  let params = useParams();
+  let idCurriculum = params.idCurriculum;
+  let idCourse = params.idCourse;
+
+  const [courses, setCourses] = useState<Curriculum["education"]>();
+  const [course, setCourse] = useState<Curriculum["education"]>();
+
+  const getCourse = async (id: string) => {
+    const res = (await serviceCurriculum.getOneCurriculum(id)).data.education;
+
+    const course = res?.filter((item) => item._id === idCourse);
+
+    setCourses(course);
+  };
+
+  if (course && course.length > 0) {
+    setCourse(course[0]);
+  }
+
+  // Outra forma de verificação
+  // setCourse(courses?.[0] ?? undefined);
+
+  console.log(course);
+
+  useEffect(() => {
+    if (idCurriculum) {
+      getCourse(idCurriculum);
+    }
+  }, []);
+
   return (
     <div className="certifications">
-      <h3 className="certifications__title">Cursos e Cerfiticações</h3>
+      <h3 className="certifications__title">Cursos e Certificações</h3>
 
       <form className="certifications__form">
         <label className="certifications__country">

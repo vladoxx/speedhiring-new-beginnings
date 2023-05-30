@@ -1,8 +1,14 @@
+import { useParams } from "react-router-dom";
+
 import Button from "../../components/Button/Button";
 
 import "./Formation.css";
 
 function Formation() {
+  let params = useParams();
+
+  console.log(params);
+
   return (
     <div className="formation">
       <h3 className="formation__title">Formação</h3>

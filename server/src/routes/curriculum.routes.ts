@@ -9,8 +9,8 @@ router.post("/curriculum", curriculumController.createCurriculum);
 router.put("/curriculum/:id", curriculumController.updateCurriculum);
 router.delete("/curriculum/:id", curriculumController.deleteCurriculum);
 router.delete(
-  "/curriculum/:id/:key/:index",
-  curriculumController.deleteCurriculumValue
+  "/curriculum/:id/education/:educationId",
+  curriculumController.deleteEducation
 );
 router.delete("/curriculums", curriculumController.deleteAllCurriculums);
 
