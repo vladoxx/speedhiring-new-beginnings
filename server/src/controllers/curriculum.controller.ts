@@ -97,16 +97,6 @@ export const deleteCurriculum: RequestHandler = async (req, res) => {
   return res.json(curriculumFound);
 };
 
-export const deleteCurriculumValue: RequestHandler = async (req, res) => {
-  try {
-  } catch (error) {
-    console.error("Erro ao deletar valor da chave do currículo:", error);
-    res
-      .status(500)
-      .json({ message: "Erro ao deletar valor da chave do currículo" });
-  }
-};
-
 export const deleteAllCurriculums: RequestHandler = async (req, res) => {
   try {
     // Excluir todos os currículos
@@ -121,5 +111,43 @@ export const deleteAllCurriculums: RequestHandler = async (req, res) => {
     return res
       .status(500)
       .json({ message: "Erro ao excluir todos os currículos:" });
+  }
+};
+
+export const deleteEducation: RequestHandler = async (req, res) => {
+  try {
+    const curriculumId = req.params.id;
+    const educationId = req.params.educationId;
+
+    const curriculum = await Curriculum.findById(curriculumId);
+
+    if (!curriculum) {
+      return res.status(404).json({ message: "Currículo não encontrado" });
+    }
+
+    // Converte o campo 'education' para o tipo 'any'
+    const educationArray: any[] = curriculum.education;
+
+    // Encontra o índice do objeto de 'education' com base no 'educationId'
+    const educationIndex = educationArray.findIndex(
+      (edu) => edu._id.toString() === educationId
+    );
+
+    if (educationIndex === -1) {
+      return res
+        .status(404)
+        .json({ message: "Valor de educação não encontrado" });
+    }
+
+    // Remove o objeto de 'education' do array
+    educationArray.splice(educationIndex, 1);
+
+    // Salva o currículo atualizado
+    await curriculum.save();
+
+    res.json({ message: "Valor de educação deletado com sucesso" });
+  } catch (error) {
+    console.error("Erro ao deletar valor de educação:", error);
+    res.status(500).json({ message: "Erro ao deletar valor de educação" });
   }
 };

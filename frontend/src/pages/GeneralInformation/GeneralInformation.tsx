@@ -182,7 +182,7 @@ export default function GeneralInformation() {
 
         <Button
           text="Editar dados"
-          onClick={() => navigate(`/formation/${infoUser?.curriculumId}`)}
+          onClick={() => navigate(`/formations/${infoUser?.curriculumId}`)}
         />
       </section>
 

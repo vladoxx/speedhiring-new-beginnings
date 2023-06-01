@@ -33,6 +33,7 @@ import { CompanyTokenContextProvider } from "./context/CompanyTokenContext.tsx";
 import CompanyVacancies from "./pages/CompanyVacancies/CompanyVacancies.tsx";
 import { CompanyNameContextProvider } from "./context/CompanyName.tsx";
 import GeneralInformation from "./pages/GeneralInformation/GeneralInformation.tsx";
+import Formations from "./pages/Formations/Formations.tsx";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -58,10 +59,18 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
                   <Route path="/candidatures/:id" element={<Candidatures />} />
                   <Route path="/change-password" element={<ChangePassword />} />
                   <Route
+                    path="/courses-certifications/:idCurriculum/:idCourse"
+                    element={<CoursesCertifications />}
+                  />
+                  <Route
                     path="/description-vacancy/:id"
                     element={<DescriptionVacancy />}
                   />
-                  <Route path="/formation/:id" element={<Formation />} />
+                  <Route
+                    path="/formation/:idCurriculum/:idFormation"
+                    element={<Formation />}
+                  />
+                  <Route path="/formations/:id" element={<Formations />} />
                   <Route path="/login-user" element={<LoginUser />} />
                   <Route path="/login-company" element={<LoginCompany />} />
                   <Route path="/general-login" element={<GeneralLogin />} />
@@ -84,10 +93,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
                   <Route
                     path="/professional-experience/:id"
                     element={<ProfessionalExperience />}
-                  />
-                  <Route
-                    path="/courses-certifications/:id"
-                    element={<CoursesCertifications />}
                   />
                   <Route path="/language/:id" element={<Language />} />
                 </Routes>
