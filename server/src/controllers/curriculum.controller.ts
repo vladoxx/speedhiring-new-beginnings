@@ -116,8 +116,10 @@ export const deleteAllCurriculums: RequestHandler = async (req, res) => {
 
 export const deleteEducation: RequestHandler = async (req, res) => {
   try {
-    const curriculumId = req.params.id;
+    const curriculumId = req.params.curriculumId;
     const educationId = req.params.educationId;
+
+    console.log(req.params);
 
     const curriculum = await Curriculum.findById(curriculumId);
 
@@ -149,5 +151,31 @@ export const deleteEducation: RequestHandler = async (req, res) => {
   } catch (error) {
     console.error("Erro ao deletar valor de educação:", error);
     res.status(500).json({ message: "Erro ao deletar valor de educação" });
+  }
+};
+
+export const addEducation: RequestHandler = async (req, res) => {
+  try {
+    const curriculumId = req.params.curriculumId;
+    const newEducation = req.body; // Dados da nova formação
+
+    const curriculum = await Curriculum.findById(curriculumId);
+
+    if (!curriculum) {
+      return res.status(404).json({ message: "Currículo não encontrado" });
+    }
+
+    curriculum.education.push(newEducation); // Adiciona a nova formação ao array de education
+
+    // Salva o currículo atualizado
+    await curriculum.save();
+
+    res.json({
+      message: "Formação adicionada com sucesso",
+      education: newEducation,
+    });
+  } catch (error) {
+    console.error("Erro ao adicionar formação:", error);
+    res.status(500).json({ message: "Erro ao adicionar formação" });
   }
 };

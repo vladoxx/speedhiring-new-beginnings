@@ -44,8 +44,8 @@ export default function GeneralInformation() {
     }
   }, []);
 
-  console.log("User:", infoUser);
-  console.log("Curriculum:", infoCurriculum);
+  // console.log("User:", infoUser);
+  // console.log("Curriculum:", infoCurriculum);
 
   return (
     <div className="general-information">

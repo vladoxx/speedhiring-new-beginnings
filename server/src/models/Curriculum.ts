@@ -181,6 +181,10 @@ const curriculumSchema = new Schema(
           type: String,
           required: true,
         },
+        status: {
+          type: String,
+          trim: true,
+        },
       },
     ],
     skills: [
