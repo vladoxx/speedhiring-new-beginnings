@@ -204,7 +204,6 @@ function Formation() {
             <option value="Marrocos">Marrocos</option>
             <option value="Mauritânia">Mauritânia</option>
             <option value="México">México</option>
-            <option value="Mianmar">Mianmar</option>
             <option value="Micronésia">Micronésia</option>
             <option value="Moçambique">Moçambique</option>
             <option value="Moldávia">Moldávia</option>
