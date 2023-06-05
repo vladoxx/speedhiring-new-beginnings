@@ -13,7 +13,6 @@ export default function Formations() {
   let params = useParams();
 
   const [formations, setFormations] = useState<Curriculum["education"]>([]);
-  const [idUser, setIdUser] = useState("");
 
   const getFormations = async (id: string) => {
     const res = (await serviceCurriculum.getOneCurriculum(id)).data.education;
@@ -28,8 +27,8 @@ export default function Formations() {
   };
 
   useEffect(() => {
-    if (params.id) {
-      getFormations(params.id);
+    if (params.curriculumId) {
+      getFormations(params.curriculumId);
     }
   }, []);
 
@@ -61,15 +60,17 @@ export default function Formations() {
                     text="Editar"
                     className="btn-edit"
                     onClick={() =>
-                      navigate(`/formation/${params.id}/${formation._id}`)
+                      navigate(
+                        `/formation/${params.curriculumId}/${formation._id}`
+                      )
                     }
                   />
                   <Button
                     text="Deletar"
                     className="btn-delete"
                     onClick={() =>
-                      params.id && formation._id
-                        ? formationDelete(params.id, formation._id)
+                      params.curriculumId && formation._id
+                        ? formationDelete(params.curriculumId, formation._id)
                         : alert("Não existe parâmetros")
                     }
                   />
@@ -84,7 +85,7 @@ export default function Formations() {
         <Button
           text="Adicionar formação"
           className="btn-open"
-          onClick={() => navigate(`/formation/${params.id}`)}
+          onClick={() => navigate(`/formation/${params.curriculumId}`)}
         />
       </div>
     </div>

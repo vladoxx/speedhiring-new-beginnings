@@ -55,14 +55,16 @@ function Formation() {
   };
 
   const getFormation = async (id: string) => {
-    const res = await curriculumService.getOneCurriculum(id);
+    if (curriculumId) {
+      const res = await curriculumService.getOneCurriculum(curriculumId);
 
-    setFormation(res.data.education?.find((item) => item._id === formationId));
+      setFormation(res.data.education?.find((item) => item._id === id));
+    }
   };
 
   useEffect(() => {
-    if (params.curriculumId) {
-      getFormation(params.curriculumId);
+    if (formationId) {
+      getFormation(formationId);
     }
   }, []);
 
