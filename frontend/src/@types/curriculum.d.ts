@@ -1,10 +1,10 @@
 export interface Curriculum {
   personalInfo: PersonalInfo;
   _id?: string;
-  user_id?: string;
+  userId?: string;
   objective?: string;
   professional_experience?: ProfessionalExperience[];
-  education?: Education[];
+  education?: Education[] | undefined;
   skills?: Skill[] | undefined;
   courses?: Course[];
   certifications?: Certification[];
@@ -41,6 +41,7 @@ export interface EducationProps {
   field_of_study?: string;
   start_date?: string;
   end_date?: string;
+  status?: string;
   _id?: string;
 }
 

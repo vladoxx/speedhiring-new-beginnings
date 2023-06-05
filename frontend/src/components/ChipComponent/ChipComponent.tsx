@@ -34,7 +34,7 @@ export default function ChipComponent({ skills }: ChipProps) {
       }));
       setChipData(formattedSkills);
 
-      console.log(formattedSkills);
+      // console.log(formattedSkills);
     }
   }, [skills]);
 

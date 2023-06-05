@@ -17,14 +17,18 @@ export default function Formations() {
   const getFormations = async (id: string) => {
     const res = (await serviceCurriculum.getOneCurriculum(id)).data.education;
 
-    // console.log(res);
-
     setFormations(res);
   };
 
+  const formationDelete = async (curriculumId: string, formationId: string) => {
+    await serviceCurriculum.deleteEducation(curriculumId, formationId);
+
+    getFormations(curriculumId);
+  };
+
   useEffect(() => {
-    if (params.id) {
-      getFormations(params.id);
+    if (params.curriculumId) {
+      getFormations(params.curriculumId);
     }
   }, []);
 
@@ -36,7 +40,7 @@ export default function Formations() {
         {formations &&
           formations.map((formation: EducationProps) => {
             return (
-              <div className="formations__card">
+              <div key={formation._id} className="formations__card">
                 <h3 className="formations__card__title">
                   {formation.institution}
                 </h3>
@@ -56,17 +60,34 @@ export default function Formations() {
                     text="Editar"
                     className="btn-edit"
                     onClick={() =>
-                      navigate(`/formation/${params.id}/${formation._id}`)
+                      navigate(
+                        `/formation/${params.curriculumId}/${formation._id}`
+                      )
                     }
                   />
-                  <Button text="Deletar" className="btn-delete" />
+                  <Button
+                    text="Deletar"
+                    className="btn-delete"
+                    onClick={() =>
+                      params.curriculumId && formation._id
+                        ? formationDelete(params.curriculumId, formation._id)
+                        : alert("Não existe parâmetros")
+                    }
+                  />
                 </div>
               </div>
             );
           })}
       </div>
 
-      <Button text="Voltar" onClick={() => navigate(-1)} />
+      <div className="formations__container__buttons">
+        <Button text="Voltar" onClick={() => navigate(-1)} />
+        <Button
+          text="Adicionar formação"
+          className="btn-open"
+          onClick={() => navigate(`/formation/${params.curriculumId}`)}
+        />
+      </div>
     </div>
   );
 }
