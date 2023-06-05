@@ -13,6 +13,9 @@ function Formation() {
   let params = useParams();
   let navigate = useNavigate();
 
+  let formationId = params.formationId;
+  let curriculumId = params.curriculumId;
+
   const initialStateFormation = {
     institution: "",
     country: "",
@@ -35,8 +38,14 @@ function Formation() {
     e.preventDefault();
 
     try {
-      if (params.curriculumId) {
-        await curriculumService.addEducation(params.curriculumId, formation);
+      if (formationId && curriculumId) {
+        await curriculumService.updateEducation(
+          curriculumId,
+          formationId,
+          formation
+        );
+      } else if (curriculumId) {
+        await curriculumService.addEducation(curriculumId, formation);
       }
 
       navigate(-1);
@@ -45,10 +54,16 @@ function Formation() {
     }
   };
 
+  const getFormation = async (id: string) => {
+    const res = await curriculumService.getOneCurriculum(id);
+
+    setFormation(res.data.education?.find((item) => item._id === formationId));
+  };
+
   useEffect(() => {
-    // if (params.curriculumId) {
-    //   getFormation(params.curriculumId);
-    // }
+    if (params.curriculumId) {
+      getFormation(params.curriculumId);
+    }
   }, []);
 
   return (
@@ -66,6 +81,7 @@ function Formation() {
             className="formation__country_select"
             name="country"
             onChange={handleInputChangeFormation}
+            value={formation.country}
           >
             <option value="Selecione o seu país">Selecione o seu país</option>
             <option value="Afeganistão">Afeganistão</option>
@@ -275,6 +291,7 @@ function Formation() {
             className="formation__level_select"
             name="level"
             onChange={handleInputChangeFormation}
+            value={formation.level}
           >
             <option value="Sem nível">Selecione o nível</option>
             <option value="Ensino Fundamental">Ensino Fundamental</option>
@@ -293,7 +310,7 @@ function Formation() {
             type="text"
             name="institution"
             onChange={handleInputChangeFormation}
-            // value={infoCurriculum.education}
+            value={formation.institution}
             required
           />
         </label>
@@ -305,19 +322,19 @@ function Formation() {
             type="text"
             name="field_of_study"
             onChange={handleInputChangeFormation}
-            // value={infoCurriculum.education}
+            value={formation.field_of_study}
             required
           />
         </label>
 
-        <label className="formation__start_date" htmlFor="">
+        <label className="formation__start_date">
           Inicio*
           <input
             className="formation__institution-input"
             type="text"
             name="start_date"
             onChange={handleInputChangeFormation}
-            // value={infoCurriculum.education}
+            value={formation.start_date}
             placeholder="01/2011"
             required
           />
@@ -330,7 +347,7 @@ function Formation() {
             type="text"
             name="end_date"
             onChange={handleInputChangeFormation}
-            // value={infoCurriculum.education}
+            value={formation.end_date}
             placeholder="08/2013"
             required
           />

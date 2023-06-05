@@ -32,3 +32,14 @@ export const addEducation = async (
     education
   );
 };
+
+export const updateEducation = async (
+  idCurriculum: string,
+  idEducation: string,
+  education: EducationProps
+) => {
+  return await axios.put<Curriculum["education"]>(
+    `${API}/curriculum/${idCurriculum}/education/${idEducation}`,
+    education
+  );
+};

@@ -114,6 +114,34 @@ export const deleteAllCurriculums: RequestHandler = async (req, res) => {
   }
 };
 
+// Education
+
+export const addEducation: RequestHandler = async (req, res) => {
+  try {
+    const curriculumId = req.params.curriculumId;
+    const newEducation = req.body; // Dados da nova formação
+
+    const curriculum = await Curriculum.findById(curriculumId);
+
+    if (!curriculum) {
+      return res.status(404).json({ message: "Currículo não encontrado" });
+    }
+
+    curriculum.education.push(newEducation); // Adiciona a nova formação ao array de education
+
+    // Salva o currículo atualizado
+    await curriculum.save();
+
+    res.json({
+      message: "Formação adicionada com sucesso",
+      education: newEducation,
+    });
+  } catch (error) {
+    console.error("Erro ao adicionar formação:", error);
+    res.status(500).json({ message: "Erro ao adicionar formação" });
+  }
+};
+
 export const deleteEducation: RequestHandler = async (req, res) => {
   try {
     const curriculumId = req.params.curriculumId;
@@ -154,10 +182,11 @@ export const deleteEducation: RequestHandler = async (req, res) => {
   }
 };
 
-export const addEducation: RequestHandler = async (req, res) => {
+export const updateEducation: RequestHandler = async (req, res) => {
   try {
     const curriculumId = req.params.curriculumId;
-    const newEducation = req.body; // Dados da nova formação
+    const educationId = req.params.educationId;
+    const updatedEducation = req.body; // Dados atualizados da educação
 
     const curriculum = await Curriculum.findById(curriculumId);
 
@@ -165,17 +194,27 @@ export const addEducation: RequestHandler = async (req, res) => {
       return res.status(404).json({ message: "Currículo não encontrado" });
     }
 
-    curriculum.education.push(newEducation); // Adiciona a nova formação ao array de education
+    // Encontra a educação a ser editada pelo ID
+    const educationIndex = curriculum.education.findIndex(
+      (education) => education._id.toString() === educationId
+    );
+
+    if (educationIndex === -1) {
+      return res.status(404).json({ message: "Educação não encontrada" });
+    }
+
+    // Atualiza os dados da educação
+    curriculum.education[educationIndex] = updatedEducation;
 
     // Salva o currículo atualizado
     await curriculum.save();
 
     res.json({
-      message: "Formação adicionada com sucesso",
-      education: newEducation,
+      message: "Educação atualizada com sucesso",
+      education: updatedEducation,
     });
   } catch (error) {
-    console.error("Erro ao adicionar formação:", error);
-    res.status(500).json({ message: "Erro ao adicionar formação" });
+    console.error("Erro ao editar educação:", error);
+    res.status(500).json({ message: "Erro ao editar educação" });
   }
 };

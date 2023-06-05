@@ -25,6 +25,7 @@ export interface ICurriculum extends Document {
     job_description: string;
   }[];
   education: {
+    _id: string;
     institution: string;
     country?: string;
     level?: string;
@@ -184,6 +185,10 @@ const curriculumSchema = new Schema(
         status: {
           type: String,
           trim: true,
+        },
+        _id: {
+          type: Schema.Types.ObjectId,
+          auto: true,
         },
       },
     ],
