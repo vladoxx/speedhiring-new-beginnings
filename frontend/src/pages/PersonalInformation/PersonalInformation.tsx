@@ -8,6 +8,7 @@ import Button from "../../components/Button/Button";
 import { InputChange } from "../../@types/general";
 
 import "./PersonalInformation.css";
+import { handleButtonClick } from "../../utils/scrollTop";
 
 function PersonalInformation() {
   let params = useParams();
@@ -54,6 +55,11 @@ function PersonalInformation() {
       navigate(-1);
       window.scrollTo(0, 0);
     }, 1000);
+  };
+
+  const handleClick = () => {
+    handleButtonClick();
+    navigate(-1);
   };
 
   const loadInfo = async (id: string) => {
@@ -216,8 +222,14 @@ function PersonalInformation() {
           ></textarea>
         </label>
 
-        <Button text="Atualizar" />
+        <Button text="Atualizar" type="submit" />
       </form>
+      <Button
+        text="Cancelar"
+        onClick={handleClick}
+        className="btn-cancel"
+        type="button"
+      />
     </div>
   );
 }

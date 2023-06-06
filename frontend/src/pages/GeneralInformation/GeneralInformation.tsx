@@ -10,6 +10,7 @@ import "./GeneralInformation.css";
 import { UserProps } from "../../@types/user";
 import { Curriculum } from "../../@types/curriculum";
 import Button from "../../components/Button/Button";
+import { handleButtonClick } from "../../utils/scrollTop";
 
 export default function GeneralInformation() {
   let params = useParams();
@@ -38,14 +39,16 @@ export default function GeneralInformation() {
     }
   };
 
+  const handleClick = (path: string) => {
+    handleButtonClick();
+    navigate(path);
+  };
+
   useEffect(() => {
     if (params.id) {
       loadUser(params.id);
     }
   }, []);
-
-  // console.log("User:", infoUser);
-  // console.log("Curriculum:", infoCurriculum);
 
   return (
     <div className="general-information">
@@ -136,12 +139,12 @@ export default function GeneralInformation() {
           </div>
         </div>
 
+        {/* /personal-information/${infoUser?.curriculumId */}
+
         <div className="personal__information-containerBtns">
           <Button
             text="Editar dados"
-            onClick={() =>
-              navigate(`/personal-information/${infoUser?.curriculumId}`)
-            }
+            onClick={() => handleClick(`${infoUser?.curriculumId}`)}
           />
         </div>
       </section>
@@ -182,7 +185,7 @@ export default function GeneralInformation() {
 
         <Button
           text="Editar dados"
-          onClick={() => navigate(`/formations/${infoUser?.curriculumId}`)}
+          onClick={() => handleClick(`/formations/${infoUser?.curriculumId}`)}
         />
       </section>
 
@@ -232,7 +235,7 @@ export default function GeneralInformation() {
         <Button
           text="Editar dados"
           onClick={() =>
-            navigate(`/professional-experience/${infoUser?.curriculumId}`)
+            handleClick(`/professional-experience/${infoUser?.curriculumId}`)
           }
         />
       </section>
@@ -282,7 +285,7 @@ export default function GeneralInformation() {
         <Button
           text="Editar dados"
           onClick={() =>
-            navigate(`/courses-certifications/${infoUser?.curriculumId}`)
+            handleClick(`/courses-certifications/${infoUser?.curriculumId}`)
           }
         />
       </section>
@@ -314,7 +317,7 @@ export default function GeneralInformation() {
 
         <Button
           text="Editar dados"
-          onClick={() => navigate(`/language/${infoUser?.curriculumId}`)}
+          onClick={() => handleClick(`/language/${infoUser?.curriculumId}`)}
         />
       </section>
 
@@ -343,7 +346,7 @@ export default function GeneralInformation() {
       </section>
 
       <div className="general-information__box-home-button">
-        <Button text="Voltar ao Início" />
+        <Button text="Voltar ao Início" onClick={() => handleButtonClick()} />
       </div>
     </div>
   );

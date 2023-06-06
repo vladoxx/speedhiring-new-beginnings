@@ -16,11 +16,12 @@ function Header() {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const { logoutUser, userId } = useUser();
+  const { logoutUser } = useUser();
   const { logoutCompany } = useCompany();
   const getTokenUser = sessionStorage.getItem("token_user");
   const getTokenCompany = sessionStorage.getItem("token_company");
   const companyId = sessionStorage.getItem("company_id");
+  const userId = sessionStorage.getItem("user_id");
 
   const value = "Contato";
   const isHome = location.pathname === "/";

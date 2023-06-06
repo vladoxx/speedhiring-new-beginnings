@@ -41,6 +41,7 @@ function LoginUser() {
         getIdUser(resLogin.data.user._id);
 
         sessionStorage.setItem("token_user", resLogin.data.token);
+        sessionStorage.setItem("user_id", resLogin.data.user._id);
 
         setUserLogin(initialStateLogin);
       } catch (error: any) {

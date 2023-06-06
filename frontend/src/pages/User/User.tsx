@@ -2,10 +2,9 @@
 import { Link } from "react-router-dom";
 
 import "./User.css";
-import useUser from "../../hooks/useUser";
 
 function User() {
-  const { userId } = useUser();
+  const userId = sessionStorage.getItem("user_id");
 
   return (
     <div className="user">
