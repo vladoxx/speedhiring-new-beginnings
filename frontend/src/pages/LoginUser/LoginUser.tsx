@@ -40,6 +40,8 @@ function LoginUser() {
         tokenUser(resLogin.data.token);
         getIdUser(resLogin.data.user._id);
 
+        sessionStorage.setItem("token_user", resLogin.data.token);
+
         setUserLogin(initialStateLogin);
       } catch (error: any) {
         const errorMessage =

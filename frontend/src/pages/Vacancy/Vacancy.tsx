@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import Vacancies from "../../components/Vacancies/Vacancies";
+import Button from "../../components/Button/Button";
+
 import { JobProps } from "../../@types/job";
+import { handleButtonClick } from "../../utils/scrollTop";
 import * as vacancyService from "../../service/VacancyService";
 
 import "./Vacancy.css";
-import Vacancies from "../../components/Vacancies/Vacancies";
-import Button from "../../components/Button/Button";
 
 function Vacancy() {
   const navigate = useNavigate();
@@ -22,9 +24,9 @@ function Vacancy() {
     loadJobs();
   }, []);
 
-  const handleButtonClick = () => {
+  const handleButton = () => {
     navigate("/");
-    window.scrollTo(0, 0);
+    handleButtonClick();
   };
 
   return (
@@ -37,7 +39,7 @@ function Vacancy() {
         })}
       </div>
 
-      <Button text="Voltar ao Início" onClick={handleButtonClick} />
+      <Button text="Voltar ao Início" onClick={handleButton} />
     </div>
   );
 }

@@ -50,6 +50,9 @@ function LoginCompany() {
         getIdCompany(resLoginCompany.data.company._id);
         getNameCompany(resLoginCompany.data.company.corporate_name);
 
+        sessionStorage.setItem("token_company", resLoginCompany.data.token);
+        sessionStorage.setItem("company_id", resLoginCompany.data.company._id);
+
         setCompanyLogin(initialStateLogin);
       } catch (error: any) {
         const errorMessage =

@@ -16,8 +16,11 @@ function Header() {
 
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const { isLoggedInUser, logoutUser, userId } = useUser();
-  const { isLoggedInCompany, logoutCompany, companyId } = useCompany();
+  const { logoutUser, userId } = useUser();
+  const { logoutCompany } = useCompany();
+  const getTokenUser = sessionStorage.getItem("token_user");
+  const getTokenCompany = sessionStorage.getItem("token_company");
+  const companyId = sessionStorage.getItem("company_id");
 
   const value = "Contato";
   const isHome = location.pathname === "/";
@@ -45,6 +48,9 @@ function Header() {
   const handleLinkClickLogout = () => {
     logoutUser();
     logoutCompany();
+    sessionStorage.removeItem("token_user");
+    sessionStorage.removeItem("token_company");
+    sessionStorage.removeItem("company_id");
 
     navigate("/");
   };
@@ -77,7 +83,7 @@ function Header() {
 
                   {/* Logica Company */}
 
-                  {isLoggedInCompany && isPageCompany && (
+                  {getTokenCompany && isPageCompany && (
                     <li className="dropdown">
                       Para empresas
                       <div
@@ -89,7 +95,7 @@ function Header() {
                     </li>
                   )}
 
-                  {isLoggedInCompany && !isPageCompany && (
+                  {getTokenCompany && !isPageCompany && (
                     <li className="dropdown">
                       Para empresas
                       <div
@@ -103,7 +109,7 @@ function Header() {
 
                   {/* Lógica Candidato */}
 
-                  {isLoggedInUser && (
+                  {getTokenUser && (
                     <li className="dropdown">
                       Candidato
                       <div
@@ -115,7 +121,7 @@ function Header() {
                     </li>
                   )}
 
-                  {!isLoggedInUser && !isLoggedInCompany && (
+                  {!getTokenUser && !getTokenCompany && (
                     <>
                       <li className="dropdown">
                         Para empresas
@@ -152,12 +158,12 @@ function Header() {
                   )}
 
                   <li>
-                    {isLoggedInUser || isLoggedInCompany ? (
+                    {getTokenUser || getTokenCompany ? (
                       <Button
                         text="Logout"
                         className={`${
-                          (!isLoggedInUser && "logout") ||
-                          (!isLoggedInCompany && "logout")
+                          (!getTokenUser && "logout") ||
+                          (!getTokenCompany && "logout")
                         }`}
                         onClick={handleLinkClickLogout}
                         width="6.875rem"

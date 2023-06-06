@@ -6,7 +6,6 @@ import { JobProps } from "../../@types/job";
 import * as companyService from "../../service/CompanyService";
 import { handleButtonClick } from "../../utils/scrollTop";
 
-import useCompany from "../../hooks/useCompany";
 import Vacancies from "../../components/Vacancies/Vacancies";
 import Button from "../../components/Button/Button";
 
@@ -15,13 +14,14 @@ export default function CompanyVacancies() {
 
   const [job, setJob] = useState<JobProps[]>([]);
 
-  const { companyId } = useCompany();
+  const companyId = sessionStorage.getItem("company_id");
 
   const fetchJobs = async () => {
     try {
-      const res = await companyService.getJobsCompany(companyId);
-
-      setJob(res.data);
+      if (companyId) {
+        const res = await companyService.getJobsCompany(companyId);
+        setJob(res.data);
+      }
     } catch (error) {
       console.error(error);
     }
@@ -40,17 +40,21 @@ export default function CompanyVacancies() {
   return (
     <div className="vacant">
       <h2 className="vacant__title">Vagas anunciadas</h2>
-      <div className="vacant__container">
-        {job.map((jobItem) => {
-          return (
-            <Vacancies
-              key={jobItem?._id}
-              vacancy={jobItem}
-              fetchJobs={fetchJobs}
-            />
-          );
-        })}
-      </div>
+      {job.length > 0 ? (
+        <div className="vacant__container">
+          {job.map((jobItem) => {
+            return (
+              <Vacancies
+                key={jobItem?._id}
+                vacancy={jobItem}
+                fetchJobs={fetchJobs}
+              />
+            );
+          })}
+        </div>
+      ) : (
+        <h3>Sem vagas anunciadas</h3>
+      )}
 
       <Button text="Voltar ao perfil" onClick={handleGoBack} />
     </div>
