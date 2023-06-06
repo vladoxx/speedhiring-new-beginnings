@@ -31,7 +31,7 @@ function Candidatures() {
 
       <div className="candidatures__container">
         {candidatures.length === 0 ? (
-          <h4 className="candidatures__tittle">Sem candidaturas</h4>
+          <h4 className="candidatures__tittle-h4">Sem candidaturas</h4>
         ) : (
           candidatures.map((candidature) => {
             return (
