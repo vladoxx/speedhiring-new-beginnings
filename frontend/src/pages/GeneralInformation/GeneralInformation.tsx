@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
+import { UserProps } from "../../@types/user";
+import { Curriculum } from "../../@types/curriculum";
+import { handleButtonClick } from "../../utils/scrollTop";
+
+import Button from "../../components/Button/Button";
 import ChipComponent from "../../components/ChipComponent/ChipComponent";
 
 import * as serviceUser from "../../service/UserService";
 import * as serviceCurriculum from "../../service/CurriculumService";
 
 import "./GeneralInformation.css";
-import { UserProps } from "../../@types/user";
-import { Curriculum } from "../../@types/curriculum";
-import Button from "../../components/Button/Button";
-import { handleButtonClick } from "../../utils/scrollTop";
 
 export default function GeneralInformation() {
   let params = useParams();
