@@ -7,11 +7,11 @@ export const getOneCurriculum = async (id: string) => {
   return await axios.get<Curriculum>(`${API}/curriculum/${id}`);
 };
 
-export const getUpdatePersonalInfoCurriculum = async (
+export const getUpdateCurriculum = async (
   id: string,
-  curriculum: Curriculum
+  dados: Curriculum["personalInfo"]
 ) => {
-  return await axios.put<Curriculum>(`${API}/curriculum/${id}`, curriculum);
+  return await axios.put<Curriculum>(`${API}/curriculum/${id}`, dados);
 };
 
 export const deleteEducation = async (

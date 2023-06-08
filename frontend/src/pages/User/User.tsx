@@ -11,7 +11,7 @@ function User() {
       <h3 className="register-use__tittle">Perfil do candidato</h3>
 
       <div className="user__container">
-        <Link className="user__buttons" to={`/general-information/${userId}`}>
+        <Link className="user__buttons" to={`/general-information`}>
           Informações Pessoais
         </Link>
 

@@ -71,6 +71,10 @@ hr {
   font-size: var(--font-size-p-mobile);
 }
 
+.general-information__text-area:hover {
+  cursor: not-allowed;
+}
+
 .general-information__box_data-info {
   display: flex;
   flex-direction: column;

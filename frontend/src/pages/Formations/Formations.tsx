@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
+import { Curriculum, EducationProps } from "../../@types/curriculum";
 import * as serviceCurriculum from "../../service/CurriculumService";
 
 import Button from "../../components/Button/Button";
 
 import "./Formations.css";
-import { Curriculum, EducationProps } from "../../@types/curriculum";
 
 export default function Formations() {
   let navigate = useNavigate();
-  let params = useParams();
+
+  let curriculumId = sessionStorage.getItem("curriculum_id");
 
   const [formations, setFormations] = useState<Curriculum["education"]>([]);
 
@@ -27,8 +28,8 @@ export default function Formations() {
   };
 
   useEffect(() => {
-    if (params.curriculumId) {
-      getFormations(params.curriculumId);
+    if (curriculumId) {
+      getFormations(curriculumId);
     }
   }, []);
 
@@ -45,14 +46,14 @@ export default function Formations() {
                   {formation.institution}
                 </h3>
                 <p className="formations__card__paragraph">
-                  {formation.field_of_study}
+                  {formation.fieldOfStudy}
                 </p>
                 <p className="formations__card__paragraph">{formation.level}</p>
                 <p className="formations__card__paragraph">
                   {formation.country}
                 </p>
                 <p className="formations__card__paragraph">
-                  {formation.start_date} - {formation.end_date}
+                  {formation.startDate} - {formation.endDate}
                 </p>
 
                 <div className="formations__card__container__buttons">
@@ -60,17 +61,15 @@ export default function Formations() {
                     text="Editar"
                     className="btn-edit"
                     onClick={() =>
-                      navigate(
-                        `/formation/${params.curriculumId}/${formation._id}`
-                      )
+                      navigate(`/formation/${curriculumId}/${formation._id}`)
                     }
                   />
                   <Button
                     text="Deletar"
                     className="btn-delete"
                     onClick={() =>
-                      params.curriculumId && formation._id
-                        ? formationDelete(params.curriculumId, formation._id)
+                      curriculumId && formation._id
+                        ? formationDelete(curriculumId, formation._id)
                         : alert("Não existe parâmetros")
                     }
                   />
@@ -85,7 +84,7 @@ export default function Formations() {
         <Button
           text="Adicionar formação"
           className="btn-open"
-          onClick={() => navigate(`/formation/${params.curriculumId}`)}
+          onClick={() => navigate(`/formation/${curriculumId}`)}
         />
       </div>
     </div>

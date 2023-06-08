@@ -26,6 +26,7 @@ function Header() {
   const value = "Contato";
   const isHome = location.pathname === "/";
   const isPageCompany = location.pathname === "/company/:id?";
+  const isPageVacancy = location.pathname === "/vacancy";
 
   const handleLinkClick = (path: string) => {
     const contactSection = document.getElementById("contact");
@@ -52,6 +53,8 @@ function Header() {
     sessionStorage.removeItem("token_user");
     sessionStorage.removeItem("token_company");
     sessionStorage.removeItem("company_id");
+    sessionStorage.removeItem("user_id");
+    sessionStorage.removeItem("curriculum_id");
 
     navigate("/");
   };
@@ -146,7 +149,9 @@ function Header() {
                     </>
                   )}
 
-                  <li onClick={() => handleLinkClick("/vacancy")}>Vagas</li>
+                  {isPageVacancy ? null : (
+                    <li onClick={() => handleLinkClick("/vacancy")}>Vagas</li>
+                  )}
 
                   {!isHome ? null : (
                     <li

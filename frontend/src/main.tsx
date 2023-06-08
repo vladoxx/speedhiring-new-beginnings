@@ -79,10 +79,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
                     element={<Formation />}
                   />
 
-                  <Route
-                    path="/formations/:curriculumId"
-                    element={<Formations />}
-                  />
+                  <Route path="/formations" element={<Formations />} />
 
                   <Route path="/login-user" element={<LoginUser />} />
 
@@ -90,7 +87,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
                   <Route path="/general-login" element={<GeneralLogin />} />
 
                   <Route
-                    path="/general-information/:id"
+                    path="/general-information"
                     element={<GeneralInformation />}
                   />
 
@@ -103,12 +100,12 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
                     element={<RegisterCompany />}
                   />
 
-                  <Route path="/user/:id" element={<User />} />
+                  <Route path="/user" element={<User />} />
 
                   <Route path="/vacancy" element={<Vacancy />} />
 
                   <Route
-                    path="/personal-information/:id"
+                    path="/personal-information"
                     element={<PersonalInformation />}
                   />
 

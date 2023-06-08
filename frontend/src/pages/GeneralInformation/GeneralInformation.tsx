@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { UserProps } from "../../@types/user";
 import { Curriculum } from "../../@types/curriculum";
@@ -14,8 +14,9 @@ import * as serviceCurriculum from "../../service/CurriculumService";
 import "./GeneralInformation.css";
 
 export default function GeneralInformation() {
-  let params = useParams();
   let navigate = useNavigate();
+  let userId = sessionStorage.getItem("user_id");
+  let curriculumId = sessionStorage.getItem("curriculum_id");
 
   const [infoUser, setInfoUser] = useState<UserProps>();
   const [infoCurriculum, setInfoCurriculum] = useState<Curriculum>();
@@ -24,13 +25,11 @@ export default function GeneralInformation() {
     try {
       const resUser = await serviceUser.getOneUser(id);
 
-      const idCurriculum = resUser.data.curriculumId;
-
       setInfoUser(resUser.data);
 
-      if (idCurriculum) {
+      if (curriculumId) {
         const resCurriculum = await serviceCurriculum.getOneCurriculum(
-          idCurriculum
+          curriculumId
         );
 
         setInfoCurriculum(resCurriculum.data);
@@ -45,9 +44,15 @@ export default function GeneralInformation() {
     navigate(path);
   };
 
+  const handleMouseDown = (
+    e: React.MouseEvent<HTMLTextAreaElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+  };
+
   useEffect(() => {
-    if (params.id) {
-      loadUser(params.id);
+    if (userId) {
+      loadUser(userId);
     }
   }, []);
 
@@ -71,7 +76,8 @@ export default function GeneralInformation() {
             className="general-information__text-area"
             placeholder="Nos conta um pouco sobre você..."
             minLength={500}
-            value={infoCurriculum?.personalInfo.about}
+            onMouseDown={handleMouseDown}
+            value={infoCurriculum?.personalInfo?.about}
           ></textarea>
         </div>
 
@@ -81,33 +87,33 @@ export default function GeneralInformation() {
               Dados Pessoais
             </h5>
             <p className="personal__information-paragraph">
-              Data de Nascimento: {infoCurriculum?.personalInfo.birth_date}
+              Data de Nascimento: {infoCurriculum?.personalInfo?.birthDate}
             </p>
             <p className="personal__information-paragraph">
-              Nacionalidade: {infoCurriculum?.personalInfo.nationality}
+              Nacionalidade: {infoCurriculum?.personalInfo?.nationality}
             </p>
             <p className="personal__information-paragraph">
-              CPF: {infoCurriculum?.personalInfo.cpf}
+              CPF: {infoCurriculum?.personalInfo?.cpf}
             </p>
             <p className="personal__information-paragraph">
-              Estado Civil: {infoCurriculum?.personalInfo.marital_status}
+              Estado Civil: {infoCurriculum?.personalInfo?.maritalStatus}
             </p>
             <p className="personal__information-paragraph">
               Sua identidade de gênero:{" "}
-              {infoCurriculum?.personalInfo.gender_identity}
+              {infoCurriculum?.personalInfo?.genderIdentity}
             </p>
             <p className="personal__information-paragraph">
-              Pronome: {infoCurriculum?.personalInfo.pronouns}
+              Pronome: {infoCurriculum?.personalInfo?.pronouns}
             </p>
             <p className="personal__information-paragraph">
               Orientação Sexual:{" "}
-              {infoCurriculum?.personalInfo.sexual_orientation}
+              {infoCurriculum?.personalInfo?.sexualOrientation}
             </p>
             <p className="personal__information-paragraph">
-              Raça/Etnia: {infoCurriculum?.personalInfo.ethnicity}
+              Raça/Etnia: {infoCurriculum?.personalInfo?.ethnicity}
             </p>
             <p className="personal__information-paragraph">
-              Deficiência: {infoCurriculum?.personalInfo.disabilities}
+              Deficiência: {infoCurriculum?.personalInfo?.disabilities}
             </p>
           </div>
 
@@ -145,7 +151,7 @@ export default function GeneralInformation() {
         <div className="personal__information-containerBtns">
           <Button
             text="Editar dados"
-            onClick={() => handleClick(`${infoUser?.curriculumId}`)}
+            onClick={() => handleClick(`/personal-information`)}
           />
         </div>
       </section>
@@ -168,7 +174,7 @@ export default function GeneralInformation() {
                     {item.institution}
                   </h4>
                   <p className="general-information__career">
-                    {item.field_of_study}
+                    {item.fieldOfStudy}
                   </p>
                   <p className="personal__information-paragraph">
                     {item.level}
@@ -177,7 +183,7 @@ export default function GeneralInformation() {
                     {item.country}
                   </p>
                   <p className="general-information__formation-data">
-                    {item.start_date} - {item.end_date}
+                    {item.startDate} - {item.endDate}
                   </p>
                 </div>
               );
@@ -186,7 +192,7 @@ export default function GeneralInformation() {
 
         <Button
           text="Editar dados"
-          onClick={() => handleClick(`/formations/${infoUser?.curriculumId}`)}
+          onClick={() => handleClick(`/formations`)}
         />
       </section>
 
@@ -199,15 +205,15 @@ export default function GeneralInformation() {
         </h3>
 
         <div>
-          {infoCurriculum?.professional_experience &&
-            infoCurriculum?.professional_experience.map((item) => {
+          {infoCurriculum?.professionalExperience &&
+            infoCurriculum?.professionalExperience.map((item) => {
               return (
                 <div
                   key={item._id}
                   className="general-information__box-experiences"
                 >
                   <h4 className="general-information__job-title">
-                    {item.job_title}
+                    {item.jobTitle}
                   </h4>
                   <p className="general-information__job-experience-institution">
                     {item.company}
@@ -216,7 +222,7 @@ export default function GeneralInformation() {
                     {item.country}
                   </p>
                   <p className="general-information__job-data">
-                    {item.start_date} - {item.end_date}
+                    {item.startDate} - {item.endDate}
                   </p>
                   <p className="general-information__job-responsibilities-description">
                     Responsabilidades
@@ -226,7 +232,8 @@ export default function GeneralInformation() {
                     rows={4}
                     cols={35}
                     placeholder="Descrição"
-                    value={item.job_description}
+                    value={item.jobDescription}
+                    onMouseDown={handleMouseDown}
                   ></textarea>
                 </div>
               );
@@ -269,15 +276,6 @@ export default function GeneralInformation() {
                   <p className="general-information__certifications-data">
                     {item.startDate} - {item.endDate}
                   </p>
-                  {/* <textarea
-                    className="general-information__certification-description"
-                    name=""
-                    id=""
-                    rows={4}
-                    cols={35}
-                    placeholder="Descrição"
-                    value={item.}
-                  ></textarea> */}
                 </div>
               );
             })}

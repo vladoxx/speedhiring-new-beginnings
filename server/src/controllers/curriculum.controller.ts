@@ -1,6 +1,7 @@
 import { RequestHandler } from "express";
 
-import Curriculum from "../models/Curriculum";
+import Curriculum, { ICurriculum } from "../models/Curriculum";
+
 import User from "../models/User";
 
 export const createCurriculum: RequestHandler = async (req, res) => {
@@ -59,25 +60,16 @@ export const getOneCurriculum: RequestHandler = async (req, res) => {
 
 export const updateCurriculum: RequestHandler = async (req, res) => {
   try {
-    const { userId, ...updatedData } = req.body;
-
-    // Atualizar apenas as chaves fornecidas no corpo da solicitação
-    const curriculumUpdate = await Curriculum.findOneAndUpdate(
-      { _id: req.params.id },
-      { $set: updatedData },
-      { new: true }
+    const curriculumUpdate = await Curriculum.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+      }
     );
 
     if (!curriculumUpdate) {
       return res.status(204).json();
-    }
-
-    // Verificar se o usuário associado ao currículo existe
-    const user = await User.findOne({ curriculumId: req.params.id });
-
-    if (user) {
-      user.curriculumId = curriculumUpdate._id;
-      await user.save();
     }
 
     res.json(curriculumUpdate);
@@ -196,7 +188,7 @@ export const updateEducation: RequestHandler = async (req, res) => {
 
     // Encontra a educação a ser editada pelo ID
     const educationIndex = curriculum.education.findIndex(
-      (education) => education._id.toString() === educationId
+      (education) => education._id?.toString() === educationId
     );
 
     if (educationIndex === -1) {
