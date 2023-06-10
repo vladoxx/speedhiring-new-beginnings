@@ -32,7 +32,6 @@ export interface ICurriculum extends Document {
     startDate: string;
     endDate: string;
     status?: string;
-    _id?: string;
   }[];
   skills: {
     skillName: string;
@@ -183,10 +182,6 @@ const curriculumSchema = new Schema(
           required: true,
         },
         status: {
-          type: String,
-          trim: true,
-        },
-        _id: {
           type: String,
           trim: true,
         },

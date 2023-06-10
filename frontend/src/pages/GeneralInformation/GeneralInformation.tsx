@@ -74,11 +74,10 @@ export default function GeneralInformation() {
           <h4 className="general-information__about-you-title">Sobre Mim</h4>
           <textarea
             className="general-information__text-area"
-            placeholder="Nos conta um pouco sobre você..."
             minLength={500}
+            defaultValue={infoCurriculum?.personalInfo?.about}
             onMouseDown={handleMouseDown}
-            value={infoCurriculum?.personalInfo?.about}
-          ></textarea>
+          />
         </div>
 
         <div className="general-information__box_data-info">
@@ -231,10 +230,9 @@ export default function GeneralInformation() {
                     className="general-information__job-responsibilities-description-textarea"
                     rows={4}
                     cols={35}
-                    placeholder="Descrição"
-                    value={item.jobDescription}
+                    defaultValue={item.jobDescription}
                     onMouseDown={handleMouseDown}
-                  ></textarea>
+                  />
                 </div>
               );
             })}

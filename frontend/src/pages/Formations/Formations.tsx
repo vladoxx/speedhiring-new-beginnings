@@ -39,52 +39,46 @@ export default function Formations() {
 
       <div className="formations__container">
         {formations &&
-          formations.map((formation: EducationProps) => {
-            return (
-              <div key={formation._id} className="formations__card">
-                <h3 className="formations__card__title">
-                  {formation.institution}
-                </h3>
-                <p className="formations__card__paragraph">
-                  {formation.fieldOfStudy}
-                </p>
-                <p className="formations__card__paragraph">{formation.level}</p>
-                <p className="formations__card__paragraph">
-                  {formation.country}
-                </p>
-                <p className="formations__card__paragraph">
-                  {formation.startDate} - {formation.endDate}
-                </p>
+          formations.map((formation: EducationProps) => (
+            <div key={formation._id} className="formations__card">
+              <h3 className="formations__card__title">
+                {formation.institution}
+              </h3>
+              <p className="formations__card__paragraph">
+                {formation.fieldOfStudy}
+              </p>
+              <p className="formations__card__paragraph">{formation.level}</p>
+              <p className="formations__card__paragraph">{formation.country}</p>
+              <p className="formations__card__paragraph">
+                {formation.startDate} - {formation.endDate}
+              </p>
 
-                <div className="formations__card__container__buttons">
-                  <Button
-                    text="Editar"
-                    className="btn-edit"
-                    onClick={() =>
-                      navigate(`/formation/${curriculumId}/${formation._id}`)
-                    }
-                  />
-                  <Button
-                    text="Deletar"
-                    className="btn-delete"
-                    onClick={() =>
-                      curriculumId && formation._id
-                        ? formationDelete(curriculumId, formation._id)
-                        : alert("Não existe parâmetros")
-                    }
-                  />
-                </div>
+              <div className="formations__card__container__buttons">
+                <Button
+                  text="Editar"
+                  className="btn-edit"
+                  onClick={() => navigate(`/formation/${formation._id}`)}
+                />
+                <Button
+                  text="Deletar"
+                  className="btn-delete"
+                  onClick={() =>
+                    curriculumId && formation._id
+                      ? formationDelete(curriculumId, formation._id)
+                      : alert("Não existe parâmetros")
+                  }
+                />
               </div>
-            );
-          })}
+            </div>
+          ))}
       </div>
 
       <div className="formations__container__buttons">
-        <Button text="Voltar" onClick={() => navigate(-1)} />
+        <Button text="Ir ao perfil" onClick={() => navigate(-1)} />
         <Button
           text="Adicionar formação"
           className="btn-open"
-          onClick={() => navigate(`/formation/${curriculumId}`)}
+          onClick={() => navigate(`/formation`)}
         />
       </div>
     </div>
