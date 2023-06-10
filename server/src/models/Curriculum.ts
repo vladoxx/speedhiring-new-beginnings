@@ -9,34 +9,33 @@ export interface ICurriculum extends Document {
     cpf?: string;
     maritalStatus?: string;
     genderIdentity?: string;
-    pronoun?: string;
+    pronouns?: string;
     sexualOrientation?: string;
     ethnicity?: string;
     disabilities?: string;
     about?: string;
   }[];
   objective: string;
-  professional_experience: {
+  professionalExperience: {
     company: string;
     country: string;
-    job_title: string;
-    start_date: string;
-    end_date: string;
-    job_description: string;
+    jobTitle: string;
+    startDate: string;
+    endDate: string;
+    jobDescription: string;
   }[];
   education: {
-    _id: string;
     institution: string;
     country?: string;
     level?: string;
-    field_of_study: string;
-    start_date: string;
-    end_date: string;
+    fieldOfStudy: string;
+    startDate: string;
+    endDate: string;
     status?: string;
   }[];
   skills: {
-    skill_name: string;
-    experience_level?: string;
+    skillName: string;
+    experienceLevel?: string;
   }[];
   courses: {
     courseName: string;
@@ -66,7 +65,7 @@ const curriculumSchema = new Schema(
       require: true,
     },
     personalInfo: {
-      birth_date: {
+      birthDate: {
         type: String,
         required: true,
       },
@@ -80,12 +79,12 @@ const curriculumSchema = new Schema(
         unique: true,
         trim: true,
       },
-      marital_status: {
+      maritalStatus: {
         type: String,
         required: true,
         trim: true,
       },
-      gender_identity: {
+      genderIdentity: {
         type: String,
         required: true,
         trim: true,
@@ -95,7 +94,7 @@ const curriculumSchema = new Schema(
         required: true,
         trim: true,
       },
-      sexual_orientation: {
+      sexualOrientation: {
         type: String,
         required: true,
         trim: true,
@@ -120,7 +119,7 @@ const curriculumSchema = new Schema(
       required: true,
       trim: true,
     },
-    professional_experience: [
+    professionalExperience: [
       {
         company: {
           type: String,
@@ -132,20 +131,20 @@ const curriculumSchema = new Schema(
           required: true,
           trim: true,
         },
-        job_title: {
+        jobTitle: {
           type: String,
           required: true,
           trim: true,
         },
-        start_date: {
+        startDate: {
           type: String,
           required: true,
         },
-        end_date: {
+        endDate: {
           type: String,
           required: true,
         },
-        job_description: {
+        jobDescription: {
           type: String,
           required: true,
           trim: true,
@@ -169,16 +168,16 @@ const curriculumSchema = new Schema(
           required: true,
           trim: true,
         },
-        field_of_study: {
+        fieldOfStudy: {
           type: String,
           required: true,
           trim: true,
         },
-        start_date: {
+        startDate: {
           type: String,
           required: true,
         },
-        end_date: {
+        endDate: {
           type: String,
           required: true,
         },
@@ -186,20 +185,16 @@ const curriculumSchema = new Schema(
           type: String,
           trim: true,
         },
-        _id: {
-          type: Schema.Types.ObjectId,
-          auto: true,
-        },
       },
     ],
     skills: [
       {
-        skill_name: {
+        skillName: {
           type: String,
           required: true,
           trim: true,
         },
-        experience_level: {
+        experienceLevel: {
           type: String,
           trim: true,
         },

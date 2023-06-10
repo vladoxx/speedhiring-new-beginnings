@@ -43,6 +43,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .vacant__description-empresa {
   font-size: var(--span-mobile);
   font-weight: 600;
@@ -77,12 +78,6 @@
     font-size: var(--font-size-h2-tablet);
   }
 
-  .vacant__container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-  }
-
   .vacant__job_title {
     font-size: var(--font-size-h3-tablet);
   }
@@ -107,10 +102,6 @@
 @media only screen and (min-width: 1024px) {
   .vacant__title {
     font-size: var(--font-size-h2-desktop);
-  }
-
-  .vacant__container {
-    grid-template-columns: repeat(3, 1fr);
   }
 
   .vacant__job_title {

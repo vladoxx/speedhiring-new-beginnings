@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { styled } from "@mui/material/styles";
 import Chip from "@mui/material/Chip";
 import Paper from "@mui/material/Paper";
-import { Curriculum, Skill } from "../../@types/curriculum";
+import { Curriculum, SkillProps } from "../../@types/curriculum";
 
 interface ChipData {
   key: number;
@@ -28,10 +28,12 @@ export default function ChipComponent({ skills }: ChipProps) {
 
   useEffect(() => {
     if (skills) {
-      const formattedSkills = skills.map((skill: Skill, index: number) => ({
-        key: index,
-        label: skill.skill_name,
-      }));
+      const formattedSkills = skills.map(
+        (skill: SkillProps, index: number) => ({
+          key: index,
+          label: skill.skillName,
+        })
+      );
       setChipData(formattedSkills);
 
       // console.log(formattedSkills);

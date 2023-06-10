@@ -1,28 +1,28 @@
 import { FormEvent, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-import Button from "../../components/Button/Button";
-
 import * as curriculumService from "../../service/CurriculumService";
-
-import "./Formation.css";
 import { EducationProps } from "../../@types/curriculum";
 import { InputChange } from "../../@types/general";
+
+import Button from "../../components/Button/Button";
+
+import "./Formation.css";
 
 function Formation() {
   let params = useParams();
   let navigate = useNavigate();
 
   let formationId = params.formationId;
-  let curriculumId = params.curriculumId;
+  let curriculumId = sessionStorage.getItem("curriculum_id");
 
   const initialStateFormation = {
     institution: "",
     country: "",
     level: "",
-    field_of_study: "",
-    start_date: "",
-    end_date: "",
+    fieldOfStudy: "",
+    startDate: "",
+    endDate: "",
     status: "",
   };
 
@@ -56,9 +56,13 @@ function Formation() {
 
   const getFormation = async (id: string) => {
     if (curriculumId) {
-      const res = await curriculumService.getOneCurriculum(curriculumId);
+      const res = (
+        await curriculumService.getOneCurriculum(curriculumId)
+      ).data.education?.find((item) => item._id === id);
 
-      setFormation(res.data.education?.find((item) => item._id === id));
+      if (res) {
+        setFormation(res);
+      }
     }
   };
 
@@ -321,9 +325,9 @@ function Formation() {
           <input
             className="formation__institution-input"
             type="text"
-            name="field_of_study"
+            name="fieldOfStudy"
             onChange={handleInputChangeFormation}
-            value={formation.field_of_study}
+            value={formation.fieldOfStudy}
             required
           />
         </label>
@@ -333,9 +337,9 @@ function Formation() {
           <input
             className="formation__institution-input"
             type="text"
-            name="start_date"
+            name="startDate"
             onChange={handleInputChangeFormation}
-            value={formation.start_date}
+            value={formation.startDate}
             placeholder="01/2011"
             required
           />
@@ -346,9 +350,9 @@ function Formation() {
           <input
             className="formation__institution-input"
             type="text"
-            name="end_date"
+            name="endDate"
             onChange={handleInputChangeFormation}
-            value={formation.end_date}
+            value={formation.endDate}
             placeholder="08/2013"
             required
           />

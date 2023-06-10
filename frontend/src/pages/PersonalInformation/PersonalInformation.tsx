@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import * as serviceCurriculum from "../../service/CurriculumService";
 
@@ -8,32 +8,31 @@ import Button from "../../components/Button/Button";
 import { InputChange } from "../../@types/general";
 
 import "./PersonalInformation.css";
+import { handleButtonClick } from "../../utils/scrollTop";
 
 function PersonalInformation() {
-  let params = useParams();
   let navigate = useNavigate();
+  let curriculumId = sessionStorage.getItem("curriculum_id");
 
-  const initialStateCurriculum = {
-    personalInfo: {
-      birth_date: "",
-      nationality: "",
-      cpf: "",
-      marital_status: "",
-      gender_identity: "",
-      pronouns: "",
-      sexual_orientation: "",
-      ethnicity: "",
-      disabilities: "",
-      about: "",
-    },
+  const initialStatePersonalInfo = {
+    birthDate: "",
+    nationality: "",
+    cpf: "",
+    maritalStatus: "",
+    genderIdentity: "",
+    pronouns: "",
+    sexualOrientation: "",
+    ethnicity: "",
+    disabilities: "",
+    about: "",
   };
 
-  const [infoCurriculum, setInfoCurriculum] = useState<Curriculum>(
-    initialStateCurriculum
+  const [infoPersonal, setInfoPersonal] = useState<Curriculum["personalInfo"]>(
+    initialStatePersonalInfo
   );
 
   const handleInputChangePersonalInformation = (e: InputChange) => {
-    setInfoCurriculum({ ...infoCurriculum, [e.target.name]: e.target.value });
+    setInfoPersonal({ ...infoPersonal, [e.target.name]: e.target.value });
   };
 
   const handleSubmitPersonalInformation = async (
@@ -41,11 +40,8 @@ function PersonalInformation() {
   ) => {
     e.preventDefault();
 
-    if (params.id) {
-      await serviceCurriculum.getUpdatePersonalInfoCurriculum(
-        params.id,
-        infoCurriculum
-      );
+    if (curriculumId) {
+      await serviceCurriculum.getUpdateCurriculum(curriculumId, infoPersonal);
 
       alert("Dados atualizados com sucesso!");
     }
@@ -54,47 +50,26 @@ function PersonalInformation() {
       navigate(-1);
       window.scrollTo(0, 0);
     }, 1000);
+
+    console.log(infoPersonal);
+  };
+
+  const handleClick = () => {
+    handleButtonClick();
+    navigate(-1);
   };
 
   const loadInfo = async (id: string) => {
     const res = await serviceCurriculum.getOneCurriculum(id);
 
-    const {
-      birth_date,
-      nationality,
-      cpf,
-      marital_status,
-      gender_identity,
-      pronouns,
-      sexual_orientation,
-      ethnicity,
-      disabilities,
-      about,
-    } = res.data.personalInfo;
-
-    setInfoCurriculum({
-      personalInfo: {
-        birth_date,
-        nationality,
-        cpf,
-        marital_status,
-        gender_identity,
-        pronouns,
-        sexual_orientation,
-        ethnicity,
-        disabilities,
-        about,
-      },
-    });
-
-    console.log(res.data.personalInfo);
+    setInfoPersonal(res.data.personalInfo);
   };
 
   useEffect(() => {
-    if (params.id) {
-      loadInfo(params.id);
+    if (curriculumId) {
+      loadInfo(curriculumId);
     }
-  }, [params.id]);
+  }, []);
 
   return (
     <div className="personal">
@@ -110,9 +85,9 @@ function PersonalInformation() {
           <input
             className="personal__input"
             type="text"
-            name="birth_date"
+            name="birthDate"
             onChange={handleInputChangePersonalInformation}
-            value={infoCurriculum.personalInfo.birth_date}
+            value={infoPersonal?.birthDate}
           />
         </label>
 
@@ -123,7 +98,7 @@ function PersonalInformation() {
             type="text"
             name="nationality"
             onChange={handleInputChangePersonalInformation}
-            value={infoCurriculum.personalInfo.nationality}
+            value={infoPersonal?.nationality}
           />
         </label>
 
@@ -134,7 +109,7 @@ function PersonalInformation() {
             type="text"
             name="cpf"
             onChange={handleInputChangePersonalInformation}
-            value={infoCurriculum.personalInfo.cpf}
+            value={infoPersonal?.cpf}
           />
         </label>
 
@@ -143,9 +118,9 @@ function PersonalInformation() {
           <input
             className="personal__input"
             type="text"
-            name="marital_status"
+            name="maritalStatus"
             onChange={handleInputChangePersonalInformation}
-            value={infoCurriculum.personalInfo.marital_status}
+            value={infoPersonal?.maritalStatus}
           />
         </label>
 
@@ -154,9 +129,9 @@ function PersonalInformation() {
           <input
             className="personal__input"
             type="text"
-            name="gender_identity"
+            name="genderIdentity"
             onChange={handleInputChangePersonalInformation}
-            value={infoCurriculum.personalInfo.gender_identity}
+            value={infoPersonal?.genderIdentity}
           />
         </label>
 
@@ -167,7 +142,7 @@ function PersonalInformation() {
             type="text"
             name="pronouns"
             onChange={handleInputChangePersonalInformation}
-            value={infoCurriculum.personalInfo.pronouns}
+            value={infoPersonal?.pronouns}
           />
         </label>
 
@@ -176,9 +151,9 @@ function PersonalInformation() {
           <input
             className="personal__input"
             type="text"
-            name="sexual_orientation"
+            name="sexualOrientation"
             onChange={handleInputChangePersonalInformation}
-            value={infoCurriculum.personalInfo.sexual_orientation}
+            value={infoPersonal?.sexualOrientation}
           />
         </label>
 
@@ -187,9 +162,9 @@ function PersonalInformation() {
           <input
             className="personal__input"
             type="text"
-            name="sexual_orientation"
+            name="ethnicity"
             onChange={handleInputChangePersonalInformation}
-            value={infoCurriculum.personalInfo.ethnicity}
+            value={infoPersonal?.ethnicity}
           />
         </label>
 
@@ -200,7 +175,7 @@ function PersonalInformation() {
             type="text"
             name="disabilities"
             onChange={handleInputChangePersonalInformation}
-            value={infoCurriculum.personalInfo.disabilities}
+            value={infoPersonal?.disabilities}
           />
         </label>
 
@@ -212,12 +187,18 @@ function PersonalInformation() {
             minLength={500}
             name="about"
             onChange={handleInputChangePersonalInformation}
-            value={infoCurriculum.personalInfo.about}
+            value={infoPersonal?.about}
           ></textarea>
         </label>
 
-        <Button text="Atualizar" />
+        <Button text="Atualizar" type="submit" />
       </form>
+      <Button
+        text="Cancelar"
+        onClick={handleClick}
+        className="btn-cancel"
+        type="button"
+      />
     </div>
   );
 }

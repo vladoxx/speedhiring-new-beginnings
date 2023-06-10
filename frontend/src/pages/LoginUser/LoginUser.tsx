@@ -40,6 +40,13 @@ function LoginUser() {
         tokenUser(resLogin.data.token);
         getIdUser(resLogin.data.user._id);
 
+        sessionStorage.setItem("token_user", resLogin.data.token);
+        sessionStorage.setItem("user_id", resLogin.data.user._id);
+        sessionStorage.setItem(
+          "curriculum_id",
+          resLogin.data.user.curriculumId
+        );
+
         setUserLogin(initialStateLogin);
       } catch (error: any) {
         const errorMessage =
@@ -54,7 +61,7 @@ function LoginUser() {
 
   useEffect(() => {
     if (isLoggedInUser) {
-      navigate(`/user/${userId}`);
+      navigate(`/user`);
     }
   }, [isLoggedInUser, navigate]);
 

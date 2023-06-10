@@ -2,17 +2,16 @@
 import { Link } from "react-router-dom";
 
 import "./User.css";
-import useUser from "../../hooks/useUser";
 
 function User() {
-  const { userId } = useUser();
+  const userId = sessionStorage.getItem("user_id");
 
   return (
     <div className="user">
       <h3 className="register-use__tittle">Perfil do candidato</h3>
 
       <div className="user__container">
-        <Link className="user__buttons" to={`/general-information/${userId}`}>
+        <Link className="user__buttons" to={`/general-information`}>
           Informações Pessoais
         </Link>
 

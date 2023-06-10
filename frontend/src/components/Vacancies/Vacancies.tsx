@@ -7,9 +7,10 @@ import * as vacancyService from "../../service/VacancyService";
 
 import { handleButtonClick } from "../../utils/scrollTop";
 
-import "./Vacancies.css";
 import { useEffect } from "react";
 import Button from "../Button/Button";
+
+import "./Vacancies.css";
 interface PropsJob {
   vacancy: JobProps | undefined;
   fetchJobs: () => void;

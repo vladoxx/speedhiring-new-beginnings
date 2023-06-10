@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
+import { Curriculum, EducationProps } from "../../@types/curriculum";
 import * as serviceCurriculum from "../../service/CurriculumService";
 
 import Button from "../../components/Button/Button";
 
 import "./Formations.css";
-import { Curriculum, EducationProps } from "../../@types/curriculum";
 
 export default function Formations() {
   let navigate = useNavigate();
-  let params = useParams();
+
+  let curriculumId = sessionStorage.getItem("curriculum_id");
 
   const [formations, setFormations] = useState<Curriculum["education"]>([]);
 
@@ -27,8 +28,8 @@ export default function Formations() {
   };
 
   useEffect(() => {
-    if (params.curriculumId) {
-      getFormations(params.curriculumId);
+    if (curriculumId) {
+      getFormations(curriculumId);
     }
   }, []);
 
@@ -38,54 +39,46 @@ export default function Formations() {
 
       <div className="formations__container">
         {formations &&
-          formations.map((formation: EducationProps) => {
-            return (
-              <div key={formation._id} className="formations__card">
-                <h3 className="formations__card__title">
-                  {formation.institution}
-                </h3>
-                <p className="formations__card__paragraph">
-                  {formation.field_of_study}
-                </p>
-                <p className="formations__card__paragraph">{formation.level}</p>
-                <p className="formations__card__paragraph">
-                  {formation.country}
-                </p>
-                <p className="formations__card__paragraph">
-                  {formation.start_date} - {formation.end_date}
-                </p>
+          formations.map((formation: EducationProps) => (
+            <div key={formation._id} className="formations__card">
+              <h3 className="formations__card__title">
+                {formation.institution}
+              </h3>
+              <p className="formations__card__paragraph">
+                {formation.fieldOfStudy}
+              </p>
+              <p className="formations__card__paragraph">{formation.level}</p>
+              <p className="formations__card__paragraph">{formation.country}</p>
+              <p className="formations__card__paragraph">
+                {formation.startDate} - {formation.endDate}
+              </p>
 
-                <div className="formations__card__container__buttons">
-                  <Button
-                    text="Editar"
-                    className="btn-edit"
-                    onClick={() =>
-                      navigate(
-                        `/formation/${params.curriculumId}/${formation._id}`
-                      )
-                    }
-                  />
-                  <Button
-                    text="Deletar"
-                    className="btn-delete"
-                    onClick={() =>
-                      params.curriculumId && formation._id
-                        ? formationDelete(params.curriculumId, formation._id)
-                        : alert("Não existe parâmetros")
-                    }
-                  />
-                </div>
+              <div className="formations__card__container__buttons">
+                <Button
+                  text="Editar"
+                  className="btn-edit"
+                  onClick={() => navigate(`/formation/${formation._id}`)}
+                />
+                <Button
+                  text="Deletar"
+                  className="btn-delete"
+                  onClick={() =>
+                    curriculumId && formation._id
+                      ? formationDelete(curriculumId, formation._id)
+                      : alert("Não existe parâmetros")
+                  }
+                />
               </div>
-            );
-          })}
+            </div>
+          ))}
       </div>
 
       <div className="formations__container__buttons">
-        <Button text="Voltar" onClick={() => navigate(-1)} />
+        <Button text="Ir ao perfil" onClick={() => navigate(-1)} />
         <Button
           text="Adicionar formação"
           className="btn-open"
-          onClick={() => navigate(`/formation/${params.curriculumId}`)}
+          onClick={() => navigate(`/formation`)}
         />
       </div>
     </div>

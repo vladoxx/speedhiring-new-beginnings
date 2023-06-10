@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 
 import { CompanyProps } from "../../@types/company";
 
-import useCompany from "../../hooks/useCompany";
-
 import * as serviceCompany from "../../service/CompanyService";
 
 import "./Company.css";
@@ -12,7 +10,7 @@ import Button from "../../components/Button/Button";
 
 function Company() {
   const [company, setCompany] = useState<CompanyProps>();
-  const { companyId, isLoggedInCompany } = useCompany();
+  const companyId = sessionStorage.getItem("company_id");
 
   let navigate = useNavigate();
   const loadCompany = async (id: string) => {
@@ -25,7 +23,7 @@ function Company() {
     if (companyId) {
       loadCompany(companyId);
     }
-  }, [isLoggedInCompany]);
+  }, [companyId]);
 
   return (
     <div className="company">

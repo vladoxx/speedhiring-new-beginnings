@@ -1,36 +1,36 @@
 export interface Curriculum {
-  personalInfo: PersonalInfo;
-  _id?: string;
   userId?: string;
+  _id?: string;
+  personalInfo?: PersonalInfoProps | undefined;
   objective?: string;
-  professional_experience?: ProfessionalExperience[];
-  education?: Education[] | undefined;
-  skills?: Skill[] | undefined;
-  courses?: Course[];
-  certifications?: Certification[];
-  languages?: Language[];
+  professionalExperience?: ProfessionalExperienceProps[];
+  education?: EducationProps[] | undefined;
+  skills?: SkillProps[] | undefined;
+  courses?: CourseProps[];
+  certifications?: CertificationProps[];
+  languages?: LanguageProps[];
 }
 
-export interface PersonalInfo {
-  birth_date?: string;
+export interface PersonalInfoProps {
+  birthDate?: string;
   nationality?: string;
   cpf?: string;
-  marital_status?: string;
-  gender_identity?: string;
+  maritalStatus?: string;
+  genderIdentity?: string;
   pronouns?: string;
-  sexual_orientation?: string;
+  sexualOrientation?: string;
   ethnicity?: string;
   disabilities?: string;
   about?: string;
 }
 
-export interface ProfessionalExperience {
+export interface ProfessionalExperienceProps {
   company: string;
   country: string;
-  job_title: string;
-  start_date: string;
-  end_date: string;
-  job_description: string;
+  jobTitle: string;
+  startDate: string;
+  endDate: string;
+  jobDescription: string;
   _id: string;
 }
 
@@ -38,20 +38,20 @@ export interface EducationProps {
   institution?: string;
   country?: string;
   level?: string;
-  field_of_study?: string;
-  start_date?: string;
-  end_date?: string;
+  fieldOfStudy?: string;
+  startDate?: string;
+  endDate?: string;
   status?: string;
   _id?: string;
 }
 
-export interface Skill {
-  skill_name: string;
-  experience_level: string;
+export interface SkillProps {
+  skillName: string;
+  experienceLevel: string;
   _id: string;
 }
 
-export interface Course {
+export interface CourseProps {
   courseName: string;
   institution: string;
   country: string;
@@ -60,7 +60,7 @@ export interface Course {
   _id: string;
 }
 
-export interface Certification {
+export interface CertificationProps {
   certificationName: string;
   institution: string;
   country: string;
@@ -69,7 +69,7 @@ export interface Certification {
   _id: string;
 }
 
-export interface Language {
+export interface LanguageProps {
   language: string;
   proficiency: string;
   _id: string;
